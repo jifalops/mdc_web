@@ -1,0 +1,13 @@
+{
+  "name": "mdc_web_example",
+  "version": "1.0.0",
+  "description": "This package is for installing 'material-components-web' ",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "material-components-web": "^0.40.0"
+  }
+}

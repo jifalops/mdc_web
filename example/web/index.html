@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+  <title>mdc_web_example</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico">
+  <script defer src="main.dart.js"></script>
+
+  <!-- This exposes the `mdc` global variable. -->
+  <!-- TODO use minified version -->
+  <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
+</head>
+
+<body>
+  <header>
+    <div id="title">mdc_web Example</div>
+    <label>
+      Dark
+      <input id="isDark" type="checkbox">
+    </label>
+  </header>
+  <div id="tabs">
+    <div id="streamTab">Stream</div>
+    <div id="futureTab">Future</div>
+  </div>
+  <div id="content">Click Stream or Future.</div>
+
+  <button id="button" class="mdc-button mdc-button--raised mdc-button--dense" data-mdc-auto-init="MDCRipple">Button</button>
+  <button id="button1" class="mdc-button">Button1</button>
+  <button id="button2" class="mdc-button">Button2</button>
+  <button id="button3" class="mdc-button">Button3</button>
+
+  <button class="mdc-icon-button foo-button" aria-label="Add to favorites" aria-pressed="false" data-mdc-auto-init="MDCIconButtonToggle">
+    <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+    <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+  </button>
+
+  <script>
+    function getAncestors(obj) {
+      let ancestors = [];
+      while (proto = Object.getPrototypeOf(any)) {
+        ancestors.push({
+          'proto': proto,
+          ctor: any.constructor
+        });
+      }
+      while (any = proto);
+      return ancestors
+    }
+
+    function getAllProperties(obj, excludes = [], includeObject = true) {
+      let props = [];
+      let objProto = Object.getPrototypeOf(Object());
+      let curr = obj;
+      do {
+        props.push({
+          [curr.constructor.name]: {
+            'static': getOwnPropertyNames(curr.constructor, obj, excludes),
+            'instance': getOwnPropertyNames(curr, obj, excludes)
+          }
+        });
+      } while (curr = Object.getPrototypeOf(curr));
+// <!--
+
+
+
+//       for (let i = 0; i < ancestors.length; i++) {
+//         if (ancestors[i] == 'instance') {
+//           let names = getOwnPropertyNames(any, any, excludes);
+//           if (props.length >= 1) {
+//             props[props.length - 1]['instance_members'] = props[props.length - 1]['instance_members'].concat(names);
+//           } else {
+//             props.push({
+//               'name': any.constructor.name,
+//               'static_members': getOwnPropertyNames(any.constructor, any, excludes),
+//               'instance_members': names
+//             });
+//           }
+//         } else if (includeObject || ancestors[i].proto != objProto) {
+//           props.push({
+//             'name': ancestors[i].ctor.name,
+//             'static_members': getOwnPropertyNames(ancestors[i].ctor, any, excludes),
+//             'instance_members': getOwnPropertyNames(ancestors[i].proto, any, excludes),
+//           });
+//         }
+//       } -->
+      return JSON.stringify(props, null, 2);
+    }
+
+    function getOwnPropertyNames(any, root, excludes = []) {
+      return any == null ? [] : Object.getOwnPropertyNames(any).filter((prop) =>
+        filter(prop, excludes)).map((name) =>
+        `${name}: ${typeString(root[name])}`
+      );
+    }
+
+    function filter(string, excludes) {
+      return !excludes.map((exclude) => !string.includes(exclude)).includes(false);
+    }
+
+    function typeString(obj) {
+      let type = typeof obj;
+      return Array.isArray(obj) ? 'array' : type == 'function' ? functionString(obj) : type;
+    }
+
+    function functionString(fn) {
+      let s = fn.toString().replace(` ${fn.name}`, '');
+      return s.substring(0, s.indexOf(')') + 1);
+    }
+
+    const mdcPropertyExcludes = ['_', 'initialize', 'destroy', 'Foundation', 'SyncWithDOM'];
+  </script>
+</body>
+
+</html>
