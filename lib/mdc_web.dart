@@ -10,6 +10,8 @@
 /// * Layout grid
 /// * RTL
 /// * Shape
+/// * Theme
+/// * Typography
 @JS('mdc')
 library mdc_web;
 
@@ -19,6 +21,7 @@ import 'package:js/js.dart';
 export 'package:mdc_web/src/util.dart';
 
 part 'src/animation.dart';
+part 'src/app_bars.dart';
 part 'src/auto_init.dart';
 part 'src/base.dart';
 part 'src/buttons.dart';
@@ -33,6 +36,3 @@ part 'src/menus.dart';
 part 'src/ripple.dart';
 part 'src/snackbar.dart';
 part 'src/tabs.dart';
-
-
-

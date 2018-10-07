@@ -1,3 +1,3 @@
-## 1.0.0
+## [0.1.0] - October 7, 2018
 
-- Initial version, created by Stagehand
+* First release. Mirrors material-components-web v0.40.0.

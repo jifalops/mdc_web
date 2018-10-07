@@ -2,9 +2,9 @@
 @import url(https://fonts.googleapis.com/css?family=Material+Icons);
 
 $mdc-theme-primary: #fcb8ab;
-$mdc-theme-secondary: #feeae6;
+$mdc-theme-secondary: rgb(66, 189, 189);
 $mdc-theme-on-primary: #442b2d;
-$mdc-theme-on-secondary: #442b2d;
+$mdc-theme-on-secondary: #212121;
 
 @import "material-components-web/material-components-web";
 
@@ -18,81 +18,27 @@ body {
   font-size: 16px;
 }
 
-.dark {
-  background-color: #333333;
-  color: white;
-}
+.mdc-button.primary {
+  @include mdc-elevation(2.0);
+  @include mdc-button-container-fill-color(secondary);
+  @include mdc-button-ink-color(on-secondary);
+  @include mdc-states;
+  // Add ripple via scss mixins.
+  // @include mdc-ripple-surface;
+  // @include mdc-ripple-radius-bounded;
+  // @include mdc-states-base-color(black);
+  // @include mdc-states-hover-opacity(.1);
+  // @include mdc-states-focus-opacity(.3);
+  // @include mdc-states-press-opacity(.4);
 
-header,
-#tabs, .post {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
 }
-
-header {
-  justify-content: space-between;
-  background-color: #006666;
-  color: white;
-  height: 64px;
-  padding: 8px;
+.mdc-button.secondary {
+  @include mdc-button-container-fill-color(primary);
+  @include mdc-button-ink-color(on-primary);
+  @include mdc-states;
 }
-
-header > * {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#tabs {
-  height: 48px;
-  background-color: #00aaaa;
-  color: black;
-  font-size: 18px;
-}
-
-.active {
-  border-bottom: 4px solid orangered;
-}
-
-#streamTab,
-#futureTab {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#title {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-#content {
-  padding: 8px;
-}
-
-.post {
-  padding: 8px 0;
-}
-
-.post .title {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.5;
-}
-.post .content {
- flex: 1;
- padding: 0 16px;
-}
-
-.leading, .trailing {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.foo-button {
-  // @include mdc-button-ink-color;
-  // @include mdc-states;
+.mdc-button.tertiary {
+  @include mdc-button-outline-color(gray);
+  @include mdc-button-ink-color(black);
+  @include mdc-states;
 }

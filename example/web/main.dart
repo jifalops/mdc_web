@@ -2,12 +2,11 @@ import 'dart:html';
 import 'package:mdc_web/mdc_web.dart';
 
 void main() {
-  ///
+  /// Automatically creates MDC-Web components from html elements that have a
+  /// `data-mdc-auto-init="<class>"` attribute.
   autoInit();
 
-  // mdc.ripple.MDCRipple.attachTo(querySelector('#button1'));
-  // // mdc.addRipple(querySelector('#button2'));
-  // final ripple = mdc.MdcRipple(querySelector('#button3'));
-  // print(mdc.stringify(ripple));
-  // print('mdc: ${stringify(mdc, null, 4)}');
+  /// Programmatically add a ripple to all elements with a class that includes
+  /// "mdc-button".
+  querySelectorAll('.mdc-button').forEach(MDCRipple.attachTo);
 }
