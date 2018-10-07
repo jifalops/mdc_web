@@ -5,7 +5,7 @@ part of mdc_web;
 /// Javascript: `mdc.drawer.MDCDrawer`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/drawers/#mdcdrawer-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-drawer).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-drawer/index.js).
 @JS('drawer.MDCDrawer')
 abstract class MDCDrawer extends MDCComponent {
   external factory MDCDrawer(Element element, [MDCFoundation foundation, args]);

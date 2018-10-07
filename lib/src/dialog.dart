@@ -6,7 +6,7 @@ part of mdc_web;
 /// Javascript: `mdc.dialog.MDCDialog`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/dialogs/#mdcdialog-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-dialog).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-dialog/index.js).
 @JS('dialog.MDCDialog')
 abstract class MDCDialog extends MDCComponent {
   external factory MDCDialog(Element element, [MDCFoundation foundation, args]);

@@ -17,7 +17,7 @@ abstract class MDCSelectionControl {
 /// Javascript: `mdc.formField.MDCFormField`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/input-controls/form-fields/#mdcformfield-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-form-field).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-form-field/index.js.
 @JS('formField.MDCFormField')
 abstract class MDCFormField extends MDCComponent {
   external factory MDCFormField(Element element,
@@ -33,7 +33,7 @@ abstract class MDCFormField extends MDCComponent {
 /// Javascript: `mdc.checkbox.MDCCheckbox`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/input-controls/checkboxes/#mdccheckbox-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-checkbox).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-checkbox/index.js).
 @JS('checkbox.MDCCheckbox')
 abstract class MDCCheckbox extends MDCComponent implements MDCSelectionControl {
   external factory MDCCheckbox(Element element,
@@ -55,7 +55,7 @@ abstract class MDCCheckbox extends MDCComponent implements MDCSelectionControl {
 /// Javascript: `mdc.floatingLabel.MDCFloatingLabel`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/input-controls/floating-label/#mdcfloatinglabel-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-floating-label).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-floating-label/index.js).
 @JS('floatingLabel.MDCFloatingLabel')
 abstract class MDCFloatingLabel extends MDCComponent
     implements MDCSelectionControl {
@@ -74,7 +74,7 @@ abstract class MDCFloatingLabel extends MDCComponent
 /// Javascript: `mdc.lineRipple.MDCLineRipple`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/input-controls/line-ripple/#mdclineripple-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-line-ripple).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-line-ripple/index.js).
 @JS('lineRipple.MDCLineRipple')
 abstract class MDCLineRipple extends MDCComponent {
   external factory MDCLineRipple(Element element,
@@ -93,7 +93,7 @@ abstract class MDCLineRipple extends MDCComponent {
 /// Javascript: `mdc.notchedOutline.MDCNotchedOutline`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/input-controls/notched-outline/#mdcnotchedoutline-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-notched-outline).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-notched-outline/index.js).
 @JS('notchedOutline.MDCNotchedOutline')
 abstract class MDCNotchedOutline {
   external factory MDCNotchedOutline(Element element,
@@ -109,7 +109,7 @@ abstract class MDCNotchedOutline {
 /// Javascript: `mdc.radio.MDCRadio`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/input-controls/radio-buttons/#mdcradio-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-radio).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-radio/index.js).
 @JS('radio.MDCRadio')
 abstract class MDCRadio extends MDCComponent implements MDCSelectionControl {
   external factory MDCRadio(Element element, [MDCFoundation foundation, args]);
@@ -128,7 +128,7 @@ abstract class MDCRadio extends MDCComponent implements MDCSelectionControl {
 /// Javascript: `mdc.select.MDCSelect`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/input-controls/select-menus/#mdcselect-api)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-select).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-select/index.js).
 @JS('select.MDCSelect')
 abstract class MDCSelect extends MDCComponent implements MDCSelectionControl {
   external factory MDCSelect(Element element, [MDCFoundation foundation, args]);
@@ -152,7 +152,7 @@ abstract class MDCSelect extends MDCComponent implements MDCSelectionControl {
 /// Javascript: `mdc.slider.MDCSlider`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/input-controls/sliders/#mdc-slider-component-api)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-slider).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-slider/index.js).
 @JS('slider.MDCSlider')
 abstract class MDCSlider extends MDCComponent implements MDCSelectionControl {
   external factory MDCSlider(Element element, [MDCFoundation foundation, args]);
@@ -191,7 +191,7 @@ abstract class MDCSlider extends MDCComponent implements MDCSelectionControl {
 /// Javascript: `mdc.switchControl.MDCSwitch`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/input-controls/switches/#mdcswitch-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-switch).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-switch/index.js).
 @JS('switchControl.MDCSwitch')
 abstract class MDCSwitch extends MDCComponent implements MDCSelectionControl {
   external factory MDCSwitch(Element element, [MDCFoundation foundation, args]);
@@ -208,7 +208,7 @@ abstract class MDCSwitch extends MDCComponent implements MDCSelectionControl {
 /// Javascript: `mdc.textField.MDCTextField`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/input-controls/text-field/#mdctextfield-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield/index.js).
 @JS('textField.MDCTextField')
 abstract class MDCTextField extends MDCComponent
     implements MDCSelectionControl {

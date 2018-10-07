@@ -5,7 +5,7 @@ part of mdc_web;
 /// Javascript: `mdc.linearProgress.MDCLinearProgress`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/linear-progress/#mdclinearprogress-api)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-linear-progress).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-linear-progress/index.js).
 @JS('linearProgress.MDCLinearProgress')
 abstract class MDCLinearProgress extends MDCComponent {
   external factory MDCLinearProgress(Element element,

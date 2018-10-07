@@ -5,7 +5,7 @@ part of mdc_web;
 /// Javascript: `mdc.base.MDCFoundation`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/base/#mdcfoundation)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/foundation.js).
 @JS('base.MDCFoundation')
 abstract class MDCFoundation {
   external factory MDCFoundation([adapter]);
@@ -33,7 +33,7 @@ abstract class MDCFoundation {
 /// Javascript: `mdc.base.MDCComponent`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/base/#mdccomponent)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/component.js).
 @JS('base.MDCComponent')
 abstract class MDCComponent {
   external factory MDCComponent(Element element,

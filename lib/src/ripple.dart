@@ -5,7 +5,7 @@ part of mdc_web;
 /// Javascript: `mdc.ripple.MDCRipple`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/ripples/#mdcripple)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-ripple).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-ripple/index.js).
 @JS('ripple.MDCRipple')
 abstract class MDCRipple extends MDCComponent {
   external factory MDCRipple(Element element, [MDCFoundation foundation, args]);

@@ -6,7 +6,7 @@ part of mdc_web;
 /// Javascript: `mdc.dom.ponyfill`.
 ///
 /// See the [component reference](https://material.io/develop/web/components/dom/)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-dom).
+/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-dom/ponyfill.js).
 @JS('dom.ponyfill')
 abstract class Ponyfill {
   /// Returns the ancestor of the given element matching the given selector
