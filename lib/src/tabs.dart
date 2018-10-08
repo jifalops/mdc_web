@@ -74,8 +74,6 @@ abstract class MDCTabIndicator extends MDCComponent {
   external /*DOMRect*/ computeContentClientRect();
 }
 
-
-
 /// A Tab Scroller allows for smooth native and animated scrolling of tabs.
 ///
 /// Javascript: `mdc.tabScroller.MDCTabScroller`.

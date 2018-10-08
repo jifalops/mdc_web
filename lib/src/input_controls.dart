@@ -252,5 +252,3 @@ abstract class MDCTextField extends MDCComponent
 /// `mdc.textField.MDCTextFieldIcon` because they only expose their foundation,
 /// and this library currently only implements the base foundation, not the
 /// foundations of components.
-
-

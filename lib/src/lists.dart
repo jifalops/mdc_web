@@ -8,8 +8,7 @@ part of mdc_web;
 /// and [source code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-list/index.js).
 @JS('list.MDCList')
 abstract class MDCList extends MDCComponent {
-  external factory MDCList(Element element,
-      [MDCFoundation foundation, args]);
+  external factory MDCList(Element element, [MDCFoundation foundation, args]);
   external static MDCList attachTo(Element element);
 
   external void set vertical(bool value);
