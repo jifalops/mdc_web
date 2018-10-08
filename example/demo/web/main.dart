@@ -8,7 +8,9 @@ void main() {
   autoInit();
 
   final topAppBar = MDCTopAppBar(querySelector('.mdc-top-app-bar'));
+  // topAppBar.listen(MDCTopAppBar.navEvent, print);
   listen(topAppBar, MDCTopAppBar.navEvent);
+  topAppBar.emit(MDCTopAppBar.navEvent, {});
 
   /// Programmatically add a ripple to all elements with a class that includes
   /// "mdc-button".
@@ -19,12 +21,17 @@ void main() {
 void Function(Event event) listen(Object target, String eventName) {
   final handler = (Event event) {
     if (event is CustomEvent)
-      print('$eventName - ${event.detail}');
+      print('Event "$eventName" detail: ${event.detail}');
     else
-      print('$eventName - $event');
+      print('Event "$eventName": $event');
   };
   if (target is Node)
     target.addEventListener(eventName, handler);
-  else if (target is MDCComponent) target.listen(eventName, handler);
+  else if (target is MDCComponent) {
+    target.listen(eventName, handler);
+    print('MDCComponent');
+    print(target.root_);
+    target.root_.addEventListener(eventName, print);
+  }
   return handler;
 }
