@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dfbc08c2-a135-4f0b-b9d6-2a4c338164bc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/../CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/mdc_web.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/mdc_web.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/src/tabs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/src/tabs.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.yaml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1780395008">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="scss" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="SCSS" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="scss" value="28" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="SCSS" value="28" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/styles.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/web/styles.scss" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/web/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/web/node_modules/@material/animation/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/auto-init/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/base/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/button/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/card/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/checkbox/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/chips/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/dialog/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/dom/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/drawer/node_modules/focus-trap/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/drawer/node_modules/tabbable/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/drawer/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/elevation/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/fab/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/floating-label/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/form-field/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/grid-list/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/icon-button/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/icon-toggle/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/image-list/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/layout-grid/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/line-ripple/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/linear-progress/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/list/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/menu-surface/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/menu/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/notched-outline/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/radio/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/ripple/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/rtl/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/select/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/selection-control/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/shape/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/slider/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/snackbar/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/switch/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/tab-bar/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/tab-indicator/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/tab-scroller/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/tab/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/textfield/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/theme/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/toolbar/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/top-app-bar/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/@material/typography/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/focus-trap/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/material-components-web/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/tabbable/package.json" />
+      <path value="$PROJECT_DIR$/web/node_modules/xtend/package.json" />
+      <path value="$PROJECT_DIR$/web/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1591" />
+    <option name="height" value="1048" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>HTML</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dfbc08c2-a135-4f0b-b9d6-2a4c338164bc" name="Default Changelist" comment="" />
+      <created>1538954401929</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1538954401929</updated>
+      <workItem from="1538954403096" duration="594000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="594000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1591" height="1048" extended-state="0" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/web/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

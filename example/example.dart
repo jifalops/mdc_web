@@ -1,7 +1,6 @@
 // See the full example at https://github.com/jifalops/mdc_web/tree/master/example.
 
-/// main.dart
-
+/// ./simple/web/main.dart
 import 'dart:html';
 import 'package:mdc_web/mdc_web.dart';
 
@@ -15,6 +14,7 @@ void main() {
   querySelectorAll('.mdc-button').forEach(MDCRipple.attachTo);
 }
 
+/// ./simple/web/index.html
 const indexHtml = '''
 <!DOCTYPE html>
 <html>
@@ -53,6 +53,7 @@ const indexHtml = '''
 </html>
 ''';
 
+/// ./simple/web/styles.scss
 const stylesScss = r'''
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Material+Icons);

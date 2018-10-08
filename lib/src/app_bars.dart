@@ -9,9 +9,9 @@ part of mdc_web;
 /// and [source code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-top-app-bar/index.js).
 @JS('topAppBar.MDCTopAppBar')
 abstract class MDCTopAppBar extends MDCComponent {
+  external static MDCTopAppBar attachTo(Element element);
   external factory MDCTopAppBar(Element element,
       [MDCFoundation foundation, args]);
-  external static MDCTopAppBar attachTo(Element element);
 
   /// The default scroll target is `window`.
   external void setScrollTarget(Element target);

@@ -1,12 +1,11 @@
-name: mdc_web_example
+name: mdc_web_example_demo
 description: Example usage of the mdc_web package.
 
 environment:
   sdk: '>=2.0.0 <3.0.0'
 
 dependencies:
- mdc_web:
-   path: ../
+ mdc_web: any
 
 dev_dependencies:
   build_runner: ^0.10.0
