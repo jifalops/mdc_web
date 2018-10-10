@@ -6,4 +6,5 @@ import 'package:js/js.dart';
 @JS('JSON.stringify')
 external String _stringify(value, [replacer, space]);
 
-String stringify(value) => _stringify(value, null, 2);
+String stringify(value, [replacer = null, space = 2]) =>
+    _stringify(value, replacer, space);

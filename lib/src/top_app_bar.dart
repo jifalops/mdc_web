@@ -15,7 +15,7 @@ abstract class MDCTopAppBar extends MDCComponent {
 
   /// The default scroll target is `window`.
   external void setScrollTarget(Element target);
-
-  /// Emits when the navigation icon is clicked.
-  static const navEvent = 'MDCTopAppBar:nav';
 }
+
+/// Emits when the navigation icon is clicked.
+const mdcTopAppBarNavEvent = 'MDCTopAppBar:nav';

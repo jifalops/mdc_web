@@ -9,8 +9,8 @@ part of mdc_web;
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-dialog/index.js).
 @JS('dialog.MDCDialog')
 abstract class MDCDialog extends MDCComponent {
-  external factory MDCDialog(Element element, [MDCFoundation foundation, args]);
   external static MDCDialog attachTo(Element element);
+  external factory MDCDialog(Element element, [MDCFoundation foundation, args]);
 
   external bool get isOpen;
   external String get escapeKeyAction;
@@ -27,13 +27,13 @@ abstract class MDCDialog extends MDCComponent {
 
   /// [action] indicates why it was closed.
   external void close([String action]);
-
-  static const openingEvent = 'MDCDialog:opening';
-  static const openedEvent = 'MDCDialog:opened';
-
-  /// `event.detail`: {action: string?}
-  static const closingEvent = 'MDCDialog:closing';
-
-  /// `event.detail`: {action: string?}
-  static const closedEvent = 'MDCDialog:closed';
 }
+
+const mdcDialogOpeningEvent = 'MDCDialog:opening';
+const mdcDialogOpenedEvent = 'MDCDialog:opened';
+
+/// `event.detail`: {action: string?}
+const mdcDialogClosingEvent = 'MDCDialog:closing';
+
+/// `event.detail`: {action: string?}
+const mdcDialogClosedEvent = 'MDCDialog:closed';

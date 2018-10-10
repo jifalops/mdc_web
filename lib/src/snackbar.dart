@@ -9,28 +9,24 @@ part of mdc_web;
 /// and [source code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-snackbar/index.js).
 @JS('snackbar.MDCSnackbar')
 abstract class MDCSnackbar extends MDCComponent {
+  external static MDCSnackbar attachTo(Element element);
   external factory MDCSnackbar(Element element,
       [MDCFoundation foundation, args]);
-  external static MDCSnackbar attachTo(Element element);
 
   external bool get dismissesOnAction;
   external void set dismissesOnAction(bool value);
 
-  @JS('show')
-  external void _show(data);
+  external void show(MDCSnackbarData data);
+}
 
-  void show(message,
-          {Function actionHandler,
-          String actionText,
-          num timeout,
-          bool multiline,
-          bool actionOnBottom}) =>
-      _show({
-        'message': message,
-        'actionHandler': actionHandler,
-        'actionText': actionText,
-        'timeout': timeout,
-        'multiline': multiline,
-        'actionOnBottom': actionOnBottom,
-      });
+@JS()
+@anonymous
+abstract class MDCSnackbarData {
+  MDCSnackbarData(
+      {@required String message,
+      Function actionHandler,
+      String actionText,
+      num timeout,
+      bool multiline,
+      bool actionOnBottom});
 }

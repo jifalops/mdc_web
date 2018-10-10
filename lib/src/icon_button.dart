@@ -8,16 +8,16 @@ part of mdc_web;
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-icon-button).
 @JS('iconButton.MDCIconButtonToggle')
 abstract class MDCIconButtonToggle extends MDCComponent {
+  external static MDCIconButtonToggle attachTo(Element element);
   external factory MDCIconButtonToggle(Element element,
       [MDCFoundation foundation, args]);
-  external static MDCIconButtonToggle attachTo(Element element);
 
   /// Get/set the toggle state.
   external bool get on;
   external void set on(bool value);
 
   external MDCRipple get ripple;
-
-  /// Data structure: {"detail": {"isOn": boolean}}
-  static const changeEvent = 'MDCIconButtonToggle:change';
 }
+
+/// Data structure: {"detail": {"isOn": boolean}}
+const mdcIconButtonToggleChangeEvent = 'MDCIconButtonToggle:change';

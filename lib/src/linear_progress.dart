@@ -8,9 +8,9 @@ part of mdc_web;
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-linear-progress/index.js).
 @JS('linearProgress.MDCLinearProgress')
 abstract class MDCLinearProgress extends MDCComponent {
+  external static MDCLinearProgress attachTo(Element element);
   external factory MDCLinearProgress(Element element,
       [MDCFoundation foundation, args]);
-  external static MDCLinearProgress attachTo(Element element);
 
   external void set determinate(bool value);
 

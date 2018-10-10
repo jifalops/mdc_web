@@ -8,17 +8,22 @@ part of mdc_web;
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-chips/chip-set/index.js).
 @JS('chips.MDCChipSet')
 abstract class MDCChipSet extends MDCComponent {
+  external static MDCChipSet attachTo(Element element);
   external factory MDCChipSet(Element element,
       [MDCFoundation foundation, args]);
-  external static MDCChipSet attachTo(Element element);
 
-  @JS('chips')
-  external List get _chips;
-  List<MDCChip> get chips => List.from(_chips);
+  external List get chips;
 
   external void addChip(Element chipEl);
-  external bool getSelectedChipIds();
+  // TODO: Not in 0.40.0
+  // external List getSelectedChipIds();
 }
+
+/// Wrapper for [MDCChipSet.chips].
+List<MDCChip> mdcChipSetChips(MDCChipSet chipset) => List.from(chipset.chips);
+// TODO: Not in 0.40.0
+// List<int> mdcChipSetSelectedChipIds(MDCChipSet chipset) =>
+//     List.from(chipset.getSelectedChipIds());
 
 /// Encompasses the behavior of a single chip. All of MDCChip’s emitted events
 /// bubble up through the DOM.
@@ -29,8 +34,8 @@ abstract class MDCChipSet extends MDCComponent {
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-chips/chip/index.js).
 @JS('chips.MDCChip')
 abstract class MDCChip extends MDCComponent {
-  external factory MDCChip(Element element, [MDCFoundation foundation, args]);
   external static MDCChip attachTo(Element element);
+  external factory MDCChip(Element element, [MDCFoundation foundation, args]);
 
   /// This will be the same as the id attribute on the root element. If an id is
   /// not provided, a unique one will be generated.
@@ -44,25 +49,26 @@ abstract class MDCChip extends MDCComponent {
   /// If [shouldRemoveOnTrailingIconClick] is set to false, you must manually
   /// call beginExit() on the chip to remove it.
   external void beginExit();
-
-  /// Indicates the chip was interacted with (via click/tap or Enter key).
-  ///
-  /// `event.detail` contents: {chipId: string}
-  static const interactionEvent = 'MDCChip:interaction';
-
-  /// Indicates the chip’s selection state has changed (for choice/filter chips).
-  ///
-  /// `event.detail` contents: {chipId: string, selected: boolean}
-  static const selectionEvent = 'MDCChip:selection';
-
-  /// Indicates the chip is ready to be removed from the DOM.
-  ///
-  /// `event.detail` contents: {chipId: string, root: Element}
-  static const removalEvent = 'MDCChip:removal';
-
-  /// Indicates the chip’s trailing icon was interacted with (via click/tap or
-  /// Enter key).
-  ///
-  /// `event.detail` contents: {chipId: string}
-  static const trailingIconInteractionEvent = 'MDCChip:trailingIconInteraction';
 }
+
+/// Indicates the chip was interacted with (via click/tap or Enter key).
+///
+/// `event.detail` contents: {chipId: string}
+const mdcChipInteractionEvent = 'MDCChip:interaction';
+
+/// Indicates the chip’s selection state has changed (for choice/filter chips).
+///
+/// `event.detail` contents: {chipId: string, selected: boolean}
+// TODO: Not part of v0.40.0.
+// const mdcChipSelectionEvent = 'MDCChip:selection';
+
+/// Indicates the chip is ready to be removed from the DOM.
+///
+/// `event.detail` contents: {chipId: string, root: Element}
+const mdcChipRemovalEvent = 'MDCChip:removal';
+
+/// Indicates the chip’s trailing icon was interacted with (via click/tap or
+/// Enter key).
+///
+/// `event.detail` contents: {chipId: string}
+const mdcChipTrailingIconInteractionEvent = 'MDCChip:trailingIconInteraction';

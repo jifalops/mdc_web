@@ -13,17 +13,9 @@ abstract class MDCFoundation {
   external void init();
   external void destroy();
 
-  @JS('cssClasses')
-  external static Map get _cssClasses;
-  Map<String, String> get cssClasses => Map.from(_cssClasses);
-
-  @JS('strings')
-  external static Map get _strings;
-  Map<String, String> get strings => Map.from(_strings);
-
-  @JS('numbers')
-  external static Map get _numbers;
-  Map<String, num> get numbers => Map.from(_numbers);
+  external static get cssClasses;
+  external static get strings;
+  external static get numbers;
 
   external static dynamic get defaultAdapter;
 }
@@ -36,6 +28,7 @@ abstract class MDCFoundation {
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/component.js).
 @JS('base.MDCComponent')
 abstract class MDCComponent {
+  external static MDCComponent attachTo(Element root);
   external factory MDCComponent(Element element,
       [MDCFoundation foundation, args]);
 
@@ -48,8 +41,13 @@ abstract class MDCComponent {
   external void destroy();
   external void listen(String type, EventListener handler);
   external void unlisten(String type, EventListener handler);
-  external void emit(String type, Object data, [bool shouldBubble = false]);
-
-  /// Subclasses should override.
-  external static MDCComponent attachTo(Element root);
+  external void emit(String type, data, [bool shouldBubble = false]);
 }
+
+/// Wrapper for [MDCComponent.listen()].
+void mdcListen(MDCComponent component, String type, EventListener handler) =>
+    component.listen(type, allowInterop(handler));
+
+/// Wrapper for [MDCComponent.unlisten()].
+void mdcUnlisten(MDCComponent component, String type, EventListener handler) =>
+    component.unlisten(type, allowInterop(handler));

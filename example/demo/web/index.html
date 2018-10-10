@@ -24,19 +24,51 @@
         <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
         <span class="mdc-top-app-bar__title">mdc_web Demo</span>
       </section>
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+        <a href="https://material.io/develop/web/components/top-app-bar/" class="material-icons mdc-top-app-bar__action-item"
+          aria-label="Top App Bar" alt="Top App Bar">launch</a>
+      </section>
     </div>
   </header>
+  <div id="content" class="mdc-top-app-bar--fixed-adjust">
+
+    <section>
+      <a href="https://material.io/develop/web/components/chips/#filter-chips">Chips</a>
+      <div class="mdc-chip-set  mdc-chip-set--choice">
+        <div class="mdc-chip">
+          <div class="mdc-chip__checkmark">
+            <svg class="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
+              <path class="mdc-chip__checkmark-path" fill="none" stroke="black" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+            </svg>
+          </div>
+          <div class="mdc-chip__text">Filterable</div>
+        </div>
+        <div class="mdc-chip">
+            <i class="material-icons mdc-chip__icon mdc-chip__icon--leading">event</i>
+            <div class="mdc-chip__text">Add to calendar</div>
+          </div>
+          <div class="mdc-chip">
+              <div class="mdc-chip__text">Jane Smith</div>
+              <i class="material-icons mdc-chip__icon mdc-chip__icon--trailing" tabindex="0" role="button">cancel</i>
+            </div>
+      </div>
+
+    </section>
+
+    <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple">Auto Init!</button>
+    <button class="mdc-button primary">Primary Button</button>
+    <button class="mdc-button secondary">Secondary Button</button>
+    <button class="mdc-button tertiary mdc-button--outlined mdc-button--dense">Tertiary Button</button>
+
+    <button class="mdc-icon-button" aria-label="Add to favorites" aria-pressed="false" data-mdc-auto-init="MDCIconButtonToggle">
+      <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+      <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+    </button>
+
+  </div>
 
 
-  <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple">Auto Init!</button>
-  <button class="mdc-button primary">Primary Button</button>
-  <button class="mdc-button secondary">Secondary Button</button>
-  <button class="mdc-button tertiary mdc-button--outlined mdc-button--dense">Tertiary Button</button>
 
-  <button class="mdc-icon-button" aria-label="Add to favorites" aria-pressed="false" data-mdc-auto-init="MDCIconButtonToggle">
-    <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-    <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-  </button>
 </body>
 
 </html>

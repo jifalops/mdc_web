@@ -8,8 +8,8 @@ part of mdc_web;
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-ripple/index.js).
 @JS('ripple.MDCRipple')
 abstract class MDCRipple extends MDCComponent {
-  external factory MDCRipple(Element element, [MDCFoundation foundation, args]);
   external static MDCRipple attachTo(Element element, [bool unbounded]);
+  external factory MDCRipple(Element element, [MDCFoundation foundation, args]);
 
   /// Surfaces for bounded ripples should have the overflow property set to
   /// hidden, while surfaces for unbounded ripples should have it set to visible.
@@ -22,5 +22,5 @@ abstract class MDCRipple extends MDCComponent {
   external void deactivate();
   external void layout();
 
-  external static Object createAdapter(MDCRipple ripple);
+  external static dynamic createAdapter(MDCRipple ripple);
 }
