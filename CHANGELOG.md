@@ -1,3 +1,7 @@
+## [0.1.1] - October 10, 2018
+
+* Fix improper use of @JS
+
 ## [0.1.0+1] - October 7, 2018
 
 * Add content to the example.
