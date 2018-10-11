@@ -1,4 +1,11 @@
-part of mdc_web;
+@JS('mdc.textField')
+library mdc_web_text_field;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
+import 'selection_control.dart';
+import 'ripple.dart';
 
 /// Text fields allow users to input, edit, and select text.
 ///
@@ -6,12 +13,10 @@ part of mdc_web;
 ///
 /// See the [component reference](https://material.io/develop/web/components/input-controls/text-field/#mdctextfield-properties-and-methods)
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield/index.js).
-@JS('textField.MDCTextField')
-abstract class MDCTextField extends MDCComponent
-    implements MDCSelectionControl {
-  external static MDCTextField attachTo(Element element);
-  external factory MDCTextField(Element element,
-      [MDCFoundation foundation, args]);
+@JS('MDCTextField')
+abstract class TextField extends Component implements SelectionControl {
+  external static TextField attachTo(Element element);
+  external factory TextField(Element element, [Foundation foundation, args]);
 
   external String get value;
   external void set value(String value);
@@ -23,7 +28,7 @@ abstract class MDCTextField extends MDCComponent
   external void set trailingIconAriaLabel(String value);
   external void set leadingIconContent(String value);
   external void set trailingIconContent(String value);
-  external void set ripple(MDCRipple value);
+  external void set ripple(Ripple value);
   external bool get valid;
   external void set valid(bool value);
 

@@ -1,4 +1,10 @@
-part of mdc_web;
+@JS('mdc.slider')
+library mdc_web_slider;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
+import 'selection_control.dart';
 
 /// MDC Slider provides an implementation of the Material Design slider
 /// component. It is modeled after the browser’s <input type="range"> element.
@@ -9,10 +15,10 @@ part of mdc_web;
 ///
 /// See the [component reference](https://material.io/develop/web/components/input-controls/sliders/#mdc-slider-component-api)
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-slider/index.js).
-@JS('slider.MDCSlider')
-abstract class MDCSlider extends MDCComponent implements MDCSelectionControl {
-  external static MDCSlider attachTo(Element element);
-  external factory MDCSlider(Element element, [MDCFoundation foundation, args]);
+@JS('MDCSlider')
+abstract class Slider extends Component implements SelectionControl {
+  external static Slider attachTo(Element element);
+  external factory Slider(Element element, [Foundation foundation, args]);
 
   external num get value;
   external void set value(num value);
@@ -30,14 +36,17 @@ abstract class MDCSlider extends MDCComponent implements MDCSelectionControl {
   external void stepDown([num amount = 1]);
 }
 
-/// Emitted whenever the slider value is changed by way of a user event, e.g.
-/// when a user is dragging the slider or changing the value using the arrow
-/// keys. The detail property of the event is set to the slider instance that
-/// was affected.
-const mdcSliderInputEvent = 'MDCSlider:input';
+/// [Slider] events and helpers.
+class slider {
+  /// Emitted whenever the slider value is changed by way of a user event, e.g.
+  /// when a user is dragging the slider or changing the value using the arrow
+  /// keys. The detail property of the event is set to the slider instance that
+  /// was affected.
+  static const inputEvent = 'MDCSlider:input';
 
-/// whenever the slider value is changed and committed by way of a user event,
-/// e.g. when a user stops dragging the slider or changes the value using the
-/// arrow keys. The detail property of the event is set to the slider instance
-/// that was affected.
-const mdcSliderChangeEvent = 'MDCSlider:change';
+  /// whenever the slider value is changed and committed by way of a user event,
+  /// e.g. when a user stops dragging the slider or changes the value using the
+  /// arrow keys. The detail property of the event is set to the slider instance
+  /// that was affected.
+  static const changeEvent = 'MDCSlider:change';
+}

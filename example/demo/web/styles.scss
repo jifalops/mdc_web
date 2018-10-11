@@ -9,6 +9,12 @@
   background-color: #eee;
 }
 
+section header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .mdc-button.primary {
   @include mdc-elevation(2.0);
   @include mdc-button-container-fill-color(secondary);

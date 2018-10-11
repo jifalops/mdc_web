@@ -1,4 +1,10 @@
-part of mdc_web;
+@JS('mdc.list')
+library mdc_web_list;
+
+import 'dart:core' as core;
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// Lists are continuous, vertical indexes of text or images.
 ///
@@ -6,20 +12,24 @@ part of mdc_web;
 ///
 /// See the [component reference](https://material.io/develop/web/components/lists/)
 /// and [source code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-list/index.js).
-@JS('list.MDCList')
-abstract class MDCList extends MDCComponent {
-  external static MDCList attachTo(Element element);
-  external factory MDCList(Element element, [MDCFoundation foundation, args]);
+@JS('MDCList')
+abstract class List extends Component {
+  external static List attachTo(Element element);
+  external factory List(Element element, [Foundation foundation, args]);
 
-  external void set vertical(bool value);
-  external void set wrapFocus(bool value);
-  external void set singleSelection(bool value);
-  external void set selectedIndex(num value);
+  external void set vertical(core.bool value);
+  external void set wrapFocus(core.bool value);
+  external void set singleSelection(core.bool value);
+  external void set selectedIndex(core.num value);
 
-  external List get listElements;
+  external core.List get listElements;
 
   external void layout();
 }
 
-/// Wrapper for [MDCList.listElements].
-List<Element> mdcListListElements(MDCList list) => List.from(list.listElements);
+/// [List] events and helpers.
+class list {
+  /// Casts [List.listElements].
+  core.List<Element> listElements(List list) =>
+      core.List.from(list.listElements);
+}

@@ -1,4 +1,10 @@
-part of mdc_web;
+@JS('mdc.formField')
+library mdc_web_form_field;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
+import 'selection_control.dart';
 
 /// MDC Form Field aligns an MDC Web form field (for example, a checkbox) with
 /// its label and makes it RTL-aware. It also activates a ripple effect upon
@@ -8,12 +14,12 @@ part of mdc_web;
 ///
 /// See the [component reference](https://material.io/develop/web/components/input-controls/form-fields/#mdcformfield-properties-and-methods)
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-form-field/index.js.
-@JS('formField.MDCFormField')
-abstract class MDCFormField extends MDCComponent {
-  external static MDCFormField attachTo(Element element);
-  external factory MDCFormField(Element element,
-      [MDCFoundation foundation, args]);
+@JS('MDCFormField')
+abstract class FormField extends Component {
+  external static FormField attachTo(Element element);
+  external factory FormField(Element element,
+      [Foundation foundation, args]);
 
-  external MDCSelectionControl get input;
-  external void set input(MDCSelectionControl value);
+  external SelectionControl get input;
+  external void set input(SelectionControl value);
 }

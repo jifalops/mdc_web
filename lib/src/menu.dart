@@ -1,4 +1,10 @@
-part of mdc_web;
+@JS('mdc.menu')
+library mdc_web_menu;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
+import 'menu_surface.dart';
 
 /// A menu displays a list of choices on a temporary surface. They appear when
 /// users interact with a button, action, or other control.
@@ -7,10 +13,10 @@ part of mdc_web;
 ///
 /// See the [component reference](https://material.io/develop/web/components/menus/#mdcmenu-properties-and-methods)
 /// and [source code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-menu/index.js).
-@JS('menu.MDCMenu')
-abstract class MDCMenu extends MDCComponent {
-  external static MDCMenu attachTo(Element element);
-  external factory MDCMenu(Element element, [MDCFoundation foundation, args]);
+@JS('MDCMenu')
+abstract class Menu extends Component {
+  external static Menu attachTo(Element element);
+  external factory Menu(Element element, [Foundation foundation, args]);
 
   external bool get open;
   external void set open(bool value);
@@ -38,5 +44,8 @@ abstract class MDCMenu extends MDCComponent {
   external Element getOptionByIndex(num index);
 }
 
-/// Wrapper for [MDCMenu.items].
-List<Element> mdcMenuItems(MDCMenu menu) => List.from(menu.items);
+/// [Menu] events and helpers.
+class menu {
+  /// Casts [Menu.items].
+  List<Element> items(Menu menu) => List.from(menu.items);
+}

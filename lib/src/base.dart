@@ -1,4 +1,8 @@
-part of mdc_web;
+@JS('mdc.base')
+library mdc_web_base;
+
+import 'dart:html';
+import 'package:js/js.dart';
 
 /// The base class for each component's related foundation.
 ///
@@ -6,9 +10,9 @@ part of mdc_web;
 ///
 /// See the [component reference](https://material.io/develop/web/components/base/#mdcfoundation)
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/foundation.js).
-@JS('base.MDCFoundation')
-abstract class MDCFoundation {
-  external factory MDCFoundation([adapter]);
+@JS('MDCFoundation')
+abstract class Foundation {
+  external factory Foundation([adapter]);
 
   external void init();
   external void destroy();
@@ -26,17 +30,17 @@ abstract class MDCFoundation {
 ///
 /// See the [component reference](https://material.io/develop/web/components/base/#mdccomponent)
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/component.js).
-@JS('base.MDCComponent')
-abstract class MDCComponent {
-  external static MDCComponent attachTo(Element root);
-  external factory MDCComponent(Element element,
-      [MDCFoundation foundation, args]);
+@JS('MDCComponent')
+abstract class Component {
+  external static Component attachTo(Element root);
+  external factory Component(Element element,
+      [Foundation foundation, args]);
 
   external Element get root_;
-  external MDCFoundation get foundation_;
+  external Foundation get foundation_;
 
   external void initialize(args);
-  external MDCFoundation getDefaultFoundation();
+  external Foundation getDefaultFoundation();
   external void initialSyncWithDOM();
   external void destroy();
   external void listen(String type, EventListener handler);
@@ -44,10 +48,10 @@ abstract class MDCComponent {
   external void emit(String type, data, [bool shouldBubble = false]);
 }
 
-/// Wrapper for [MDCComponent.listen()].
-void mdcListen(MDCComponent component, String type, EventListener handler) =>
+/// Wrapper for [Component.listen()].
+void listen(Component component, String type, EventListener handler) =>
     component.listen(type, allowInterop(handler));
 
-/// Wrapper for [MDCComponent.unlisten()].
-void mdcUnlisten(MDCComponent component, String type, EventListener handler) =>
+/// Wrapper for [Component.unlisten()].
+void unlisten(Component component, String type, EventListener handler) =>
     component.unlisten(type, allowInterop(handler));

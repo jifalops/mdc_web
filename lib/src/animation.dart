@@ -1,4 +1,8 @@
-part of mdc_web;
+// @JS('mdc.??')
+// library mdc_web_animation;
+
+// import 'dart:html';
+// import 'package:js/js.dart';
 
 /// Returns a JavaScript event name, prefixed if necessary.
 ///

@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.ripple')
+library mdc_web_ripple;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// Material design surface ripples.
 ///
@@ -6,10 +11,10 @@ part of mdc_web;
 ///
 /// See the [component reference](https://material.io/develop/web/components/ripples/#mdcripple)
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-ripple/index.js).
-@JS('ripple.MDCRipple')
-abstract class MDCRipple extends MDCComponent {
-  external static MDCRipple attachTo(Element element, [bool unbounded]);
-  external factory MDCRipple(Element element, [MDCFoundation foundation, args]);
+@JS('MDCRipple')
+abstract class Ripple extends Component {
+  external static Ripple attachTo(Element element, [bool unbounded]);
+  external factory Ripple(Element element, [Foundation foundation, args]);
 
   /// Surfaces for bounded ripples should have the overflow property set to
   /// hidden, while surfaces for unbounded ripples should have it set to visible.
@@ -22,5 +27,5 @@ abstract class MDCRipple extends MDCComponent {
   external void deactivate();
   external void layout();
 
-  external static dynamic createAdapter(MDCRipple ripple);
+  external static dynamic createAdapter(Ripple ripple);
 }

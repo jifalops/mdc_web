@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.tab')
+library mdc_web_tab;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// A tab governs the visibility of one group of content.
 ///
@@ -6,10 +11,10 @@ part of mdc_web;
 ///
 /// See the [component reference](https://material.io/develop/web/components/tabs/tab/#mdctab-properties-and-methods)
 /// and [source code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-tab/index.js).
-@JS('tab.MDCTab')
-abstract class MDCTab extends MDCComponent {
-  external static MDCTab attachTo(Element element);
-  external factory MDCTab(Element element, [MDCFoundation foundation, args]);
+@JS('MDCTab')
+abstract class Tab extends Component {
+  external static Tab attachTo(Element element);
+  external factory Tab(Element element, [Foundation foundation, args]);
 
   external bool get active;
 
@@ -27,8 +32,11 @@ abstract class MDCTab extends MDCComponent {
   external /*MDCTabDimensions*/ Map computeDimensions();
 }
 
-/// Emitted when the Tab is interacted with, regardless of its active state.
-/// Used by parent components to know which Tab to activate.
-///
-/// Event data: {"detail": {"tab": MDCTab}}
-const mdcTabInteractedEvent = 'MDCTab:interacted';
+/// [Tab] events and helpers.
+class tab {
+  /// Emitted when the Tab is interacted with, regardless of its active state.
+  /// Used by parent components to know which Tab to activate.
+  ///
+  /// Event data: {"detail": {"tab": MDCTab}}
+  static const interactedEvent = 'MDCTab:interacted';
+}

@@ -1,4 +1,10 @@
-part of mdc_web;
+@JS('mdc.iconButton')
+library mdc_web_icon_button;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
+import 'ripple.dart';
 
 /// Toggle between an on and off icon.
 ///
@@ -6,18 +12,21 @@ part of mdc_web;
 ///
 /// See the [component reference](https://material.io/develop/web/components/buttons/icon-buttons/#mdciconbuttontoggle-properties-and-methods)
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-icon-button).
-@JS('iconButton.MDCIconButtonToggle')
-abstract class MDCIconButtonToggle extends MDCComponent {
-  external static MDCIconButtonToggle attachTo(Element element);
-  external factory MDCIconButtonToggle(Element element,
-      [MDCFoundation foundation, args]);
+@JS('MDCIconButtonToggle')
+abstract class IconButtonToggle extends Component {
+  external static IconButtonToggle attachTo(Element element);
+  external factory IconButtonToggle(Element element,
+      [Foundation foundation, args]);
 
   /// Get/set the toggle state.
   external bool get on;
   external void set on(bool value);
 
-  external MDCRipple get ripple;
+  external Ripple get ripple;
 }
 
-/// Data structure: {"detail": {"isOn": boolean}}
-const mdcIconButtonToggleChangeEvent = 'MDCIconButtonToggle:change';
+/// [IconButtonToggle] events and helpers.
+class iconButtonToggle {
+  /// Data structure: {"detail": {"isOn": boolean}}
+  static const changeEvent = 'MDCIconButtonToggle:change';
+}

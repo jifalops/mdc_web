@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.lineRipple')
+library mdc_web_line_ripple;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// The line ripple is used to highlight user-specified input above it. When a
 /// line ripple is active, the line’s color and thickness changes.
@@ -7,11 +12,10 @@ part of mdc_web;
 ///
 /// See the [component reference](https://material.io/develop/web/components/input-controls/line-ripple/#mdclineripple-properties-and-methods)
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-line-ripple/index.js).
-@JS('lineRipple.MDCLineRipple')
-abstract class MDCLineRipple extends MDCComponent {
-  external static MDCLineRipple attachTo(Element element);
-  external factory MDCLineRipple(Element element,
-      [MDCFoundation foundation, args]);
+@JS('MDCLineRipple')
+abstract class LineRipple extends Component {
+  external static LineRipple attachTo(Element element);
+  external factory LineRipple(Element element, [Foundation foundation, args]);
 
   external void activate();
   external void deactivate();

@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.tabIndicator')
+library mdc_web_tab_indicator;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// A Tab Indicator is a visual guide that shows which Tab is active.
 ///
@@ -6,11 +11,10 @@ part of mdc_web;
 ///
 /// See the [component reference](https://material.io/develop/web/components/tabs/indicator/#mdctabindicator-methods)
 /// and [source code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-tab-indicator/index.js).
-@JS('tabIndicator.MDCTabIndicator')
-abstract class MDCTabIndicator extends MDCComponent {
-  external static MDCTabIndicator attachTo(Element element);
-  external factory MDCTabIndicator(Element element,
-      [MDCFoundation foundation, args]);
+@JS('MDCTabIndicator')
+abstract class TabIndicator extends Component {
+  external static TabIndicator attachTo(Element element);
+  external factory TabIndicator(Element element, [Foundation foundation, args]);
 
   /// [previousIndicatorClientRect] is a DOMRect. See also
   /// [computeIndicatorClientRect()].

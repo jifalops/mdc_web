@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.menuSurface')
+library mdc_web_menu_surface;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// A reusable surface that appears above the content of the page and can be
 /// positioned adjacent to an element.
@@ -7,11 +12,10 @@ part of mdc_web;
 ///
 /// See the [component reference](https://material.io/develop/web/components/menu-surface/#mdcmenusurface-properties-and-methods)
 /// and [source code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-menu-surface/index.js).
-@JS('menuSurface.MDCMenuSurface')
-abstract class MDCMenuSurface extends MDCComponent {
-  external static MDCMenuSurface attachTo(Element element);
-  external factory MDCMenuSurface(Element element,
-      [MDCFoundation foundation, args]);
+@JS('MDCMenuSurface')
+abstract class MenuSurface extends Component {
+  external static MenuSurface attachTo(Element element);
+  external factory MenuSurface(Element element, [Foundation foundation, args]);
 
   external bool get open;
   external void set open(bool value);
@@ -35,10 +39,13 @@ abstract class MDCMenuSurface extends MDCComponent {
   external void setIsHoisted(bool hoisted);
 }
 
-const mdcMenuSurfaceOpenedEvent = 'MDCMenuSurface:opened';
-const mdcMenuSurfaceClosedEvent = 'MDCMenuSurface:closed';
+/// [MenuSurface] events and helpers.
+class menuSurface {
+  static const openedEvent = 'MDCMenuSurface:opened';
+  static const closedEvent = 'MDCMenuSurface:closed';
+}
 
-@JS('menuSurface.Corner')
+@JS('Corner')
 abstract class _Corner {
   external static num get TOP_LEFT;
   external static num get TOP_RIGHT;
@@ -50,7 +57,7 @@ abstract class _Corner {
   external static num get BOTTOM_END;
 }
 
-/// The anchored corner of a [MDCMenu] or [MDCMenuSurface].
+/// The anchored corner of a [MDCMenu] or [MenuSurface].
 class AnchorCorner {
   static num get topLeft => _Corner.TOP_LEFT;
   static num get topRight => _Corner.TOP_RIGHT;

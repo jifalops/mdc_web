@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.dialog')
+library mdc_web_dialog;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// Dialogs inform users about a task and can contain critical information,
 /// require decisions, or involve multiple tasks.
@@ -7,10 +12,10 @@ part of mdc_web;
 ///
 /// See the [component reference](https://material.io/develop/web/components/dialogs/#mdcdialog-properties-and-methods)
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-dialog/index.js).
-@JS('dialog.MDCDialog')
-abstract class MDCDialog extends MDCComponent {
-  external static MDCDialog attachTo(Element element);
-  external factory MDCDialog(Element element, [MDCFoundation foundation, args]);
+@JS('MDCDialog')
+abstract class Dialog extends Component {
+  external static Dialog attachTo(Element element);
+  external factory Dialog(Element element, [Foundation foundation, args]);
 
   external bool get isOpen;
   external String get escapeKeyAction;
@@ -29,11 +34,14 @@ abstract class MDCDialog extends MDCComponent {
   external void close([String action]);
 }
 
-const mdcDialogOpeningEvent = 'MDCDialog:opening';
-const mdcDialogOpenedEvent = 'MDCDialog:opened';
+/// [Dialog] events and helpers.
+class dialog {
+  static const openingEvent = 'MDCDialog:opening';
+  static const openedEvent = 'MDCDialog:opened';
 
-/// `event.detail`: {action: string?}
-const mdcDialogClosingEvent = 'MDCDialog:closing';
+  /// `event.detail`: {action: string?}
+  static const closingEvent = 'MDCDialog:closing';
 
-/// `event.detail`: {action: string?}
-const mdcDialogClosedEvent = 'MDCDialog:closed';
+  /// `event.detail`: {action: string?}
+  static const closedEvent = 'MDCDialog:closed';
+}

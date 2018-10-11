@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.drawer')
+library mdc_web_drawer;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// A material design navigation drawer.
 ///
@@ -6,14 +11,17 @@ part of mdc_web;
 ///
 /// See the [component reference](https://material.io/develop/web/components/drawers/#mdcdrawer-properties-and-methods)
 /// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-drawer/index.js).
-@JS('drawer.MDCDrawer')
-abstract class MDCDrawer extends MDCComponent {
-  external static MDCDrawer attachTo(Element element);
-  external factory MDCDrawer(Element element, [MDCFoundation foundation, args]);
+@JS('MDCDrawer')
+abstract class Drawer extends Component {
+  external static Drawer attachTo(Element element);
+  external factory Drawer(Element element, [Foundation foundation, args]);
 
   external bool get open;
   external void set open(bool value);
 }
 
-const mdcDrawerOpenedEvent = 'MDCDrawer:opened';
-const mdcDrawerClosedEvent = 'MDCDrawer:closed';
+/// [Drawer] events and helpers.
+class drawer {
+  static const openedEvent = 'MDCDrawer:opened';
+  static const closedEvent = 'MDCDrawer:closed';
+}
