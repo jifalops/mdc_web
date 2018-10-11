@@ -15,9 +15,7 @@ In your index.html, include the script just before the `main.dart.js` script.
 <script defer src="main.dart.js"></script>
 ```
 
-Now in your dart application you can use all of the `MDC*` classes as described by the [Material Design Web](https://material.io/develop/web/) component reference.
-
-This package was created by closely following the above component reference along with the Javascript source. All documented component features as well as some undocumented features are included.
+Now in your dart application you can use all of the `MDC*` classes as described by the [Material Design Web](https://material.io/develop/web/) component reference, except instead of `MDC<Component>`, it's `mdc.<Component>`, assuming you import this library as `mdc`.
 
 ## Documentation
 
@@ -30,7 +28,9 @@ Each class and notable members are documented. Class documentation includes link
 
 ## Convention
 
-Dart classes that access Javascript are strictly limited on what else they can do. The convention used in this library is to add any supplemental functionality a class of the same name but with the first letter lower-cased.
+When importing this library, it is strongly recommended to import as `mdc`.
+
+Dart classes that access Javascript are strictly limited on what else they can do (essentially nothing). The convention used in this library is to add any supplemental functionality a class of the same name but with the first letter lower-cased.
 
 These helper classes contain only static members, and are generally used for event names and to cast a `List` to the proper type, because all lists from Javascript are of type `dynamic`.
 
@@ -60,7 +60,7 @@ class dialog {
 }
 ```
 
-When importing this library, it is strongly recommended to import as `mdc`.
+>Many ways of [wrapping](https://github.com/matanlurey/dart_js_interop#creating-a-wrapper-class) the @JS classes have been attempted and failed. It seems this doesn't work when the @JS class extends another @JS class. The only approach not attempted is to remove inheritance altogether and add the base methods to every implementation class manually, and possibly to each wrapper class too. Until another door opens or some kind soul illuminates a better path, the convention hitherto described shall hold.
 
 ## Limitations
 

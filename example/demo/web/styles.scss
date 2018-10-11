@@ -3,7 +3,7 @@
 
 @import "material-components-web/material-components-web";
 
-#content > section {
+#content>section {
   margin: 8px 0;
   padding: 8px;
   background-color: #eee;
@@ -29,11 +29,13 @@ section header {
   // @include mdc-states-press-opacity(.4);
 
 }
+
 .mdc-button.secondary {
   @include mdc-button-container-fill-color(primary);
   @include mdc-button-ink-color(on-primary);
   @include mdc-states;
 }
+
 .mdc-button.tertiary {
   @include mdc-button-outline-color(gray);
   @include mdc-button-ink-color(black);
@@ -48,4 +50,56 @@ body {
   padding: 0;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+}
+
+.dyslexic {
+  font-family: 'Open Dyslexic';
+  tt, code, kbd, samp {
+    font-family: 'Open Dyslexic Mono';
+  }
+}
+
+p {
+  max-width: 28em;
+  margin: 1em auto;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.selected-text {
+  font-family: 'Sans Forgetica';
+}
+
+@font-face {
+  font-family: 'Sans Forgetica';
+  src: url(fonts/SansForgetica-Regular.otf);
+}
+
+@font-face {
+  font-family: 'Open Dyslexic';
+  src: url(fonts/OpenDyslexic3-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Open Dyslexic';
+  font-weight: bold;
+  src: url(fonts/OpenDyslexic3-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Open Dyslexic';
+  font-weight: bold;
+  font-style: italic;
+  src: url(fonts/OpenDyslexic-BoldItalic.otf);
+}
+
+@font-face {
+  font-family: 'Open Dyslexic';
+  font-style: italic;
+  src: url(fonts/OpenDyslexic-Italic.otf);
+}
+
+@font-face {
+  font-family: 'Open Dyslexic Mono';
+  src: url(fonts/OpenDyslexicMono-Regular.otf);
 }

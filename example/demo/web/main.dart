@@ -29,6 +29,9 @@ void main() {
   /// Programmatically add a ripple to all elements with a class that includes
   /// "mdc-button".
   querySelectorAll('.mdc-button').forEach(mdc.Ripple.attachTo);
+
+  addDyslexicOption();
+  handleSelectedText();
 }
 
 /// Listen to events and print the event name and event details when they happen.
@@ -51,13 +54,44 @@ void listen(Object target, final String eventName,
           if (callback != null) callback(node);
         }));
   else if (target is mdc.Component)
-    listen(target, eventName, (event) {
+    mdc.listen(target, eventName, (event) {
       handler(event);
       if (callback != null) callback(target);
     });
   else if (target is Iterable<mdc.Component>)
-    target.forEach((comp) => listen(comp, eventName, (event) {
+    target.forEach((comp) => mdc.listen(comp, eventName, (event) {
           handler(event);
           if (callback != null) callback(comp);
         }));
+}
+
+/// I must be bored.
+void addDyslexicOption() {
+  final dyslexic = mdc.Switch(querySelector('.mdc-switch'));
+  dyslexic.listen('change', (e) {
+    document.body.className = dyslexic.checked ? 'dyslexic' : '';
+  });
+}
+
+/// Because why not?
+void handleSelectedText() {
+  document.addEventListener('mouseup', (event) {
+    final sel = window.getSelection();
+    if (sel.toString().length > 0) {
+      final range = sel.getRangeAt(0).cloneRange();
+      try {
+        range.surroundContents(SpanElement()..className = 'selected-text');
+        sel.removeAllRanges();
+        sel.addRange(range);
+      } catch (e) {}
+    }
+  });
+
+  document.addEventListener('mousedown', (event) {
+    if (window.getSelection().toString().length == 0) {
+      querySelectorAll('.selected-text').forEach((el) {
+        el.replaceWith(Text(el.text));
+      });
+    }
+  });
 }

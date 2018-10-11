@@ -33,8 +33,7 @@ abstract class Foundation {
 @JS('MDCComponent')
 abstract class Component {
   external static Component attachTo(Element root);
-  external factory Component(Element element,
-      [Foundation foundation, args]);
+  external factory Component(Element element, [Foundation foundation, args]);
 
   external Element get root_;
   external Foundation get foundation_;
@@ -49,9 +48,13 @@ abstract class Component {
 }
 
 /// Wrapper for [Component.listen()].
-void listen(Component component, String type, EventListener handler) =>
-    component.listen(type, allowInterop(handler));
+void listen(Component component, String type, EventListener handler,
+        {bool captureThis: false}) =>
+    component.listen(type,
+        captureThis ? allowInteropCaptureThis(handler) : allowInterop(handler));
 
 /// Wrapper for [Component.unlisten()].
-void unlisten(Component component, String type, EventListener handler) =>
-    component.unlisten(type, allowInterop(handler));
+void unlisten(Component component, String type, EventListener handler,
+        {bool captureThis: false}) =>
+    component.unlisten(type,
+        captureThis ? allowInteropCaptureThis(handler) : allowInterop(handler));
