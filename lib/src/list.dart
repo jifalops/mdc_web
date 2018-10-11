@@ -10,8 +10,10 @@ import 'base.dart';
 ///
 /// Javascript: `mdc.list.MDCList`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/lists/)
-/// and [source code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-list/index.js).
+/// * [Design Guidelines](https://material.io/go/design-lists)
+/// * [Component Reference](https://material.io/develop/web/components/lists/)
+/// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/list)
+/// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-list/index.js)
 @JS('MDCList')
 abstract class List extends Component {
   external static List attachTo(Element element);

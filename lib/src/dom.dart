@@ -9,8 +9,8 @@ import 'package:js/js.dart';
 ///
 /// Javascript: `mdc.dom.ponyfill`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/dom/)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-dom/ponyfill.js).
+/// * [Component Reference](https://material.io/develop/web/components/dom/)
+/// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-dom/ponyfill.js)
 @JS('ponyfill')
 abstract class Ponyfill {
   /// Returns the ancestor of the given element matching the given selector

@@ -12,8 +12,8 @@ import 'selection_control.dart';
 ///
 /// Javascript: `mdc.formField.MDCFormField`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/input-controls/form-fields/#mdcformfield-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-form-field/index.js.
+/// * [Component Reference](https://material.io/develop/web/components/input-controls/form-fields/#mdcformfield-properties-and-methods)
+/// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-form-field/index.js.
 @JS('MDCFormField')
 abstract class FormField extends Component {
   external static FormField attachTo(Element element);

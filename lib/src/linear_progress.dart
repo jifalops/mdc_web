@@ -9,8 +9,10 @@ import 'base.dart';
 ///
 /// Javascript: `mdc.linearProgress.MDCLinearProgress`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/linear-progress/#mdclinearprogress-api)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-linear-progress/index.js).
+/// * [Design Guidelines](https://material.io/go/design-progress-indicators)
+/// * [Component Reference](https://material.io/develop/web/components/linear-progress/#mdclinearprogress-api)
+/// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/linear-progress-indicator)
+/// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-linear-progress/index.js)
 @JS('MDCLinearProgress')
 abstract class LinearProgress extends Component {
   external static LinearProgress attachTo(Element element);

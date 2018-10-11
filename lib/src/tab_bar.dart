@@ -11,8 +11,10 @@ import 'base.dart';
 ///
 /// Javascript: `mdc.tabBar.MDCTabBar`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/tabs/tab-bar/#mdctabbar-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-tab-bar/index.js).
+/// * [Design Guidelines](https://material.io/go/design-tabs)
+/// * [Component Reference](https://material.io/develop/web/components/tabs/tab-bar/#mdctabbar-properties-and-methods)
+/// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/tabs)
+/// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-tab-bar/index.js)
 @JS('MDCTabBar')
 abstract class TabBar extends Component {
   external static TabBar attachTo(Element element);
@@ -24,6 +26,6 @@ abstract class TabBar extends Component {
 
 /// [TabBar] events and helpers.
 class tabBar {
-// Event data: {"detail": {"index": number}}
+  /// Event data: {"detail": {"index": number}}
   static const activatedEvent = 'MDCTabBar:activated';
 }

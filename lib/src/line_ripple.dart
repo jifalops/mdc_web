@@ -10,8 +10,8 @@ import 'base.dart';
 ///
 /// Javascript: `mdc.lineRipple.MDCLineRipple`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/input-controls/line-ripple/#mdclineripple-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-line-ripple/index.js).
+/// * [Component Reference](https://material.io/develop/web/components/input-controls/line-ripple/#mdclineripple-properties-and-methods)
+/// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-line-ripple/index.js)
 @JS('MDCLineRipple')
 abstract class LineRipple extends Component {
   external static LineRipple attachTo(Element element);

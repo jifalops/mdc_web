@@ -10,8 +10,10 @@ import 'base.dart';
 ///
 /// Javascript: `mdc.topAppBar.MDCTopAppBar`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/top-app-bar/#mdctopappbar-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-top-app-bar/index.js).
+/// * [Design Guidelines](https://material.io/go/design-app-bar-top)
+/// * [Component Reference](https://material.io/develop/web/components/top-app-bar/#mdctopappbar-properties-and-methods)
+/// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/top-app-bar)
+/// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-top-app-bar/index.js)
 @JS('MDCTopAppBar')
 abstract class TopAppBar extends Component {
   external static TopAppBar attachTo(Element element);

@@ -8,7 +8,7 @@ import 'ripple.dart';
 ///
 /// Javascript: `mdc.selectionControl.MDCSelectionControl`.
 ///
-/// See the [source code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-selection-control/index.js).
+/// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-selection-control/index.js)
 @JS('MDCSelectionControl')
 abstract class SelectionControl {
   external Ripple get ripple;

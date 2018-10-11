@@ -27,13 +27,12 @@ const indexHtml = '''
   <title>mdc_web Example</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico">
-  <script defer src="main.dart.js"></script>
-
   <!--
     This exposes the `mdc` global variable required by this package.
     For debugging purposes you can replace the ".min.js" extension with ".js".
   -->
-  <script src="packages/mdc_web/material-components-web.min.js"></script>
+  <script defer src="packages/mdc_web/material-components-web.min.js"></script>
+  <script defer src="main.dart.js"></script>
 </head>
 
 <body>

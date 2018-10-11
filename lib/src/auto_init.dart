@@ -9,8 +9,8 @@ import 'package:js/js.dart';
 ///
 /// Javascript: `mdc.autoInit()`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/auto-init/)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-auto-init/index.js).
+/// * [Component Reference](https://material.io/develop/web/components/auto-init)
+/// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-auto-init)
 external void autoInit([Node root, Function warn]);
 
 /// Triggered when initialization of all components is complete.

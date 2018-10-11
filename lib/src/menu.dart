@@ -11,8 +11,10 @@ import 'menu_surface.dart';
 ///
 /// Javascript: `mdc.menu.MDCMenu`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/menus/#mdcmenu-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-menu/index.js).
+/// * [Design Guidelines](https://material.io/go/design-menus)
+/// * [Component Reference](https://material.io/develop/web/components/menus/#mdcmenu-properties-and-methods)
+/// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/menu)
+/// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-menu/index.js)
 @JS('MDCMenu')
 abstract class Menu extends Component {
   external static Menu attachTo(Element element);

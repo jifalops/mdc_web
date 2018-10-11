@@ -8,8 +8,8 @@ import 'package:js/js.dart';
 ///
 /// Javascript: `mdc.base.MDCFoundation`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/base/#mdcfoundation)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/foundation.js).
+/// * [Component Reference](https://material.io/develop/web/components/base/#mdcfoundation)
+/// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/foundation.js)
 @JS('MDCFoundation')
 abstract class Foundation {
   external factory Foundation([adapter]);
@@ -28,8 +28,8 @@ abstract class Foundation {
 ///
 /// Javascript: `mdc.base.MDCComponent`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/base/#mdccomponent)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/component.js).
+/// * [Component Reference](https://material.io/develop/web/components/base/#mdccomponent)
+/// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/component.js)
 @JS('MDCComponent')
 abstract class Component {
   external static Component attachTo(Element root);

@@ -11,8 +11,8 @@ import 'base.dart';
 ///
 /// Javascript: `mdc.notchedOutline.MDCNotchedOutline`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/input-controls/notched-outline/#mdcnotchedoutline-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-notched-outline/index.js).
+/// * [Component Reference](https://material.io/develop/web/components/input-controls/notched-outline/#mdcnotchedoutline-properties-and-methods)
+/// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-notched-outline/index.js)
 @JS('MDCNotchedOutline')
 abstract class NotchedOutline {
   external static NotchedOutline attachTo(Element element);

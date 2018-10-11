@@ -10,8 +10,8 @@ import 'base.dart';
 ///
 /// Javascript: `mdc.menuSurface.MDCMenuSurface`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/menu-surface/#mdcmenusurface-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-menu-surface/index.js).
+/// * [Component Reference](https://material.io/develop/web/components/menu-surface/#mdcmenusurface-properties-and-methods)
+/// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-menu-surface/index.js)
 @JS('MDCMenuSurface')
 abstract class MenuSurface extends Component {
   external static MenuSurface attachTo(Element element);

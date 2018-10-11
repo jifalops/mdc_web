@@ -11,8 +11,10 @@ import 'base.dart';
 ///
 /// Javascript: `mdc.snackbar.MDCSnackbar`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/snackbars/)
-/// and [source code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-snackbar/index.js).
+/// * [Design Guidelines](https://material.io/go/design-snackbar)
+/// * [Component Reference](https://material.io/develop/web/components/snackbars/)
+/// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/snackbar)
+/// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-snackbar/index.js)
 @JS('MDCSnackbar')
 abstract class Snackbar extends Component {
   external static Snackbar attachTo(Element element);

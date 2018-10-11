@@ -11,8 +11,10 @@ import 'ripple.dart';
 ///
 /// Javascript: `mdc.textField.MDCTextField`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/input-controls/text-field/#mdctextfield-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield/index.js).
+/// * [Design Guidelines](https://material.io/go/design-text-fields)
+/// * [Component Reference](https://material.io/develop/web/components/input-controls/text-field/#mdctextfield-properties-and-methods)
+/// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/text-field)
+/// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield/index.js)
 @JS('MDCTextField')
 abstract class TextField extends Component implements SelectionControl {
   external static TextField attachTo(Element element);

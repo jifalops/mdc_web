@@ -8,8 +8,8 @@
 ///
 /// Javascript: `mdc.??`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/animation/#javascript)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-animation/index.js).
+/// * [Component Reference](https://material.io/develop/web/components/animation/#javascript)
+/// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-animation/index.js)
 // @JS('??')
 // external void getCorrectEventName(windowObj, eventType);
 
@@ -17,7 +17,7 @@
 ///
 /// Javascript: `mdc.??`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/animation/#javascript)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-animation/index.js).
+/// * [Component Reference](https://material.io/develop/web/components/animation/#javascript)
+/// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-animation/index.js)
 // @JS('??')
 // external void getCorrectPropertyName(windowObj, eventType);

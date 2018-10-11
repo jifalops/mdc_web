@@ -10,8 +10,10 @@ import 'selection_control.dart';
 ///
 /// Javascript: `mdc.radio.MDCRadio`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/input-controls/radio-buttons/#mdcradio-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-radio/index.js).
+/// * [Design Guidelines](https://material.io/go/design-radio-buttons)
+/// * [Component Reference](https://material.io/develop/web/components/input-controls/radio-buttons/#mdcradio-properties-and-methods)
+/// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/radio)
+/// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-radio/index.js)
 @JS('MDCRadio')
 abstract class Radio extends Component implements SelectionControl {
   external static Radio attachTo(Element element);

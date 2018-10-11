@@ -11,8 +11,10 @@ import 'selection_control.dart';
 ///
 /// Javascript: `mdc.select.MDCSelect`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/input-controls/select-menus/#mdcselect-api)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-select/index.js).
+/// * [Design Guidelines](https://material.io/go/design-text-fields)
+/// * [Component Reference](https://material.io/develop/web/components/input-controls/select-menus/#mdcselect-api)
+/// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/select)
+/// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-select/index.js)
 @JS('MDCSelect')
 abstract class Select extends Component implements SelectionControl {
   external static Select attachTo(Element element);

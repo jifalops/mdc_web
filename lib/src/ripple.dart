@@ -9,8 +9,10 @@ import 'base.dart';
 ///
 /// Javascript: `mdc.ripple.MDCRipple`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/ripples/#mdcripple)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-ripple/index.js).
+/// * [Design Guidelines](https://material.io/go/design-states)
+/// * [Component Reference](https://material.io/develop/web/components/ripples/#mdcripple)
+/// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/ripple)
+/// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-ripple/index.js)
 @JS('MDCRipple')
 abstract class Ripple extends Component {
   external static Ripple attachTo(Element element, [bool unbounded]);

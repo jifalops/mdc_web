@@ -10,8 +10,10 @@ import 'ripple.dart';
 ///
 /// Javascript: `mdc.chips.MDCChipSet`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/chips/#mdcchip-and-mdcchipset-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-chips/chip-set/index.js).
+/// * [Design Guidelines](https://material.io/go/design-chips)
+/// * [Component Reference](https://material.io/develop/web/components/chips/#mdcchip-and-mdcchipset-properties-and-methods)
+/// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/chips)
+/// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-chips/chip-set/index.js)
 @JS('MDCChipSet')
 abstract class ChipSet extends Component {
   external static ChipSet attachTo(Element element);
@@ -32,6 +34,12 @@ class chipSet {
   // TODO: Not in 0.40.0
   // static List<int> selectedChipIds(ChipSet chipset) =>
   //     List.from(chipset.getSelectedChipIds());
+
+  /// Add the chip and then append it to the ChipSet's root Element.
+  static void addAndAppend(ChipSet chipSet, Element chipEl) {
+    chipSet.addChip(chipEl);
+    chipSet.root_.append(chipEl);
+  }
 }
 
 /// Encompasses the behavior of a single chip. All of MDCChip’s emitted events
@@ -39,8 +47,10 @@ class chipSet {
 ///
 /// Javascript: `mdc.chips.MDCChip`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/chips/#mdcchip-and-mdcchipset-properties-and-methods)
-/// and [source code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-chips/chip/index.js).
+/// * [Design Guidelines](https://material.io/go/design-chips)
+/// * [Component Reference](https://material.io/develop/web/components/chips/#mdcchip-and-mdcchipset-properties-and-methods)
+/// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/chips)
+/// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-chips/chip/index.js)
 @JS('MDCChip')
 abstract class Chip extends Component {
   external static Chip attachTo(Element element);

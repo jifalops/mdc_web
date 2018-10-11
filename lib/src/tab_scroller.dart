@@ -9,8 +9,10 @@ import 'base.dart';
 ///
 /// Javascript: `mdc.tabScroller.MDCTabScroller`.
 ///
-/// See the [component reference](https://material.io/develop/web/components/tabs/scroller/#mdctabscroller-methods)
-/// and [source code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-tab-scroller/index.js).
+/// * [Design Guidelines](https://material.io/go/design-tabs)
+/// * [Component Reference](https://material.io/develop/web/components/tabs/scroller/#mdctabscroller-methods)
+/// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/tabs)
+/// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-tab-scroller/index.js)
 @JS('MDCTabScroller')
 abstract class TabScroller extends Component {
   external static TabScroller attachTo(Element element);
