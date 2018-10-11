@@ -1,3 +1,9 @@
+## [0.2.0] - October 11, 2018
+
+* Shorten class names and recommend import as `mdc`.
+* Add helper classes to organize helper functions and event names.
+* Improve documentation.
+
 ## [0.1.1] - October 10, 2018
 
 * Fix improper use of @JS
