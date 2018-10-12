@@ -15,7 +15,8 @@ void main() {
   final chipset = MDCChipSet(querySelector('.mdc-chip-set'));
   listen(chipset, MDCChip.interactionEvent);
   // listen(chipset, MDCChip.selectionEvent);
-  listen<MDCChipSet>(chipset, MDCChip.removalEvent, (chipset) => print('Chips: ${chipset.chips.length}'));
+  listen<MDCChipSet>(chipset, MDCChip.removalEvent,
+      (chipset) => print('Chips: ${chipset.chips.length}'));
   listen(chipset, MDCChip.trailingIconInteractionEvent);
 
   print('Chips: ${chipset.chips.length}');
