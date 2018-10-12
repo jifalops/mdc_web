@@ -1,6 +1,9 @@
 import 'dart:html';
 import 'package:mdc_web/mdc_web.dart';
-import 'package:js/js.dart';
+import 'main_demos.dart';
+
+Element _content;
+Element get content => _content;
 
 void main() {
   /// Automatically creates MDC-Web components from html elements that have a
@@ -8,40 +11,32 @@ void main() {
   listen(document, autoInitEndEvent);
   autoInit();
 
-  final topAppBar = MDCTopAppBar(querySelector('.mdc-top-app-bar'));
-  listen(topAppBar, MDCTopAppBar.navEvent);
-  topAppBar.emit(MDCTopAppBar.navEvent, {'a': 1, 'b': 2});
-
-  final chipset = MDCChipSet(querySelector('.mdc-chip-set'));
-  listen(chipset, MDCChip.interactionEvent);
-  // listen(chipset, MDCChip.selectionEvent);
-  listen<MDCChipSet>(chipset, MDCChip.removalEvent,
-      (chipset) => print('Chips: ${chipset.chips.length}'));
-  listen(chipset, MDCChip.trailingIconInteractionEvent);
-
-  print('Chips: ${chipset.chips.length}');
-  final div = DivElement()..text = 'new div';
-  chipset.addChip(div, true);
-  print('Chips: ${chipset.chips.length}');
-
-  // var chips = mdc.chipSet.chips(chipset);
-
-  /// Programmatically add a ripple to all elements with a class that includes
-  /// "mdc-button".
-  querySelectorAll('.mdc-button').forEach(MDCRipple.attachTo);
-
   addDyslexicOption();
   handleSelectedText();
+
+  _content = querySelector('#content');
+
+  topAppBar();
+  chips();
+  snackbar();
 }
+
+Element addSection(String id, String title, String demoUrl) {
+  final section = Element.section()..id = id;
+  setInnerHtml(section, '''
+
+    ''');
+  content.append(section);
+  return section;
+}
+
+void setInnerHtml(Element el, String html) =>
+    el.setInnerHtml(html, treeSanitizer: NodeTreeSanitizer.trusted);
 
 /// Listen to events and print the event name and event details when they happen.
 void listen<T>(T target, final String eventName, [void Function(T) callback]) {
   final handler = (Event event) {
-    if (event is CustomEvent)
-      print('Event "$eventName": ${event.detail}');
-    else
-      print('Event "$eventName": ${stringify(event)}');
-
+    print('Event "$eventName": ${stringify(event)}');
     if (callback != null) callback(target);
   };
   if (target is Node)

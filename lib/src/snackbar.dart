@@ -40,6 +40,7 @@ abstract class _Snackbar extends _Component {
   external void show(SnackbarData data);
 }
 
+/// Passed to [MDCSnackbar.show()].
 @JS()
 @anonymous
 class SnackbarData {

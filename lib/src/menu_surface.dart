@@ -86,7 +86,7 @@ abstract class _Corner {
   external static num get BOTTOM_END;
 }
 
-/// The anchored corner of a [_Menu] or [_MenuSurface].
+/// The anchored corner of an [MDCMenu] or [MDCMenuSurface].
 class AnchorCorner {
   static num get topLeft => _Corner.TOP_LEFT;
   static num get topRight => _Corner.TOP_RIGHT;
@@ -98,11 +98,13 @@ class AnchorCorner {
   static num get bottomEnd => _Corner.BOTTOM_END;
 }
 
-/// Set the top, right, bottom, and/or left margin.
+/// The margins for an [MDCMenu] or [MDCMenuSurface] anchor.
 @JS()
 @anonymous
-class AnchorMargin {
-  const AnchorMargin(
-      {this.top: 0, this.right: 0, this.bottom: 0, this.left: 0});
-  final num top, right, bottom, left;
+abstract class AnchorMargin {
+  external factory AnchorMargin({num top, num right, num bottom, num left});
+  external num get top;
+  external num get right;
+  external num get bottom;
+  external num get left;
 }
