@@ -1,8 +1,4 @@
-@JS('mdc.dom')
-library mdc_web_dom;
-
-import 'dart:html';
-import 'package:js/js.dart';
+part of mdc_web;
 
 /// MDC DOM provides commonly-used utilities for inspecting, traversing, and
 /// manipulating the DOM.
@@ -11,13 +7,13 @@ import 'package:js/js.dart';
 ///
 /// * [Component Reference](https://material.io/develop/web/components/dom/)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-dom/ponyfill.js)
-@JS('ponyfill')
+@JS('dom.ponyfill')
 abstract class Ponyfill {
   /// Returns the ancestor of the given element matching the given selector
   /// (which may be the element itself if it matches), or null if no matching
   /// ancestor is found.
-  external static Element closest(Element element, String selector);
+  external static Element closest(Element root, String selector);
 
   /// Returns true if the given element matches the given CSS selector.
-  external static bool matches(Element element, String selector);
+  external static bool matches(Element root, String selector);
 }

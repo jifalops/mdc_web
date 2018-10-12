@@ -1,9 +1,4 @@
-@JS('mdc.tabBar')
-library mdc_web_tab_bar;
-
-import 'dart:html';
-import 'package:js/js.dart';
-import 'base.dart';
+part of mdc_web;
 
 /// Tabs organize and allow navigation between groups of content that are
 /// related and at the same level of hierarchy. The Tab Bar contains the Tab
@@ -15,17 +10,32 @@ import 'base.dart';
 /// * [Component Reference](https://material.io/develop/web/components/tabs/tab-bar/#mdctabbar-properties-and-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/tabs)
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-tab-bar/index.js)
-@JS('MDCTabBar')
-abstract class TabBar extends Component {
-  external static TabBar attachTo(Element element);
-  external factory TabBar(Element element, [Foundation foundation, args]);
+class MDCTabBar extends MDCComponent<_TabBar> {
+  static MDCTabBar attachTo(Element root) => MDCTabBar._attach(root);
+  MDCTabBar._attach(Element root) : super._(_TabBar.attachTo(root));
+
+  MDCTabBar(Element root, [foundation, args])
+      : super._(_preserveUndefined(root, foundation, args));
+
+  static _TabBar _preserveUndefined(Element root, foundation, args) =>
+      foundation == null
+          ? _TabBar(root)
+          : args == null
+              ? _TabBar(root, foundation)
+              : _TabBar(root, foundation, args);
+
+  void activateTab(num index) => _js.activateTab(index);
+  void scrollIntoView(num index) => _js.scrollIntoView(index);
+
+  /// Event data: {"detail": {"index": number}}
+  static const activatedEvent = 'MDCTabBar:activated';
+}
+
+@JS('tabBar.MDCTabBar')
+abstract class _TabBar extends _Component {
+  external static _TabBar attachTo(Element root);
+  external factory _TabBar(Element root, [foundation, args]);
 
   external void activateTab(num index);
   external void scrollIntoView(num index);
-}
-
-/// [TabBar] events and helpers.
-class tabBar {
-  /// Event data: {"detail": {"index": number}}
-  static const activatedEvent = 'MDCTabBar:activated';
 }

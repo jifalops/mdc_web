@@ -1,10 +1,4 @@
-@JS('mdc.snackbar')
-library mdc_web_snackbar;
-
-import 'dart:html';
-import 'package:js/js.dart';
-import 'package:meta/meta.dart';
-import 'base.dart';
+part of mdc_web;
 
 /// Snackbars provide brief messages about app processes at the bottom of the
 /// screen.
@@ -15,10 +9,30 @@ import 'base.dart';
 /// * [Component Reference](https://material.io/develop/web/components/snackbars/)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/snackbar)
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-snackbar/index.js)
-@JS('MDCSnackbar')
-abstract class Snackbar extends Component {
-  external static Snackbar attachTo(Element element);
-  external factory Snackbar(Element element, [Foundation foundation, args]);
+class MDCSnackbar extends MDCComponent<_Snackbar> {
+  static MDCSnackbar attachTo(Element root) => MDCSnackbar._attach(root);
+  MDCSnackbar._attach(Element root) : super._(_Snackbar.attachTo(root));
+
+  MDCSnackbar(Element root, [foundation, args])
+      : super._(_preserveUndefined(root, foundation, args));
+
+  static _Snackbar _preserveUndefined(Element root, foundation, args) =>
+      foundation == null
+          ? _Snackbar(root)
+          : args == null
+              ? _Snackbar(root, foundation)
+              : _Snackbar(root, foundation, args);
+
+  bool get dismissesOnAction => _js.dismissesOnAction;
+  void set dismissesOnAction(bool value) => _js.dismissesOnAction = value;
+
+  void show(SnackbarData data) => _js.show(data);
+}
+
+@JS('snackbar.MDCSnackbar')
+abstract class _Snackbar extends _Component {
+  external static _Snackbar attachTo(Element root);
+  external factory _Snackbar(Element root, [foundation, args]);
 
   external bool get dismissesOnAction;
   external void set dismissesOnAction(bool value);
@@ -28,7 +42,7 @@ abstract class Snackbar extends Component {
 
 @JS()
 @anonymous
-abstract class SnackbarData {
+class SnackbarData {
   SnackbarData(
       {@required String message,
       Function actionHandler,

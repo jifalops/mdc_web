@@ -1,8 +1,4 @@
-@JS('mdc')
-library mdc_web_auto_init;
-
-import 'dart:html';
-import 'package:js/js.dart';
+part of mdc_web;
 
 /// Automatically create MDC-Web components from html elements that have a
 /// `data-mdc-auto-init="MDC<component>"` attribute.

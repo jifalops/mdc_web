@@ -12,34 +12,42 @@
 /// * Shape
 /// * Theme
 /// * Typography
-export 'src/animation.dart';
-export 'src/auto_init.dart';
-export 'src/base.dart';
-export 'src/checkbox.dart';
-export 'src/chips.dart';
-export 'src/dialog.dart';
-export 'src/dom.dart';
-export 'src/drawer.dart';
-export 'src/floating_label.dart';
-export 'src/form_field.dart';
-export 'src/icon_button.dart';
-export 'src/line_ripple.dart';
-export 'src/linear_progress.dart';
-export 'src/list.dart';
-export 'src/menu_surface.dart';
-export 'src/menu.dart';
-export 'src/notched_outline.dart';
-export 'src/radio.dart';
-export 'src/ripple.dart';
-export 'src/select.dart';
-export 'src/selection_control.dart';
-export 'src/slider.dart';
-export 'src/snackbar.dart';
-export 'src/switch.dart';
-export 'src/tab_bar.dart';
-export 'src/tab_indicator.dart';
-export 'src/tab_scroller.dart';
-export 'src/tab.dart';
-export 'src/text_field.dart';
-export 'src/top_app_bar.dart';
+@JS('mdc')
+library mdc_web;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'package:meta/meta.dart';
+
 export 'src/util.dart';
+
+part 'src/animation.dart';
+part 'src/auto_init.dart';
+part 'src/base.dart';
+part 'src/checkbox.dart';
+part 'src/chips.dart';
+part 'src/dialog.dart';
+part 'src/dom.dart';
+part 'src/drawer.dart';
+part 'src/floating_label.dart';
+part 'src/form_field.dart';
+part 'src/icon_button.dart';
+part 'src/line_ripple.dart';
+part 'src/linear_progress.dart';
+part 'src/list.dart';
+part 'src/menu_surface.dart';
+part 'src/menu.dart';
+part 'src/notched_outline.dart';
+part 'src/radio.dart';
+part 'src/ripple.dart';
+part 'src/select.dart';
+part 'src/selection_control.dart';
+part 'src/slider.dart';
+part 'src/snackbar.dart';
+part 'src/switch.dart';
+part 'src/tab_bar.dart';
+part 'src/tab_indicator.dart';
+part 'src/tab_scroller.dart';
+part 'src/tab.dart';
+part 'src/text_field.dart';
+part 'src/top_app_bar.dart';

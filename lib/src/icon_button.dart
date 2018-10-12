@@ -1,10 +1,4 @@
-@JS('mdc.iconButton')
-library mdc_web_icon_button;
-
-import 'dart:html';
-import 'package:js/js.dart';
-import 'base.dart';
-import 'ripple.dart';
+part of mdc_web;
 
 /// Toggle between an on and off icon.
 ///
@@ -14,21 +8,40 @@ import 'ripple.dart';
 /// * [Component Reference](https://material.io/develop/web/components/buttons/icon-buttons/#mdciconbuttontoggle-properties-and-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/icon-button)
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-icon-button/index.js)
-@JS('MDCIconButtonToggle')
-abstract class IconButtonToggle extends Component {
-  external static IconButtonToggle attachTo(Element element);
-  external factory IconButtonToggle(Element element,
-      [Foundation foundation, args]);
+class MDCIconButtonToggle extends MDCComponent<_IconButtonToggle> {
+  static MDCIconButtonToggle attachTo(Element root) =>
+      MDCIconButtonToggle._attach(root);
+  MDCIconButtonToggle._attach(Element root)
+      : super._(_IconButtonToggle.attachTo(root));
+
+  MDCIconButtonToggle(Element root, [foundation, args])
+      : super._(_preserveUndefined(root, foundation, args));
+
+  static _IconButtonToggle _preserveUndefined(Element root, foundation, args) =>
+      foundation == null
+          ? _IconButtonToggle(root)
+          : args == null
+              ? _IconButtonToggle(root, foundation)
+              : _IconButtonToggle(root, foundation, args);
+
+  /// Get/set the toggle state.
+  bool get on => _js.on;
+  void set on(bool value) => _js.on = value;
+
+  MDCRipple get ripple => MDCRipple._(_js.ripple);
+
+  /// Data structure: {"detail": {"isOn": boolean}}
+  static const changeEvent = 'MDCIconButtonToggle:change';
+}
+
+@JS('iconButton.MDCIconButtonToggle')
+abstract class _IconButtonToggle extends _Component {
+  external static _IconButtonToggle attachTo(Element root);
+  external factory _IconButtonToggle(Element root, [foundation, args]);
 
   /// Get/set the toggle state.
   external bool get on;
   external void set on(bool value);
 
-  external Ripple get ripple;
-}
-
-/// [IconButtonToggle] events and helpers.
-class iconButtonToggle {
-  /// Data structure: {"detail": {"isOn": boolean}}
-  static const changeEvent = 'MDCIconButtonToggle:change';
+  external _Ripple get ripple;
 }

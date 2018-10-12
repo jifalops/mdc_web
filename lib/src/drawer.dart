@@ -1,9 +1,4 @@
-@JS('mdc.drawer')
-library mdc_web_drawer;
-
-import 'dart:html';
-import 'package:js/js.dart';
-import 'base.dart';
+part of mdc_web;
 
 /// A material design navigation drawer.
 ///
@@ -13,17 +8,32 @@ import 'base.dart';
 /// * [Component Reference](https://material.io/develop/web/components/drawers/#mdcdrawer-properties-and-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/drawer)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-drawer/index.js)
-@JS('MDCDrawer')
-abstract class Drawer extends Component {
-  external static Drawer attachTo(Element element);
-  external factory Drawer(Element element, [Foundation foundation, args]);
+class MDCDrawer extends MDCComponent<_Drawer> {
+  static MDCDrawer attachTo(Element root) => MDCDrawer._attach(root);
+  MDCDrawer._attach(Element root) : super._(_Drawer.attachTo(root));
+
+  MDCDrawer(Element root, [foundation, args])
+      : super._(_preserveUndefined(root, foundation, args));
+
+  static _Drawer _preserveUndefined(Element root, foundation, args) =>
+      foundation == null
+          ? _Drawer(root)
+          : args == null
+              ? _Drawer(root, foundation)
+              : _Drawer(root, foundation, args);
+
+  bool get open => _js.open;
+  void set open(bool value) => _js.open = value;
+
+  static const openedEvent = 'MDCDrawer:opened';
+  static const closedEvent = 'MDCDrawer:closed';
+}
+
+@JS('drawer.MDCDrawer')
+abstract class _Drawer extends _Component {
+  external static _Drawer attachTo(Element root);
+  external factory _Drawer(Element root, [foundation, args]);
 
   external bool get open;
   external void set open(bool value);
-}
-
-/// [Drawer] events and helpers.
-class drawer {
-  static const openedEvent = 'MDCDrawer:opened';
-  static const closedEvent = 'MDCDrawer:closed';
 }

@@ -1,10 +1,4 @@
-@JS('mdc.list')
-library mdc_web_list;
-
-import 'dart:core' as core;
-import 'dart:html';
-import 'package:js/js.dart';
-import 'base.dart';
+part of mdc_web;
 
 /// Lists are continuous, vertical indexes of text or images.
 ///
@@ -14,24 +8,41 @@ import 'base.dart';
 /// * [Component Reference](https://material.io/develop/web/components/lists/)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/list)
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-list/index.js)
-@JS('MDCList')
-abstract class List extends Component {
-  external static List attachTo(Element element);
-  external factory List(Element element, [Foundation foundation, args]);
+class MDCList extends MDCComponent<_List> {
+  static MDCList attachTo(Element root) => MDCList._attach(root);
+  MDCList._attach(Element root) : super._(_List.attachTo(root));
 
-  external void set vertical(core.bool value);
-  external void set wrapFocus(core.bool value);
-  external void set singleSelection(core.bool value);
-  external void set selectedIndex(core.num value);
+  MDCList(Element root, [foundation, args])
+      : super._(_preserveUndefined(root, foundation, args));
 
-  external core.List get listElements;
+  static _List _preserveUndefined(Element root, foundation, args) =>
+      foundation == null
+          ? _List(root)
+          : args == null
+              ? _List(root, foundation)
+              : _List(root, foundation, args);
 
-  external void layout();
+  void set vertical(bool value) => _js.vertical = value;
+  void set wrapFocus(bool value) => _js.wrapFocus = value;
+  void set singleSelection(bool value) => _js.singleSelection = value;
+  void set selectedIndex(num value) => _js.selectedIndex = value;
+
+  List<Element> get listElements => List.from(_js.listElements);
+
+  void layout() => _js.layout();
 }
 
-/// [List] events and helpers.
-class list {
-  /// Casts [List.listElements].
-  core.List<Element> listElements(List list) =>
-      core.List.from(list.listElements);
+@JS('list.MDCList')
+abstract class _List extends _Component {
+  external static _List attachTo(Element root);
+  external factory _List(Element root, [foundation, args]);
+
+  external void set vertical(bool value);
+  external void set wrapFocus(bool value);
+  external void set singleSelection(bool value);
+  external void set selectedIndex(num value);
+
+  external List get listElements;
+
+  external void layout();
 }

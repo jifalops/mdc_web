@@ -1,9 +1,4 @@
-@JS('mdc.menuSurface')
-library mdc_web_menu_surface;
-
-import 'dart:html';
-import 'package:js/js.dart';
-import 'base.dart';
+part of mdc_web;
 
 /// A reusable surface that appears above the content of the page and can be
 /// positioned adjacent to an element.
@@ -12,10 +7,50 @@ import 'base.dart';
 ///
 /// * [Component Reference](https://material.io/develop/web/components/menu-surface/#mdcmenusurface-properties-and-methods)
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-menu-surface/index.js)
-@JS('MDCMenuSurface')
-abstract class MenuSurface extends Component {
-  external static MenuSurface attachTo(Element element);
-  external factory MenuSurface(Element element, [Foundation foundation, args]);
+class MDCMenuSurface extends MDCComponent<_MenuSurface> {
+  static MDCMenuSurface attachTo(Element root) => MDCMenuSurface._attach(root);
+  MDCMenuSurface._attach(Element root) : super._(_MenuSurface.attachTo(root));
+
+  MDCMenuSurface(Element root, [foundation, args])
+      : super._(_preserveUndefined(root, foundation, args));
+
+  static _MenuSurface _preserveUndefined(Element root, foundation, args) =>
+      foundation == null
+          ? _MenuSurface(root)
+          : args == null
+              ? _MenuSurface(root, foundation)
+              : _MenuSurface(root, foundation, args);
+
+  bool get open => _js.open;
+  void set open(bool value) => _js.open = value;
+  bool get quickOpen => _js.quickOpen;
+  void set quickOpen(bool value) => _js.quickOpen = value;
+
+  /// See [AnchorCorner] for acceptable values.
+  void setAnchorCorner(num corner) => _js.setAnchorCorner(corner);
+
+  void setAnchorMargin(AnchorMargin margin) => _js.setAnchorMargin(margin);
+  void setFixedPosition(bool isFixed) => _js.setFixedPosition(isFixed);
+  void setAbsolutePosition(num x, num y) => _js.setAbsolutePosition(x, y);
+
+  /// Changes the element used as an anchor for menu-surface positioning logic.
+  /// Should be used with conjunction with hoistMenuToBody().
+  void setMenuSurfaceAnchorElement(Element root) =>
+      _js.setMenuSurfaceAnchorElement(root);
+
+  /// Removes the menu-surface element from the DOM and appends it to the body
+  /// element. Should be used to overcome overflow: hidden issues.
+  void hoistMenuToBody() => _js.hoistMenuToBody();
+  void setIsHoisted(bool hoisted) => _js.setIsHoisted(hoisted);
+
+  static const openedEvent = 'MDCMenuSurface:opened';
+  static const closedEvent = 'MDCMenuSurface:closed';
+}
+
+@JS('menuSurface.MDCMenuSurface')
+abstract class _MenuSurface extends _Component {
+  external static _MenuSurface attachTo(Element root);
+  external factory _MenuSurface(Element root, [foundation, args]);
 
   external bool get open;
   external void set open(bool value);
@@ -31,7 +66,7 @@ abstract class MenuSurface extends Component {
 
   /// Changes the element used as an anchor for menu-surface positioning logic.
   /// Should be used with conjunction with hoistMenuToBody().
-  external void setMenuSurfaceAnchorElement(Element element);
+  external void setMenuSurfaceAnchorElement(Element root);
 
   /// Removes the menu-surface element from the DOM and appends it to the body
   /// element. Should be used to overcome overflow: hidden issues.
@@ -39,13 +74,7 @@ abstract class MenuSurface extends Component {
   external void setIsHoisted(bool hoisted);
 }
 
-/// [MenuSurface] events and helpers.
-class menuSurface {
-  static const openedEvent = 'MDCMenuSurface:opened';
-  static const closedEvent = 'MDCMenuSurface:closed';
-}
-
-@JS('Corner')
+@JS('menuSurface.Corner')
 abstract class _Corner {
   external static num get TOP_LEFT;
   external static num get TOP_RIGHT;
@@ -57,7 +86,7 @@ abstract class _Corner {
   external static num get BOTTOM_END;
 }
 
-/// The anchored corner of a [Menu] or [MenuSurface].
+/// The anchored corner of a [_Menu] or [_MenuSurface].
 class AnchorCorner {
   static num get topLeft => _Corner.TOP_LEFT;
   static num get topRight => _Corner.TOP_RIGHT;

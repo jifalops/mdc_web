@@ -1,15 +1,15 @@
-@JS('mdc.selectionControl')
-library mdc_web_selection_control;
-
-import 'package:js/js.dart';
-import 'ripple.dart';
+part of mdc_web;
 
 /// An interface for input controls.
 ///
 /// Javascript: `mdc.selectionControl.MDCSelectionControl`.
 ///
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-selection-control/index.js)
-@JS('MDCSelectionControl')
-abstract class SelectionControl {
-  external Ripple get ripple;
+abstract class MDCSelectionControl {
+  MDCRipple get ripple;
+}
+
+@JS('selectionControl.MDCSelectionControl')
+abstract class _SelectionControl {
+  external _Ripple get ripple;
 }
