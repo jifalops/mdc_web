@@ -1,3 +1,8 @@
+## [0.3.0] - October 11, 2018
+
+* Revert to `MDC*` class names (no need to import as 'mdc').
+* Wrap all component classes. The basic form of the API is hopefully settled.
+
 ## [0.2.0] - October 11, 2018
 
 * Shorten class names and recommend import as `mdc`.
