@@ -1,0 +1,59 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  @include mdc-theme-prop(background-color, background);
+  @include mdc-theme-prop(color, text-primary-on-background);
+}
+
+.mdc-top-app-bar {
+  @include mdc-elevation(4);
+}
+
+#content {
+  margin: 0 auto;
+  max-width: 1024px;
+
+  .mdc-layout-grid__cell {
+    // border: 1px solid gray;
+  }
+}
+
+.mdc-button {
+  @include mdc-states;
+  margin: 4px;
+
+  &.primary {
+    @include mdc-theme-prop(background-color, secondary);
+    @include mdc-theme-prop(color, on-secondary);
+    @include mdc-elevation(8);
+    margin-bottom: 12px;
+  }
+
+  &.secondary {
+    @include mdc-theme-prop(background-color, primary);
+    @include mdc-theme-prop(color, on-primary);
+  }
+
+  &.tertiary {
+    background-color: transparent;
+    @include mdc-theme-prop(color, on-surface);
+    @include mdc-button--dense_;
+  }
+}
+
+.error {
+  @include mdc-theme-prop(background-color, error);
+  @include mdc-theme-prop(color, on-error);
+}
+
+.mdc-list-item__meta {
+  margin-left: 28px;
+}

@@ -1,8 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Material+Icons);
-
 @import "material-components-web/material-components-web";
-
 #content>section {
   margin: 8px 0;
   padding: 8px;
@@ -19,15 +17,13 @@ section header {
   @include mdc-elevation(2.0);
   @include mdc-button-container-fill-color(secondary);
   @include mdc-button-ink-color(on-secondary);
-  @include mdc-states;
-  // Add ripple via scss mixins.
+  @include mdc-states; // Add ripple via scss mixins.
   // @include mdc-ripple-surface;
   // @include mdc-ripple-radius-bounded;
   // @include mdc-states-base-color(black);
   // @include mdc-states-hover-opacity(.1);
   // @include mdc-states-focus-opacity(.3);
   // @include mdc-states-press-opacity(.4);
-
 }
 
 .mdc-button.secondary {
@@ -54,7 +50,10 @@ body {
 
 .dyslexic {
   font-family: 'Open Dyslexic';
-  tt, code, kbd, samp {
+  tt,
+  code,
+  kbd,
+  samp {
     font-family: 'Open Dyslexic Mono';
   }
 }

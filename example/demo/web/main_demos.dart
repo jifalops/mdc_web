@@ -41,7 +41,7 @@ abstract class ComponentDemo {
 class Demo {
   const Demo(this.id, this.html, [this.actions = const []]);
   final String id, html;
-  final List<ButtonElement> actions;
+  final List<String> actions;
 
   @override
     String toString() => '''
@@ -113,12 +113,12 @@ class ChipsDemo extends ComponentDemo {
             'https://material-components.github.io/material-components-web-catalog/#/component/chips');
   @override
   List<Demo> get demos => [
-        Demo('choice-chips',
-        choiceChips([chip, leadingIcon, trailingIcon, checkMark, selected]),
-        []
-        ),
-        filterChips([chip, leadingIcon, trailingIcon, checkMark, selected]),
-        inputChips([chip, leadingIcon, trailingIcon, checkMark, selected])
+        // Demo('choice-chips',
+        // choiceChips([chip, leadingIcon, trailingIcon, checkMark, selected]),
+        // []
+        // ),
+        // filterChips([chip, leadingIcon, trailingIcon, checkMark, selected]),
+        // inputChips([chip, leadingIcon, trailingIcon, checkMark, selected])
       ];
 
   @override
@@ -131,16 +131,16 @@ class ChipsDemo extends ComponentDemo {
     chipsets.forEach(
         (chipset) => listen(chipset, MDCChip.trailingIconInteractionEvent));
 
-    print('Chips: ${chipset.chips.length}');
-    final div = DivElement()
-      ..text = 'new div'
-      ..className = 'mdc-chip';
-    chipset.addChip(div, true);
-    print('Chips: ${chipset.chips.length}');
+    // print('Chips: ${chipset.chips.length}');
+    // final div = DivElement()
+    //   ..text = 'new div'
+    //   ..className = 'mdc-chip';
+    // chipset.addChip(div, true);
+    // print('Chips: ${chipset.chips.length}');
   }
 
   static List<ButtonElement> get actions => [
-    ButtonElement()..setInnerHtml(ButtonDemo.button('Add'), treeSanitizer: NodeTreeSanitizer.trusted)..addEventListener('click', (e) => e.
+    // ButtonElement()..setInnerHtml(ButtonDemo.button('Add'), treeSanitizer: NodeTreeSanitizer.trusted)..addEventListener('click', (e) => e.
   ];
 
   static const chip = '''
@@ -177,19 +177,19 @@ div class="mdc-chip">
 </div>
 ''';
 
-  String choiceChips(List<String> chips) => '''
+  static String choiceChips(List<String> chips) => '''
 <div class="mdc-chip-set mdc-chip-set--choice">
-  $chips
+  ${chips.join('')}
 </div>
 ''';
-  String filterChips(List<String> chips) => '''
+  static String filterChips(List<String> chips) => '''
 <div class="mdc-chip-set mdc-chip-set--filter">
-  $chips
+  ${chips.join('')}
 </div>
 ''';
-  String inputChips(List<String> chips) => '''
+  static String inputChips(List<String> chips) => '''
 <div class="mdc-chip-set mdc-chip-set--input">
-  $chips
+  ${chips.join('')}
 </div>
 ''';
 }

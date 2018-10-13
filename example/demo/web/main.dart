@@ -17,7 +17,7 @@ void main() {
   _content = querySelector('#content');
 
   topAppBar();
-  chips();
+  // chips();
   snackbar();
 }
 
