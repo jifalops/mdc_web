@@ -1,11 +1,8 @@
 // https://material.io/tools/color/#!/?primary.color=2E7D32&secondary.color=FFAB00
 $mdc-theme-primary: #2E7D32;
 $mdc-theme-secondary:#FFAB00;
-$mdc-theme-background: #fefefe;
-$mdc-theme-surface: #f8f8f8;
+$mdc-theme-background: #f8f8f8;
+$mdc-theme-surface: #fefefe;
 $mdc-theme-error: #b00020;
-// This line will no longer be necessary in v0.41.0
-$mdc-theme-on-error: if(mdc-theme-contrast-tone($mdc-theme-error) == "dark", #000, #fff);
 
-@import "material-components-web/material-components-web";
 @import 'styles';

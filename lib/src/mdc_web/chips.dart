@@ -30,8 +30,7 @@ class MDCChipSet extends MDCComponent<_ChipSet> {
     if (appendToRoot) root_.append(chipEl);
   }
 
-  // TODO: Not in 0.40.0
-  // List<int> getSelectedChipIds() => List.from(_js.getSelectedChipIds());
+  List<int> getSelectedChipIds() => List.from(_js.getSelectedChipIds());
 }
 
 @JS('chips.MDCChipSet')
@@ -42,8 +41,7 @@ abstract class _ChipSet extends _Component {
   external List get chips;
 
   external void addChip(Element chipEl);
-  // TODO: Not in 0.40.0
-  // external List getSelectedChipIds();
+  external List getSelectedChipIds();
 }
 
 /// Encompasses the behavior of a single chip. All of MDCChip’s emitted events
@@ -90,11 +88,10 @@ class MDCChip extends MDCComponent<_Chip> {
   /// `event.detail` contents: {chipId: string}
   static const interactionEvent = 'MDCChip:interaction';
 
-  // /// Indicates the chip’s selection state has changed (for choice/filter chips).
-  // ///
-  // /// `event.detail` contents: {chipId: string, selected: boolean}
-  // // TODO: not part of 0.40.0.
-  // static const selectionEvent = 'MDCChip:selection';
+  /// Indicates the chip’s selection state has changed (for choice/filter chips).
+  ///
+  /// `event.detail` contents: {chipId: string, selected: boolean}
+  static const selectionEvent = 'MDCChip:selection';
 
   /// Indicates the chip is ready to be removed from the DOM.
   ///

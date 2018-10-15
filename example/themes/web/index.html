@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="scaffolded-by" content="https://github.com/google/stagehand">
-  <title>mdc_web Example</title>
-  <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
-  <script>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+    <title>mdc_web Example</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Material+Icons">
+    <link rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous">
+    <script>
     // Load saved theme.
     let theme = window.localStorage['theme'] || 'Light';
     document.documentElement.className = `theme-${theme}`;
@@ -20,94 +26,122 @@
     link.rel = 'stylesheet';
     link.href = theme == 'Dark' ? 'theme-dark.css' : 'theme-light.css';
     document.head.appendChild(link);
+
+    // Initially hide content for people with scripts enabled.
+    // document.documentElement.style.visibility = 'hidden';
   </script>
-  <!--
+    <!--
     This exposes the `mdc` global variable required by this package.
     For debugging purposes you can replace the ".min.js" extension with ".js".
   -->
-  <script defer src="packages/mdc_web/material-components-web.min.js"></script>
-  <script defer src="main.dart.js"></script>
-</head>
+    <script defer src="packages/mdc_web/material-components-web.min.js"></script>
+    <script defer src="main.dart.js"></script>
+  </head>
 
-<body>
-  <header class="mdc-top-app-bar mdc-top-app-bar--dense">
-    <div class="mdc-top-app-bar__row">
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-        <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
-        <span class="mdc-top-app-bar__title">mdc_web Demo</span>
-      </section>
+  <body>
+    <header class="mdc-top-app-bar mdc-top-app-bar--dense">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section
+          mdc-top-app-bar__section--align-start">
+          <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
+          <span class="mdc-top-app-bar__title">mdc_web Demo</span>
+        </section>
 
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <div class="mdc-menu-surface--anchor">
-          <!--
-            Work around for invisible icon when using
-            "mdc-button" and "mdc-button__icon".
-           -->
-          <button id="overflow-menu-button" class="mdc-icon-button" aria-label="menu" aria-pressed="false">
-            <i class="material-icons mdc-icon-button__icon">more_vert</i>
-            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">more_vert</i>
+        <section class="mdc-top-app-bar__section
+          mdc-top-app-bar__section--align-end" role="toolbar">
+          <button class="mdc-button">
+            <i class="material-icons mdc-button__icon" aria-hidden="true">favorite</i>a
           </button>
-          <div id="overflow-menu" class="mdc-menu mdc-menu-surface" tabindex="-1">
-            <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-              <li class="mdc-list-item" role="menuitem">
-                <span class="mdc-list-item__text">Dark theme</span>
-                <div id="theme-switch" class="mdc-switch mdc-list-item__meta">
-                  <div class="mdc-switch__track"></div>
-                  <div class="mdc-switch__thumb-underlay">
-                    <div class="mdc-switch__thumb">
-                      <input type="checkbox" class="mdc-switch__native-control" role="switch">
+          <div class="mdc-menu-surface--anchor">
+            <button id="overflow-menu-button" class="mdc-icon-button"
+              aria-label="menu" aria-pressed="false">
+              <i class="material-icons mdc-icon-button__icon">more_vert</i>
+              <i class="material-icons mdc-icon-button__icon
+                mdc-icon-button__icon--on">more_vert</i>
+            </button>
+            <div id="overflow-menu" class="mdc-menu mdc-menu-surface"
+              tabindex="-1">
+              <ul class="mdc-list" role="menu" aria-hidden="true"
+                aria-orientation="vertical">
+                <li class="mdc-list-item" role="menuitem">
+                  <span class="mdc-list-item__text">Dark theme</span>
+                  <div id="theme-switch" class="mdc-switch mdc-list-item__meta">
+                    <div class="mdc-switch__track"></div>
+                    <div class="mdc-switch__thumb-underlay">
+                      <div class="mdc-switch__thumb">
+                        <input type="checkbox"
+                          class="mdc-switch__native-control" role="switch">
+                      </div>
                     </div>
                   </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </div>
-  </header>
-
-
-  <div id="content" class="mdc-top-app-bar--dense-fixed-adjust">
-    <div class="mdc-layout-grid">
-      <div class="mdc-layout-grid__inner">
-
-        <div class="mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
-          <div class="mdc-typography--headline6">Default buttons</div>
-          <div class="content">
-            <button class="mdc-button" data-mdc-auto-init="MDCRipple">Button</button>
-            <button class="mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple">Raised Button</button>
-            <div class="mdc-theme--error">
-              <code>&lt;div class="mdc-theme--error"&gt;&lt;/div&gt;</code>
-            </div>
-            <div class="error">
-              <code>&lt;div class="error"&gt;&lt;/div&gt;</code>
+                </li>
+              </ul>
             </div>
           </div>
-        </div>
+        </section>
+      </div>
+    </header>
 
-        <div class="mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
-          <div class="mdc-typography--headline6">Theme buttons</div>
-          <div class="content">
-            <button class="mdc-button primary">Primary Button</button>
-            <button class="mdc-button secondary">Secondary Button</button>
-            <button class="mdc-button tertiary">Tertiary Button</button>
+
+    <div id="content" class="mdc-top-app-bar--dense-fixed-adjust">
+      <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+
+          <div class="mdc-card mdc-layout-grid__cell
+            mdc-layout-grid__cell--span-12">
+            <div class="mdc-typography--headline6">Default buttons</div>
+            <div class="content">
+              <button class="mdc-button" data-mdc-auto-init="MDCRipple">Button</button>
+              <button class="mdc-button mdc-button--raised"
+                data-mdc-auto-init="MDCRipple">Raised Button</button>
+              <div class="mdc-theme--error">
+                <code>&lt;div class="mdc-theme--error"&gt;&lt;/div&gt;</code>
+              </div>
+              <div class="error">
+                <code>&lt;div class="error"&gt;&lt;/div&gt;</code>
+              </div>
+              <button class="mdc-button" aria-label="favorite">
+                <i class="material-icons mdc-button__icon" aria-hidden="true">favorite</i>
+              </button>
+            </div>
           </div>
-        </div>
 
-        <div class="mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
-          <div class="mdc-typography--headline6">An icon-button-toggle</div>
-          <div class="content">
-            <button class="mdc-icon-button" aria-label="Add to favorites" aria-pressed="false" data-mdc-auto-init="MDCIconButtonToggle">
-              <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-              <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-            </button>
+          <div class="mdc-card mdc-layout-grid__cell
+            mdc-layout-grid__cell--span-12">
+            <div class="mdc-typography--headline6">Theme buttons</div>
+            <div class="content">
+              <button class="mdc-button primary">Primary Button</button>
+              <button class="mdc-button secondary">Secondary Button</button>
+              <button class="mdc-button tertiary">Tertiary Button</button>
+              <mdc-button icon="wifi">material icon</mdc-button>
+              <mdc-button icon="fas fa-ghost">font awesome icon</mdc-button>
+              <mdc-button dense>dense</mdc-button>
+              <mdc-button ripple>ripple</mdc-button>
+              <mdc-button href="#">href</mdc-button>
+              <mdc-button href="#" target="_blank">target</mdc-button>
+              <mdc-button unelevated>unelevated</mdc-button>
+              <mdc-button raised>raised</mdc-button>
+              <mdc-button outlined>outlined</mdc-button>
+              <mdc-button raised outlined>raised outlined</mdc-button>
+            </div>
           </div>
-        </div>
 
+          <div class="mdc-card mdc-layout-grid__cell
+            mdc-layout-grid__cell--span-12">
+            <div class="mdc-typography--headline6">An icon-button-toggle</div>
+            <div class="content">
+              <button class="mdc-icon-button" aria-label="Add to favorites"
+                aria-pressed="false">
+                <i class="material-icons mdc-icon-button__icon
+                  mdc-icon-button__icon--on">favorite</i>
+                <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+              </button>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 
 </html>

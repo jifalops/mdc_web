@@ -1,3 +1,15 @@
+// This line will no longer be necessary in v0.41.0
+$mdc-theme-on-error: if(mdc-theme-contrast-tone($mdc-theme-error) == "dark", #000, #fff);
+
+$mdc-layout-grid-default-margin: (
+  desktop: 24px,
+  tablet: 16px,
+  phone: 12px
+);
+$mdc-layout-grid-default-gutter: $mdc-layout-grid-default-margin;
+
+@import "material-components-web/material-components-web";
+
 html,
 body {
   width: 100%;

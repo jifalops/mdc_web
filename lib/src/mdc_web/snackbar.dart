@@ -43,8 +43,8 @@ abstract class _Snackbar extends _Component {
 /// Passed to [MDCSnackbar.show()].
 @JS()
 @anonymous
-class SnackbarData {
-  SnackbarData(
+abstract class SnackbarData {
+  external factory SnackbarData(
       {@required String message,
       Function actionHandler,
       String actionText,
