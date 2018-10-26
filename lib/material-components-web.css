@@ -106,7 +106,7 @@
     pointer-events: none;
     content: ""; }
   .mdc-button::before {
-    transition: opacity 15ms linear;
+    transition: opacity 15ms linear, background-color 15ms linear;
     z-index: 1; }
   .mdc-button.mdc-ripple-upgraded::before {
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
@@ -358,7 +358,7 @@
     pointer-events: none;
     content: ""; }
   .mdc-card__primary-action::before {
-    transition: opacity 15ms linear;
+    transition: opacity 15ms linear, background-color 15ms linear;
     z-index: 1; }
   .mdc-card__primary-action.mdc-ripple-upgraded::before {
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
@@ -720,7 +720,7 @@
     pointer-events: none;
     content: ""; }
   .mdc-checkbox::before {
-    transition: opacity 15ms linear;
+    transition: opacity 15ms linear, background-color 15ms linear;
     z-index: 1; }
   .mdc-checkbox.mdc-ripple-upgraded::before {
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
@@ -1098,7 +1098,7 @@
     pointer-events: none;
     content: ""; }
   .mdc-chip::before {
-    transition: opacity 15ms linear;
+    transition: opacity 15ms linear, background-color 15ms linear;
     z-index: 1; }
   .mdc-chip.mdc-ripple-upgraded::before {
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
@@ -1905,7 +1905,7 @@
     pointer-events: none;
     content: ""; }
   .mdc-fab::before {
-    transition: opacity 15ms linear;
+    transition: opacity 15ms linear, background-color 15ms linear;
     z-index: 1; }
   .mdc-fab.mdc-ripple-upgraded::before {
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
@@ -2073,6 +2073,7 @@
   transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
   line-height: 1.15rem;
+  text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: text;
@@ -2085,7 +2086,9 @@
     left: auto;
     /* @noflip */
     -webkit-transform-origin: right top;
-            transform-origin: right top; }
+            transform-origin: right top;
+    /* @noflip */
+    text-align: right; }
 
 .mdc-floating-label--float-above {
   cursor: auto; }
@@ -2379,7 +2382,7 @@
     pointer-events: none;
     content: ""; }
   .mdc-icon-button::before {
-    transition: opacity 15ms linear;
+    transition: opacity 15ms linear, background-color 15ms linear;
     z-index: 1; }
   .mdc-icon-button.mdc-ripple-upgraded::before {
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
@@ -2490,7 +2493,7 @@
     pointer-events: none;
     content: ""; }
   .mdc-icon-toggle::before {
-    transition: opacity 15ms linear;
+    transition: opacity 15ms linear, background-color 15ms linear;
     z-index: 1; }
   .mdc-icon-toggle.mdc-ripple-upgraded::before {
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
@@ -3788,7 +3791,7 @@
     pointer-events: none;
     content: ""; }
   :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item::before {
-    transition: opacity 15ms linear;
+    transition: opacity 15ms linear, background-color 15ms linear;
     z-index: 1; }
   :not(.mdc-list--non-interactive) > :not(.mdc-list-item--disabled).mdc-list-item.mdc-ripple-upgraded::before {
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
@@ -4120,7 +4123,7 @@ a.mdc-list-item {
     pointer-events: none;
     content: ""; }
   .mdc-radio::before {
-    transition: opacity 15ms linear;
+    transition: opacity 15ms linear, background-color 15ms linear;
     z-index: 1; }
   .mdc-radio.mdc-ripple-upgraded::before {
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
@@ -4302,7 +4305,7 @@ a.mdc-list-item {
     pointer-events: none;
     content: ""; }
   .mdc-ripple-surface::before {
-    transition: opacity 15ms linear;
+    transition: opacity 15ms linear, background-color 15ms linear;
     z-index: 1; }
   .mdc-ripple-surface.mdc-ripple-upgraded::before {
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
@@ -4451,7 +4454,7 @@ a.mdc-list-item {
     pointer-events: none;
     content: ""; }
   .mdc-select::before {
-    transition: opacity 15ms linear;
+    transition: opacity 15ms linear, background-color 15ms linear;
     z-index: 1; }
   .mdc-select.mdc-ripple-upgraded::before {
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
@@ -5167,7 +5170,7 @@ a.mdc-list-item {
     pointer-events: none;
     content: ""; }
   .mdc-switch__thumb-underlay::before {
-    transition: opacity 15ms linear;
+    transition: opacity 15ms linear, background-color 15ms linear;
     z-index: 1; }
   .mdc-switch__thumb-underlay.mdc-ripple-upgraded::before {
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
@@ -5345,7 +5348,7 @@ a.mdc-list-item {
     pointer-events: none;
     content: ""; }
   .mdc-tab__ripple::before {
-    transition: opacity 15ms linear;
+    transition: opacity 15ms linear, background-color 15ms linear;
     z-index: 1; }
   .mdc-tab__ripple.mdc-ripple-upgraded::before {
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
@@ -5419,7 +5422,8 @@ a.mdc-list-item {
 .mdc-tab__icon {
   width: 24px;
   height: 24px;
-  opacity: 0.54; }
+  opacity: 0.54;
+  font-size: 24px; }
 
 .mdc-tab--stacked {
   height: 72px; }
@@ -5737,7 +5741,7 @@ a.mdc-list-item {
     pointer-events: none;
     content: ""; }
   .mdc-text-field::before {
-    transition: opacity 15ms linear;
+    transition: opacity 15ms linear, background-color 15ms linear;
     z-index: 1; }
   .mdc-text-field.mdc-ripple-upgraded::before {
     -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
@@ -7158,7 +7162,7 @@ a.mdc-list-item {
       pointer-events: none;
       content: ""; }
     .mdc-toolbar__icon::before, .mdc-toolbar__menu-icon::before {
-      transition: opacity 15ms linear;
+      transition: opacity 15ms linear, background-color 15ms linear;
       z-index: 1; }
     .mdc-toolbar__icon.mdc-ripple-upgraded::before, .mdc-toolbar__menu-icon.mdc-ripple-upgraded::before {
       -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
@@ -7407,7 +7411,7 @@ a.mdc-list-item {
       pointer-events: none;
       content: ""; }
     .mdc-top-app-bar__action-item::before, .mdc-top-app-bar__navigation-icon::before {
-      transition: opacity 15ms linear;
+      transition: opacity 15ms linear, background-color 15ms linear;
       z-index: 1; }
     .mdc-top-app-bar__action-item.mdc-ripple-upgraded::before, .mdc-top-app-bar__navigation-icon.mdc-ripple-upgraded::before {
       -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
