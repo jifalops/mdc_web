@@ -1,6 +1,6 @@
 name: mdc_web
 description: Dart wrapper for the material-components-web javascript library.
-version: 0.3.1
+version: 0.3.1+1
 author: Jacob Phillips <jifalops@gmail.com>
 homepage: https://github.com/jifalops/mdc_web
 

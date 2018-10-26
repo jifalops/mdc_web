@@ -1,3 +1,8 @@
+## [0.3.1+1] - October 26, 2018
+
+* Fix missing import
+
+
 ## [0.3.1] - October 26, 2018
 
 * Fix function signatures
