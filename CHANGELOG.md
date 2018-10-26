@@ -1,3 +1,9 @@
+## [0.3.1] - October 26, 2018
+
+* Fix function signatures
+* Upgrade to material-components-web 0.40.1
+
+
 ## [0.3.0] - October 11, 2018
 
 * Revert to `MDC*` class names (no need to import as 'mdc').
