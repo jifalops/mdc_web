@@ -6,7 +6,7 @@ part of mdc_web;
 ///
 /// * [Component Reference](https://material.io/develop/web/components/base/#mdccomponent)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/component.js)
-class MDCComponent<T extends _Component> {
+class MDCComponent<T extends _Component> implements _Component {
   static MDCComponent attachTo(Element root) => MDCComponent._attach(root);
 
   /// Example constructor for calling attach on the underlying component.

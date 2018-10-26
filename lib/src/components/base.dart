@@ -5,9 +5,9 @@ import 'package:mdc_web/components.dart' show afterNextRender;
 
 /// The base class for all MDC HTML elements.
 ///
-/// Descendent classes are expected implement these `static const` memebers:
+/// Descendant classes are expected implement these `static const` members:
 /// * `tag` (String) The element's HTML tag (mdc-*)
-/// * `customAttributes` (List<String>) The elements implemented attibutes,
+/// * `customAttributes` (List<String>) The elements implemented attributes,
 /// or an empty array.
 /// * `cssClasses` (List<String>) The CSS classes the underlying component
 /// uses.
@@ -66,7 +66,7 @@ abstract class MdcElement extends HtmlElement {
 
   void afterFirstRender() {}
 
-  /// Descendent classes should implement [bool attributeDidChange()] instead of
+  /// Descendant classes should implement [bool attributeDidChange()] instead of
   /// this method.
   @override
   @deprecated

@@ -51,4 +51,3 @@ part 'src/mdc_web/tab_scroller.dart';
 part 'src/mdc_web/tab.dart';
 part 'src/mdc_web/text_field.dart';
 part 'src/mdc_web/top_app_bar.dart';
-

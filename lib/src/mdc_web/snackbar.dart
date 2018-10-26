@@ -46,7 +46,7 @@ abstract class _Snackbar extends _Component {
 abstract class SnackbarData {
   external factory SnackbarData(
       {@required String message,
-      Function actionHandler,
+      void Function() actionHandler,
       String actionText,
       num timeout,
       bool multiline,
