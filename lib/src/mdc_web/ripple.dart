@@ -8,7 +8,7 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/ripples/#mdcripple)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/ripple)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-ripple/index.js)
-class MDCRipple extends MDCComponent<_Ripple> implements _Ripple {
+class MDCRipple extends MDCComponent<_Ripple> {
   static MDCRipple attachTo(Element root, [bool unbounded]) =>
       MDCRipple._attach(root, unbounded);
   MDCRipple._attach(Element root, [bool unbounded])
@@ -61,7 +61,7 @@ abstract class _Ripple extends _Component {
   external void deactivate();
   external void layout();
 
-  external static dynamic createAdapter(_Ripple ripple);
+  external static createAdapter(_Ripple ripple);
 }
 
 // @JS('ripple.RippleCapableSurface')

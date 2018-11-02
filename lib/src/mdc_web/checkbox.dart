@@ -9,7 +9,7 @@ part of mdc_web;
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/checkbox)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-checkbox/index.js)
 class MDCCheckbox extends MDCComponent<_Checkbox>
-    implements MDCSelectionControl, _Checkbox {
+    implements MDCSelectionControl {
   static MDCCheckbox attachTo(Element root) => MDCCheckbox._attach(root);
   MDCCheckbox._attach(Element root) : super._(_Checkbox.attachTo(root));
   MDCCheckbox(Element root, [foundation, args])
@@ -39,12 +39,8 @@ class _Checkbox extends _Component with _SelectionControl {
   external static _Checkbox attachTo(Element root);
   external factory _Checkbox(Element root, [foundation, args]);
 
-  external bool get checked;
-  external void set checked(bool value);
-  external bool get indeterminate;
-  external void set indeterminate(bool value);
-  external bool get disabled;
-  external void set disabled(bool value);
-  external String get value;
-  external void set value(String value);
+  bool checked;
+  bool indeterminate;
+  bool disabled;
+  String value;
 }

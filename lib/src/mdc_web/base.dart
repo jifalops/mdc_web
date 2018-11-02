@@ -6,7 +6,7 @@ part of mdc_web;
 ///
 /// * [Component Reference](https://material.io/develop/web/components/base/#mdccomponent)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/component.js)
-class MDCComponent<T extends _Component> implements _Component {
+class MDCComponent<T extends _Component> {
   static MDCComponent attachTo(Element root) => MDCComponent._attach(root);
 
   /// Example constructor for calling attach on the underlying component.
@@ -56,7 +56,7 @@ class MDCComponent<T extends _Component> implements _Component {
 }
 
 @JS('base.MDCComponent')
-class _Component {
+abstract class _Component {
   external static _Component attachTo(Element root);
   external factory _Component(Element root, [foundation, args]);
 
@@ -79,7 +79,7 @@ class _Component {
 /// * [Component Reference](https://material.io/develop/web/components/base/#mdcfoundation)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/foundation.js)
 @JS('base.MDCFoundation')
-class MDCFoundation {
+abstract class MDCFoundation {
   external factory MDCFoundation([adapter]);
 
   external void init();

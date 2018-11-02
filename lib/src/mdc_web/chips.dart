@@ -8,7 +8,7 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/chips/#mdcchip-and-mdcchipset-properties-and-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/chips)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-chips/chip-set/index.js)
-class MDCChipSet extends MDCComponent<_ChipSet> implements _ChipSet {
+class MDCChipSet extends MDCComponent<_ChipSet> {
   static MDCChipSet attachTo(Element root) => MDCChipSet._attach(root);
   MDCChipSet._attach(Element root) : super._(_ChipSet.attachTo(root));
 
@@ -53,7 +53,7 @@ abstract class _ChipSet extends _Component {
 /// * [Component Reference](https://material.io/develop/web/components/chips/#mdcchip-and-mdcchipset-properties-and-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/chips)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-chips/chip/index.js)
-class MDCChip extends MDCComponent<_Chip> implements _Chip {
+class MDCChip extends MDCComponent<_Chip> {
   static MDCChip attachTo(Element root) => MDCChip._attach(root);
   MDCChip._attach(Element root) : super._(_Chip.attachTo(root));
   MDCChip._(_Chip chip) : super._(chip);
@@ -117,7 +117,7 @@ abstract class _Chip extends _Component {
   external void set selected(bool value);
   external bool get shouldRemoveOnTrailingIconClick;
   external void set shouldRemoveOnTrailingIconClick(bool value);
-  external /*_Ripple*/ get ripple;
+  external _Ripple get ripple;
 
   /// If [shouldRemoveOnTrailingIconClick] is set to false, you must manually
   /// call beginExit() on the chip to remove it.

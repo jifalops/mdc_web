@@ -9,7 +9,7 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/dialogs/#mdcdialog-properties-and-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/dialog)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-dialog/index.js)
-class MDCDialog extends MDCComponent<_Dialog> implements _Dialog {
+class MDCDialog extends MDCComponent<_Dialog> {
   static MDCDialog attachTo(Element root) => MDCDialog._attach(root);
   MDCDialog._attach(Element root) : super._(_Dialog.attachTo(root));
 
