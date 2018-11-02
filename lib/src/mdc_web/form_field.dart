@@ -8,7 +8,8 @@ part of mdc_web;
 ///
 /// * [Component Reference](https://material.io/develop/web/components/input-controls/form-fields/#mdcformfield-properties-and-methods)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-form-field/index.js.
-abstract class MDCFormField extends MDCComponent<_FormField> {
+abstract class MDCFormField extends MDCComponent<_FormField>
+    implements _FormField {
   // static MDCFormField attachTo(Element root) => MDCFormField._attach(root);
   MDCFormField._attach(Element root) : super._(_FormField.attachTo(root));
 
@@ -22,8 +23,8 @@ abstract class MDCFormField extends MDCComponent<_FormField> {
               ? _FormField(root, foundation)
               : _FormField(root, foundation, args);
 
-  MDCSelectionControl get input;
-  void set input(MDCSelectionControl value);
+  MDCSelectionControl get input => _js.input;
+  void set input(/*MDCSelectionControl*/ value) => _js.input = value;
 }
 
 @JS('formField.MDCFormField')
@@ -31,6 +32,6 @@ abstract class _FormField extends _Component {
   external static _FormField attachTo(Element root);
   external factory _FormField(Element root, [foundation, args]);
 
-  external _SelectionControl get input;
-  external void set input(_SelectionControl value);
+  external /*_SelectionControl*/ get input;
+  external void set input(/*_SelectionControl*/ value);
 }

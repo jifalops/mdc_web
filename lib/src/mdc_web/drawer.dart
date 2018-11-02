@@ -8,7 +8,7 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/drawers/#mdcdrawer-properties-and-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/drawer)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-drawer/index.js)
-class MDCDrawer extends MDCComponent<_Drawer> {
+class MDCDrawer extends MDCComponent<_Drawer> implements _Drawer {
   static MDCDrawer attachTo(Element root) => MDCDrawer._attach(root);
   MDCDrawer._attach(Element root) : super._(_Drawer.attachTo(root));
 

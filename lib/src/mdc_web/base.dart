@@ -56,7 +56,7 @@ class MDCComponent<T extends _Component> implements _Component {
 }
 
 @JS('base.MDCComponent')
-abstract class _Component {
+class _Component {
   external static _Component attachTo(Element root);
   external factory _Component(Element root, [foundation, args]);
 
@@ -79,7 +79,7 @@ abstract class _Component {
 /// * [Component Reference](https://material.io/develop/web/components/base/#mdcfoundation)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/foundation.js)
 @JS('base.MDCFoundation')
-abstract class MDCFoundation {
+class MDCFoundation {
   external factory MDCFoundation([adapter]);
 
   external void init();

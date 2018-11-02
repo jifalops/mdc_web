@@ -6,7 +6,7 @@ export 'src/components/base.dart';
 export 'src/components/button.dart';
 
 void registerMdcWebComponents() {
-  document.registerElement(MdcButton.tag, MdcButton);
+  // document.registerElement(MdcButton.tag, MdcButton);
   // window.customElements.define(MdcButton.tag, MdcButton);
 }
 

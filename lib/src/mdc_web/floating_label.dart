@@ -7,7 +7,7 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/input-controls/floating-label/#mdcfloatinglabel-properties-and-methods)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-floating-label/index.js)
 class MDCFloatingLabel extends MDCComponent<_FloatingLabel>
-    implements MDCSelectionControl {
+    implements _FloatingLabel, MDCSelectionControl {
   static MDCFloatingLabel attachTo(Element root) =>
       MDCFloatingLabel._attach(root);
   MDCFloatingLabel._attach(Element root)

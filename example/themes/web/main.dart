@@ -1,6 +1,10 @@
 import 'dart:html';
 import 'package:mdc_web/mdc_web.dart';
 import 'package:mdc_web/components.dart';
+import 'package:js/js.dart';
+
+// @JS('customElements.define')
+// external defineElement(String tag, klass);
 
 void main() {
   // MdcElement.renderQueue.listenOnce(() async {
@@ -8,7 +12,8 @@ void main() {
   //   document.documentElement.style.visibility = 'visible';
   // });
   try {
-    registerMdcWebComponents();
+    // defineElement(MdcButton.tag, MdcButton);
+    // registerMdcWebComponents();
   } catch (e) {
     print('Failed to register web components.');
     print(
@@ -18,9 +23,9 @@ void main() {
     print('A workaround is to serve in release mode ("webdev serve -r');
   }
 
-  MdcButton button = querySelector('mdc-button');
-  button.outlined = true;
-  button.attributes['ripple'] = 'true';
+  // MdcButton button = querySelector('mdc-button');
+  // button.outlined = true;
+  // button.attributes['ripple'] = 'true';
 
   final topAppBar = MDCTopAppBar(querySelector('.mdc-top-app-bar'));
 

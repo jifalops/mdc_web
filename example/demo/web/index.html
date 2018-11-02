@@ -101,7 +101,30 @@
   </div>
 
 
-
+  <script>
+    var abcd = 'efg'
+    function test(callback) {
+      return callback();
+    }
+  </script>
+  <script>
+      function invokeCallback(callback) {
+        callback();
+      }
+      function Kennel() {
+        this.dogs = ['Spot', 'Fido'];
+      }
+      function fetchGoodBoy(callback) {
+        callback('All dogs are good boys!');
+      }
+      function fetchGoodBoys(callback, options) {
+        callback('Fido');
+        callback('Spot');
+        if (options.onDone) {
+          options.onDone();
+        }
+      }
+    </script>
 </body>
 
 </html>
