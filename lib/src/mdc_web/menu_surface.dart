@@ -56,7 +56,7 @@ abstract class _MenuSurface extends _Component {
   bool quickOpen;
 
   /// See [AnchorCorner] for acceptable values.
-  external void setAnchorCorner(num corner);
+  external void setAnchorCorner(int corner);
 
   external void setAnchorMargin(AnchorMargin margin);
   external void setFixedPosition(bool isFixed);

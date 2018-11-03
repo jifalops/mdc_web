@@ -24,8 +24,8 @@ class MDCTabBar extends MDCComponent<_TabBar> {
               ? _TabBar(root, foundation)
               : _TabBar(root, foundation, args);
 
-  void activateTab(num index) => _js.activateTab(index);
-  void scrollIntoView(num index) => _js.scrollIntoView(index);
+  void activateTab(int index) => _js.activateTab(index);
+  void scrollIntoView(int index) => _js.scrollIntoView(index);
 
   /// Event data: {"detail": {"index": number}}
   static const activatedEvent = 'MDCTabBar:activated';
@@ -36,6 +36,6 @@ abstract class _TabBar extends _Component {
   external static _TabBar attachTo(Element root);
   external factory _TabBar(Element root, [foundation, args]);
 
-  external void activateTab(num index);
-  external void scrollIntoView(num index);
+  external void activateTab(int index);
+  external void scrollIntoView(int index);
 }

@@ -31,7 +31,7 @@ class MDCMenu extends MDCComponent<_Menu> {
   List<Element> get items => List.from(_js.items);
 
   /// See [AnchorCorner] for accepted constants.
-  void setAnchorCorner(num corner) => _js.setAnchorCorner(corner);
+  void setAnchorCorner(int corner) => _js.setAnchorCorner(corner);
 
   void setAnchorMargin(AnchorMargin margin) => _js.setAnchorMargin(margin);
   void setFixedPosition(bool isFixed) => _js.setFixedPosition(isFixed);
@@ -46,7 +46,7 @@ class MDCMenu extends MDCComponent<_Menu> {
   /// Should be used with conjunction with hoistMenuToBody().
   void setAnchorElement(Element root) => _js.setAnchorElement(root);
 
-  Element getOptionByIndex(num index) => _js.getOptionByIndex(index);
+  Element getOptionByIndex(int index) => _js.getOptionByIndex(index);
 }
 
 @JS('menu.MDCMenu')
@@ -75,5 +75,5 @@ abstract class _Menu extends _Component {
   /// Should be used with conjunction with hoistMenuToBody().
   external void setAnchorElement(Element root);
 
-  external Element getOptionByIndex(num index);
+  external Element getOptionByIndex(int index);
 }

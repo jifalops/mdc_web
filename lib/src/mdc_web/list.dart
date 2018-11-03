@@ -25,7 +25,7 @@ class MDCList extends MDCComponent<_List> {
   void set vertical(bool value) => _js.vertical = value;
   void set wrapFocus(bool value) => _js.wrapFocus = value;
   void set singleSelection(bool value) => _js.singleSelection = value;
-  void set selectedIndex(num value) => _js.selectedIndex = value;
+  void set selectedIndex(int value) => _js.selectedIndex = value;
 
   List<Element> get listElements => List.from(_js.listElements);
 
@@ -40,7 +40,7 @@ abstract class _List extends _Component {
   external void set vertical(bool value);
   external void set wrapFocus(bool value);
   external void set singleSelection(bool value);
-  external void set selectedIndex(num value);
+  external void set selectedIndex(int value);
 
   external List get listElements;
 
