@@ -1,6 +1,5 @@
 import 'dart:html';
 import 'package:mdc_web/mdc_web.dart';
-import 'package:mdc_web/components.dart';
 import 'package:js/js.dart';
 
 // @JS('customElements.define')
