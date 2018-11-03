@@ -1,4 +1,10 @@
-part of mdc_web;
+@JS('mdc.slider')
+library slider;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
+import 'selection_control.dart';
 
 /// MDC Slider provides an implementation of the Material Design slider
 /// component. It is modeled after the browser’s <input type="range"> element.
@@ -44,7 +50,7 @@ class MDCSlider extends MDCComponent implements MDCSelectionControl {
   void stepDown([num amount = 1]) => js.stepDown(amount);
 
   @override
-  MDCRipple get ripple => MDCRipple._(js.ripple);
+  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 
   /// Emitted whenever the slider value is changed by way of a user event, e.g.
   /// when a user is dragging the slider or changing the value using the arrow
@@ -59,7 +65,7 @@ class MDCSlider extends MDCComponent implements MDCSelectionControl {
   static const changeEvent = 'MDCSlider:change';
 }
 
-@JS('slider.MDCSlider')
+@JS('MDCSlider')
 abstract class SliderComponent extends Component implements SelectionControlComponent {
   external static SliderComponent attachTo(Element root);
   external factory SliderComponent(Element root, [foundation, args]);

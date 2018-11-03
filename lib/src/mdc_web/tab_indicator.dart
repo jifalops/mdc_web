@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.tabIndicator')
+library tabIndicator;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// A Tab Indicator is a visual guide that shows which Tab is active.
 ///
@@ -36,7 +41,7 @@ class MDCTabIndicator extends MDCComponent {
   /*DOMRect*/ computeContentClientRect() => js.computeContentClientRect();
 }
 
-@JS('tabIndicator.MDCTabIndicator')
+@JS('MDCTabIndicator')
 abstract class TabIndicatorComponent extends Component {
   external static TabIndicatorComponent attachTo(Element root);
   external factory TabIndicatorComponent(Element root, [foundation, args]);

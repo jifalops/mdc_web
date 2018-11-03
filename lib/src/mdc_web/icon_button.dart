@@ -1,4 +1,10 @@
-part of mdc_web;
+@JS('mdc.iconButton')
+library iconButton;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
+import 'ripple.dart';
 
 /// Toggle between an on and off icon.
 ///
@@ -31,13 +37,13 @@ class MDCIconButtonToggle extends MDCComponent {
   bool get on => js.on;
   void set on(bool value) => js.on = value;
 
-  MDCRipple get ripple => MDCRipple._(js.ripple);
+  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 
   /// Data structure: {"detail": {"isOn": boolean}}
   static const changeEvent = 'MDCIconButtonToggle:change';
 }
 
-@JS('iconButton.MDCIconButtonToggle')
+@JS('MDCIconButtonToggle')
 abstract class IconButtonToggleComponent extends Component {
   external static IconButtonToggleComponent attachTo(Element root);
   external factory IconButtonToggleComponent(Element root, [foundation, args]);

@@ -1,9 +1,8 @@
-// @JS()
-// library base;
+@JS('mdc.base')
+library base;
 
-// import 'dart:html';
-// import 'package:js/js.dart';
-part of mdc_web;
+import 'dart:html';
+import 'package:js/js.dart';
 
 /// Base class for MDC Web components.
 ///
@@ -39,7 +38,7 @@ abstract class MDCComponent {
       js.emit(type, data, shouldBubble);
 }
 
-@JS('base.MDCComponent')
+@JS('MDCComponent')
 abstract class Component {
   external static Component attachTo(Element root);
   external factory Component(Element root, [foundation, args]);
@@ -62,7 +61,7 @@ abstract class Component {
 ///
 /// * [Component Reference](https://material.io/develop/web/components/base/#mdcfoundation)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/foundation.js)
-@JS('base.MDCFoundation')
+@JS()
 abstract class MDCFoundation {
   external factory MDCFoundation([adapter]);
 

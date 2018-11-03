@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.topAppBar')
+library topAppBar;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// A Top app bar acts as a container for items such as application title,
 /// navigation icon, and action items.
@@ -27,13 +32,13 @@ class MDCTopAppBar extends MDCComponent {
 }
 
 TopAppBarComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? TopAppBarComponent(root)
-          : args == null
-              ? TopAppBarComponent(root, foundation)
-              : TopAppBarComponent(root, foundation, args);
+    foundation == null
+        ? TopAppBarComponent(root)
+        : args == null
+            ? TopAppBarComponent(root, foundation)
+            : TopAppBarComponent(root, foundation, args);
 
-@JS('topAppBar.MDCTopAppBar')
+@JS('MDCTopAppBar')
 abstract class TopAppBarComponent extends Component {
   external static TopAppBarComponent attachTo(Element root);
   external factory TopAppBarComponent(Element root, [foundation, args]);

@@ -1,4 +1,10 @@
-part of mdc_web;
+@JS('mdc.chips')
+library chips;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
+import 'ripple.dart';
 
 /// A set of [MDCChip]s that controls how they interact.
 ///
@@ -36,7 +42,7 @@ class MDCChipSet extends MDCComponent {
   List<int> getSelectedChipIds() => List.from(js.getSelectedChipIds());
 }
 
-@JS('chips.MDCChipSet')
+@JS('MDCChipSet')
 abstract class ChipSetComponent extends Component {
   external static ChipSetComponent attachTo(Element root);
   external factory ChipSetComponent(Element root, [foundation, args]);
@@ -83,7 +89,7 @@ class MDCChip extends MDCComponent {
       js.shouldRemoveOnTrailingIconClick;
   void set shouldRemoveOnTrailingIconClick(bool value) =>
       js.shouldRemoveOnTrailingIconClick = value;
-  MDCRipple get ripple => MDCRipple._(js.ripple);
+  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 
   /// If [shouldRemoveOnTrailingIconClick] is set to false, you must manually
   /// call beginExit() on the chip to remove it.
@@ -111,7 +117,7 @@ class MDCChip extends MDCComponent {
   static const trailingIconInteractionEvent = 'MDCChip:trailingIconInteraction';
 }
 
-@JS('chips.MDCChip')
+@JS('MDCChip')
 abstract class ChipComponent extends Component {
   external static ChipComponent attachTo(Element root);
   external factory ChipComponent(Element root, [foundation, args]);

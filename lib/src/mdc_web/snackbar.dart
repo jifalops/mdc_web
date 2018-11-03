@@ -1,4 +1,10 @@
-part of mdc_web;
+@JS('mdc.snackbar')
+library snackbar;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'package:meta/meta.dart';
+import 'base.dart';
 
 /// Snackbars provide brief messages about app processes at the bottom of the
 /// screen.
@@ -32,7 +38,7 @@ class MDCSnackbar extends MDCComponent {
   void show(SnackbarData data) => js.show(data);
 }
 
-@JS('snackbar.MDCSnackbar')
+@JS('MDCSnackbar')
 abstract class SnackbarComponent extends Component {
   external static SnackbarComponent attachTo(Element root);
   external factory SnackbarComponent(Element root, [foundation, args]);

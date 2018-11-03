@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.drawer')
+library drawer;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// A material design navigation drawer.
 ///
@@ -32,7 +37,7 @@ class MDCDrawer extends MDCComponent {
   static const closedEvent = 'MDCDrawer:closed';
 }
 
-@JS('drawer.MDCDrawer')
+@JS('MDCDrawer')
 abstract class DrawerComponent extends Component {
   external static DrawerComponent attachTo(Element root);
   external factory DrawerComponent(Element root, [foundation, args]);

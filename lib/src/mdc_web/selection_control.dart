@@ -1,4 +1,11 @@
-part of mdc_web;
+@JS('mdc.selectionControl')
+library selectionControl;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'ripple.dart';
+
+export 'ripple.dart';
 
 /// An interface for input controls.
 ///
@@ -9,7 +16,7 @@ abstract class MDCSelectionControl {
   MDCRipple get ripple;
 }
 
-@JS('selectionControl.MDCSelectionControl')
+@JS('MDCSelectionControl')
 abstract class SelectionControlComponent {
   external RippleComponent get ripple;
 }

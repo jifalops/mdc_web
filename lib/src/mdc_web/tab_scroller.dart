@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.tabScroller')
+library tabScroller;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// A Tab Scroller allows for smooth native and animated scrolling of tabs.
 ///
@@ -31,7 +36,7 @@ class MDCTabScroller extends MDCComponent {
   num getScrollContentWidth() => js.getScrollContentWidth();
 }
 
-@JS('tabScroller.MDCTabScroller')
+@JS('MDCTabScroller')
 abstract class TabScrollerComponent extends Component {
   external static TabScrollerComponent attachTo(Element root);
   external factory TabScrollerComponent(Element root, [foundation, args]);

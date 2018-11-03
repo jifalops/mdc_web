@@ -1,4 +1,10 @@
-part of mdc_web;
+@JS('mdc.radio')
+library radio;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
+import 'selection_control.dart';
 
 /// Radio buttons select one item out of a list.
 ///
@@ -33,11 +39,12 @@ class MDCRadio extends MDCComponent implements MDCSelectionControl {
   void set value(String value) => js.value = value;
 
   @override
-  MDCRipple get ripple => MDCRipple._(js.ripple);
+  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 }
 
-@JS('radio.MDCRadio')
-abstract class RadioComponent extends Component implements SelectionControlComponent {
+@JS('MDCRadio')
+abstract class RadioComponent extends Component
+    implements SelectionControlComponent {
   external static RadioComponent attachTo(Element root);
   external factory RadioComponent(Element root, [foundation, args]);
 

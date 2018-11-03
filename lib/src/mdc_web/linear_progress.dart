@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.linearProgress')
+library linearProgress;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// A linear progress indicator.
 ///
@@ -41,7 +46,7 @@ class MDCLinearProgress extends MDCComponent {
   void close() => js.close();
 }
 
-@JS('linearProgress.MDCLinearProgress')
+@JS('MDCLinearProgress')
 abstract class LinearProgressComponent extends Component {
   external static LinearProgressComponent attachTo(Element root);
   external factory LinearProgressComponent(Element root, [foundation, args]);

@@ -1,4 +1,10 @@
-part of mdc_web;
+@JS('mdc.textField')
+library textField;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
+import 'selection_control.dart';
 
 /// Text fields allow users to input, edit, and select text.
 ///
@@ -59,10 +65,10 @@ class MDCTextField extends MDCComponent implements MDCSelectionControl {
   void layout() => js.layout();
 
   @override
-  MDCRipple get ripple => MDCRipple._(js.ripple);
+  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 }
 
-@JS('textField.MDCTextField')
+@JS('MDCTextField')
 abstract class TextFieldComponent extends Component implements SelectionControlComponent {
   external static TextFieldComponent attachTo(Element root);
   external factory TextFieldComponent(Element root, [foundation, args]);

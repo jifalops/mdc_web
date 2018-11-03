@@ -1,12 +1,10 @@
-// @JS()
-// library base;
+@JS('mdc.checkbox')
+library checkbox;
 
-// import 'dart:html';
-// import 'package:js/js.dart';
-// import 'base.dart';
-// import 'selection_control.dart';
-
-part of mdc_web;
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
+import 'selection_control.dart';
 
 /// A material design checkbox. To listen for changes, use the native event.
 ///
@@ -42,11 +40,12 @@ class MDCCheckbox extends MDCComponent implements MDCSelectionControl {
   String get value => js.value;
   void set value(String value) => js.value = value;
   @override
-  MDCRipple get ripple => MDCRipple._(js.ripple);
+  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 }
 
-@JS('checkbox.MDCCheckbox')
-abstract class CheckboxComponent extends Component implements SelectionControlComponent {
+@JS('MDCCheckbox')
+abstract class CheckboxComponent extends Component
+    implements SelectionControlComponent {
   external static CheckboxComponent attachTo(Element root);
   external factory CheckboxComponent(Element root, [foundation, args]);
 

@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.list')
+library list;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// Lists are continuous, vertical indexes of text or images.
 ///
@@ -35,7 +40,7 @@ class MDCList extends MDCComponent {
   void layout() => js.layout();
 }
 
-@JS('list.MDCList')
+@JS('MDCList')
 abstract class ListComponent extends Component {
   external static ListComponent attachTo(Element root);
   external factory ListComponent(Element root, [foundation, args]);

@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.menuSurface')
+library menuSurface;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// A reusable surface that appears above the content of the page and can be
 /// positioned adjacent to an element.
@@ -50,7 +55,7 @@ class MDCMenuSurface extends MDCComponent {
   static const closedEvent = 'MDCMenuSurface:closed';
 }
 
-@JS('menuSurface.MDCMenuSurface')
+@JS('MDCMenuSurface')
 abstract class MenuSurfaceComponent extends Component {
   external static MenuSurfaceComponent attachTo(Element root);
   external factory MenuSurfaceComponent(Element root, [foundation, args]);
@@ -75,7 +80,7 @@ abstract class MenuSurfaceComponent extends Component {
   external void setIsHoisted(bool hoisted);
 }
 
-@JS('menuSurface.Corner')
+@JS('Corner')
 abstract class MenuSurfaceCorner {
   external static int get TOP_LEFT;
   external static int get TOP_RIGHT;

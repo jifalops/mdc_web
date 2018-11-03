@@ -1,4 +1,10 @@
-part of mdc_web;
+@JS('mdc.select')
+library select;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
+import 'selection_control.dart';
 
 /// A drop-down selection menu.
 ///
@@ -35,10 +41,10 @@ class MDCSelect extends MDCComponent implements MDCSelectionControl {
   void set selectedIndex(int value) => js.selectedIndex = value;
 
   @override
-  MDCRipple get ripple => MDCRipple._(js.ripple);
+  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 }
 
-@JS('select.MDCSelect')
+@JS('MDCSelect')
 abstract class SelectComponent extends Component implements SelectionControlComponent {
   external static SelectComponent attachTo(Element root);
   external factory SelectComponent(Element root, [foundation, args]);

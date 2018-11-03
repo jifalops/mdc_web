@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.tab')
+library tab;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// A tab governs the visibility of one group of content.
 ///
@@ -46,7 +51,7 @@ class MDCTab extends MDCComponent {
   static const interactedEvent = 'MDCTab:interacted';
 }
 
-@JS('tab.MDCTab')
+@JS('MDCTab')
 abstract class TabComponent extends Component {
   external static TabComponent attachTo(Element root);
   external factory TabComponent(Element root, [foundation, args]);

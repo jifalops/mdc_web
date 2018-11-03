@@ -1,4 +1,10 @@
-part of mdc_web;
+@JS('mdc.floatingLabel')
+library floatingLabel;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
+import 'selection_control.dart';
 
 /// Floating labels display the type of input a field requires.
 ///
@@ -29,10 +35,10 @@ class MDCFloatingLabel extends MDCComponent implements MDCSelectionControl {
   num getWidth() => js.getWidth();
 
   @override
-  MDCRipple get ripple => MDCRipple._(js.ripple);
+  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 }
 
-@JS('floatingLabel.MDCFloatingLabel')
+@JS('MDCFloatingLabel')
 abstract class FloatingLabelComponent extends Component implements SelectionControlComponent {
   external static FloatingLabelComponent attachTo(Element root);
   external factory FloatingLabelComponent(Element root, [foundation, args]);

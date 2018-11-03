@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.tabBar')
+library tabBar;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// Tabs organize and allow navigation between groups of content that are
 /// related and at the same level of hierarchy. The Tab Bar contains the Tab
@@ -34,7 +39,7 @@ class MDCTabBar extends MDCComponent {
   static const activatedEvent = 'MDCTabBar:activated';
 }
 
-@JS('tabBar.MDCTabBar')
+@JS('MDCTabBar')
 abstract class TabBarComponent extends Component {
   external static TabBarComponent attachTo(Element root);
   external factory TabBarComponent(Element root, [foundation, args]);

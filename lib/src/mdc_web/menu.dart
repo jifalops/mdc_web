@@ -1,4 +1,10 @@
-part of mdc_web;
+@JS('mdc.menu')
+library menu;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
+import 'menu_surface.dart';
 
 /// A menu displays a list of choices on a temporary surface. They appear when
 /// users interact with a button, action, or other control.
@@ -52,7 +58,7 @@ class MDCMenu extends MDCComponent {
   Element getOptionByIndex(int index) => js.getOptionByIndex(index);
 }
 
-@JS('menu.MDCMenu')
+@JS('MDCMenu')
 abstract class MenuComponent extends Component {
   external static MenuComponent attachTo(Element root);
   external factory MenuComponent(Element root, [foundation, args]);

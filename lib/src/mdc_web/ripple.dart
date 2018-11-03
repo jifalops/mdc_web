@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.ripple')
+library ripple;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// Material design surface ripples.
 ///
@@ -16,7 +21,7 @@ class MDCRipple extends MDCComponent {
   MDCRipple(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  MDCRipple._(this._js);
+  MDCRipple.fromComponent(this._js);
 
   static RippleComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -48,7 +53,7 @@ class MDCRipple extends MDCComponent {
       RippleComponent.createAdapter(ripple.js);
 }
 
-@JS('ripple.MDCRipple')
+@JS('MDCRipple')
 abstract class RippleComponent extends Component {
   external static RippleComponent attachTo(Element root, [bool unbounded]);
   external factory RippleComponent(Element root, [foundation, args]);

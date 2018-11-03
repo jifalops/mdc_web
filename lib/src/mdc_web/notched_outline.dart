@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.notchedOutline')
+library notchedOutline;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// The notched outline is a border around all sides of either a Text Field or
 /// Select component. This is used for the Outlined variant of either a Text
@@ -31,7 +36,7 @@ class MDCNotchedOutline extends MDCComponent {
   void closeNotch() => js.closeNotch();
 }
 
-@JS('notchedOutline.MDCNotchedOutline')
+@JS('MDCNotchedOutline')
 abstract class NotchedOutlineComponent extends Component {
   external static NotchedOutlineComponent attachTo(Element root);
   external factory NotchedOutlineComponent(Element root, [foundation, args]);

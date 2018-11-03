@@ -1,4 +1,10 @@
-part of mdc_web;
+@JS('mdc.formField')
+library formField;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
+import 'selection_control.dart';
 
 /// MDC Form Field aligns an MDC Web form field (for example, a checkbox) with
 /// its label and makes it RTL-aware. It also activates a ripple effect upon
@@ -29,7 +35,7 @@ class MDCFormField extends MDCComponent {
   void set input(MDCSelectionControl value) => js.input = value;
 }
 
-@JS('formField.MDCFormField')
+@JS('MDCFormField')
 abstract class FormFieldComponent extends Component {
   external static FormFieldComponent attachTo(Element root);
   external factory FormFieldComponent(Element root, [foundation, args]);

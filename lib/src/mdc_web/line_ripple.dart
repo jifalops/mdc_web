@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.lineRipple')
+library lineRipple;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// The line ripple is used to highlight user-specified input above it. When a
 /// line ripple is active, the line’s color and thickness changes.
@@ -29,7 +34,7 @@ class MDCLineRipple extends MDCComponent {
   void setRippleCenter(num xCoordinate) => js.setRippleCenter(xCoordinate);
 }
 
-@JS('lineRipple.MDCLineRipple')
+@JS('MDCLineRipple')
 abstract class LineRippleComponent extends Component {
   external static LineRippleComponent attachTo(Element root);
   external factory LineRippleComponent(Element root, [foundation, args]);

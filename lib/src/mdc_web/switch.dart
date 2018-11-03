@@ -1,4 +1,10 @@
-part of mdc_web;
+@JS('mdc.switchControl')
+library switchControl;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
+import 'selection_control.dart';
 
 /// A toggle switch control.
 ///
@@ -31,11 +37,12 @@ class MDCSwitch extends MDCComponent implements MDCSelectionControl {
   void set disabled(bool value) => js.disabled = value;
 
   @override
-  MDCRipple get ripple => MDCRipple._(js.ripple);
+  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 }
 
-@JS('switchControl.MDCSwitch')
-abstract class SwitchComponent extends Component implements SelectionControlComponent {
+@JS('MDCSwitch')
+abstract class SwitchComponent extends Component
+    implements SelectionControlComponent {
   external static SwitchComponent attachTo(Element root);
   external factory SwitchComponent(Element root, [foundation, args]);
 

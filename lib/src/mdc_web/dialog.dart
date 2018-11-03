@@ -1,4 +1,9 @@
-part of mdc_web;
+@JS('mdc.dialog')
+library dialog;
+
+import 'dart:html';
+import 'package:js/js.dart';
+import 'base.dart';
 
 /// Dialogs inform users about a task and can contain critical information,
 /// require decisions, or involve multiple tasks.
@@ -52,7 +57,7 @@ class MDCDialog extends MDCComponent {
   static const closedEvent = 'MDCDialog:closed';
 }
 
-@JS('dialog.MDCDialog')
+@JS('MDCDialog')
 abstract class DialogComponent extends Component {
   external static DialogComponent attachTo(Element root);
   external factory DialogComponent(Element root, [foundation, args]);
