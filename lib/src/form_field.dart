@@ -1,4 +1,3 @@
-
 import 'base.dart';
 import 'selection_control.dart';
 import 'mdc_web/form_field.dart';
@@ -18,17 +17,16 @@ class MDCFormField extends MDCComponent {
   MDCFormField(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-
-
   FormFieldComponent get js => _js;
   final FormFieldComponent _js;
 
   MDCSelectionControl get input => js.input;
   void set input(MDCSelectionControl value) => js.input = value;
 }
-   FormFieldComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? FormFieldComponent(root)
-          : args == null
-              ? FormFieldComponent(root, foundation)
-              : FormFieldComponent(root, foundation, args);
+
+FormFieldComponent _preserveUndefined(Element root, foundation, args) =>
+    foundation == null
+        ? FormFieldComponent(root)
+        : args == null
+            ? FormFieldComponent(root, foundation)
+            : FormFieldComponent(root, foundation, args);

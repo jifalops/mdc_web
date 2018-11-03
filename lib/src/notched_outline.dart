@@ -1,4 +1,3 @@
-
 import 'base.dart';
 import 'mdc_web/notched_outline.dart';
 
@@ -19,17 +18,16 @@ class MDCNotchedOutline extends MDCComponent {
   MDCNotchedOutline(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-
-
   NotchedOutlineComponent get js => _js;
   final NotchedOutlineComponent _js;
 
   void notch(num notchWidth, bool isRtl) => js.notch(notchWidth, isRtl);
   void closeNotch() => js.closeNotch();
 }
- NotchedOutlineComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? NotchedOutlineComponent(root)
-          : args == null
-              ? NotchedOutlineComponent(root, foundation)
-              : NotchedOutlineComponent(root, foundation, args);
+
+NotchedOutlineComponent _preserveUndefined(Element root, foundation, args) =>
+    foundation == null
+        ? NotchedOutlineComponent(root)
+        : args == null
+            ? NotchedOutlineComponent(root, foundation)
+            : NotchedOutlineComponent(root, foundation, args);

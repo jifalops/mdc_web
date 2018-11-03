@@ -13,7 +13,8 @@ import 'selection_control.dart';
 /// * [Component Reference](https://material.io/develop/web/components/input-controls/floating-label/#mdcfloatinglabel-properties-and-methods)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-floating-label/index.js)
 @JS('MDCFloatingLabel')
-abstract class FloatingLabelComponent extends Component implements SelectionControlComponent {
+abstract class FloatingLabelComponent extends Component
+    implements SelectionControlComponent {
   external static FloatingLabelComponent attachTo(Element root);
   external factory FloatingLabelComponent(Element root, [foundation, args]);
 

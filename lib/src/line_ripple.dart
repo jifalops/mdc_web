@@ -1,4 +1,3 @@
-
 import 'base.dart';
 import 'mdc_web/line_ripple.dart';
 
@@ -11,12 +10,11 @@ import 'mdc_web/line_ripple.dart';
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-line-ripple/index.js)
 class MDCLineRipple extends MDCComponent {
   static MDCLineRipple attachTo(Element root) => MDCLineRipple._attach(root);
-  MDCLineRipple._attach(Element root) : _js = LineRippleComponent.attachTo(root);
+  MDCLineRipple._attach(Element root)
+      : _js = LineRippleComponent.attachTo(root);
 
   MDCLineRipple(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
-
-
 
   LineRippleComponent get js => _js;
   final LineRippleComponent _js;
@@ -25,9 +23,10 @@ class MDCLineRipple extends MDCComponent {
   void deactivate() => js.deactivate();
   void setRippleCenter(num xCoordinate) => js.setRippleCenter(xCoordinate);
 }
-   LineRippleComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? LineRippleComponent(root)
-          : args == null
-              ? LineRippleComponent(root, foundation)
-              : LineRippleComponent(root, foundation, args);
+
+LineRippleComponent _preserveUndefined(Element root, foundation, args) =>
+    foundation == null
+        ? LineRippleComponent(root)
+        : args == null
+            ? LineRippleComponent(root, foundation)
+            : LineRippleComponent(root, foundation, args);

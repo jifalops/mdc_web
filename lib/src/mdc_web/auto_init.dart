@@ -13,4 +13,3 @@ import 'package:js/js.dart';
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-auto-init)
 @JS()
 external void autoInit([Node root, void Function(String) warn]);
-

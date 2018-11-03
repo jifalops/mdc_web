@@ -1,4 +1,3 @@
-
 import 'base.dart';
 import 'mdc_web/tab.dart';
 
@@ -18,8 +17,6 @@ class MDCTab extends MDCComponent {
 
   MDCTab(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
-
-
 
   TabComponent get js => _js;
   final TabComponent _js;
@@ -44,9 +41,10 @@ class MDCTab extends MDCComponent {
   /// Event data: {"detail": {"tab": MDCTab}}
   static const interactedEvent = 'MDCTab:interacted';
 }
-   TabComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? TabComponent(root)
-          : args == null
-              ? TabComponent(root, foundation)
-              : TabComponent(root, foundation, args);
+
+TabComponent _preserveUndefined(Element root, foundation, args) =>
+    foundation == null
+        ? TabComponent(root)
+        : args == null
+            ? TabComponent(root, foundation)
+            : TabComponent(root, foundation, args);

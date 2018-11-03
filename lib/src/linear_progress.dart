@@ -1,4 +1,3 @@
-
 import 'base.dart';
 import 'mdc_web/linear_progress.dart';
 
@@ -19,8 +18,6 @@ class MDCLinearProgress extends MDCComponent {
   MDCLinearProgress(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-
-
   LinearProgressComponent get js => _js;
   final LinearProgressComponent _js;
 
@@ -37,9 +34,10 @@ class MDCLinearProgress extends MDCComponent {
   void open() => js.open();
   void close() => js.close();
 }
-   LinearProgressComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? LinearProgressComponent(root)
-          : args == null
-              ? LinearProgressComponent(root, foundation)
-              : LinearProgressComponent(root, foundation, args);
+
+LinearProgressComponent _preserveUndefined(Element root, foundation, args) =>
+    foundation == null
+        ? LinearProgressComponent(root)
+        : args == null
+            ? LinearProgressComponent(root, foundation)
+            : LinearProgressComponent(root, foundation, args);

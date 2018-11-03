@@ -1,4 +1,3 @@
-
 import 'base.dart';
 import 'mdc_web/ripple.dart';
 
@@ -20,8 +19,6 @@ class MDCRipple extends MDCComponent {
 
   MDCRipple.fromComponent(this._js);
 
-
-
   RippleComponent get js => _js;
   final RippleComponent _js;
 
@@ -39,14 +36,14 @@ class MDCRipple extends MDCComponent {
   static createAdapter(MDCRipple ripple) =>
       RippleComponent.createAdapter(ripple.js);
 }
-  RippleComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? RippleComponent(root)
-          : args == null
-              ? RippleComponent(root, foundation)
-              : RippleComponent(root, foundation, args);
-   RippleComponent _preserveUndefinedAttach(
-          Element root, bool unbounded) =>
-      unbounded == null
-          ? RippleComponent.attachTo(root)
-          : RippleComponent.attachTo(root, unbounded);
+
+RippleComponent _preserveUndefined(Element root, foundation, args) =>
+    foundation == null
+        ? RippleComponent(root)
+        : args == null
+            ? RippleComponent(root, foundation)
+            : RippleComponent(root, foundation, args);
+RippleComponent _preserveUndefinedAttach(Element root, bool unbounded) =>
+    unbounded == null
+        ? RippleComponent.attachTo(root)
+        : RippleComponent.attachTo(root, unbounded);

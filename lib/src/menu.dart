@@ -1,4 +1,3 @@
-
 import 'base.dart';
 import 'menu_surface.dart';
 import 'mdc_web/menu.dart';
@@ -20,8 +19,6 @@ class MDCMenu extends MDCComponent {
 
   MDCMenu(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
-
-
 
   MenuComponent get js => _js;
   final MenuComponent _js;
@@ -51,9 +48,10 @@ class MDCMenu extends MDCComponent {
 
   Element getOptionByIndex(int index) => js.getOptionByIndex(index);
 }
-   MenuComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? MenuComponent(root)
-          : args == null
-              ? MenuComponent(root, foundation)
-              : MenuComponent(root, foundation, args);
+
+MenuComponent _preserveUndefined(Element root, foundation, args) =>
+    foundation == null
+        ? MenuComponent(root)
+        : args == null
+            ? MenuComponent(root, foundation)
+            : MenuComponent(root, foundation, args);

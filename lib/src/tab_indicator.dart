@@ -1,4 +1,3 @@
-
 import 'base.dart';
 import 'mdc_web/tab_indicator.dart';
 
@@ -13,11 +12,11 @@ import 'mdc_web/tab_indicator.dart';
 class MDCTabIndicator extends MDCComponent {
   static MDCTabIndicator attachTo(Element root) =>
       MDCTabIndicator._attach(root);
-  MDCTabIndicator._attach(Element root) : _js = TabIndicatorComponent.attachTo(root);
+  MDCTabIndicator._attach(Element root)
+      : _js = TabIndicatorComponent.attachTo(root);
 
   MDCTabIndicator(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
-
 
   TabIndicatorComponent get js => _js;
   final TabIndicatorComponent _js;
@@ -32,9 +31,9 @@ class MDCTabIndicator extends MDCComponent {
   /*DOMRect*/ computeContentClientRect() => js.computeContentClientRect();
 }
 
-   TabIndicatorComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? TabIndicatorComponent(root)
-          : args == null
-              ? TabIndicatorComponent(root, foundation)
-              : TabIndicatorComponent(root, foundation, args);
+TabIndicatorComponent _preserveUndefined(Element root, foundation, args) =>
+    foundation == null
+        ? TabIndicatorComponent(root)
+        : args == null
+            ? TabIndicatorComponent(root, foundation)
+            : TabIndicatorComponent(root, foundation, args);

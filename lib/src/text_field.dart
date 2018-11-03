@@ -1,4 +1,3 @@
-
 import 'base.dart';
 import 'selection_control.dart';
 import 'mdc_web/text_field.dart';
@@ -17,8 +16,6 @@ class MDCTextField extends MDCComponent implements MDCSelectionControl {
 
   MDCTextField(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
-
-
 
   TextFieldComponent get js => _js;
   final TextFieldComponent _js;
@@ -59,9 +56,10 @@ class MDCTextField extends MDCComponent implements MDCSelectionControl {
   @override
   MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 }
-   TextFieldComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? TextFieldComponent(root)
-          : args == null
-              ? TextFieldComponent(root, foundation)
-              : TextFieldComponent(root, foundation, args);
+
+TextFieldComponent _preserveUndefined(Element root, foundation, args) =>
+    foundation == null
+        ? TextFieldComponent(root)
+        : args == null
+            ? TextFieldComponent(root, foundation)
+            : TextFieldComponent(root, foundation, args);

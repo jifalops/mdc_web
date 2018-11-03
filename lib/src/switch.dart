@@ -1,4 +1,3 @@
-
 import 'base.dart';
 import 'selection_control.dart';
 import 'mdc_web/switch.dart';
@@ -18,7 +17,6 @@ class MDCSwitch extends MDCComponent implements MDCSelectionControl {
   MDCSwitch(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-
   SwitchComponent get js => _js;
   final SwitchComponent _js;
 
@@ -31,9 +29,9 @@ class MDCSwitch extends MDCComponent implements MDCSelectionControl {
   MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 }
 
-   SwitchComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? SwitchComponent(root)
-          : args == null
-              ? SwitchComponent(root, foundation)
-              : SwitchComponent(root, foundation, args);
+SwitchComponent _preserveUndefined(Element root, foundation, args) =>
+    foundation == null
+        ? SwitchComponent(root)
+        : args == null
+            ? SwitchComponent(root, foundation)
+            : SwitchComponent(root, foundation, args);

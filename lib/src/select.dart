@@ -1,4 +1,3 @@
-
 import 'base.dart';
 import 'selection_control.dart';
 import 'mdc_web/select.dart';
@@ -18,8 +17,6 @@ class MDCSelect extends MDCComponent implements MDCSelectionControl {
   MDCSelect(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-
-
   SelectComponent get js => _js;
   final SelectComponent _js;
 
@@ -35,9 +32,10 @@ class MDCSelect extends MDCComponent implements MDCSelectionControl {
   @override
   MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 }
-   SelectComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? SelectComponent(root)
-          : args == null
-              ? SelectComponent(root, foundation)
-              : SelectComponent(root, foundation, args);
+
+SelectComponent _preserveUndefined(Element root, foundation, args) =>
+    foundation == null
+        ? SelectComponent(root)
+        : args == null
+            ? SelectComponent(root, foundation)
+            : SelectComponent(root, foundation, args);

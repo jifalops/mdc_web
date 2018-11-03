@@ -1,4 +1,3 @@
-
 import 'base.dart';
 import 'mdc_web/list.dart';
 
@@ -17,8 +16,6 @@ class MDCList extends MDCComponent {
   MDCList(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-
-
   ListComponent get js => _js;
   final ListComponent _js;
 
@@ -31,9 +28,10 @@ class MDCList extends MDCComponent {
 
   void layout() => js.layout();
 }
-   ListComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? ListComponent(root)
-          : args == null
-              ? ListComponent(root, foundation)
-              : ListComponent(root, foundation, args);
+
+ListComponent _preserveUndefined(Element root, foundation, args) =>
+    foundation == null
+        ? ListComponent(root)
+        : args == null
+            ? ListComponent(root, foundation)
+            : ListComponent(root, foundation, args);

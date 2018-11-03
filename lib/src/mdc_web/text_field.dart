@@ -15,7 +15,8 @@ import 'selection_control.dart';
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/text-field)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield/index.js)
 @JS('MDCTextField')
-abstract class TextFieldComponent extends Component implements SelectionControlComponent {
+abstract class TextFieldComponent extends Component
+    implements SelectionControlComponent {
   external static TextFieldComponent attachTo(Element root);
   external factory TextFieldComponent(Element root, [foundation, args]);
 

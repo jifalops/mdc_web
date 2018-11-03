@@ -15,7 +15,8 @@ import 'selection_control.dart';
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/select)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-select/index.js)
 @JS('MDCSelect')
-abstract class SelectComponent extends Component implements SelectionControlComponent {
+abstract class SelectComponent extends Component
+    implements SelectionControlComponent {
   external static SelectComponent attachTo(Element root);
   external factory SelectComponent(Element root, [foundation, args]);
 

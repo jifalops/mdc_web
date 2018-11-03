@@ -1,4 +1,3 @@
-
 import 'base.dart';
 import 'mdc_web/top_app_bar.dart';
 
@@ -34,4 +33,3 @@ TopAppBarComponent _preserveUndefined(Element root, foundation, args) =>
         : args == null
             ? TopAppBarComponent(root, foundation)
             : TopAppBarComponent(root, foundation, args);
-

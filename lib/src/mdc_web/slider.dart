@@ -18,7 +18,8 @@ import 'selection_control.dart';
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/slider)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-slider/index.js)
 @JS('MDCSlider')
-abstract class SliderComponent extends Component implements SelectionControlComponent {
+abstract class SliderComponent extends Component
+    implements SelectionControlComponent {
   external static SliderComponent attachTo(Element root);
   external factory SliderComponent(Element root, [foundation, args]);
 

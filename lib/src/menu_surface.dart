@@ -1,5 +1,3 @@
-
-
 import 'base.dart';
 import 'mdc_web/menu_surface.dart';
 
@@ -14,11 +12,11 @@ export 'mdc_web/menu_surface.dart' show AnchorMargin;
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-menu-surface/index.js)
 class MDCMenuSurface extends MDCComponent {
   static MDCMenuSurface attachTo(Element root) => MDCMenuSurface._attach(root);
-  MDCMenuSurface._attach(Element root) : _js = MenuSurfaceComponent.attachTo(root);
+  MDCMenuSurface._attach(Element root)
+      : _js = MenuSurfaceComponent.attachTo(root);
 
   MDCMenuSurface(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
-
 
   MenuSurfaceComponent get js => _js;
   final MenuSurfaceComponent _js;
@@ -49,12 +47,12 @@ class MDCMenuSurface extends MDCComponent {
   static const closedEvent = 'MDCMenuSurface:closed';
 }
 
-   MenuSurfaceComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? MenuSurfaceComponent(root)
-          : args == null
-              ? MenuSurfaceComponent(root, foundation)
-              : MenuSurfaceComponent(root, foundation, args);
+MenuSurfaceComponent _preserveUndefined(Element root, foundation, args) =>
+    foundation == null
+        ? MenuSurfaceComponent(root)
+        : args == null
+            ? MenuSurfaceComponent(root, foundation)
+            : MenuSurfaceComponent(root, foundation, args);
 
 /// The anchored corner of an [MDCMenu] or [MDCMenuSurface].
 class AnchorCorner {
