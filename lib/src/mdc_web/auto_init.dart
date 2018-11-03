@@ -1,5 +1,5 @@
 @JS('mdc')
-library autoinit;
+library autoInit;
 
 import 'dart:html';
 import 'package:js/js.dart';
@@ -14,5 +14,3 @@ import 'package:js/js.dart';
 @JS()
 external void autoInit([Node root, void Function(String) warn]);
 
-/// Triggered when initialization of all components is complete.
-const autoInitEndEvent = 'MDCAutoInit:End';
