@@ -8,12 +8,12 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/drawers/#mdcdrawer-properties-and-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/drawer)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-drawer/index.js)
-class MDCDrawer extends MDCComponent<_Drawer> {
+class MDCDrawer extends MDCComponent {
   static MDCDrawer attachTo(Element root) => MDCDrawer._attach(root);
-  MDCDrawer._attach(Element root) : super._(_Drawer.attachTo(root));
+  MDCDrawer._attach(Element root) : _js = _Drawer.attachTo(root);
 
   MDCDrawer(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
   static _Drawer _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -22,8 +22,11 @@ class MDCDrawer extends MDCComponent<_Drawer> {
               ? _Drawer(root, foundation)
               : _Drawer(root, foundation, args);
 
-  bool get open => _js.open;
-  void set open(bool value) => _js.open = value;
+  _Drawer get js => _js;
+  final _Drawer _js;
+
+  bool get open => js.open;
+  void set open(bool value) => js.open = value;
 
   static const openedEvent = 'MDCDrawer:opened';
   static const closedEvent = 'MDCDrawer:closed';

@@ -8,12 +8,12 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/tabs/tab/#mdctab-properties-and-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/tabs)
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-tab/index.js)
-class MDCTab extends MDCComponent<_Tab> {
+class MDCTab extends MDCComponent {
   static MDCTab attachTo(Element root) => MDCTab._attach(root);
-  MDCTab._attach(Element root) : super._(_Tab.attachTo(root));
+  MDCTab._attach(Element root) : _js = _Tab.attachTo(root);
 
   MDCTab(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
   static _Tab _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -22,19 +22,22 @@ class MDCTab extends MDCComponent<_Tab> {
               ? _Tab(root, foundation)
               : _Tab(root, foundation, args);
 
-  bool get active => _js.active;
+  _Tab get js => _js;
+  final _Tab _js;
+
+  bool get active => js.active;
 
   /// [previousIndicatorClientRect] is a DOMRect. See also
   /// [computeIndicatorClientRect()].
   void activate([/*DOMRect*/ previousIndicatorClientRect]) =>
-      _js.activate(previousIndicatorClientRect);
-  void deactivate() => _js.deactivate();
-  void focus() => _js.focus();
+      js.activate(previousIndicatorClientRect);
+  void deactivate() => js.deactivate();
+  void focus() => js.focus();
 
   /// Returns a DOMRect.
-  /*DOMRect*/ computeIndicatorClientRect() => _js.computeIndicatorClientRect();
+  /*DOMRect*/ computeIndicatorClientRect() => js.computeIndicatorClientRect();
 
-  MDCTabDimensions computeDimensions() => _js.computeDimensions();
+  MDCTabDimensions computeDimensions() => js.computeDimensions();
 
   /// Emitted when the Tab is interacted with, regardless of its active state.
   /// Used by parent components to know which Tab to activate.
@@ -59,8 +62,6 @@ abstract class _Tab extends _Component {
   /// Returns a DOMRect.
   external /*DOMRect*/ computeIndicatorClientRect();
 
-  /// {rootLeft: number, rootRight: number, contentLeft: number, contentRight:
-  /// number}
   external MDCTabDimensions computeDimensions();
 }
 

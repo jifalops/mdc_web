@@ -10,12 +10,12 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/tabs/tab-bar/#mdctabbar-properties-and-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/tabs)
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-tab-bar/index.js)
-class MDCTabBar extends MDCComponent<_TabBar> {
+class MDCTabBar extends MDCComponent {
   static MDCTabBar attachTo(Element root) => MDCTabBar._attach(root);
-  MDCTabBar._attach(Element root) : super._(_TabBar.attachTo(root));
+  MDCTabBar._attach(Element root) : _js = _TabBar.attachTo(root);
 
   MDCTabBar(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
   static _TabBar _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -24,8 +24,11 @@ class MDCTabBar extends MDCComponent<_TabBar> {
               ? _TabBar(root, foundation)
               : _TabBar(root, foundation, args);
 
-  void activateTab(int index) => _js.activateTab(index);
-  void scrollIntoView(int index) => _js.scrollIntoView(index);
+  _TabBar get js => _js;
+  final _TabBar _js;
+
+  void activateTab(int index) => js.activateTab(index);
+  void scrollIntoView(int index) => js.scrollIntoView(index);
 
   /// Event data: {"detail": {"index": number}}
   static const activatedEvent = 'MDCTabBar:activated';

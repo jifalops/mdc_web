@@ -6,15 +6,13 @@ part of mdc_web;
 ///
 /// * [Component Reference](https://material.io/develop/web/components/input-controls/floating-label/#mdcfloatinglabel-properties-and-methods)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-floating-label/index.js)
-class MDCFloatingLabel extends MDCComponent<_FloatingLabel>
-    implements MDCSelectionControl {
+class MDCFloatingLabel extends MDCComponent implements MDCSelectionControl {
   static MDCFloatingLabel attachTo(Element root) =>
       MDCFloatingLabel._attach(root);
-  MDCFloatingLabel._attach(Element root)
-      : super._(_FloatingLabel.attachTo(root));
+  MDCFloatingLabel._attach(Element root) : _js = _FloatingLabel.attachTo(root);
 
   MDCFloatingLabel(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
   static _FloatingLabel _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -23,12 +21,15 @@ class MDCFloatingLabel extends MDCComponent<_FloatingLabel>
               ? _FloatingLabel(root, foundation)
               : _FloatingLabel(root, foundation, args);
 
-  void shake(bool shouldShake) => _js.shake(shouldShake);
-  void float(bool shouldFloat) => _js.float(shouldFloat);
-  num getWidth() => _js.getWidth();
+  _FloatingLabel get js => _js;
+  final _FloatingLabel _js;
+
+  void shake(bool shouldShake) => js.shake(shouldShake);
+  void float(bool shouldFloat) => js.float(shouldFloat);
+  num getWidth() => js.getWidth();
 
   @override
-  MDCRipple get ripple => MDCRipple._(_js.ripple);
+  MDCRipple get ripple => MDCRipple._(js.ripple);
 }
 
 @JS('floatingLabel.MDCFloatingLabel')

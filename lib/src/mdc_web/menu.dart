@@ -9,12 +9,12 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/menus/#mdcmenu-properties-and-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/menu)
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-menu/index.js)
-class MDCMenu extends MDCComponent<_Menu> {
+class MDCMenu extends MDCComponent {
   static MDCMenu attachTo(Element root) => MDCMenu._attach(root);
-  MDCMenu._attach(Element root) : super._(_Menu.attachTo(root));
+  MDCMenu._attach(Element root) : _js = _Menu.attachTo(root);
 
   MDCMenu(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
   static _Menu _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -23,30 +23,33 @@ class MDCMenu extends MDCComponent<_Menu> {
               ? _Menu(root, foundation)
               : _Menu(root, foundation, args);
 
-  bool get open => _js.open;
-  void set open(bool value) => _js.open = value;
-  bool get quickOpen => _js.quickOpen;
-  void set quickOpen(bool value) => _js.quickOpen = value;
+  _Menu get js => _js;
+  final _Menu _js;
 
-  List<Element> get items => List.from(_js.items);
+  bool get open => js.open;
+  void set open(bool value) => js.open = value;
+  bool get quickOpen => js.quickOpen;
+  void set quickOpen(bool value) => js.quickOpen = value;
+
+  List<Element> get items => List.from(js.items);
 
   /// See [AnchorCorner] for accepted constants.
-  void setAnchorCorner(int corner) => _js.setAnchorCorner(corner);
+  void setAnchorCorner(int corner) => js.setAnchorCorner(corner);
 
-  void setAnchorMargin(AnchorMargin margin) => _js.setAnchorMargin(margin);
-  void setFixedPosition(bool isFixed) => _js.setFixedPosition(isFixed);
-  void setAbsolutePosition(num x, num y) => _js.setAbsolutePosition(x, y);
+  void setAnchorMargin(AnchorMargin margin) => js.setAnchorMargin(margin);
+  void setFixedPosition(bool isFixed) => js.setFixedPosition(isFixed);
+  void setAbsolutePosition(num x, num y) => js.setAbsolutePosition(x, y);
 
   /// Removes the menu-surface element from the DOM and appends it to the body
   /// element. Should be used to overcome overflow: hidden issues.
-  void hoistMenuToBody() => _js.hoistMenuToBody();
-  void setIsHoisted(bool hoisted) => _js.setIsHoisted(hoisted);
+  void hoistMenuToBody() => js.hoistMenuToBody();
+  void setIsHoisted(bool hoisted) => js.setIsHoisted(hoisted);
 
   /// Changes the element used as an anchor for menu-surface positioning logic.
   /// Should be used with conjunction with hoistMenuToBody().
-  void setAnchorElement(Element root) => _js.setAnchorElement(root);
+  void setAnchorElement(Element root) => js.setAnchorElement(root);
 
-  Element getOptionByIndex(int index) => _js.getOptionByIndex(index);
+  Element getOptionByIndex(int index) => js.getOptionByIndex(index);
 }
 
 @JS('menu.MDCMenu')

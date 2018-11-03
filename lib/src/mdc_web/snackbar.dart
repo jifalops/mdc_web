@@ -9,12 +9,12 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/snackbars/)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/snackbar)
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-snackbar/index.js)
-class MDCSnackbar extends MDCComponent<_Snackbar> {
+class MDCSnackbar extends MDCComponent {
   static MDCSnackbar attachTo(Element root) => MDCSnackbar._attach(root);
-  MDCSnackbar._attach(Element root) : super._(_Snackbar.attachTo(root));
+  MDCSnackbar._attach(Element root) : _js = _Snackbar.attachTo(root);
 
   MDCSnackbar(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
   static _Snackbar _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -23,10 +23,13 @@ class MDCSnackbar extends MDCComponent<_Snackbar> {
               ? _Snackbar(root, foundation)
               : _Snackbar(root, foundation, args);
 
-  bool get dismissesOnAction => _js.dismissesOnAction;
-  void set dismissesOnAction(bool value) => _js.dismissesOnAction = value;
+  _Snackbar get js => _js;
+  final _Snackbar _js;
 
-  void show(SnackbarData data) => _js.show(data);
+  bool get dismissesOnAction => js.dismissesOnAction;
+  void set dismissesOnAction(bool value) => js.dismissesOnAction = value;
+
+  void show(SnackbarData data) => js.show(data);
 }
 
 @JS('snackbar.MDCSnackbar')

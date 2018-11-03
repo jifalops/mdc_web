@@ -8,13 +8,12 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/input-controls/text-field/#mdctextfield-properties-and-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/text-field)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield/index.js)
-class MDCTextField extends MDCComponent<_TextField>
-    implements MDCSelectionControl {
+class MDCTextField extends MDCComponent implements MDCSelectionControl {
   static MDCTextField attachTo(Element root) => MDCTextField._attach(root);
-  MDCTextField._attach(Element root) : super._(_TextField.attachTo(root));
+  MDCTextField._attach(Element root) : _js = _TextField.attachTo(root);
 
   MDCTextField(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
   static _TextField _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -23,41 +22,44 @@ class MDCTextField extends MDCComponent<_TextField>
               ? _TextField(root, foundation)
               : _TextField(root, foundation, args);
 
-  String get value => _js.value;
-  void set value(String value) => _js.value = value;
-  bool get disabled => _js.disabled;
-  void set disabled(bool value) => _js.disabled = value;
-  void set useNativeValidation(bool value) => _js.useNativeValidation = value;
-  void set helperTextContent(String value) => _js.helperTextContent = value;
+  _TextField get js => _js;
+  final _TextField _js;
+
+  String get value => js.value;
+  void set value(String value) => js.value = value;
+  bool get disabled => js.disabled;
+  void set disabled(bool value) => js.disabled = value;
+  void set useNativeValidation(bool value) => js.useNativeValidation = value;
+  void set helperTextContent(String value) => js.helperTextContent = value;
   void set leadingIconAriaLabel(String value) =>
-      _js.leadingIconAriaLabel = value;
+      js.leadingIconAriaLabel = value;
   void set trailingIconAriaLabel(String value) =>
-      _js.trailingIconAriaLabel = value;
-  void set leadingIconContent(String value) => _js.leadingIconContent = value;
-  void set trailingIconContent(String value) => _js.trailingIconContent = value;
-  void set ripple(MDCRipple value) => _js.ripple = value._js;
-  bool get valid => _js.valid;
-  void set valid(bool value) => _js.valid = value;
+      js.trailingIconAriaLabel = value;
+  void set leadingIconContent(String value) => js.leadingIconContent = value;
+  void set trailingIconContent(String value) => js.trailingIconContent = value;
+  void set ripple(MDCRipple value) => js.ripple = value.js;
+  bool get valid => js.valid;
+  void set valid(bool value) => js.valid = value;
 
-  bool get required => _js.required;
-  void set required(bool value) => _js.required = value;
-  int get minLength => _js.minLength;
-  void set minLength(int value) => _js.minLength = value;
-  int get maxLength => _js.maxLength;
-  void set maxLength(int value) => _js.maxLength = value;
-  String get min => _js.min;
-  void set min(String value) => _js.min = value;
-  String get max => _js.max;
-  void set max(String value) => _js.max = value;
-  String get step => _js.step;
-  void set step(String value) => _js.step = value;
-  String get pattern => _js.pattern;
-  void set pattern(String value) => _js.pattern = value;
+  bool get required => js.required;
+  void set required(bool value) => js.required = value;
+  int get minLength => js.minLength;
+  void set minLength(int value) => js.minLength = value;
+  int get maxLength => js.maxLength;
+  void set maxLength(int value) => js.maxLength = value;
+  String get min => js.min;
+  void set min(String value) => js.min = value;
+  String get max => js.max;
+  void set max(String value) => js.max = value;
+  String get step => js.step;
+  void set step(String value) => js.step = value;
+  String get pattern => js.pattern;
+  void set pattern(String value) => js.pattern = value;
 
-  void layout() => _js.layout();
+  void layout() => js.layout();
 
   @override
-  MDCRipple get ripple => MDCRipple._(_js.ripple);
+  MDCRipple get ripple => MDCRipple._(js.ripple);
 }
 
 @JS('textField.MDCTextField')

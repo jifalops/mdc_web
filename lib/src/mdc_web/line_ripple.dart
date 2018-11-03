@@ -7,12 +7,12 @@ part of mdc_web;
 ///
 /// * [Component Reference](https://material.io/develop/web/components/input-controls/line-ripple/#mdclineripple-properties-and-methods)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-line-ripple/index.js)
-class MDCLineRipple extends MDCComponent<_LineRipple> {
+class MDCLineRipple extends MDCComponent {
   static MDCLineRipple attachTo(Element root) => MDCLineRipple._attach(root);
-  MDCLineRipple._attach(Element root) : super._(_LineRipple.attachTo(root));
+  MDCLineRipple._attach(Element root) : _js = _LineRipple.attachTo(root);
 
   MDCLineRipple(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
   static _LineRipple _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -21,9 +21,12 @@ class MDCLineRipple extends MDCComponent<_LineRipple> {
               ? _LineRipple(root, foundation)
               : _LineRipple(root, foundation, args);
 
-  void activate() => _js.activate();
-  void deactivate() => _js.deactivate();
-  void setRippleCenter(num xCoordinate) => _js.setRippleCenter(xCoordinate);
+  _LineRipple get js => _js;
+  final _LineRipple _js;
+
+  void activate() => js.activate();
+  void deactivate() => js.deactivate();
+  void setRippleCenter(num xCoordinate) => js.setRippleCenter(xCoordinate);
 }
 
 @JS('lineRipple.MDCLineRipple')

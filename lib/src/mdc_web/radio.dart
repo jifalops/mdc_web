@@ -8,12 +8,12 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/input-controls/radio-buttons/#mdcradio-properties-and-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/radio)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-radio/index.js)
-class MDCRadio extends MDCComponent<_Radio> implements MDCSelectionControl {
+class MDCRadio extends MDCComponent implements MDCSelectionControl {
   static MDCRadio attachTo(Element root) => MDCRadio._attach(root);
-  MDCRadio._attach(Element root) : super._(_Radio.attachTo(root));
+  MDCRadio._attach(Element root) : _js = _Radio.attachTo(root);
 
   MDCRadio(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
   static _Radio _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -22,15 +22,18 @@ class MDCRadio extends MDCComponent<_Radio> implements MDCSelectionControl {
               ? _Radio(root, foundation)
               : _Radio(root, foundation, args);
 
-  bool get checked => _js.checked;
-  void set checked(bool value) => _js.checked = value;
-  bool get disabled => _js.disabled;
-  void set disabled(bool value) => _js.disabled = value;
-  String get value => _js.value;
-  void set value(String value) => _js.value = value;
+  _Radio get js => _js;
+  final _Radio _js;
+
+  bool get checked => js.checked;
+  void set checked(bool value) => js.checked = value;
+  bool get disabled => js.disabled;
+  void set disabled(bool value) => js.disabled = value;
+  String get value => js.value;
+  void set value(String value) => js.value = value;
 
   @override
-  MDCRipple get ripple => MDCRipple._(_js.ripple);
+  MDCRipple get ripple => MDCRipple._(js.ripple);
 }
 
 @JS('radio.MDCRadio')

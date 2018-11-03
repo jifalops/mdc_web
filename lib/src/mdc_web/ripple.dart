@@ -8,16 +8,15 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/ripples/#mdcripple)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/ripple)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-ripple/index.js)
-class MDCRipple extends MDCComponent<_Ripple> {
+class MDCRipple extends MDCComponent {
   static MDCRipple attachTo(Element root, [bool unbounded]) =>
       MDCRipple._attach(root, unbounded);
   MDCRipple._attach(Element root, [bool unbounded])
-      : super._(_preserveUndefinedAttach(root, unbounded));
+      : _js = _preserveUndefinedAttach(root, unbounded);
   MDCRipple(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
-  /// For wrapping a [_Ripple].
-  MDCRipple._(_Ripple ripple) : super._(ripple);
+  MDCRipple._(this._js);
 
   static _Ripple _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -30,19 +29,22 @@ class MDCRipple extends MDCComponent<_Ripple> {
           ? _Ripple.attachTo(root)
           : _Ripple.attachTo(root, unbounded);
 
+  _Ripple get js => _js;
+  final _Ripple _js;
+
   /// Surfaces for bounded ripples should have the overflow property set to
   /// hidden, while surfaces for unbounded ripples should have it set to visible.
-  bool get unbounded => _js.unbounded;
-  void set unbounded(bool value) => _js.unbounded = value;
-  bool get disabled => _js.disabled;
-  void set disabled(bool value) => _js.disabled = value;
+  bool get unbounded => js.unbounded;
+  void set unbounded(bool value) => js.unbounded = value;
+  bool get disabled => js.disabled;
+  void set disabled(bool value) => js.disabled = value;
 
-  void activate() => _js.activate();
-  void deactivate() => _js.deactivate();
-  void layout() => _js.layout();
+  void activate() => js.activate();
+  void deactivate() => js.deactivate();
+  void layout() => js.layout();
 
   static dynamic createAdapter(MDCRipple ripple) =>
-      _Ripple.createAdapter(ripple._js);
+      _Ripple.createAdapter(ripple.js);
 }
 
 @JS('ripple.MDCRipple')

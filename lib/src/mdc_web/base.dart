@@ -6,53 +6,32 @@ part of mdc_web;
 ///
 /// * [Component Reference](https://material.io/develop/web/components/base/#mdccomponent)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/component.js)
-class MDCComponent<T extends _Component> {
-  static MDCComponent attachTo(Element root) => MDCComponent._attach(root);
-
-  /// Example constructor for calling attach on the underlying component.
-  /// Child classes should implement their own version and call `super._()`.
-  /// Do not call this from child classes.
-  MDCComponent._attach(Element root) : _js = _Component.attachTo(root);
-
-  const MDCComponent._(this._js);
-
-  /// Example default constructor child classes will recreate.
-  /// Do not call this from child classes.
-  MDCComponent(Element root, [foundation, args])
-      : _js = _preserveUndefined(root, foundation, args);
-
-  static _Component _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? _Component(root)
-          : args == null
-              ? _Component(root, foundation)
-              : _Component(root, foundation, args);
-
+abstract class MDCComponent {
   /// The underlying Javascript component for this class.
-  final T _js;
+  _Component get js;
 
-  Element get root_ => _js.root_;
-  MDCFoundation get foundation_ => _js.foundation_;
+  Element get root_ => js.root_;
+  MDCFoundation get foundation_ => js.foundation_;
 
-  void initialize(args) => _js.initialize(args);
-  MDCFoundation getDefaultFoundation() => _js.getDefaultFoundation();
-  void initialSyncWithDOM() => _js.initialSyncWithDOM();
-  void destroy() => _js.destroy();
+  void initialize(args) => js.initialize(args);
+  MDCFoundation getDefaultFoundation() => js.getDefaultFoundation();
+  void initialSyncWithDOM() => js.initialSyncWithDOM();
+  void destroy() => js.destroy();
   void listen(String type, EventListener handler, {bool captureThis: false}) =>
-      _js.listen(
+      js.listen(
           type,
           captureThis
               ? allowInteropCaptureThis(handler)
               : allowInterop(handler));
   void unlisten(String type, EventListener handler,
           {bool captureThis: false}) =>
-      _js.unlisten(
+      js.unlisten(
           type,
           captureThis
               ? allowInteropCaptureThis(handler)
               : allowInterop(handler));
   void emit(String type, data, [bool shouldBubble = false]) =>
-      _js.emit(type, data, shouldBubble);
+      js.emit(type, data, shouldBubble);
 }
 
 @JS('base.MDCComponent')

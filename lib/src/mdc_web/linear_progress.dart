@@ -8,14 +8,14 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/linear-progress/#mdclinearprogress-api)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/linear-progress-indicator)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-linear-progress/index.js)
-class MDCLinearProgress extends MDCComponent<_LinearProgress> {
+class MDCLinearProgress extends MDCComponent {
   static MDCLinearProgress attachTo(Element root) =>
       MDCLinearProgress._attach(root);
   MDCLinearProgress._attach(Element root)
-      : super._(_LinearProgress.attachTo(root));
+      : _js = _LinearProgress.attachTo(root);
 
   MDCLinearProgress(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
   static _LinearProgress _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -24,18 +24,21 @@ class MDCLinearProgress extends MDCComponent<_LinearProgress> {
               ? _LinearProgress(root, foundation)
               : _LinearProgress(root, foundation, args);
 
-  void set determinate(bool value) => _js.determinate = value;
+  _LinearProgress get js => _js;
+  final _LinearProgress _js;
+
+  void set determinate(bool value) => js.determinate = value;
 
   /// Value should be between 0 and 1, inclusive.
-  void set progress(num value) => _js.progress = value;
+  void set progress(num value) => js.progress = value;
 
   /// Value should be between 0 and 1, inclusive.
-  void set buffer(num value) => _js.buffer = value;
+  void set buffer(num value) => js.buffer = value;
 
-  void set reverse(bool value) => _js.reverse = value;
+  void set reverse(bool value) => js.reverse = value;
 
-  void open() => _js.open();
-  void close() => _js.close();
+  void open() => js.open();
+  void close() => js.close();
 }
 
 @JS('linearProgress.MDCLinearProgress')

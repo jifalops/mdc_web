@@ -8,12 +8,12 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/lists/)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/list)
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-list/index.js)
-class MDCList extends MDCComponent<_List> {
+class MDCList extends MDCComponent {
   static MDCList attachTo(Element root) => MDCList._attach(root);
-  MDCList._attach(Element root) : super._(_List.attachTo(root));
+  MDCList._attach(Element root) : _js = _List.attachTo(root);
 
   MDCList(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
   static _List _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -22,14 +22,17 @@ class MDCList extends MDCComponent<_List> {
               ? _List(root, foundation)
               : _List(root, foundation, args);
 
-  void set vertical(bool value) => _js.vertical = value;
-  void set wrapFocus(bool value) => _js.wrapFocus = value;
-  void set singleSelection(bool value) => _js.singleSelection = value;
-  void set selectedIndex(int value) => _js.selectedIndex = value;
+  _List get js => _js;
+  final _List _js;
 
-  List<Element> get listElements => List.from(_js.listElements);
+  void set vertical(bool value) => js.vertical = value;
+  void set wrapFocus(bool value) => js.wrapFocus = value;
+  void set singleSelection(bool value) => js.singleSelection = value;
+  void set selectedIndex(int value) => js.selectedIndex = value;
 
-  void layout() => _js.layout();
+  List<Element> get listElements => List.from(js.listElements);
+
+  void layout() => js.layout();
 }
 
 @JS('list.MDCList')

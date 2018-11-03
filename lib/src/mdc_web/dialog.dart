@@ -9,12 +9,12 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/dialogs/#mdcdialog-properties-and-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/dialog)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-dialog/index.js)
-class MDCDialog extends MDCComponent<_Dialog> {
+class MDCDialog extends MDCComponent {
   static MDCDialog attachTo(Element root) => MDCDialog._attach(root);
-  MDCDialog._attach(Element root) : super._(_Dialog.attachTo(root));
+  MDCDialog._attach(Element root) : _js = _Dialog.attachTo(root);
 
   MDCDialog(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
   static _Dialog _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -23,21 +23,24 @@ class MDCDialog extends MDCComponent<_Dialog> {
               ? _Dialog(root, foundation)
               : _Dialog(root, foundation, args);
 
-  bool get isOpen => _js.isOpen;
-  String get escapeKeyAction => _js.escapeKeyAction;
-  void set escapeKeyAction(String value) => _js.escapeKeyAction = value;
-  String get scrimClickAction => _js.scrimClickAction;
-  void set scrimClickAction(String value) => _js.scrimClickAction = value;
-  bool get autoStackButtons => _js.autoStackButtons;
-  void set autoStackButtons(bool value) => _js.autoStackButtons = value;
+  _Dialog get js => _js;
+  final _Dialog _js;
+
+  bool get isOpen => js.isOpen;
+  String get escapeKeyAction => js.escapeKeyAction;
+  void set escapeKeyAction(String value) => js.escapeKeyAction = value;
+  String get scrimClickAction => js.scrimClickAction;
+  void set scrimClickAction(String value) => js.scrimClickAction = value;
+  bool get autoStackButtons => js.autoStackButtons;
+  void set autoStackButtons(bool value) => js.autoStackButtons = value;
 
   /// Recalculates layout and automatically adds/removes modifier classes like
   /// --scrollable.
-  void layout() => _js.layout();
-  void open() => _js.open();
+  void layout() => js.layout();
+  void open() => js.open();
 
   /// [action] indicates why it was closed.
-  void close([String action]) => _js.close();
+  void close([String action]) => js.close();
 
   static const openingEvent = 'MDCDialog:opening';
   static const openedEvent = 'MDCDialog:opened';

@@ -8,12 +8,12 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/tabs/scroller/#mdctabscroller-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/tabs)
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-tab-scroller/index.js)
-class MDCTabScroller extends MDCComponent<_TabScroller> {
+class MDCTabScroller extends MDCComponent {
   static MDCTabScroller attachTo(Element root) => MDCTabScroller._attach(root);
-  MDCTabScroller._attach(Element root) : super._(_TabScroller.attachTo(root));
+  MDCTabScroller._attach(Element root) : _js = _TabScroller.attachTo(root);
 
   MDCTabScroller(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
   static _TabScroller _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -22,10 +22,13 @@ class MDCTabScroller extends MDCComponent<_TabScroller> {
               ? _TabScroller(root, foundation)
               : _TabScroller(root, foundation, args);
 
-  void scrollTo(num scrollX) => _js.scrollTo(scrollX);
-  void incrementScroll(num scrollX) => _js.incrementScroll(scrollX);
-  num getScrollPosition() => _js.getScrollPosition();
-  num getScrollContentWidth() => _js.getScrollContentWidth();
+  _TabScroller get js => _js;
+  final _TabScroller _js;
+
+  void scrollTo(num scrollX) => js.scrollTo(scrollX);
+  void incrementScroll(num scrollX) => js.incrementScroll(scrollX);
+  num getScrollPosition() => js.getScrollPosition();
+  num getScrollContentWidth() => js.getScrollContentWidth();
 }
 
 @JS('tabScroller.MDCTabScroller')

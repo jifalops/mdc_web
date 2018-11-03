@@ -8,14 +8,14 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/buttons/icon-buttons/#mdciconbuttontoggle-properties-and-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/icon-button)
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-icon-button/index.js)
-class MDCIconButtonToggle extends MDCComponent<_IconButtonToggle> {
+class MDCIconButtonToggle extends MDCComponent {
   static MDCIconButtonToggle attachTo(Element root) =>
       MDCIconButtonToggle._attach(root);
   MDCIconButtonToggle._attach(Element root)
-      : super._(_IconButtonToggle.attachTo(root));
+      : _js = _IconButtonToggle.attachTo(root);
 
   MDCIconButtonToggle(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
   static _IconButtonToggle _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -24,11 +24,14 @@ class MDCIconButtonToggle extends MDCComponent<_IconButtonToggle> {
               ? _IconButtonToggle(root, foundation)
               : _IconButtonToggle(root, foundation, args);
 
-  /// Get/set the toggle state.
-  bool get on => _js.on;
-  void set on(bool value) => _js.on = value;
+  _IconButtonToggle get js => _js;
+  final _IconButtonToggle _js;
 
-  MDCRipple get ripple => MDCRipple._(_js.ripple);
+  /// Get/set the toggle state.
+  bool get on => js.on;
+  void set on(bool value) => js.on = value;
+
+  MDCRipple get ripple => MDCRipple._(js.ripple);
 
   /// Data structure: {"detail": {"isOn": boolean}}
   static const changeEvent = 'MDCIconButtonToggle:change';

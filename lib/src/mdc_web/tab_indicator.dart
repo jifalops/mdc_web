@@ -8,13 +8,13 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/tabs/indicator/#mdctabindicator-methods)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/tabs)
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-tab-indicator/index.js)
-class MDCTabIndicator extends MDCComponent<_TabIndicator> {
+class MDCTabIndicator extends MDCComponent {
   static MDCTabIndicator attachTo(Element root) =>
       MDCTabIndicator._attach(root);
-  MDCTabIndicator._attach(Element root) : super._(_TabIndicator.attachTo(root));
+  MDCTabIndicator._attach(Element root) : _js = _TabIndicator.attachTo(root);
 
   MDCTabIndicator(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
   static _TabIndicator _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -23,14 +23,17 @@ class MDCTabIndicator extends MDCComponent<_TabIndicator> {
               ? _TabIndicator(root, foundation)
               : _TabIndicator(root, foundation, args);
 
+  _TabIndicator get js => _js;
+  final _TabIndicator _js;
+
   /// [previousIndicatorClientRect] is a DOMRect. See also
   /// [computeIndicatorClientRect()].
   void activate([/*DOMRect*/ previousIndicatorClientRect]) =>
-      _js.activate(previousIndicatorClientRect);
-  void deactivate() => _js.deactivate();
+      js.activate(previousIndicatorClientRect);
+  void deactivate() => js.deactivate();
 
   /// Returns a DOMRect.
-  /*DOMRect*/ computeContentClientRect() => _js.computeContentClientRect();
+  /*DOMRect*/ computeContentClientRect() => js.computeContentClientRect();
 }
 
 @JS('tabIndicator.MDCTabIndicator')

@@ -11,12 +11,12 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/input-controls/sliders/#mdc-slider-component-api)
 /// * [Demo](https://material-components.github.io/material-components-web-catalog/#/component/slider)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-slider/index.js)
-class MDCSlider extends MDCComponent<_Slider> implements MDCSelectionControl {
+class MDCSlider extends MDCComponent implements MDCSelectionControl {
   static MDCSlider attachTo(Element root) => MDCSlider._attach(root);
-  MDCSlider._attach(Element root) : super._(_Slider.attachTo(root));
+  MDCSlider._attach(Element root) : _js = _Slider.attachTo(root);
 
   MDCSlider(Element root, [foundation, args])
-      : super._(_preserveUndefined(root, foundation, args));
+      : _js = _preserveUndefined(root, foundation, args);
 
   static _Slider _preserveUndefined(Element root, foundation, args) =>
       foundation == null
@@ -25,23 +25,26 @@ class MDCSlider extends MDCComponent<_Slider> implements MDCSelectionControl {
               ? _Slider(root, foundation)
               : _Slider(root, foundation, args);
 
-  num get value => _js.value;
-  void set value(num value) => _js.value = value;
-  num get min => _js.min;
-  void set min(num value) => _js.min = value;
-  num get max => _js.max;
-  void set max(num value) => _js.max = value;
-  num get step => _js.step;
-  void set step(num value) => _js.step = value;
-  bool get disabled => _js.disabled;
-  void set disabled(bool value) => _js.disabled = value;
+  _Slider get js => _js;
+  final _Slider _js;
 
-  void layout() => _js.layout();
-  void stepUp([num amount = 1]) => _js.stepUp(amount);
-  void stepDown([num amount = 1]) => _js.stepDown(amount);
+  num get value => js.value;
+  void set value(num value) => js.value = value;
+  num get min => js.min;
+  void set min(num value) => js.min = value;
+  num get max => js.max;
+  void set max(num value) => js.max = value;
+  num get step => js.step;
+  void set step(num value) => js.step = value;
+  bool get disabled => js.disabled;
+  void set disabled(bool value) => js.disabled = value;
+
+  void layout() => js.layout();
+  void stepUp([num amount = 1]) => js.stepUp(amount);
+  void stepDown([num amount = 1]) => js.stepDown(amount);
 
   @override
-  MDCRipple get ripple => MDCRipple._(_js.ripple);
+  MDCRipple get ripple => MDCRipple._(js.ripple);
 
   /// Emitted whenever the slider value is changed by way of a user event, e.g.
   /// when a user is dragging the slider or changing the value using the arrow
