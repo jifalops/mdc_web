@@ -19,12 +19,6 @@ class MDCMenuSurface extends MDCComponent {
   MDCMenuSurface(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static MenuSurfaceComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? MenuSurfaceComponent(root)
-          : args == null
-              ? MenuSurfaceComponent(root, foundation)
-              : MenuSurfaceComponent(root, foundation, args);
 
   MenuSurfaceComponent get js => _js;
   final MenuSurfaceComponent _js;
@@ -55,6 +49,12 @@ class MDCMenuSurface extends MDCComponent {
   static const closedEvent = 'MDCMenuSurface:closed';
 }
 
+   MenuSurfaceComponent _preserveUndefined(Element root, foundation, args) =>
+      foundation == null
+          ? MenuSurfaceComponent(root)
+          : args == null
+              ? MenuSurfaceComponent(root, foundation)
+              : MenuSurfaceComponent(root, foundation, args);
 
 /// The anchored corner of an [MDCMenu] or [MDCMenuSurface].
 class AnchorCorner {

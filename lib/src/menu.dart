@@ -21,12 +21,7 @@ class MDCMenu extends MDCComponent {
   MDCMenu(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static MenuComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? MenuComponent(root)
-          : args == null
-              ? MenuComponent(root, foundation)
-              : MenuComponent(root, foundation, args);
+
 
   MenuComponent get js => _js;
   final MenuComponent _js;
@@ -56,3 +51,9 @@ class MDCMenu extends MDCComponent {
 
   Element getOptionByIndex(int index) => js.getOptionByIndex(index);
 }
+   MenuComponent _preserveUndefined(Element root, foundation, args) =>
+      foundation == null
+          ? MenuComponent(root)
+          : args == null
+              ? MenuComponent(root, foundation)
+              : MenuComponent(root, foundation, args);

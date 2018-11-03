@@ -16,12 +16,7 @@ class MDCLineRipple extends MDCComponent {
   MDCLineRipple(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static LineRippleComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? LineRippleComponent(root)
-          : args == null
-              ? LineRippleComponent(root, foundation)
-              : LineRippleComponent(root, foundation, args);
+
 
   LineRippleComponent get js => _js;
   final LineRippleComponent _js;
@@ -30,3 +25,9 @@ class MDCLineRipple extends MDCComponent {
   void deactivate() => js.deactivate();
   void setRippleCenter(num xCoordinate) => js.setRippleCenter(xCoordinate);
 }
+   LineRippleComponent _preserveUndefined(Element root, foundation, args) =>
+      foundation == null
+          ? LineRippleComponent(root)
+          : args == null
+              ? LineRippleComponent(root, foundation)
+              : LineRippleComponent(root, foundation, args);

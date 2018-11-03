@@ -20,12 +20,7 @@ class MDCSnackbar extends MDCComponent {
   MDCSnackbar(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static SnackbarComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? SnackbarComponent(root)
-          : args == null
-              ? SnackbarComponent(root, foundation)
-              : SnackbarComponent(root, foundation, args);
+
 
   SnackbarComponent get js => _js;
   final SnackbarComponent _js;
@@ -35,3 +30,9 @@ class MDCSnackbar extends MDCComponent {
 
   void show(SnackbarData data) => js.show(data);
 }
+   SnackbarComponent _preserveUndefined(Element root, foundation, args) =>
+      foundation == null
+          ? SnackbarComponent(root)
+          : args == null
+              ? SnackbarComponent(root, foundation)
+              : SnackbarComponent(root, foundation, args);

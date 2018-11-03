@@ -18,12 +18,7 @@ class MDCRadio extends MDCComponent implements MDCSelectionControl {
   MDCRadio(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static RadioComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? RadioComponent(root)
-          : args == null
-              ? RadioComponent(root, foundation)
-              : RadioComponent(root, foundation, args);
+
 
   RadioComponent get js => _js;
   final RadioComponent _js;
@@ -38,3 +33,9 @@ class MDCRadio extends MDCComponent implements MDCSelectionControl {
   @override
   MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 }
+  RadioComponent _preserveUndefined(Element root, foundation, args) =>
+      foundation == null
+          ? RadioComponent(root)
+          : args == null
+              ? RadioComponent(root, foundation)
+              : RadioComponent(root, foundation, args);

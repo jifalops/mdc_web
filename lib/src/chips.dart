@@ -1,4 +1,3 @@
-
 import 'base.dart';
 import 'ripple.dart';
 import 'mdc_web/chips.dart';
@@ -16,14 +15,8 @@ class MDCChipSet extends MDCComponent {
   MDCChipSet._attach(Element root) : _js = ChipSetComponent.attachTo(root);
 
   MDCChipSet(Element root, [foundation, args])
-      : _js = _preserveUndefined(root, foundation, args);
+      : _js = _preserveUndefinedChipSet(root, foundation, args);
 
-  static ChipSetComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? ChipSetComponent(root)
-          : args == null
-              ? ChipSetComponent(root, foundation)
-              : ChipSetComponent(root, foundation, args);
   @override
   ChipSetComponent get js => _js;
   final ChipSetComponent _js;
@@ -40,6 +33,13 @@ class MDCChipSet extends MDCComponent {
   List<int> getSelectedChipIds() => List.from(js.getSelectedChipIds());
 }
 
+ChipSetComponent _preserveUndefinedChipSet(Element root, foundation, args) =>
+    foundation == null
+        ? ChipSetComponent(root)
+        : args == null
+            ? ChipSetComponent(root, foundation)
+            : ChipSetComponent(root, foundation, args);
+
 /// Encompasses the behavior of a single chip. All of MDCChip’s emitted events
 /// bubble up through the DOM.
 ///
@@ -55,14 +55,7 @@ class MDCChip extends MDCComponent {
   MDCChip._(this._js);
 
   MDCChip(Element root, [foundation, args])
-      : _js = _preserveUndefined(root, foundation, args);
-
-  static ChipComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? ChipComponent(root)
-          : args == null
-              ? ChipComponent(root, foundation)
-              : ChipComponent(root, foundation, args);
+      : _js = _preserveUndefinedChip(root, foundation, args);
 
   ChipComponent get js => _js;
   final ChipComponent _js;
@@ -103,3 +96,10 @@ class MDCChip extends MDCComponent {
   /// `event.detail` contents: {chipId: string}
   static const trailingIconInteractionEvent = 'MDCChip:trailingIconInteraction';
 }
+
+ChipComponent _preserveUndefinedChip(Element root, foundation, args) =>
+    foundation == null
+        ? ChipComponent(root)
+        : args == null
+            ? ChipComponent(root, foundation)
+            : ChipComponent(root, foundation, args);

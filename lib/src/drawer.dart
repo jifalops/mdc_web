@@ -17,12 +17,7 @@ class MDCDrawer extends MDCComponent {
   MDCDrawer(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static DrawerComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? DrawerComponent(root)
-          : args == null
-              ? DrawerComponent(root, foundation)
-              : DrawerComponent(root, foundation, args);
+
 
   DrawerComponent get js => _js;
   final DrawerComponent _js;
@@ -33,3 +28,9 @@ class MDCDrawer extends MDCComponent {
   static const openedEvent = 'MDCDrawer:opened';
   static const closedEvent = 'MDCDrawer:closed';
 }
+   DrawerComponent _preserveUndefined(Element root, foundation, args) =>
+      foundation == null
+          ? DrawerComponent(root)
+          : args == null
+              ? DrawerComponent(root, foundation)
+              : DrawerComponent(root, foundation, args);

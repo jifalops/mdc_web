@@ -21,12 +21,7 @@ class MDCSlider extends MDCComponent implements MDCSelectionControl {
   MDCSlider(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static SliderComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? SliderComponent(root)
-          : args == null
-              ? SliderComponent(root, foundation)
-              : SliderComponent(root, foundation, args);
+
 
   SliderComponent get js => _js;
   final SliderComponent _js;
@@ -61,3 +56,9 @@ class MDCSlider extends MDCComponent implements MDCSelectionControl {
   /// that was affected.
   static const changeEvent = 'MDCSlider:change';
 }
+   SliderComponent _preserveUndefined(Element root, foundation, args) =>
+      foundation == null
+          ? SliderComponent(root)
+          : args == null
+              ? SliderComponent(root, foundation)
+              : SliderComponent(root, foundation, args);

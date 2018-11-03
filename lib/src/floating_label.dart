@@ -18,13 +18,7 @@ class MDCFloatingLabel extends MDCComponent implements MDCSelectionControl {
   MDCFloatingLabel(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static FloatingLabelComponent _preserveUndefined(
-          Element root, foundation, args) =>
-      foundation == null
-          ? FloatingLabelComponent(root)
-          : args == null
-              ? FloatingLabelComponent(root, foundation)
-              : FloatingLabelComponent(root, foundation, args);
+
 
   FloatingLabelComponent get js => _js;
   final FloatingLabelComponent _js;
@@ -36,3 +30,10 @@ class MDCFloatingLabel extends MDCComponent implements MDCSelectionControl {
   @override
   MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 }
+  FloatingLabelComponent _preserveUndefined(
+          Element root, foundation, args) =>
+      foundation == null
+          ? FloatingLabelComponent(root)
+          : args == null
+              ? FloatingLabelComponent(root, foundation)
+              : FloatingLabelComponent(root, foundation, args);

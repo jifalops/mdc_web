@@ -1,4 +1,3 @@
-
 import 'base.dart';
 import 'mdc_web/dialog.dart';
 
@@ -17,13 +16,6 @@ class MDCDialog extends MDCComponent {
 
   MDCDialog(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
-
-  static DialogComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? DialogComponent(root)
-          : args == null
-              ? DialogComponent(root, foundation)
-              : DialogComponent(root, foundation, args);
 
   DialogComponent get js => _js;
   final DialogComponent _js;
@@ -53,3 +45,10 @@ class MDCDialog extends MDCComponent {
   /// `event.detail`: {action: string?}
   static const closedEvent = 'MDCDialog:closed';
 }
+
+DialogComponent _preserveUndefined(Element root, foundation, args) =>
+    foundation == null
+        ? DialogComponent(root)
+        : args == null
+            ? DialogComponent(root, foundation)
+            : DialogComponent(root, foundation, args);

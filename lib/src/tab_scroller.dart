@@ -18,13 +18,7 @@ class MDCTabScroller extends MDCComponent {
   MDCTabScroller(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static TabScrollerComponent _preserveUndefined(
-          Element root, foundation, args) =>
-      foundation == null
-          ? TabScrollerComponent(root)
-          : args == null
-              ? TabScrollerComponent(root, foundation)
-              : TabScrollerComponent(root, foundation, args);
+
 
   TabScrollerComponent get js => _js;
   final TabScrollerComponent _js;
@@ -34,3 +28,10 @@ class MDCTabScroller extends MDCComponent {
   num getScrollPosition() => js.getScrollPosition();
   num getScrollContentWidth() => js.getScrollContentWidth();
 }
+   TabScrollerComponent _preserveUndefined(
+          Element root, foundation, args) =>
+      foundation == null
+          ? TabScrollerComponent(root)
+          : args == null
+              ? TabScrollerComponent(root, foundation)
+              : TabScrollerComponent(root, foundation, args);

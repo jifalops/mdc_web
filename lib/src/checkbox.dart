@@ -16,12 +16,7 @@ class MDCCheckbox extends MDCComponent implements MDCSelectionControl {
   MDCCheckbox(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static CheckboxComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? CheckboxComponent(root)
-          : args == null
-              ? CheckboxComponent(root, foundation)
-              : CheckboxComponent(root, foundation, args);
+
 
   @override
   CheckboxComponent get js => _js;
@@ -38,3 +33,10 @@ class MDCCheckbox extends MDCComponent implements MDCSelectionControl {
   @override
   MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 }
+
+ CheckboxComponent _preserveUndefined(Element root, foundation, args) =>
+      foundation == null
+          ? CheckboxComponent(root)
+          : args == null
+              ? CheckboxComponent(root, foundation)
+              : CheckboxComponent(root, foundation, args);

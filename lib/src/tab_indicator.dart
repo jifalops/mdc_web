@@ -18,12 +18,6 @@ class MDCTabIndicator extends MDCComponent {
   MDCTabIndicator(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static TabIndicatorComponent _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? TabIndicatorComponent(root)
-          : args == null
-              ? TabIndicatorComponent(root, foundation)
-              : TabIndicatorComponent(root, foundation, args);
 
   TabIndicatorComponent get js => _js;
   final TabIndicatorComponent _js;
@@ -37,3 +31,10 @@ class MDCTabIndicator extends MDCComponent {
   /// Returns a DOMRect.
   /*DOMRect*/ computeContentClientRect() => js.computeContentClientRect();
 }
+
+   TabIndicatorComponent _preserveUndefined(Element root, foundation, args) =>
+      foundation == null
+          ? TabIndicatorComponent(root)
+          : args == null
+              ? TabIndicatorComponent(root, foundation)
+              : TabIndicatorComponent(root, foundation, args);
