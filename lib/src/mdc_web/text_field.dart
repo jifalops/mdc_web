@@ -10,20 +10,20 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-textfield/index.js)
 class MDCTextField extends MDCComponent implements MDCSelectionControl {
   static MDCTextField attachTo(Element root) => MDCTextField._attach(root);
-  MDCTextField._attach(Element root) : _js = _TextField.attachTo(root);
+  MDCTextField._attach(Element root) : _js = TextFieldComponent.attachTo(root);
 
   MDCTextField(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _TextField _preserveUndefined(Element root, foundation, args) =>
+  static TextFieldComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _TextField(root)
+          ? TextFieldComponent(root)
           : args == null
-              ? _TextField(root, foundation)
-              : _TextField(root, foundation, args);
+              ? TextFieldComponent(root, foundation)
+              : TextFieldComponent(root, foundation, args);
 
-  _TextField get js => _js;
-  final _TextField _js;
+  TextFieldComponent get js => _js;
+  final TextFieldComponent _js;
 
   String get value => js.value;
   void set value(String value) => js.value = value;
@@ -63,14 +63,14 @@ class MDCTextField extends MDCComponent implements MDCSelectionControl {
 }
 
 @JS('textField.MDCTextField')
-abstract class _TextField extends _Component implements _SelectionControl {
-  external static _TextField attachTo(Element root);
-  external factory _TextField(Element root, [foundation, args]);
+abstract class TextFieldComponent extends Component implements SelectionControlComponent {
+  external static TextFieldComponent attachTo(Element root);
+  external factory TextFieldComponent(Element root, [foundation, args]);
 
   String value;
   bool disabled;
   bool valid;
-  _Ripple ripple;
+  RippleComponent ripple;
   bool required;
   int minLength;
   int maxLength;

@@ -10,20 +10,20 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-list/index.js)
 class MDCList extends MDCComponent {
   static MDCList attachTo(Element root) => MDCList._attach(root);
-  MDCList._attach(Element root) : _js = _List.attachTo(root);
+  MDCList._attach(Element root) : _js = ListComponent.attachTo(root);
 
   MDCList(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _List _preserveUndefined(Element root, foundation, args) =>
+  static ListComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _List(root)
+          ? ListComponent(root)
           : args == null
-              ? _List(root, foundation)
-              : _List(root, foundation, args);
+              ? ListComponent(root, foundation)
+              : ListComponent(root, foundation, args);
 
-  _List get js => _js;
-  final _List _js;
+  ListComponent get js => _js;
+  final ListComponent _js;
 
   void set vertical(bool value) => js.vertical = value;
   void set wrapFocus(bool value) => js.wrapFocus = value;
@@ -36,9 +36,9 @@ class MDCList extends MDCComponent {
 }
 
 @JS('list.MDCList')
-abstract class _List extends _Component {
-  external static _List attachTo(Element root);
-  external factory _List(Element root, [foundation, args]);
+abstract class ListComponent extends Component {
+  external static ListComponent attachTo(Element root);
+  external factory ListComponent(Element root, [foundation, args]);
 
   external void set vertical(bool value);
   external void set wrapFocus(bool value);

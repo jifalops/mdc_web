@@ -11,20 +11,13 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-top-app-bar/index.js)
 class MDCTopAppBar extends MDCComponent {
   static MDCTopAppBar attachTo(Element root) => MDCTopAppBar._attach(root);
-  MDCTopAppBar._attach(Element root) : _js = _TopAppBar.attachTo(root);
+  MDCTopAppBar._attach(Element root) : _js = TopAppBarComponent.attachTo(root);
 
   MDCTopAppBar(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _TopAppBar _preserveUndefined(Element root, foundation, args) =>
-      foundation == null
-          ? _TopAppBar(root)
-          : args == null
-              ? _TopAppBar(root, foundation)
-              : _TopAppBar(root, foundation, args);
-
-  _TopAppBar get js => _js;
-  final _TopAppBar _js;
+  TopAppBarComponent get js => _js;
+  final TopAppBarComponent _js;
 
   /// The default scroll target is `window`.
   void setScrollTarget(Element target) => js.setScrollTarget(target);
@@ -33,10 +26,17 @@ class MDCTopAppBar extends MDCComponent {
   static const navEvent = 'MDCTopAppBar:nav';
 }
 
+TopAppBarComponent _preserveUndefined(Element root, foundation, args) =>
+      foundation == null
+          ? TopAppBarComponent(root)
+          : args == null
+              ? TopAppBarComponent(root, foundation)
+              : TopAppBarComponent(root, foundation, args);
+
 @JS('topAppBar.MDCTopAppBar')
-abstract class _TopAppBar extends _Component {
-  external static _TopAppBar attachTo(Element root);
-  external factory _TopAppBar(Element root, [foundation, args]);
+abstract class TopAppBarComponent extends Component {
+  external static TopAppBarComponent attachTo(Element root);
+  external factory TopAppBarComponent(Element root, [foundation, args]);
 
   /// The default scroll target is `window`.
   external void setScrollTarget(Element target);

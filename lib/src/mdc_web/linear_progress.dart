@@ -12,20 +12,20 @@ class MDCLinearProgress extends MDCComponent {
   static MDCLinearProgress attachTo(Element root) =>
       MDCLinearProgress._attach(root);
   MDCLinearProgress._attach(Element root)
-      : _js = _LinearProgress.attachTo(root);
+      : _js = LinearProgressComponent.attachTo(root);
 
   MDCLinearProgress(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _LinearProgress _preserveUndefined(Element root, foundation, args) =>
+  static LinearProgressComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _LinearProgress(root)
+          ? LinearProgressComponent(root)
           : args == null
-              ? _LinearProgress(root, foundation)
-              : _LinearProgress(root, foundation, args);
+              ? LinearProgressComponent(root, foundation)
+              : LinearProgressComponent(root, foundation, args);
 
-  _LinearProgress get js => _js;
-  final _LinearProgress _js;
+  LinearProgressComponent get js => _js;
+  final LinearProgressComponent _js;
 
   void set determinate(bool value) => js.determinate = value;
 
@@ -42,9 +42,9 @@ class MDCLinearProgress extends MDCComponent {
 }
 
 @JS('linearProgress.MDCLinearProgress')
-abstract class _LinearProgress extends _Component {
-  external static _LinearProgress attachTo(Element root);
-  external factory _LinearProgress(Element root, [foundation, args]);
+abstract class LinearProgressComponent extends Component {
+  external static LinearProgressComponent attachTo(Element root);
+  external factory LinearProgressComponent(Element root, [foundation, args]);
 
   external void set determinate(bool value);
 

@@ -11,20 +11,20 @@ part of mdc_web;
 class MDCTabIndicator extends MDCComponent {
   static MDCTabIndicator attachTo(Element root) =>
       MDCTabIndicator._attach(root);
-  MDCTabIndicator._attach(Element root) : _js = _TabIndicator.attachTo(root);
+  MDCTabIndicator._attach(Element root) : _js = TabIndicatorComponent.attachTo(root);
 
   MDCTabIndicator(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _TabIndicator _preserveUndefined(Element root, foundation, args) =>
+  static TabIndicatorComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _TabIndicator(root)
+          ? TabIndicatorComponent(root)
           : args == null
-              ? _TabIndicator(root, foundation)
-              : _TabIndicator(root, foundation, args);
+              ? TabIndicatorComponent(root, foundation)
+              : TabIndicatorComponent(root, foundation, args);
 
-  _TabIndicator get js => _js;
-  final _TabIndicator _js;
+  TabIndicatorComponent get js => _js;
+  final TabIndicatorComponent _js;
 
   /// [previousIndicatorClientRect] is a DOMRect. See also
   /// [computeIndicatorClientRect()].
@@ -37,9 +37,9 @@ class MDCTabIndicator extends MDCComponent {
 }
 
 @JS('tabIndicator.MDCTabIndicator')
-abstract class _TabIndicator extends _Component {
-  external static _TabIndicator attachTo(Element root);
-  external factory _TabIndicator(Element root, [foundation, args]);
+abstract class TabIndicatorComponent extends Component {
+  external static TabIndicatorComponent attachTo(Element root);
+  external factory TabIndicatorComponent(Element root, [foundation, args]);
 
   /// [previousIndicatorClientRect] is a DOMRect. See also
   /// [computeIndicatorClientRect()].

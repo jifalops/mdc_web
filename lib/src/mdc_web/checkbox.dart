@@ -1,3 +1,11 @@
+// @JS()
+// library base;
+
+// import 'dart:html';
+// import 'package:js/js.dart';
+// import 'base.dart';
+// import 'selection_control.dart';
+
 part of mdc_web;
 
 /// A material design checkbox. To listen for changes, use the native event.
@@ -10,20 +18,20 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-checkbox/index.js)
 class MDCCheckbox extends MDCComponent implements MDCSelectionControl {
   static MDCCheckbox attachTo(Element root) => MDCCheckbox._attach(root);
-  MDCCheckbox._attach(Element root) : _js = _Checkbox.attachTo(root);
+  MDCCheckbox._attach(Element root) : _js = CheckboxComponent.attachTo(root);
   MDCCheckbox(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _Checkbox _preserveUndefined(Element root, foundation, args) =>
+  static CheckboxComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _Checkbox(root)
+          ? CheckboxComponent(root)
           : args == null
-              ? _Checkbox(root, foundation)
-              : _Checkbox(root, foundation, args);
+              ? CheckboxComponent(root, foundation)
+              : CheckboxComponent(root, foundation, args);
 
   @override
-  _Checkbox get js => _js;
-  final _Checkbox _js;
+  CheckboxComponent get js => _js;
+  final CheckboxComponent _js;
 
   bool get checked => js.checked;
   void set checked(bool value) => js.checked = value;
@@ -38,9 +46,9 @@ class MDCCheckbox extends MDCComponent implements MDCSelectionControl {
 }
 
 @JS('checkbox.MDCCheckbox')
-abstract class _Checkbox extends _Component implements _SelectionControl {
-  external static _Checkbox attachTo(Element root);
-  external factory _Checkbox(Element root, [foundation, args]);
+abstract class CheckboxComponent extends Component implements SelectionControlComponent {
+  external static CheckboxComponent attachTo(Element root);
+  external factory CheckboxComponent(Element root, [foundation, args]);
 
   bool checked;
   bool indeterminate;

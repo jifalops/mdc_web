@@ -11,20 +11,20 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-dialog/index.js)
 class MDCDialog extends MDCComponent {
   static MDCDialog attachTo(Element root) => MDCDialog._attach(root);
-  MDCDialog._attach(Element root) : _js = _Dialog.attachTo(root);
+  MDCDialog._attach(Element root) : _js = DialogComponent.attachTo(root);
 
   MDCDialog(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _Dialog _preserveUndefined(Element root, foundation, args) =>
+  static DialogComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _Dialog(root)
+          ? DialogComponent(root)
           : args == null
-              ? _Dialog(root, foundation)
-              : _Dialog(root, foundation, args);
+              ? DialogComponent(root, foundation)
+              : DialogComponent(root, foundation, args);
 
-  _Dialog get js => _js;
-  final _Dialog _js;
+  DialogComponent get js => _js;
+  final DialogComponent _js;
 
   bool get isOpen => js.isOpen;
   String get escapeKeyAction => js.escapeKeyAction;
@@ -53,9 +53,9 @@ class MDCDialog extends MDCComponent {
 }
 
 @JS('dialog.MDCDialog')
-abstract class _Dialog extends _Component {
-  external static _Dialog attachTo(Element root);
-  external factory _Dialog(Element root, [foundation, args]);
+abstract class DialogComponent extends Component {
+  external static DialogComponent attachTo(Element root);
+  external factory DialogComponent(Element root, [foundation, args]);
 
   external bool get isOpen;
   String escapeKeyAction;

@@ -11,20 +11,20 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-menu/index.js)
 class MDCMenu extends MDCComponent {
   static MDCMenu attachTo(Element root) => MDCMenu._attach(root);
-  MDCMenu._attach(Element root) : _js = _Menu.attachTo(root);
+  MDCMenu._attach(Element root) : _js = MenuComponent.attachTo(root);
 
   MDCMenu(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _Menu _preserveUndefined(Element root, foundation, args) =>
+  static MenuComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _Menu(root)
+          ? MenuComponent(root)
           : args == null
-              ? _Menu(root, foundation)
-              : _Menu(root, foundation, args);
+              ? MenuComponent(root, foundation)
+              : MenuComponent(root, foundation, args);
 
-  _Menu get js => _js;
-  final _Menu _js;
+  MenuComponent get js => _js;
+  final MenuComponent _js;
 
   bool get open => js.open;
   void set open(bool value) => js.open = value;
@@ -53,9 +53,9 @@ class MDCMenu extends MDCComponent {
 }
 
 @JS('menu.MDCMenu')
-abstract class _Menu extends _Component {
-  external static _Menu attachTo(Element root);
-  external factory _Menu(Element root, [foundation, args]);
+abstract class MenuComponent extends Component {
+  external static MenuComponent attachTo(Element root);
+  external factory MenuComponent(Element root, [foundation, args]);
 
   bool open;
   bool quickOpen;

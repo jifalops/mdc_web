@@ -1,3 +1,9 @@
+// @JS()
+// library autoinit;
+
+// import 'dart:html';
+// import 'package:js/js.dart';
+
 part of mdc_web;
 
 /// Automatically create MDC-Web components from html elements that have a

@@ -1,3 +1,8 @@
+// @JS()
+// library base;
+
+// import 'dart:html';
+// import 'package:js/js.dart';
 part of mdc_web;
 
 /// Base class for MDC Web components.
@@ -7,8 +12,8 @@ part of mdc_web;
 /// * [Component Reference](https://material.io/develop/web/components/base/#mdccomponent)
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/component.js)
 abstract class MDCComponent {
-  /// The underlying Javascript component for this class.
-  _Component get js;
+  /// The underlying Javascript component.
+  Component get js;
 
   Element get root_ => js.root_;
   MDCFoundation get foundation_ => js.foundation_;
@@ -35,9 +40,9 @@ abstract class MDCComponent {
 }
 
 @JS('base.MDCComponent')
-abstract class _Component {
-  external static _Component attachTo(Element root);
-  external factory _Component(Element root, [foundation, args]);
+abstract class Component {
+  external static Component attachTo(Element root);
+  external factory Component(Element root, [foundation, args]);
 
   external Element get root_;
   external MDCFoundation get foundation_;

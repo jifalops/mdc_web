@@ -12,20 +12,20 @@ class MDCIconButtonToggle extends MDCComponent {
   static MDCIconButtonToggle attachTo(Element root) =>
       MDCIconButtonToggle._attach(root);
   MDCIconButtonToggle._attach(Element root)
-      : _js = _IconButtonToggle.attachTo(root);
+      : _js = IconButtonToggleComponent.attachTo(root);
 
   MDCIconButtonToggle(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _IconButtonToggle _preserveUndefined(Element root, foundation, args) =>
+  static IconButtonToggleComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _IconButtonToggle(root)
+          ? IconButtonToggleComponent(root)
           : args == null
-              ? _IconButtonToggle(root, foundation)
-              : _IconButtonToggle(root, foundation, args);
+              ? IconButtonToggleComponent(root, foundation)
+              : IconButtonToggleComponent(root, foundation, args);
 
-  _IconButtonToggle get js => _js;
-  final _IconButtonToggle _js;
+  IconButtonToggleComponent get js => _js;
+  final IconButtonToggleComponent _js;
 
   /// Get/set the toggle state.
   bool get on => js.on;
@@ -38,12 +38,12 @@ class MDCIconButtonToggle extends MDCComponent {
 }
 
 @JS('iconButton.MDCIconButtonToggle')
-abstract class _IconButtonToggle extends _Component {
-  external static _IconButtonToggle attachTo(Element root);
-  external factory _IconButtonToggle(Element root, [foundation, args]);
+abstract class IconButtonToggleComponent extends Component {
+  external static IconButtonToggleComponent attachTo(Element root);
+  external factory IconButtonToggleComponent(Element root, [foundation, args]);
 
   /// Get/set the toggle state.
   bool on;
 
-  external _Ripple get ripple;
+  external RippleComponent get ripple;
 }

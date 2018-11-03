@@ -9,20 +9,20 @@ part of mdc_web;
 class MDCFloatingLabel extends MDCComponent implements MDCSelectionControl {
   static MDCFloatingLabel attachTo(Element root) =>
       MDCFloatingLabel._attach(root);
-  MDCFloatingLabel._attach(Element root) : _js = _FloatingLabel.attachTo(root);
+  MDCFloatingLabel._attach(Element root) : _js = FloatingLabelComponent.attachTo(root);
 
   MDCFloatingLabel(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _FloatingLabel _preserveUndefined(Element root, foundation, args) =>
+  static FloatingLabelComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _FloatingLabel(root)
+          ? FloatingLabelComponent(root)
           : args == null
-              ? _FloatingLabel(root, foundation)
-              : _FloatingLabel(root, foundation, args);
+              ? FloatingLabelComponent(root, foundation)
+              : FloatingLabelComponent(root, foundation, args);
 
-  _FloatingLabel get js => _js;
-  final _FloatingLabel _js;
+  FloatingLabelComponent get js => _js;
+  final FloatingLabelComponent _js;
 
   void shake(bool shouldShake) => js.shake(shouldShake);
   void float(bool shouldFloat) => js.float(shouldFloat);
@@ -33,9 +33,9 @@ class MDCFloatingLabel extends MDCComponent implements MDCSelectionControl {
 }
 
 @JS('floatingLabel.MDCFloatingLabel')
-abstract class _FloatingLabel extends _Component implements _SelectionControl {
-  external static _FloatingLabel attachTo(Element root);
-  external factory _FloatingLabel(Element root, [foundation, args]);
+abstract class FloatingLabelComponent extends Component implements SelectionControlComponent {
+  external static FloatingLabelComponent attachTo(Element root);
+  external factory FloatingLabelComponent(Element root, [foundation, args]);
 
   external void shake(bool shouldShake);
   external void float(bool shouldFloat);

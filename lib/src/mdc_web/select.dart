@@ -10,20 +10,20 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-select/index.js)
 class MDCSelect extends MDCComponent implements MDCSelectionControl {
   static MDCSelect attachTo(Element root) => MDCSelect._attach(root);
-  MDCSelect._attach(Element root) : _js = _Select.attachTo(root);
+  MDCSelect._attach(Element root) : _js = SelectComponent.attachTo(root);
 
   MDCSelect(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _Select _preserveUndefined(Element root, foundation, args) =>
+  static SelectComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _Select(root)
+          ? SelectComponent(root)
           : args == null
-              ? _Select(root, foundation)
-              : _Select(root, foundation, args);
+              ? SelectComponent(root, foundation)
+              : SelectComponent(root, foundation, args);
 
-  _Select get js => _js;
-  final _Select _js;
+  SelectComponent get js => _js;
+  final SelectComponent _js;
 
   bool get disabled => js.disabled;
   void set disabled(bool value) => js.disabled = value;
@@ -39,9 +39,9 @@ class MDCSelect extends MDCComponent implements MDCSelectionControl {
 }
 
 @JS('select.MDCSelect')
-abstract class _Select extends _Component implements _SelectionControl {
-  external static _Select attachTo(Element root);
-  external factory _Select(Element root, [foundation, args]);
+abstract class SelectComponent extends Component implements SelectionControlComponent {
+  external static SelectComponent attachTo(Element root);
+  external factory SelectComponent(Element root, [foundation, args]);
 
   bool disabled;
   String value;

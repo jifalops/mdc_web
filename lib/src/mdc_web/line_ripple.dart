@@ -9,20 +9,20 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-line-ripple/index.js)
 class MDCLineRipple extends MDCComponent {
   static MDCLineRipple attachTo(Element root) => MDCLineRipple._attach(root);
-  MDCLineRipple._attach(Element root) : _js = _LineRipple.attachTo(root);
+  MDCLineRipple._attach(Element root) : _js = LineRippleComponent.attachTo(root);
 
   MDCLineRipple(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _LineRipple _preserveUndefined(Element root, foundation, args) =>
+  static LineRippleComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _LineRipple(root)
+          ? LineRippleComponent(root)
           : args == null
-              ? _LineRipple(root, foundation)
-              : _LineRipple(root, foundation, args);
+              ? LineRippleComponent(root, foundation)
+              : LineRippleComponent(root, foundation, args);
 
-  _LineRipple get js => _js;
-  final _LineRipple _js;
+  LineRippleComponent get js => _js;
+  final LineRippleComponent _js;
 
   void activate() => js.activate();
   void deactivate() => js.deactivate();
@@ -30,9 +30,9 @@ class MDCLineRipple extends MDCComponent {
 }
 
 @JS('lineRipple.MDCLineRipple')
-abstract class _LineRipple extends _Component {
-  external static _LineRipple attachTo(Element root);
-  external factory _LineRipple(Element root, [foundation, args]);
+abstract class LineRippleComponent extends Component {
+  external static LineRippleComponent attachTo(Element root);
+  external factory LineRippleComponent(Element root, [foundation, args]);
 
   external void activate();
   external void deactivate();

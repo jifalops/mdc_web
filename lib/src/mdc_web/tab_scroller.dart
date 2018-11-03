@@ -10,20 +10,20 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-tab-scroller/index.js)
 class MDCTabScroller extends MDCComponent {
   static MDCTabScroller attachTo(Element root) => MDCTabScroller._attach(root);
-  MDCTabScroller._attach(Element root) : _js = _TabScroller.attachTo(root);
+  MDCTabScroller._attach(Element root) : _js = TabScrollerComponent.attachTo(root);
 
   MDCTabScroller(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _TabScroller _preserveUndefined(Element root, foundation, args) =>
+  static TabScrollerComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _TabScroller(root)
+          ? TabScrollerComponent(root)
           : args == null
-              ? _TabScroller(root, foundation)
-              : _TabScroller(root, foundation, args);
+              ? TabScrollerComponent(root, foundation)
+              : TabScrollerComponent(root, foundation, args);
 
-  _TabScroller get js => _js;
-  final _TabScroller _js;
+  TabScrollerComponent get js => _js;
+  final TabScrollerComponent _js;
 
   void scrollTo(num scrollX) => js.scrollTo(scrollX);
   void incrementScroll(num scrollX) => js.incrementScroll(scrollX);
@@ -32,9 +32,9 @@ class MDCTabScroller extends MDCComponent {
 }
 
 @JS('tabScroller.MDCTabScroller')
-abstract class _TabScroller extends _Component {
-  external static _TabScroller attachTo(Element root);
-  external factory _TabScroller(Element root, [foundation, args]);
+abstract class TabScrollerComponent extends Component {
+  external static TabScrollerComponent attachTo(Element root);
+  external factory TabScrollerComponent(Element root, [foundation, args]);
 
   external void scrollTo(num scrollX);
   external void incrementScroll(num scrollX);

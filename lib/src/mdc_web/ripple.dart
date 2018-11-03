@@ -18,19 +18,20 @@ class MDCRipple extends MDCComponent {
 
   MDCRipple._(this._js);
 
-  static _Ripple _preserveUndefined(Element root, foundation, args) =>
+  static RippleComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _Ripple(root)
+          ? RippleComponent(root)
           : args == null
-              ? _Ripple(root, foundation)
-              : _Ripple(root, foundation, args);
-  static _Ripple _preserveUndefinedAttach(Element root, bool unbounded) =>
+              ? RippleComponent(root, foundation)
+              : RippleComponent(root, foundation, args);
+  static RippleComponent _preserveUndefinedAttach(
+          Element root, bool unbounded) =>
       unbounded == null
-          ? _Ripple.attachTo(root)
-          : _Ripple.attachTo(root, unbounded);
+          ? RippleComponent.attachTo(root)
+          : RippleComponent.attachTo(root, unbounded);
 
-  _Ripple get js => _js;
-  final _Ripple _js;
+  RippleComponent get js => _js;
+  final RippleComponent _js;
 
   /// Surfaces for bounded ripples should have the overflow property set to
   /// hidden, while surfaces for unbounded ripples should have it set to visible.
@@ -43,14 +44,14 @@ class MDCRipple extends MDCComponent {
   void deactivate() => js.deactivate();
   void layout() => js.layout();
 
-  static dynamic createAdapter(MDCRipple ripple) =>
-      _Ripple.createAdapter(ripple.js);
+  static createAdapter(MDCRipple ripple) =>
+      RippleComponent.createAdapter(ripple.js);
 }
 
 @JS('ripple.MDCRipple')
-abstract class _Ripple extends _Component {
-  external static _Ripple attachTo(Element root, [bool unbounded]);
-  external factory _Ripple(Element root, [foundation, args]);
+abstract class RippleComponent extends Component {
+  external static RippleComponent attachTo(Element root, [bool unbounded]);
+  external factory RippleComponent(Element root, [foundation, args]);
 
   /// Surfaces for bounded ripples should have the overflow property set to
   /// hidden, while surfaces for unbounded ripples should have it set to visible.
@@ -61,7 +62,7 @@ abstract class _Ripple extends _Component {
   external void deactivate();
   external void layout();
 
-  external static createAdapter(_Ripple ripple);
+  external static createAdapter(RippleComponent ripple);
 }
 
 // @JS('ripple.RippleCapableSurface')

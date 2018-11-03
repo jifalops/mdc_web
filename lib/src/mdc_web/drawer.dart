@@ -10,20 +10,20 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-drawer/index.js)
 class MDCDrawer extends MDCComponent {
   static MDCDrawer attachTo(Element root) => MDCDrawer._attach(root);
-  MDCDrawer._attach(Element root) : _js = _Drawer.attachTo(root);
+  MDCDrawer._attach(Element root) : _js = DrawerComponent.attachTo(root);
 
   MDCDrawer(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _Drawer _preserveUndefined(Element root, foundation, args) =>
+  static DrawerComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _Drawer(root)
+          ? DrawerComponent(root)
           : args == null
-              ? _Drawer(root, foundation)
-              : _Drawer(root, foundation, args);
+              ? DrawerComponent(root, foundation)
+              : DrawerComponent(root, foundation, args);
 
-  _Drawer get js => _js;
-  final _Drawer _js;
+  DrawerComponent get js => _js;
+  final DrawerComponent _js;
 
   bool get open => js.open;
   void set open(bool value) => js.open = value;
@@ -33,9 +33,9 @@ class MDCDrawer extends MDCComponent {
 }
 
 @JS('drawer.MDCDrawer')
-abstract class _Drawer extends _Component {
-  external static _Drawer attachTo(Element root);
-  external factory _Drawer(Element root, [foundation, args]);
+abstract class DrawerComponent extends Component {
+  external static DrawerComponent attachTo(Element root);
+  external factory DrawerComponent(Element root, [foundation, args]);
 
   bool open;
 }

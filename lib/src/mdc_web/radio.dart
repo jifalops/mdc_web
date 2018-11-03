@@ -10,20 +10,20 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-radio/index.js)
 class MDCRadio extends MDCComponent implements MDCSelectionControl {
   static MDCRadio attachTo(Element root) => MDCRadio._attach(root);
-  MDCRadio._attach(Element root) : _js = _Radio.attachTo(root);
+  MDCRadio._attach(Element root) : _js = RadioComponent.attachTo(root);
 
   MDCRadio(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _Radio _preserveUndefined(Element root, foundation, args) =>
+  static RadioComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _Radio(root)
+          ? RadioComponent(root)
           : args == null
-              ? _Radio(root, foundation)
-              : _Radio(root, foundation, args);
+              ? RadioComponent(root, foundation)
+              : RadioComponent(root, foundation, args);
 
-  _Radio get js => _js;
-  final _Radio _js;
+  RadioComponent get js => _js;
+  final RadioComponent _js;
 
   bool get checked => js.checked;
   void set checked(bool value) => js.checked = value;
@@ -37,9 +37,9 @@ class MDCRadio extends MDCComponent implements MDCSelectionControl {
 }
 
 @JS('radio.MDCRadio')
-abstract class _Radio extends _Component implements _SelectionControl {
-  external static _Radio attachTo(Element root);
-  external factory _Radio(Element root, [foundation, args]);
+abstract class RadioComponent extends Component implements SelectionControlComponent {
+  external static RadioComponent attachTo(Element root);
+  external factory RadioComponent(Element root, [foundation, args]);
 
   bool checked;
   bool disabled;

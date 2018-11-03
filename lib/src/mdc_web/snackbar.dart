@@ -11,20 +11,20 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-snackbar/index.js)
 class MDCSnackbar extends MDCComponent {
   static MDCSnackbar attachTo(Element root) => MDCSnackbar._attach(root);
-  MDCSnackbar._attach(Element root) : _js = _Snackbar.attachTo(root);
+  MDCSnackbar._attach(Element root) : _js = SnackbarComponent.attachTo(root);
 
   MDCSnackbar(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _Snackbar _preserveUndefined(Element root, foundation, args) =>
+  static SnackbarComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _Snackbar(root)
+          ? SnackbarComponent(root)
           : args == null
-              ? _Snackbar(root, foundation)
-              : _Snackbar(root, foundation, args);
+              ? SnackbarComponent(root, foundation)
+              : SnackbarComponent(root, foundation, args);
 
-  _Snackbar get js => _js;
-  final _Snackbar _js;
+  SnackbarComponent get js => _js;
+  final SnackbarComponent _js;
 
   bool get dismissesOnAction => js.dismissesOnAction;
   void set dismissesOnAction(bool value) => js.dismissesOnAction = value;
@@ -33,9 +33,9 @@ class MDCSnackbar extends MDCComponent {
 }
 
 @JS('snackbar.MDCSnackbar')
-abstract class _Snackbar extends _Component {
-  external static _Snackbar attachTo(Element root);
-  external factory _Snackbar(Element root, [foundation, args]);
+abstract class SnackbarComponent extends Component {
+  external static SnackbarComponent attachTo(Element root);
+  external factory SnackbarComponent(Element root, [foundation, args]);
 
   bool dismissesOnAction;
 

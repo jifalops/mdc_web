@@ -10,20 +10,20 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-tab/index.js)
 class MDCTab extends MDCComponent {
   static MDCTab attachTo(Element root) => MDCTab._attach(root);
-  MDCTab._attach(Element root) : _js = _Tab.attachTo(root);
+  MDCTab._attach(Element root) : _js = TabComponent.attachTo(root);
 
   MDCTab(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _Tab _preserveUndefined(Element root, foundation, args) =>
+  static TabComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _Tab(root)
+          ? TabComponent(root)
           : args == null
-              ? _Tab(root, foundation)
-              : _Tab(root, foundation, args);
+              ? TabComponent(root, foundation)
+              : TabComponent(root, foundation, args);
 
-  _Tab get js => _js;
-  final _Tab _js;
+  TabComponent get js => _js;
+  final TabComponent _js;
 
   bool get active => js.active;
 
@@ -47,9 +47,9 @@ class MDCTab extends MDCComponent {
 }
 
 @JS('tab.MDCTab')
-abstract class _Tab extends _Component {
-  external static _Tab attachTo(Element root);
-  external factory _Tab(Element root, [foundation, args]);
+abstract class TabComponent extends Component {
+  external static TabComponent attachTo(Element root);
+  external factory TabComponent(Element root, [foundation, args]);
 
   external bool get active;
 

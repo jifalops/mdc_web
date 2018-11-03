@@ -9,20 +9,20 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-menu-surface/index.js)
 class MDCMenuSurface extends MDCComponent {
   static MDCMenuSurface attachTo(Element root) => MDCMenuSurface._attach(root);
-  MDCMenuSurface._attach(Element root) : _js = _MenuSurface.attachTo(root);
+  MDCMenuSurface._attach(Element root) : _js = MenuSurfaceComponent.attachTo(root);
 
   MDCMenuSurface(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _MenuSurface _preserveUndefined(Element root, foundation, args) =>
+  static MenuSurfaceComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _MenuSurface(root)
+          ? MenuSurfaceComponent(root)
           : args == null
-              ? _MenuSurface(root, foundation)
-              : _MenuSurface(root, foundation, args);
+              ? MenuSurfaceComponent(root, foundation)
+              : MenuSurfaceComponent(root, foundation, args);
 
-  _MenuSurface get js => _js;
-  final _MenuSurface _js;
+  MenuSurfaceComponent get js => _js;
+  final MenuSurfaceComponent _js;
 
   bool get open => js.open;
   void set open(bool value) => js.open = value;
@@ -51,9 +51,9 @@ class MDCMenuSurface extends MDCComponent {
 }
 
 @JS('menuSurface.MDCMenuSurface')
-abstract class _MenuSurface extends _Component {
-  external static _MenuSurface attachTo(Element root);
-  external factory _MenuSurface(Element root, [foundation, args]);
+abstract class MenuSurfaceComponent extends Component {
+  external static MenuSurfaceComponent attachTo(Element root);
+  external factory MenuSurfaceComponent(Element root, [foundation, args]);
 
   bool open;
   bool quickOpen;
@@ -76,7 +76,7 @@ abstract class _MenuSurface extends _Component {
 }
 
 @JS('menuSurface.Corner')
-abstract class _Corner {
+abstract class MenuSurfaceCorner {
   external static int get TOP_LEFT;
   external static int get TOP_RIGHT;
   external static int get BOTTOM_LEFT;
@@ -89,14 +89,14 @@ abstract class _Corner {
 
 /// The anchored corner of an [MDCMenu] or [MDCMenuSurface].
 class AnchorCorner {
-  static int get topLeft => _Corner.TOP_LEFT;
-  static int get topRight => _Corner.TOP_RIGHT;
-  static int get bottomLeft => _Corner.BOTTOM_LEFT;
-  static int get bottomRight => _Corner.BOTTOM_RIGHT;
-  static int get topStart => _Corner.TOP_START;
-  static int get topEnd => _Corner.TOP_END;
-  static int get bottomStart => _Corner.BOTTOM_START;
-  static int get bottomEnd => _Corner.BOTTOM_END;
+  static int get topLeft => MenuSurfaceCorner.TOP_LEFT;
+  static int get topRight => MenuSurfaceCorner.TOP_RIGHT;
+  static int get bottomLeft => MenuSurfaceCorner.BOTTOM_LEFT;
+  static int get bottomRight => MenuSurfaceCorner.BOTTOM_RIGHT;
+  static int get topStart => MenuSurfaceCorner.TOP_START;
+  static int get topEnd => MenuSurfaceCorner.TOP_END;
+  static int get bottomStart => MenuSurfaceCorner.BOTTOM_START;
+  static int get bottomEnd => MenuSurfaceCorner.BOTTOM_END;
 }
 
 /// The margins for an [MDCMenu] or [MDCMenuSurface] anchor.

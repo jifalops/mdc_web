@@ -10,20 +10,20 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-switch/index.js)
 class MDCSwitch extends MDCComponent implements MDCSelectionControl {
   static MDCSwitch attachTo(Element root) => MDCSwitch._attach(root);
-  MDCSwitch._attach(Element root) : _js = _Switch.attachTo(root);
+  MDCSwitch._attach(Element root) : _js = SwitchComponent.attachTo(root);
 
   MDCSwitch(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _Switch _preserveUndefined(Element root, foundation, args) =>
+  static SwitchComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _Switch(root)
+          ? SwitchComponent(root)
           : args == null
-              ? _Switch(root, foundation)
-              : _Switch(root, foundation, args);
+              ? SwitchComponent(root, foundation)
+              : SwitchComponent(root, foundation, args);
 
-  _Switch get js => _js;
-  final _Switch _js;
+  SwitchComponent get js => _js;
+  final SwitchComponent _js;
 
   bool get checked => js.checked;
   void set checked(bool value) => js.checked = value;
@@ -35,9 +35,9 @@ class MDCSwitch extends MDCComponent implements MDCSelectionControl {
 }
 
 @JS('switchControl.MDCSwitch')
-abstract class _Switch extends _Component implements _SelectionControl {
-  external static _Switch attachTo(Element root);
-  external factory _Switch(Element root, [foundation, args]);
+abstract class SwitchComponent extends Component implements SelectionControlComponent {
+  external static SwitchComponent attachTo(Element root);
+  external factory SwitchComponent(Element root, [foundation, args]);
 
   bool checked;
   bool disabled;

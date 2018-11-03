@@ -12,20 +12,20 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-tab-bar/index.js)
 class MDCTabBar extends MDCComponent {
   static MDCTabBar attachTo(Element root) => MDCTabBar._attach(root);
-  MDCTabBar._attach(Element root) : _js = _TabBar.attachTo(root);
+  MDCTabBar._attach(Element root) : _js = TabBarComponent.attachTo(root);
 
   MDCTabBar(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _TabBar _preserveUndefined(Element root, foundation, args) =>
+  static TabBarComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _TabBar(root)
+          ? TabBarComponent(root)
           : args == null
-              ? _TabBar(root, foundation)
-              : _TabBar(root, foundation, args);
+              ? TabBarComponent(root, foundation)
+              : TabBarComponent(root, foundation, args);
 
-  _TabBar get js => _js;
-  final _TabBar _js;
+  TabBarComponent get js => _js;
+  final TabBarComponent _js;
 
   void activateTab(int index) => js.activateTab(index);
   void scrollIntoView(int index) => js.scrollIntoView(index);
@@ -35,9 +35,9 @@ class MDCTabBar extends MDCComponent {
 }
 
 @JS('tabBar.MDCTabBar')
-abstract class _TabBar extends _Component {
-  external static _TabBar attachTo(Element root);
-  external factory _TabBar(Element root, [foundation, args]);
+abstract class TabBarComponent extends Component {
+  external static TabBarComponent attachTo(Element root);
+  external factory TabBarComponent(Element root, [foundation, args]);
 
   external void activateTab(int index);
   external void scrollIntoView(int index);

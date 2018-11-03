@@ -10,6 +10,6 @@ abstract class MDCSelectionControl {
 }
 
 @JS('selectionControl.MDCSelectionControl')
-abstract class _SelectionControl {
-  external _Ripple get ripple;
+abstract class SelectionControlComponent {
+  external RippleComponent get ripple;
 }

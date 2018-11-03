@@ -10,23 +10,23 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-chips/chip-set/index.js)
 class MDCChipSet extends MDCComponent {
   static MDCChipSet attachTo(Element root) => MDCChipSet._attach(root);
-  MDCChipSet._attach(Element root) : _js = _ChipSet.attachTo(root);
+  MDCChipSet._attach(Element root) : _js = ChipSetComponent.attachTo(root);
 
   MDCChipSet(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _ChipSet _preserveUndefined(Element root, foundation, args) =>
+  static ChipSetComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _ChipSet(root)
+          ? ChipSetComponent(root)
           : args == null
-              ? _ChipSet(root, foundation)
-              : _ChipSet(root, foundation, args);
+              ? ChipSetComponent(root, foundation)
+              : ChipSetComponent(root, foundation, args);
   @override
-  _ChipSet get js => _js;
-  final _ChipSet _js;
+  ChipSetComponent get js => _js;
+  final ChipSetComponent _js;
 
   List<MDCChip> get chips =>
-      List<_Chip>.from(js.chips).map((chip) => MDCChip._(chip)).toList();
+      List<ChipComponent>.from(js.chips).map((chip) => MDCChip._(chip)).toList();
 
   void addChip(Element chipEl, [bool appendToRoot = false]) {
     js.addChip(chipEl);
@@ -37,9 +37,9 @@ class MDCChipSet extends MDCComponent {
 }
 
 @JS('chips.MDCChipSet')
-abstract class _ChipSet extends _Component {
-  external static _ChipSet attachTo(Element root);
-  external factory _ChipSet(Element root, [foundation, args]);
+abstract class ChipSetComponent extends Component {
+  external static ChipSetComponent attachTo(Element root);
+  external factory ChipSetComponent(Element root, [foundation, args]);
 
   external List get chips;
 
@@ -58,21 +58,21 @@ abstract class _ChipSet extends _Component {
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-chips/chip/index.js)
 class MDCChip extends MDCComponent {
   static MDCChip attachTo(Element root) => MDCChip._attach(root);
-  MDCChip._attach(Element root) : _js = _Chip.attachTo(root);
+  MDCChip._attach(Element root) : _js = ChipComponent.attachTo(root);
   MDCChip._(this._js);
 
   MDCChip(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _Chip _preserveUndefined(Element root, foundation, args) =>
+  static ChipComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _Chip(root)
+          ? ChipComponent(root)
           : args == null
-              ? _Chip(root, foundation)
-              : _Chip(root, foundation, args);
+              ? ChipComponent(root, foundation)
+              : ChipComponent(root, foundation, args);
 
-  _Chip get js => _js;
-  final _Chip _js;
+  ChipComponent get js => _js;
+  final ChipComponent _js;
 
   /// This will be the same as the id attribute on the root element. If an id is
   /// not provided, a unique one will be generated.
@@ -112,16 +112,16 @@ class MDCChip extends MDCComponent {
 }
 
 @JS('chips.MDCChip')
-abstract class _Chip extends _Component {
-  external static _Chip attachTo(Element root);
-  external factory _Chip(Element root, [foundation, args]);
+abstract class ChipComponent extends Component {
+  external static ChipComponent attachTo(Element root);
+  external factory ChipComponent(Element root, [foundation, args]);
 
   /// This will be the same as the id attribute on the root element. If an id is
   /// not provided, a unique one will be generated.
   external String get id;
   bool selected;
   bool shouldRemoveOnTrailingIconClick;
-  external _Ripple get ripple;
+  external RippleComponent get ripple;
 
   /// If [shouldRemoveOnTrailingIconClick] is set to false, you must manually
   /// call beginExit() on the chip to remove it.

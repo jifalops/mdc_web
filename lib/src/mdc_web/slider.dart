@@ -13,20 +13,20 @@ part of mdc_web;
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-slider/index.js)
 class MDCSlider extends MDCComponent implements MDCSelectionControl {
   static MDCSlider attachTo(Element root) => MDCSlider._attach(root);
-  MDCSlider._attach(Element root) : _js = _Slider.attachTo(root);
+  MDCSlider._attach(Element root) : _js = SliderComponent.attachTo(root);
 
   MDCSlider(Element root, [foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
-  static _Slider _preserveUndefined(Element root, foundation, args) =>
+  static SliderComponent _preserveUndefined(Element root, foundation, args) =>
       foundation == null
-          ? _Slider(root)
+          ? SliderComponent(root)
           : args == null
-              ? _Slider(root, foundation)
-              : _Slider(root, foundation, args);
+              ? SliderComponent(root, foundation)
+              : SliderComponent(root, foundation, args);
 
-  _Slider get js => _js;
-  final _Slider _js;
+  SliderComponent get js => _js;
+  final SliderComponent _js;
 
   num get value => js.value;
   void set value(num value) => js.value = value;
@@ -60,9 +60,9 @@ class MDCSlider extends MDCComponent implements MDCSelectionControl {
 }
 
 @JS('slider.MDCSlider')
-abstract class _Slider extends _Component implements _SelectionControl {
-  external static _Slider attachTo(Element root);
-  external factory _Slider(Element root, [foundation, args]);
+abstract class SliderComponent extends Component implements SelectionControlComponent {
+  external static SliderComponent attachTo(Element root);
+  external factory SliderComponent(Element root, [foundation, args]);
 
   num value;
   num min;
