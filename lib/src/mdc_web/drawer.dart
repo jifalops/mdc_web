@@ -34,6 +34,5 @@ abstract class _Drawer extends _Component {
   external static _Drawer attachTo(Element root);
   external factory _Drawer(Element root, [foundation, args]);
 
-  external bool get open;
-  external void set open(bool value);
+  bool open;
 }

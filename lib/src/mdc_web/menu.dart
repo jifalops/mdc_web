@@ -54,10 +54,8 @@ abstract class _Menu extends _Component {
   external static _Menu attachTo(Element root);
   external factory _Menu(Element root, [foundation, args]);
 
-  external bool get open;
-  external void set open(bool value);
-  external bool get quickOpen;
-  external void set quickOpen(bool value);
+  bool open;
+  bool quickOpen;
 
   external List get items;
 

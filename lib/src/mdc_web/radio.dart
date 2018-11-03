@@ -38,10 +38,7 @@ abstract class _Radio extends _Component implements _SelectionControl {
   external static _Radio attachTo(Element root);
   external factory _Radio(Element root, [foundation, args]);
 
-  external bool get checked;
-  external void set checked(bool value);
-  external bool get disabled;
-  external void set disabled(bool value);
-  external String get value;
-  external void set value(String value);
+  bool checked;
+  bool disabled;
+  String value;
 }

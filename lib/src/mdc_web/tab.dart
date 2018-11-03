@@ -34,9 +34,7 @@ class MDCTab extends MDCComponent<_Tab> {
   /// Returns a DOMRect.
   /*DOMRect*/ computeIndicatorClientRect() => _js.computeIndicatorClientRect();
 
-  /// {rootLeft: number, rootRight: number, contentLeft: number, contentRight:
-  /// number}
-  /*MDCTabDimensions*/ computeDimensions() => _js.computeDimensions();
+  MDCTabDimensions computeDimensions() => _js.computeDimensions();
 
   /// Emitted when the Tab is interacted with, regardless of its active state.
   /// Used by parent components to know which Tab to activate.
@@ -63,25 +61,16 @@ abstract class _Tab extends _Component {
 
   /// {rootLeft: number, rootRight: number, contentLeft: number, contentRight:
   /// number}
-  external /*MDCTabDimensions*/ computeDimensions();
+  external MDCTabDimensions computeDimensions();
 }
 
-// class MDCTabDimensions {
-//   const MDCTabDimensions(
-//       {this.rootLeft: 0,
-//       this.rootRight: 0,
-//       this.contentLeft: 0,
-//       this.contentRight: 0});
-//   final num rootLeft, rootRight, contentLeft, contentRight;
-// }
-
-// @JS()
-// @anonymous
-// abstract class _TabDimensions {
-//   external factory _TabDimensions(
-//       {num rootLeft, num rootRight, num contentLeft, num contentRight});
-//   external num get rootLeft;
-//   external num get rootRight;
-//   external num get contentLeft;
-//   external num get contentRight;
-// }
+@JS()
+@anonymous
+abstract class MDCTabDimensions {
+  external factory MDCTabDimensions(
+      {num rootLeft, num rootRight, num contentLeft, num contentRight});
+  num rootLeft;
+  num rootRight;
+  num contentLeft;
+  num contentRight;
+}

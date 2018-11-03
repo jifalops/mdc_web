@@ -113,10 +113,8 @@ abstract class _Chip extends _Component {
   /// This will be the same as the id attribute on the root element. If an id is
   /// not provided, a unique one will be generated.
   external String get id;
-  external bool get selected;
-  external void set selected(bool value);
-  external bool get shouldRemoveOnTrailingIconClick;
-  external void set shouldRemoveOnTrailingIconClick(bool value);
+  bool selected;
+  bool shouldRemoveOnTrailingIconClick;
   external _Ripple get ripple;
 
   /// If [shouldRemoveOnTrailingIconClick] is set to false, you must manually

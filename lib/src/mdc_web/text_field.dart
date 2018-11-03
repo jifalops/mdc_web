@@ -41,10 +41,10 @@ class MDCTextField extends MDCComponent<_TextField>
 
   bool get required => _js.required;
   void set required(bool value) => _js.required = value;
-  num get minLength => _js.minLength;
-  void set minLength(num value) => _js.minLength = value;
-  num get maxLength => _js.maxLength;
-  void set maxLength(num value) => _js.maxLength = value;
+  int get minLength => _js.minLength;
+  void set minLength(int value) => _js.minLength = value;
+  int get maxLength => _js.maxLength;
+  void set maxLength(int value) => _js.maxLength = value;
   String get min => _js.min;
   void set min(String value) => _js.min = value;
   String get max => _js.max;
@@ -65,34 +65,24 @@ abstract class _TextField extends _Component implements _SelectionControl {
   external static _TextField attachTo(Element root);
   external factory _TextField(Element root, [foundation, args]);
 
-  external String get value;
-  external void set value(String value);
-  external bool get disabled;
-  external void set disabled(bool value);
+  String value;
+  bool disabled;
+  bool valid;
+  _Ripple ripple;
+  bool required;
+  int minLength;
+  int maxLength;
+  String min;
+  String max;
+  String step;
+  String pattern;
+
   external void set useNativeValidation(bool value);
   external void set helperTextContent(String value);
   external void set leadingIconAriaLabel(String value);
   external void set trailingIconAriaLabel(String value);
   external void set leadingIconContent(String value);
   external void set trailingIconContent(String value);
-  external void set ripple(_Ripple value);
-  external bool get valid;
-  external void set valid(bool value);
-
-  external bool get required;
-  external void set required(bool value);
-  external num get minLength;
-  external void set minLength(num value);
-  external num get maxLength;
-  external void set maxLength(num value);
-  external String get min;
-  external void set min(String value);
-  external String get max;
-  external void set max(String value);
-  external String get step;
-  external void set step(String value);
-  external String get pattern;
-  external void set pattern(String value);
 
   external void layout();
 }

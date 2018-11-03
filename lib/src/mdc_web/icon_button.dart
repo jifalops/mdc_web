@@ -40,8 +40,7 @@ abstract class _IconButtonToggle extends _Component {
   external factory _IconButtonToggle(Element root, [foundation, args]);
 
   /// Get/set the toggle state.
-  external bool get on;
-  external void set on(bool value);
+  bool on;
 
   external _Ripple get ripple;
 }

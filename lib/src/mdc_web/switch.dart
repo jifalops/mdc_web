@@ -36,8 +36,6 @@ abstract class _Switch extends _Component implements _SelectionControl {
   external static _Switch attachTo(Element root);
   external factory _Switch(Element root, [foundation, args]);
 
-  external bool get checked;
-  external void set checked(bool value);
-  external bool get disabled;
-  external void set disabled(bool value);
+  bool checked;
+  bool disabled;
 }

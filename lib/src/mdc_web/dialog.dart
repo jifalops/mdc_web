@@ -55,12 +55,9 @@ abstract class _Dialog extends _Component {
   external factory _Dialog(Element root, [foundation, args]);
 
   external bool get isOpen;
-  external String get escapeKeyAction;
-  external void set escapeKeyAction(String value);
-  external String get scrimClickAction;
-  external void set scrimClickAction(String value);
-  external bool get autoStackButtons;
-  external void set autoStackButtons(bool value);
+  String escapeKeyAction;
+  String scrimClickAction;
+  bool autoStackButtons;
 
   /// Recalculates layout and automatically adds/removes modifier classes like
   /// --scrollable.

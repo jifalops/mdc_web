@@ -61,16 +61,11 @@ abstract class _Slider extends _Component implements _SelectionControl {
   external static _Slider attachTo(Element root);
   external factory _Slider(Element root, [foundation, args]);
 
-  external num get value;
-  external void set value(num value);
-  external num get min;
-  external void set min(num value);
-  external num get max;
-  external void set max(num value);
-  external num get step;
-  external void set step(num value);
-  external bool get disabled;
-  external void set disabled(bool value);
+  num value;
+  num min;
+  num max;
+  num step;
+  bool disabled;
 
   external void layout();
   external void stepUp([num amount = 1]);

@@ -27,7 +27,7 @@ class MDCMenuSurface extends MDCComponent<_MenuSurface> {
   void set quickOpen(bool value) => _js.quickOpen = value;
 
   /// See [AnchorCorner] for acceptable values.
-  void setAnchorCorner(num corner) => _js.setAnchorCorner(corner);
+  void setAnchorCorner(int corner) => _js.setAnchorCorner(corner);
 
   void setAnchorMargin(AnchorMargin margin) => _js.setAnchorMargin(margin);
   void setFixedPosition(bool isFixed) => _js.setFixedPosition(isFixed);
@@ -52,10 +52,8 @@ abstract class _MenuSurface extends _Component {
   external static _MenuSurface attachTo(Element root);
   external factory _MenuSurface(Element root, [foundation, args]);
 
-  external bool get open;
-  external void set open(bool value);
-  external bool get quickOpen;
-  external void set quickOpen(bool value);
+  bool open;
+  bool quickOpen;
 
   /// See [AnchorCorner] for acceptable values.
   external void setAnchorCorner(num corner);
@@ -76,26 +74,26 @@ abstract class _MenuSurface extends _Component {
 
 @JS('menuSurface.Corner')
 abstract class _Corner {
-  external static num get TOP_LEFT;
-  external static num get TOP_RIGHT;
-  external static num get BOTTOM_LEFT;
-  external static num get BOTTOM_RIGHT;
-  external static num get TOP_START;
-  external static num get TOP_END;
-  external static num get BOTTOM_START;
-  external static num get BOTTOM_END;
+  external static int get TOP_LEFT;
+  external static int get TOP_RIGHT;
+  external static int get BOTTOM_LEFT;
+  external static int get BOTTOM_RIGHT;
+  external static int get TOP_START;
+  external static int get TOP_END;
+  external static int get BOTTOM_START;
+  external static int get BOTTOM_END;
 }
 
 /// The anchored corner of an [MDCMenu] or [MDCMenuSurface].
 class AnchorCorner {
-  static num get topLeft => _Corner.TOP_LEFT;
-  static num get topRight => _Corner.TOP_RIGHT;
-  static num get bottomLeft => _Corner.BOTTOM_LEFT;
-  static num get bottomRight => _Corner.BOTTOM_RIGHT;
-  static num get topStart => _Corner.TOP_START;
-  static num get topEnd => _Corner.TOP_END;
-  static num get bottomStart => _Corner.BOTTOM_START;
-  static num get bottomEnd => _Corner.BOTTOM_END;
+  static int get topLeft => _Corner.TOP_LEFT;
+  static int get topRight => _Corner.TOP_RIGHT;
+  static int get bottomLeft => _Corner.BOTTOM_LEFT;
+  static int get bottomRight => _Corner.BOTTOM_RIGHT;
+  static int get topStart => _Corner.TOP_START;
+  static int get topEnd => _Corner.TOP_END;
+  static int get bottomStart => _Corner.BOTTOM_START;
+  static int get bottomEnd => _Corner.BOTTOM_END;
 }
 
 /// The margins for an [MDCMenu] or [MDCMenuSurface] anchor.
@@ -103,8 +101,8 @@ class AnchorCorner {
 @anonymous
 abstract class AnchorMargin {
   external factory AnchorMargin({num top, num right, num bottom, num left});
-  external num get top;
-  external num get right;
-  external num get bottom;
-  external num get left;
+  num top;
+  num right;
+  num bottom;
+  num left;
 }

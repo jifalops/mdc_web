@@ -19,7 +19,7 @@ import 'dart:html';
 import 'package:js/js.dart';
 import 'package:meta/meta.dart';
 
-export 'src/mdc_web/util.dart';
+export 'src/util.dart';
 
 part 'src/mdc_web/animation.dart';
 part 'src/mdc_web/auto_init.dart';

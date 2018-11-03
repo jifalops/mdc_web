@@ -28,8 +28,8 @@ class MDCSelect extends MDCComponent<_Select> implements MDCSelectionControl {
   void set value(String value) => _js.value = value;
 
   /// Set to -1 if no option is currently selected.
-  num get selectedIndex => _js.selectedIndex;
-  void set selectedIndex(num value) => _js.selectedIndex = value;
+  int get selectedIndex => _js.selectedIndex;
+  void set selectedIndex(int value) => _js.selectedIndex = value;
 
   @override
   MDCRipple get ripple => MDCRipple._(_js.ripple);
@@ -40,12 +40,9 @@ abstract class _Select extends _Component implements _SelectionControl {
   external static _Select attachTo(Element root);
   external factory _Select(Element root, [foundation, args]);
 
-  external bool get disabled;
-  external void set disabled(bool value);
-  external String get value;
-  external void set value(String value);
+  bool disabled;
+  String value;
 
   /// Set to -1 if no option is currently selected.
-  external num get selectedIndex;
-  external void set selectedIndex(num value);
+  int selectedIndex;
 }

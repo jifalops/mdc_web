@@ -31,6 +31,5 @@ abstract class _FormField extends _Component {
   external static _FormField attachTo(Element root);
   external factory _FormField(Element root, [foundation, args]);
 
-  external /*_SelectionControl*/ get input;
-  external void set input(/*_SelectionControl*/ value);
+  dynamic /*_SelectionControl*/ input;
 }

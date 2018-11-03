@@ -34,8 +34,7 @@ abstract class _Snackbar extends _Component {
   external static _Snackbar attachTo(Element root);
   external factory _Snackbar(Element root, [foundation, args]);
 
-  external bool get dismissesOnAction;
-  external void set dismissesOnAction(bool value);
+  bool dismissesOnAction;
 
   external void show(SnackbarData data);
 }
@@ -48,7 +47,13 @@ abstract class SnackbarData {
       {@required String message,
       void Function() actionHandler,
       String actionText,
-      num timeout,
+      int timeout,
       bool multiline,
       bool actionOnBottom});
+  String message;
+  void Function() actionHandler;
+  String actionText;
+  int timeout;
+  bool multiline;
+  bool actionOnBottom;
 }
