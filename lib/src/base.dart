@@ -15,12 +15,9 @@ abstract class MDCComponent {
   /// The underlying Javascript component.
   Component get js;
 
-  Element get root_ => js.root_;
-  MDCFoundation get foundation_ => js.foundation_;
+  Element get root => js.root_;
+  MDCFoundation get foundation => js.foundation_;
 
-  void initialize(args) => js.initialize(args);
-  MDCFoundation getDefaultFoundation() => js.getDefaultFoundation();
-  void initialSyncWithDOM() => js.initialSyncWithDOM();
   void destroy() => js.destroy();
   void listen(String type, EventListener handler, {bool captureThis: false}) =>
       js.listen(

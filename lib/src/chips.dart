@@ -27,7 +27,7 @@ class MDCChipSet extends MDCComponent {
 
   void addChip(Element chipEl, [bool appendToRoot = false]) {
     js.addChip(chipEl);
-    if (appendToRoot) root_.append(chipEl);
+    if (appendToRoot) root.append(chipEl);
   }
 
   List<int> getSelectedChipIds() => List.from(js.getSelectedChipIds());

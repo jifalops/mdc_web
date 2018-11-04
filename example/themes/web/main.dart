@@ -39,7 +39,7 @@ void main() {
 
   final menuButton = querySelector('#overflow-menu-button');
   final menu = MDCMenu(querySelector('#overflow-menu'));
-  menu.setAnchorMargin(AnchorMargin(top: topAppBar.root_.clientHeight / 2));
+  menu.setAnchorMargin(AnchorMargin(top: topAppBar.root.clientHeight / 2));
   menuButton.addEventListener('click', (event) {
     menu.open = !menu.open;
   });
