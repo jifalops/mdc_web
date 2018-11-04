@@ -16,7 +16,7 @@ library mdc_web;
 
 export 'src/animation.dart';
 export 'src/auto_init.dart';
-export 'src/base.dart';
+export 'src/base.dart' hide Element;
 export 'src/checkbox.dart';
 export 'src/chips.dart';
 export 'src/dialog.dart';
