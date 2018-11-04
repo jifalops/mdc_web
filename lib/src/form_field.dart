@@ -14,7 +14,7 @@ class MDCFormField extends MDCComponent {
   static MDCFormField attachTo(Element root) => MDCFormField._attach(root);
   MDCFormField._attach(Element root) : _js = FormFieldComponent.attachTo(root);
 
-  MDCFormField(Element root, [foundation, args])
+  MDCFormField(Element root, [MDCFoundation foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   FormFieldComponent get js => _js;
@@ -24,7 +24,8 @@ class MDCFormField extends MDCComponent {
   void set input(MDCSelectionControl value) => js.input = value;
 }
 
-FormFieldComponent _preserveUndefined(Element root, foundation, args) =>
+FormFieldComponent _preserveUndefined(
+        Element root, MDCFoundation foundation, args) =>
     foundation == null
         ? FormFieldComponent(root)
         : args == null

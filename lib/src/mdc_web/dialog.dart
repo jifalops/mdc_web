@@ -17,7 +17,8 @@ import 'base.dart';
 @JS('MDCDialog')
 abstract class DialogComponent extends Component {
   external static DialogComponent attachTo(Element root);
-  external factory DialogComponent(Element root, [foundation, args]);
+  external factory DialogComponent(Element root,
+      [MDCFoundation foundation, args]);
 
   external bool get isOpen;
   String escapeKeyAction;

@@ -17,7 +17,8 @@ import 'ripple.dart';
 @JS('MDCIconButtonToggle')
 abstract class IconButtonToggleComponent extends Component {
   external static IconButtonToggleComponent attachTo(Element root);
-  external factory IconButtonToggleComponent(Element root, [foundation, args]);
+  external factory IconButtonToggleComponent(Element root,
+      [MDCFoundation foundation, args]);
 
   /// Get/set the toggle state.
   bool on;

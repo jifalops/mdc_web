@@ -18,7 +18,8 @@ import 'menu_surface.dart';
 @JS('MDCMenu')
 abstract class MenuComponent extends Component {
   external static MenuComponent attachTo(Element root);
-  external factory MenuComponent(Element root, [foundation, args]);
+  external factory MenuComponent(Element root,
+      [MDCFoundation foundation, args]);
 
   bool open;
   bool quickOpen;

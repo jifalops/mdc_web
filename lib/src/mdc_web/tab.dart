@@ -16,7 +16,7 @@ import 'base.dart';
 @JS('MDCTab')
 abstract class TabComponent extends Component {
   external static TabComponent attachTo(Element root);
-  external factory TabComponent(Element root, [foundation, args]);
+  external factory TabComponent(Element root, [MDCFoundation foundation, args]);
 
   external bool get active;
 

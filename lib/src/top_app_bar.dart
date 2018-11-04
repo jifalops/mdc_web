@@ -14,7 +14,7 @@ class MDCTopAppBar extends MDCComponent {
   static MDCTopAppBar attachTo(Element root) => MDCTopAppBar._attach(root);
   MDCTopAppBar._attach(Element root) : _js = TopAppBarComponent.attachTo(root);
 
-  MDCTopAppBar(Element root, [foundation, args])
+  MDCTopAppBar(Element root, [MDCFoundation foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   TopAppBarComponent get js => _js;
@@ -27,7 +27,8 @@ class MDCTopAppBar extends MDCComponent {
   static const navEvent = 'MDCTopAppBar:nav';
 }
 
-TopAppBarComponent _preserveUndefined(Element root, foundation, args) =>
+TopAppBarComponent _preserveUndefined(
+        Element root, MDCFoundation foundation, args) =>
     foundation == null
         ? TopAppBarComponent(root)
         : args == null

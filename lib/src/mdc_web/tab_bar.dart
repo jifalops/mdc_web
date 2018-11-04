@@ -18,7 +18,8 @@ import 'base.dart';
 @JS('MDCTabBar')
 abstract class TabBarComponent extends Component {
   external static TabBarComponent attachTo(Element root);
-  external factory TabBarComponent(Element root, [foundation, args]);
+  external factory TabBarComponent(Element root,
+      [MDCFoundation foundation, args]);
 
   external void activateTab(int index);
   external void scrollIntoView(int index);

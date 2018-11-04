@@ -14,7 +14,7 @@ class MDCTextField extends MDCComponent implements MDCSelectionControl {
   static MDCTextField attachTo(Element root) => MDCTextField._attach(root);
   MDCTextField._attach(Element root) : _js = TextFieldComponent.attachTo(root);
 
-  MDCTextField(Element root, [foundation, args])
+  MDCTextField(Element root, [MDCFoundation foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   TextFieldComponent get js => _js;
@@ -57,7 +57,8 @@ class MDCTextField extends MDCComponent implements MDCSelectionControl {
   MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 }
 
-TextFieldComponent _preserveUndefined(Element root, foundation, args) =>
+TextFieldComponent _preserveUndefined(
+        Element root, MDCFoundation foundation, args) =>
     foundation == null
         ? TextFieldComponent(root)
         : args == null

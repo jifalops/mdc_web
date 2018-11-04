@@ -14,7 +14,7 @@ class MDCRipple extends MDCComponent {
       MDCRipple._attach(root, unbounded);
   MDCRipple._attach(Element root, [bool unbounded])
       : _js = _preserveUndefinedAttach(root, unbounded);
-  MDCRipple(Element root, [foundation, args])
+  MDCRipple(Element root, [MDCFoundation foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   MDCRipple.fromComponent(this._js);
@@ -37,7 +37,8 @@ class MDCRipple extends MDCComponent {
       RippleComponent.createAdapter(ripple.js);
 }
 
-RippleComponent _preserveUndefined(Element root, foundation, args) =>
+RippleComponent _preserveUndefined(
+        Element root, MDCFoundation foundation, args) =>
     foundation == null
         ? RippleComponent(root)
         : args == null

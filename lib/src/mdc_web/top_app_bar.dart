@@ -17,7 +17,8 @@ import 'base.dart';
 @JS('MDCTopAppBar')
 abstract class TopAppBarComponent extends Component {
   external static TopAppBarComponent attachTo(Element root);
-  external factory TopAppBarComponent(Element root, [foundation, args]);
+  external factory TopAppBarComponent(Element root,
+      [MDCFoundation foundation, args]);
 
   /// The default scroll target is `window`.
   external void setScrollTarget(Element target);

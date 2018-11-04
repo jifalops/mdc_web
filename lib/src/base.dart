@@ -18,6 +18,7 @@ abstract class MDCComponent {
   Element get root => js.root_;
   MDCFoundation get foundation => js.foundation_;
 
+  /// Releases resources and removes any listeners.
   void destroy() => js.destroy();
   void listen(String type, EventListener handler, {bool captureThis: false}) =>
       js.listen(

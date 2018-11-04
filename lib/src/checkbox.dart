@@ -13,7 +13,7 @@ import 'mdc_web/checkbox.dart';
 class MDCCheckbox extends MDCComponent implements MDCSelectionControl {
   static MDCCheckbox attachTo(Element root) => MDCCheckbox._attach(root);
   MDCCheckbox._attach(Element root) : _js = CheckboxComponent.attachTo(root);
-  MDCCheckbox(Element root, [foundation, args])
+  MDCCheckbox(Element root, [MDCFoundation foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   @override
@@ -32,7 +32,8 @@ class MDCCheckbox extends MDCComponent implements MDCSelectionControl {
   MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 }
 
-CheckboxComponent _preserveUndefined(Element root, foundation, args) =>
+CheckboxComponent _preserveUndefined(
+        Element root, MDCFoundation foundation, args) =>
     foundation == null
         ? CheckboxComponent(root)
         : args == null

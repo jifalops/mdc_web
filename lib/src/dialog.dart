@@ -14,7 +14,7 @@ class MDCDialog extends MDCComponent {
   static MDCDialog attachTo(Element root) => MDCDialog._attach(root);
   MDCDialog._attach(Element root) : _js = DialogComponent.attachTo(root);
 
-  MDCDialog(Element root, [foundation, args])
+  MDCDialog(Element root, [MDCFoundation foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   DialogComponent get js => _js;
@@ -46,7 +46,8 @@ class MDCDialog extends MDCComponent {
   static const closedEvent = 'MDCDialog:closed';
 }
 
-DialogComponent _preserveUndefined(Element root, foundation, args) =>
+DialogComponent _preserveUndefined(
+        Element root, MDCFoundation foundation, args) =>
     foundation == null
         ? DialogComponent(root)
         : args == null

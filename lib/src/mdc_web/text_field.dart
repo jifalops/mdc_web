@@ -18,7 +18,8 @@ import 'selection_control.dart';
 abstract class TextFieldComponent extends Component
     implements SelectionControlComponent {
   external static TextFieldComponent attachTo(Element root);
-  external factory TextFieldComponent(Element root, [foundation, args]);
+  external factory TextFieldComponent(Element root,
+      [MDCFoundation foundation, args]);
 
   String value;
   bool disabled;

@@ -15,7 +15,7 @@ class MDCTabBar extends MDCComponent {
   static MDCTabBar attachTo(Element root) => MDCTabBar._attach(root);
   MDCTabBar._attach(Element root) : _js = TabBarComponent.attachTo(root);
 
-  MDCTabBar(Element root, [foundation, args])
+  MDCTabBar(Element root, [MDCFoundation foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   TabBarComponent get js => _js;
@@ -28,7 +28,8 @@ class MDCTabBar extends MDCComponent {
   static const activatedEvent = 'MDCTabBar:activated';
 }
 
-TabBarComponent _preserveUndefined(Element root, foundation, args) =>
+TabBarComponent _preserveUndefined(
+        Element root, MDCFoundation foundation, args) =>
     foundation == null
         ? TabBarComponent(root)
         : args == null

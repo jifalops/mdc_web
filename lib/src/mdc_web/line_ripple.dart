@@ -15,7 +15,8 @@ import 'base.dart';
 @JS('MDCLineRipple')
 abstract class LineRippleComponent extends Component {
   external static LineRippleComponent attachTo(Element root);
-  external factory LineRippleComponent(Element root, [foundation, args]);
+  external factory LineRippleComponent(Element root,
+      [MDCFoundation foundation, args]);
 
   external void activate();
   external void deactivate();

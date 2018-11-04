@@ -16,7 +16,7 @@ class MDCIconButtonToggle extends MDCComponent {
   MDCIconButtonToggle._attach(Element root)
       : _js = IconButtonToggleComponent.attachTo(root);
 
-  MDCIconButtonToggle(Element root, [foundation, args])
+  MDCIconButtonToggle(Element root, [MDCFoundation foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   IconButtonToggleComponent get js => _js;
@@ -32,7 +32,8 @@ class MDCIconButtonToggle extends MDCComponent {
   static const changeEvent = 'MDCIconButtonToggle:change';
 }
 
-IconButtonToggleComponent _preserveUndefined(Element root, foundation, args) =>
+IconButtonToggleComponent _preserveUndefined(
+        Element root, MDCFoundation foundation, args) =>
     foundation == null
         ? IconButtonToggleComponent(root)
         : args == null

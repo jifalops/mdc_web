@@ -13,7 +13,7 @@ class MDCList extends MDCComponent {
   static MDCList attachTo(Element root) => MDCList._attach(root);
   MDCList._attach(Element root) : _js = ListComponent.attachTo(root);
 
-  MDCList(Element root, [foundation, args])
+  MDCList(Element root, [MDCFoundation foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   ListComponent get js => _js;
@@ -29,7 +29,8 @@ class MDCList extends MDCComponent {
   void layout() => js.layout();
 }
 
-ListComponent _preserveUndefined(Element root, foundation, args) =>
+ListComponent _preserveUndefined(
+        Element root, MDCFoundation foundation, args) =>
     foundation == null
         ? ListComponent(root)
         : args == null

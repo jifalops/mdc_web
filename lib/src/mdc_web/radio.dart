@@ -18,7 +18,8 @@ import 'selection_control.dart';
 abstract class RadioComponent extends Component
     implements SelectionControlComponent {
   external static RadioComponent attachTo(Element root);
-  external factory RadioComponent(Element root, [foundation, args]);
+  external factory RadioComponent(Element root,
+      [MDCFoundation foundation, args]);
 
   bool checked;
   bool disabled;

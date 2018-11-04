@@ -18,7 +18,8 @@ import 'selection_control.dart';
 abstract class SelectComponent extends Component
     implements SelectionControlComponent {
   external static SelectComponent attachTo(Element root);
-  external factory SelectComponent(Element root, [foundation, args]);
+  external factory SelectComponent(Element root,
+      [MDCFoundation foundation, args]);
 
   bool disabled;
   String value;

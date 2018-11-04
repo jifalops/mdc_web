@@ -15,7 +15,7 @@ class MDCMenuSurface extends MDCComponent {
   MDCMenuSurface._attach(Element root)
       : _js = MenuSurfaceComponent.attachTo(root);
 
-  MDCMenuSurface(Element root, [foundation, args])
+  MDCMenuSurface(Element root, [MDCFoundation foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   MenuSurfaceComponent get js => _js;
@@ -47,7 +47,8 @@ class MDCMenuSurface extends MDCComponent {
   static const closedEvent = 'MDCMenuSurface:closed';
 }
 
-MenuSurfaceComponent _preserveUndefined(Element root, foundation, args) =>
+MenuSurfaceComponent _preserveUndefined(
+        Element root, MDCFoundation foundation, args) =>
     foundation == null
         ? MenuSurfaceComponent(root)
         : args == null

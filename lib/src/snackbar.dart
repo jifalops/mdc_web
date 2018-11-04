@@ -16,7 +16,7 @@ class MDCSnackbar extends MDCComponent {
   static MDCSnackbar attachTo(Element root) => MDCSnackbar._attach(root);
   MDCSnackbar._attach(Element root) : _js = SnackbarComponent.attachTo(root);
 
-  MDCSnackbar(Element root, [foundation, args])
+  MDCSnackbar(Element root, [MDCFoundation foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   SnackbarComponent get js => _js;
@@ -28,7 +28,8 @@ class MDCSnackbar extends MDCComponent {
   void show(SnackbarData data) => js.show(data);
 }
 
-SnackbarComponent _preserveUndefined(Element root, foundation, args) =>
+SnackbarComponent _preserveUndefined(
+        Element root, MDCFoundation foundation, args) =>
     foundation == null
         ? SnackbarComponent(root)
         : args == null

@@ -18,7 +18,8 @@ import 'base.dart';
 @JS('MDCSnackbar')
 abstract class SnackbarComponent extends Component {
   external static SnackbarComponent attachTo(Element root);
-  external factory SnackbarComponent(Element root, [foundation, args]);
+  external factory SnackbarComponent(Element root,
+      [MDCFoundation foundation, args]);
 
   bool dismissesOnAction;
 

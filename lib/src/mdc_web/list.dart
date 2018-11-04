@@ -16,7 +16,8 @@ import 'base.dart';
 @JS('MDCList')
 abstract class ListComponent extends Component {
   external static ListComponent attachTo(Element root);
-  external factory ListComponent(Element root, [foundation, args]);
+  external factory ListComponent(Element root,
+      [MDCFoundation foundation, args]);
 
   external void set vertical(bool value);
   external void set wrapFocus(bool value);

@@ -16,7 +16,8 @@ import 'selection_control.dart';
 abstract class FloatingLabelComponent extends Component
     implements SelectionControlComponent {
   external static FloatingLabelComponent attachTo(Element root);
-  external factory FloatingLabelComponent(Element root, [foundation, args]);
+  external factory FloatingLabelComponent(Element root,
+      [MDCFoundation foundation, args]);
 
   external void shake(bool shouldShake);
   external void float(bool shouldFloat);

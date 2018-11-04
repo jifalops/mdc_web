@@ -14,7 +14,7 @@ class MDCTabScroller extends MDCComponent {
   MDCTabScroller._attach(Element root)
       : _js = TabScrollerComponent.attachTo(root);
 
-  MDCTabScroller(Element root, [foundation, args])
+  MDCTabScroller(Element root, [MDCFoundation foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   TabScrollerComponent get js => _js;
@@ -26,7 +26,8 @@ class MDCTabScroller extends MDCComponent {
   num getScrollContentWidth() => js.getScrollContentWidth();
 }
 
-TabScrollerComponent _preserveUndefined(Element root, foundation, args) =>
+TabScrollerComponent _preserveUndefined(
+        Element root, MDCFoundation foundation, args) =>
     foundation == null
         ? TabScrollerComponent(root)
         : args == null

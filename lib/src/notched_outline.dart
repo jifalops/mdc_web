@@ -15,7 +15,7 @@ class MDCNotchedOutline extends MDCComponent {
   MDCNotchedOutline._attach(Element root)
       : _js = NotchedOutlineComponent.attachTo(root);
 
-  MDCNotchedOutline(Element root, [foundation, args])
+  MDCNotchedOutline(Element root, [MDCFoundation foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   NotchedOutlineComponent get js => _js;
@@ -25,7 +25,8 @@ class MDCNotchedOutline extends MDCComponent {
   void closeNotch() => js.closeNotch();
 }
 
-NotchedOutlineComponent _preserveUndefined(Element root, foundation, args) =>
+NotchedOutlineComponent _preserveUndefined(
+        Element root, MDCFoundation foundation, args) =>
     foundation == null
         ? NotchedOutlineComponent(root)
         : args == null
