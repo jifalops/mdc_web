@@ -1,12 +1,7 @@
-## [0.3.2] - November 3, 2018
+## [0.3.2] - November 4, 2018
 
 * Expose underlying JavaScript class through `js` getter.
 * Clean up and organize code.
-
-## [0.3.1+1] - October 26, 2018
-
-* Fix missing import
-
 
 ## [0.3.1] - October 26, 2018
 

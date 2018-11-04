@@ -57,5 +57,6 @@ void main() {
   querySelectorAll('.mdc-checkbox').forEach(MDCCheckbox.attachTo);
   querySelectorAll('.mdc-form-field').forEach(MDCFormField.attachTo);
 
-  MDCFormField(querySelector('.mdc-form-field')).input = MDCCheckbox(querySelector('.mdc-checkbox'));
+  MDCFormField(querySelector('.mdc-form-field')).input =
+      MDCCheckbox(querySelector('.mdc-checkbox'));
 }
