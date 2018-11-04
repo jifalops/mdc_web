@@ -1,5 +1,6 @@
 import 'dart:html' show Element, EventListener;
-import 'package:js/js.dart';
+import 'package:js/js.dart' show allowInterop, allowInteropCaptureThis;
+import 'package:meta/meta.dart';
 import 'mdc_web/base.dart';
 
 export 'dart:html' show Element;
@@ -13,6 +14,7 @@ export 'mdc_web/base.dart' show MDCFoundation;
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-base/component.js)
 abstract class MDCComponent {
   /// The underlying Javascript component.
+  @protected
   Component get js;
 
   Element get root => js.root_;

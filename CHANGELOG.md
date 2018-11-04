@@ -1,3 +1,7 @@
+## [0.4.0] - November 4, 2018
+
+* Improve exposed APIs on the base `MDCComponent`.
+
 ## [0.3.2] - November 4, 2018
 
 * Expose underlying JavaScript class through `js` getter.
