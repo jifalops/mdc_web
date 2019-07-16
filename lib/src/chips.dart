@@ -64,10 +64,10 @@ class MDCChip extends MDCComponent {
   /// not provided, a unique one will be generated.
   String get id => js.id;
   bool get selected => js.selected;
-  void set selected(bool value) => js.selected = value;
+  set  selected(bool value) => js.selected = value;
   bool get shouldRemoveOnTrailingIconClick =>
       js.shouldRemoveOnTrailingIconClick;
-  void set shouldRemoveOnTrailingIconClick(bool value) =>
+  set  shouldRemoveOnTrailingIconClick(bool value) =>
       js.shouldRemoveOnTrailingIconClick = value;
   MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 

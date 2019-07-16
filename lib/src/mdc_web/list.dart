@@ -19,10 +19,10 @@ abstract class ListComponent extends Component {
   external factory ListComponent(Element root,
       [MDCFoundation foundation, args]);
 
-  external void set vertical(bool value);
-  external void set wrapFocus(bool value);
-  external void set singleSelection(bool value);
-  external void set selectedIndex(int value);
+  external set  vertical(bool value);
+  external set  wrapFocus(bool value);
+  external set  singleSelection(bool value);
+  external set  selectedIndex(int value);
 
   external List get listElements;
 

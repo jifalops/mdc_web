@@ -24,9 +24,9 @@ class MDCMenu extends MDCComponent {
   final MenuComponent _js;
 
   bool get open => js.open;
-  void set open(bool value) => js.open = value;
+  set  open(bool value) => js.open = value;
   bool get quickOpen => js.quickOpen;
-  void set quickOpen(bool value) => js.quickOpen = value;
+  set  quickOpen(bool value) => js.quickOpen = value;
 
   List<Element> get items => List.from(js.items);
 

@@ -25,9 +25,9 @@ class MDCRipple extends MDCComponent {
   /// Surfaces for bounded ripples should have the overflow property set to
   /// hidden, while surfaces for unbounded ripples should have it set to visible.
   bool get unbounded => js.unbounded;
-  void set unbounded(bool value) => js.unbounded = value;
+  set  unbounded(bool value) => js.unbounded = value;
   bool get disabled => js.disabled;
-  void set disabled(bool value) => js.disabled = value;
+  set  disabled(bool value) => js.disabled = value;
 
   void activate() => js.activate();
   void deactivate() => js.deactivate();

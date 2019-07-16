@@ -21,35 +21,35 @@ class MDCTextField extends MDCComponent implements MDCSelectionControl {
   final TextFieldComponent _js;
 
   String get value => js.value;
-  void set value(String value) => js.value = value;
+  set  value(String value) => js.value = value;
   bool get disabled => js.disabled;
-  void set disabled(bool value) => js.disabled = value;
-  void set useNativeValidation(bool value) => js.useNativeValidation = value;
-  void set helperTextContent(String value) => js.helperTextContent = value;
-  void set leadingIconAriaLabel(String value) =>
+  set  disabled(bool value) => js.disabled = value;
+  set  useNativeValidation(bool value) => js.useNativeValidation = value;
+  set  helperTextContent(String value) => js.helperTextContent = value;
+  set  leadingIconAriaLabel(String value) =>
       js.leadingIconAriaLabel = value;
-  void set trailingIconAriaLabel(String value) =>
+  set  trailingIconAriaLabel(String value) =>
       js.trailingIconAriaLabel = value;
-  void set leadingIconContent(String value) => js.leadingIconContent = value;
-  void set trailingIconContent(String value) => js.trailingIconContent = value;
-  void set ripple(MDCRipple value) => js.ripple = value.js;
+  set  leadingIconContent(String value) => js.leadingIconContent = value;
+  set  trailingIconContent(String value) => js.trailingIconContent = value;
+  set  ripple(MDCRipple value) => js.ripple = value.js;
   bool get valid => js.valid;
-  void set valid(bool value) => js.valid = value;
+  set  valid(bool value) => js.valid = value;
 
   bool get required => js.required;
-  void set required(bool value) => js.required = value;
+  set  required(bool value) => js.required = value;
   int get minLength => js.minLength;
-  void set minLength(int value) => js.minLength = value;
+  set  minLength(int value) => js.minLength = value;
   int get maxLength => js.maxLength;
-  void set maxLength(int value) => js.maxLength = value;
+  set  maxLength(int value) => js.maxLength = value;
   String get min => js.min;
-  void set min(String value) => js.min = value;
+  set  min(String value) => js.min = value;
   String get max => js.max;
-  void set max(String value) => js.max = value;
+  set  max(String value) => js.max = value;
   String get step => js.step;
-  void set step(String value) => js.step = value;
+  set  step(String value) => js.step = value;
   String get pattern => js.pattern;
-  void set pattern(String value) => js.pattern = value;
+  set  pattern(String value) => js.pattern = value;
 
   void layout() => js.layout();
 

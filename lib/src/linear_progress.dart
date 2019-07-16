@@ -21,15 +21,15 @@ class MDCLinearProgress extends MDCComponent {
   LinearProgressComponent get js => _js;
   final LinearProgressComponent _js;
 
-  void set determinate(bool value) => js.determinate = value;
+  set  determinate(bool value) => js.determinate = value;
 
   /// Value should be between 0 and 1, inclusive.
-  void set progress(num value) => js.progress = value;
+  set  progress(num value) => js.progress = value;
 
   /// Value should be between 0 and 1, inclusive.
-  void set buffer(num value) => js.buffer = value;
+  set  buffer(num value) => js.buffer = value;
 
-  void set reverse(bool value) => js.reverse = value;
+  set  reverse(bool value) => js.reverse = value;
 
   void open() => js.open();
   void close() => js.close();

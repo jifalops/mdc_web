@@ -21,13 +21,13 @@ class MDCCheckbox extends MDCComponent implements MDCSelectionControl {
   final CheckboxComponent _js;
 
   bool get checked => js.checked;
-  void set checked(bool value) => js.checked = value;
+  set  checked(bool value) => js.checked = value;
   bool get indeterminate => js.indeterminate;
-  void set indeterminate(bool value) => js.indeterminate = value;
+  set  indeterminate(bool value) => js.indeterminate = value;
   bool get disabled => js.disabled;
-  void set disabled(bool value) => js.disabled = value;
+  set  disabled(bool value) => js.disabled = value;
   String get value => js.value;
-  void set value(String value) => js.value = value;
+  set  value(String value) => js.value = value;
   @override
   MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 }

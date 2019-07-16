@@ -24,15 +24,15 @@ class MDCSlider extends MDCComponent implements MDCSelectionControl {
   final SliderComponent _js;
 
   num get value => js.value;
-  void set value(num value) => js.value = value;
+  set  value(num value) => js.value = value;
   num get min => js.min;
-  void set min(num value) => js.min = value;
+  set  min(num value) => js.min = value;
   num get max => js.max;
-  void set max(num value) => js.max = value;
+  set  max(num value) => js.max = value;
   num get step => js.step;
-  void set step(num value) => js.step = value;
+  set  step(num value) => js.step = value;
   bool get disabled => js.disabled;
-  void set disabled(bool value) => js.disabled = value;
+  set  disabled(bool value) => js.disabled = value;
 
   void layout() => js.layout();
   void stepUp([num amount = 1]) => js.stepUp(amount);

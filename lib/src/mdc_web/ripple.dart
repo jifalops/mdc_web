@@ -34,9 +34,9 @@ abstract class RippleComponent extends Component {
 // @JS('ripple.RippleCapableSurface')
 // abstract class RippleCapableSurface {
 //   external Element get root_;
-//   external void set root_(Element value);
+//   external set  root_(Element value);
 //   external bool get unbounded;
-//   external void set unbounded(bool value);
+//   external set  unbounded(bool value);
 //   external bool get disabled;
-//   external void set disabled(bool value);
+//   external set  disabled(bool value);
 // }
