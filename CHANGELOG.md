@@ -1,3 +1,7 @@
+## [0.4.1] - July 16, 2019
+
+* Adds sass generator and material-components-web files.
+
 ## [0.4.0] - November 4, 2018
 
 * Improve exposed APIs on the base `MDCComponent`.
