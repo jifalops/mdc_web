@@ -21,7 +21,7 @@ class MDCFormField extends MDCComponent {
   final FormFieldComponent _js;
 
   MDCSelectionControl get input => js.input;
-  set  input(MDCSelectionControl value) => js.input = value;
+  set input(MDCSelectionControl value) => js.input = value;
 }
 
 FormFieldComponent _preserveUndefined(

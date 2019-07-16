@@ -21,9 +21,9 @@ class MDCSwitch extends MDCComponent implements MDCSelectionControl {
   final SwitchComponent _js;
 
   bool get checked => js.checked;
-  set  checked(bool value) => js.checked = value;
+  set checked(bool value) => js.checked = value;
   bool get disabled => js.disabled;
-  set  disabled(bool value) => js.disabled = value;
+  set disabled(bool value) => js.disabled = value;
 
   @override
   MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);

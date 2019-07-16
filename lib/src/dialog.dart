@@ -22,11 +22,11 @@ class MDCDialog extends MDCComponent {
 
   bool get isOpen => js.isOpen;
   String get escapeKeyAction => js.escapeKeyAction;
-  set  escapeKeyAction(String value) => js.escapeKeyAction = value;
+  set escapeKeyAction(String value) => js.escapeKeyAction = value;
   String get scrimClickAction => js.scrimClickAction;
-  set  scrimClickAction(String value) => js.scrimClickAction = value;
+  set scrimClickAction(String value) => js.scrimClickAction = value;
   bool get autoStackButtons => js.autoStackButtons;
-  set  autoStackButtons(bool value) => js.autoStackButtons = value;
+  set autoStackButtons(bool value) => js.autoStackButtons = value;
 
   /// Recalculates layout and automatically adds/removes modifier classes like
   /// --scrollable.

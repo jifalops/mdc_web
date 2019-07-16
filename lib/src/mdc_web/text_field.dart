@@ -33,12 +33,12 @@ abstract class TextFieldComponent extends Component
   String step;
   String pattern;
 
-  external set  useNativeValidation(bool value);
-  external set  helperTextContent(String value);
-  external set  leadingIconAriaLabel(String value);
-  external set  trailingIconAriaLabel(String value);
-  external set  leadingIconContent(String value);
-  external set  trailingIconContent(String value);
+  external set useNativeValidation(bool value);
+  external set helperTextContent(String value);
+  external set leadingIconAriaLabel(String value);
+  external set trailingIconAriaLabel(String value);
+  external set leadingIconContent(String value);
+  external set trailingIconContent(String value);
 
   external void layout();
 }

@@ -21,11 +21,11 @@ class MDCRadio extends MDCComponent implements MDCSelectionControl {
   final RadioComponent _js;
 
   bool get checked => js.checked;
-  set  checked(bool value) => js.checked = value;
+  set checked(bool value) => js.checked = value;
   bool get disabled => js.disabled;
-  set  disabled(bool value) => js.disabled = value;
+  set disabled(bool value) => js.disabled = value;
   String get value => js.value;
-  set  value(String value) => js.value = value;
+  set value(String value) => js.value = value;
 
   @override
   MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);

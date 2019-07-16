@@ -24,7 +24,7 @@ class MDCIconButtonToggle extends MDCComponent {
 
   /// Get/set the toggle state.
   bool get on => js.on;
-  set  on(bool value) => js.on = value;
+  set on(bool value) => js.on = value;
 
   MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 

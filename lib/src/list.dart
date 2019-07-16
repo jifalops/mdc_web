@@ -19,10 +19,10 @@ class MDCList extends MDCComponent {
   ListComponent get js => _js;
   final ListComponent _js;
 
-  set  vertical(bool value) => js.vertical = value;
-  set  wrapFocus(bool value) => js.wrapFocus = value;
-  set  singleSelection(bool value) => js.singleSelection = value;
-  set  selectedIndex(int value) => js.selectedIndex = value;
+  set vertical(bool value) => js.vertical = value;
+  set wrapFocus(bool value) => js.wrapFocus = value;
+  set singleSelection(bool value) => js.singleSelection = value;
+  set selectedIndex(int value) => js.selectedIndex = value;
 
   List<Element> get listElements => List.from(js.listElements);
 

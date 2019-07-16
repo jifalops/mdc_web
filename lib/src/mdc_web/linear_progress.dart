@@ -19,15 +19,15 @@ abstract class LinearProgressComponent extends Component {
   external factory LinearProgressComponent(Element root,
       [MDCFoundation foundation, args]);
 
-  external set  determinate(bool value);
+  external set determinate(bool value);
 
   /// Value should be between 0 and 1, inclusive.
-  external set  progress(num value);
+  external set progress(num value);
 
   /// Value should be between 0 and 1, inclusive.
-  external set  buffer(num value);
+  external set buffer(num value);
 
-  external set  reverse(bool value);
+  external set reverse(bool value);
 
   external void open();
   external void close();

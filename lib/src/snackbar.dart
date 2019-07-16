@@ -23,7 +23,7 @@ class MDCSnackbar extends MDCComponent {
   final SnackbarComponent _js;
 
   bool get dismissesOnAction => js.dismissesOnAction;
-  set  dismissesOnAction(bool value) => js.dismissesOnAction = value;
+  set dismissesOnAction(bool value) => js.dismissesOnAction = value;
 
   void show(SnackbarData data) => js.show(data);
 }
