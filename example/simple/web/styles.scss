@@ -6,7 +6,7 @@ $mdc-theme-secondary: rgb(66, 189, 189);
 $mdc-theme-on-primary: #442b2d;
 $mdc-theme-on-secondary: #212121;
 
-@import "material-components-web/material-components-web";
+@import "package:mdc_web/material-components-web";
 
 .mdc-button.primary {
   @include mdc-elevation(2.0);
