@@ -1,5 +1,5 @@
 @JS('mdc.tabScroller')
-library tabScroller;
+library tab_scroller;
 
 import 'dart:html';
 import 'package:js/js.dart';

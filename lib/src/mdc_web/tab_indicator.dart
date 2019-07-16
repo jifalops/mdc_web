@@ -1,5 +1,5 @@
 @JS('mdc.tabIndicator')
-library tabIndicator;
+library tab_indicator;
 
 import 'dart:html';
 import 'package:js/js.dart';

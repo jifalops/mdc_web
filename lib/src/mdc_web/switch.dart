@@ -1,5 +1,5 @@
 @JS('mdc.switchControl')
-library switchControl;
+library switch_control;
 
 import 'dart:html';
 import 'package:js/js.dart';

@@ -1,5 +1,5 @@
 @JS('mdc.lineRipple')
-library lineRipple;
+library line_ripple;
 
 import 'dart:html';
 import 'package:js/js.dart';

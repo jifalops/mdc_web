@@ -1,5 +1,5 @@
 @JS('mdc.linearProgress')
-library linearProgress;
+library linear_progress;
 
 import 'dart:html';
 import 'package:js/js.dart';

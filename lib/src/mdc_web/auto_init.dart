@@ -1,5 +1,5 @@
 @JS('mdc')
-library autoInit;
+library auto_init;
 
 import 'dart:html';
 import 'package:js/js.dart';

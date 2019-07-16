@@ -1,5 +1,5 @@
 @JS('mdc.floatingLabel')
-library floatingLabel;
+library floating_label;
 
 import 'dart:html';
 import 'package:js/js.dart';

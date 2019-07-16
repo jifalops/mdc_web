@@ -1,5 +1,5 @@
 @JS('mdc.topAppBar')
-library topAppBar;
+library top_app_bar;
 
 import 'dart:html';
 import 'package:js/js.dart';

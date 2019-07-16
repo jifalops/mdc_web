@@ -1,5 +1,5 @@
 @JS('mdc.textField')
-library textField;
+library text_field;
 
 import 'dart:html';
 import 'package:js/js.dart';

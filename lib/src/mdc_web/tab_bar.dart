@@ -1,5 +1,5 @@
 @JS('mdc.tabBar')
-library tabBar;
+library tab_bar;
 
 import 'dart:html';
 import 'package:js/js.dart';

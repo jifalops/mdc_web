@@ -1,5 +1,5 @@
 @JS('mdc.iconButton')
-library iconButton;
+library icon_button;
 
 import 'dart:html';
 import 'package:js/js.dart';

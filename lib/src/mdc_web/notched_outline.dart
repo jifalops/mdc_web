@@ -1,5 +1,5 @@
 @JS('mdc.notchedOutline')
-library notchedOutline;
+library notched_outline;
 
 import 'dart:html';
 import 'package:js/js.dart';

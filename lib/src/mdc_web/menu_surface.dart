@@ -1,5 +1,5 @@
 @JS('mdc.menuSurface')
-library menuSurface;
+library menu_surface;
 
 import 'dart:html';
 import 'package:js/js.dart';
