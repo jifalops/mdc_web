@@ -1,7 +1,6 @@
 @JS('mdc.selectionControl')
 library selection_control;
 
-import 'dart:html';
 import 'package:js/js.dart';
 import 'ripple.dart';
 

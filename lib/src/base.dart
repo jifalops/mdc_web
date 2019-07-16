@@ -22,14 +22,14 @@ abstract class MDCComponent {
 
   /// Releases resources and removes any listeners.
   void destroy() => js.destroy();
-  void listen(String type, EventListener handler, {bool captureThis: false}) =>
+  void listen(String type, EventListener handler, {bool captureThis = false}) =>
       js.listen(
           type,
           captureThis
               ? allowInteropCaptureThis(handler)
               : allowInterop(handler));
   void unlisten(String type, EventListener handler,
-          {bool captureThis: false}) =>
+          {bool captureThis = false}) =>
       js.unlisten(
           type,
           captureThis
