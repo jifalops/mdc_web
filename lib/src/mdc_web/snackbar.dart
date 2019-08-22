@@ -3,7 +3,6 @@ library snackbar;
 
 import 'dart:html';
 import 'package:js/js.dart';
-import 'package:meta/meta.dart';
 import 'base.dart';
 
 /// Snackbars provide brief messages about app processes at the bottom of the
@@ -23,24 +22,10 @@ abstract class SnackbarComponent extends Component {
 
   bool dismissesOnAction;
 
-  external void show(SnackbarData data);
-}
-
-/// Passed to [MDCSnackbar.show()].
-@JS()
-@anonymous
-abstract class SnackbarData {
-  external factory SnackbarData(
-      {@required String message,
-      void Function() actionHandler,
-      String actionText,
-      int timeout,
-      bool multiline,
-      bool actionOnBottom});
-  String message;
-  void Function() actionHandler;
-  String actionText;
-  int timeout;
-  bool multiline;
-  bool actionOnBottom;
+  external void open();
+  external void close([String reason]);
+  int timeoutMs;
+  String labelText;
+  String actionButtonText;
+  external bool get isOpen;
 }

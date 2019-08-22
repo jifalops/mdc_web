@@ -23,4 +23,5 @@ abstract class TabBarComponent extends Component {
 
   external void activateTab(int index);
   external void scrollIntoView(int index);
+  external void set focusOnActivate(bool b);
 }
