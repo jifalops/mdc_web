@@ -1,7 +1,6 @@
 import 'dart:html';
 import 'package:mdc_web/mdc_web.dart';
-import 'main.dart' show content, listen, addSection;
-import 'package:js/js.dart';
+import 'main.dart' show listen;
 
 void buttons() {
   querySelectorAll('.mdc-button').forEach(MDCRipple.attachTo);
@@ -196,7 +195,11 @@ void topAppBar() {
 // }
 
 void snackbar() {
-  final snackbar = MDCSnackbar(querySelector('.mdc-snackbar'));
-  snackbar.show(
-      SnackbarData(message: 'hi', actionText: 'click', actionHandler: allowInterop(() => print('clicked'))));
+  final snackbar = MDCSnackbar(querySelector('.mdc-snackbar'))
+    ..labelText = 'hi'
+    ..actionButtonText = 'click'
+    ..listen('MDCSnackbar:closing', (e) {
+      print('clicked');
+    });
+  snackbar.open();
 }

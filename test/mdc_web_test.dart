@@ -1,4 +1,3 @@
-import 'package:mdc_web/mdc_web.dart';
 import 'package:test/test.dart';
 
 void main() {

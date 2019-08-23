@@ -1,8 +1,6 @@
 import 'base.dart';
 import 'mdc_web/snackbar.dart';
 
-export 'mdc_web/snackbar.dart' show SnackbarData;
-
 /// Snackbars provide brief messages about app processes at the bottom of the
 /// screen.
 ///
@@ -22,10 +20,19 @@ class MDCSnackbar extends MDCComponent {
   SnackbarComponent get js => _js;
   final SnackbarComponent _js;
 
-  bool get dismissesOnAction => js.dismissesOnAction;
-  set dismissesOnAction(bool value) => js.dismissesOnAction = value;
+  bool get isOpen => js.isOpen;
 
-  void show(SnackbarData data) => js.show(data);
+  String get labelText => js.labelText;
+  void set labelText(String text) => js.labelText = text;
+
+  String get actionButtonText => js.actionButtonText;
+  void set actionButtonText(String text) => js.actionButtonText = text;
+
+  int get timeoutMs => js.timeoutMs;
+  void set timeoutMs(int t) => js.timeoutMs = t;
+
+  void open() => js.open();
+  void close([String reason]) => js.close(reason);
 }
 
 SnackbarComponent _preserveUndefined(
