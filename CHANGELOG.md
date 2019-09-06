@@ -1,3 +1,7 @@
+## [0.5.0-pre] - September 5, 2019
+
+* Upgrade to material-components-web 3.1.1
+
 ## [0.4.1] - July 16, 2019
 
 * Adds sass generator and material-components-web files.
