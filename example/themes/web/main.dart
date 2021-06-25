@@ -31,12 +31,12 @@ void main() {
   themeSwitch.checked = window.localStorage['theme'] == 'Dark';
   themeSwitch.listen('change', (e) {
     window.localStorage['theme'] = themeSwitch.checked ? 'Dark' : 'Light';
-    final LinkElement? styles = querySelector('#theme') as LinkElement?;
-    window.animationFrame.then((time) => styles!.href =
+    final LinkElement styles = querySelector('#theme') as LinkElement;
+    window.animationFrame.then((time) => styles.href =
         themeSwitch.checked ? 'theme-dark.css' : 'theme-light.css');
   });
 
-  final menuButton = querySelector('#overflow-menu-button')!;
+  final menuButton = querySelector('#overflow-menu-button');
   final menu = MDCMenu(querySelector('#overflow-menu'));
   menu.setAnchorMargin(AnchorMargin(top: topAppBar.root.clientHeight / 2));
   menuButton.addEventListener('click', (event) {
