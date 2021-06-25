@@ -195,7 +195,7 @@ void topAppBar() {
 // }
 
 void snackbar() {
-  final snackbar = MDCSnackbar(querySelector('.mdc-snackbar'))
+  final snackbar = MDCSnackbar(querySelector('.mdc-snackbar')!)
     ..labelText = 'hi'
     ..actionButtonText = 'click'
     ..listen('MDCSnackbar:closing', (e) {
