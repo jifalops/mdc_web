@@ -22,7 +22,7 @@ abstract class SliderComponent extends Component
     implements SelectionControlComponent {
   external static SliderComponent attachTo(Element root);
   external factory SliderComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
   num value;
   num min;

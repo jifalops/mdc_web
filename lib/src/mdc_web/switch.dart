@@ -18,8 +18,8 @@ import 'selection_control.dart';
 abstract class SwitchComponent extends Component
     implements SelectionControlComponent {
   external static SwitchComponent attachTo(Element root);
-  external factory SwitchComponent(Element root,
-      [MDCFoundation foundation, args]);
+  external factory SwitchComponent(Element? root,
+      [MDCFoundation? foundation, args]);
 
   bool checked;
   bool disabled;

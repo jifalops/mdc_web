@@ -18,8 +18,8 @@ import 'selection_control.dart';
 abstract class CheckboxComponent extends Component
     implements SelectionControlComponent {
   external static CheckboxComponent attachTo(Element root);
-  external factory CheckboxComponent(Element root,
-      [MDCFoundation foundation, args]);
+  external factory CheckboxComponent(Element? root,
+      [MDCFoundation? foundation, args]);
 
   bool checked;
   bool indeterminate;

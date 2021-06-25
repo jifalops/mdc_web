@@ -13,7 +13,7 @@ import 'package:js/js.dart';
 @JS('MDCComponent')
 abstract class Component {
   external static Component attachTo(Element root);
-  external factory Component(Element root, [MDCFoundation foundation, args]);
+  external factory Component(Element root, [MDCFoundation? foundation, args]);
 
   external Element get root_;
   external MDCFoundation get foundation_;

@@ -5,7 +5,7 @@ author: Jacob Phillips <jifalops@gmail.com>
 homepage: https://github.com/jifalops/mdc_web
 
 environment:
-  sdk: '>=2.2.2 <3.0.0'
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   js: ^0.6.1+1

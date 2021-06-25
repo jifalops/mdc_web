@@ -17,7 +17,7 @@ import 'base.dart';
 abstract class TabIndicatorComponent extends Component {
   external static TabIndicatorComponent attachTo(Element root);
   external factory TabIndicatorComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
   /// [previousIndicatorClientRect] is a DOMRect. See also
   /// [computeIndicatorClientRect()].

@@ -26,14 +26,14 @@ abstract class MDCComponent {
       js.listen(
           type,
           captureThis
-              ? allowInteropCaptureThis(handler)
+              ? allowInteropCaptureThis(handler) as dynamic Function(Event)
               : allowInterop(handler));
   void unlisten(String type, EventListener handler,
           {bool captureThis: false}) =>
       js.unlisten(
           type,
           captureThis
-              ? allowInteropCaptureThis(handler)
+              ? allowInteropCaptureThis(handler) as dynamic Function(Event)
               : allowInterop(handler));
   void emit(String type, data, [bool shouldBubble = false]) =>
       js.emit(type, data, shouldBubble);

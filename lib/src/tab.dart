@@ -15,7 +15,7 @@ class MDCTab extends MDCComponent {
   static MDCTab attachTo(Element root) => MDCTab._attach(root);
   MDCTab._attach(Element root) : _js = TabComponent.attachTo(root);
 
-  MDCTab(Element root, [MDCFoundation foundation, args])
+  MDCTab(Element root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   TabComponent get js => _js;
@@ -42,7 +42,7 @@ class MDCTab extends MDCComponent {
   static const interactedEvent = 'MDCTab:interacted';
 }
 
-TabComponent _preserveUndefined(Element root, MDCFoundation foundation, args) =>
+TabComponent _preserveUndefined(Element root, MDCFoundation? foundation, args) =>
     foundation == null
         ? TabComponent(root)
         : args == null

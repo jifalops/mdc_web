@@ -17,7 +17,7 @@ class MDCSlider extends MDCComponent implements MDCSelectionControl {
   static MDCSlider attachTo(Element root) => MDCSlider._attach(root);
   MDCSlider._attach(Element root) : _js = SliderComponent.attachTo(root);
 
-  MDCSlider(Element root, [MDCFoundation foundation, args])
+  MDCSlider(Element root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   SliderComponent get js => _js;
@@ -55,7 +55,7 @@ class MDCSlider extends MDCComponent implements MDCSelectionControl {
 }
 
 SliderComponent _preserveUndefined(
-        Element root, MDCFoundation foundation, args) =>
+        Element root, MDCFoundation? foundation, args) =>
     foundation == null
         ? SliderComponent(root)
         : args == null

@@ -13,7 +13,7 @@ class MDCLineRipple extends MDCComponent {
   MDCLineRipple._attach(Element root)
       : _js = LineRippleComponent.attachTo(root);
 
-  MDCLineRipple(Element root, [MDCFoundation foundation, args])
+  MDCLineRipple(Element root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   LineRippleComponent get js => _js;
@@ -25,7 +25,7 @@ class MDCLineRipple extends MDCComponent {
 }
 
 LineRippleComponent _preserveUndefined(
-        Element root, MDCFoundation foundation, args) =>
+        Element root, MDCFoundation? foundation, args) =>
     foundation == null
         ? LineRippleComponent(root)
         : args == null

@@ -17,7 +17,7 @@ import 'base.dart';
 abstract class LinearProgressComponent extends Component {
   external static LinearProgressComponent attachTo(Element root);
   external factory LinearProgressComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
   external set determinate(bool value);
 

@@ -15,9 +15,9 @@ import 'base.dart';
 /// * [Source Code](https://github.com/material-components/material-components-web/tree/master/packages/mdc-ripple/index.js)
 @JS('MDCRipple')
 abstract class RippleComponent extends Component {
-  external static RippleComponent attachTo(Element root, [bool unbounded]);
+  external static RippleComponent attachTo(Element root, [bool? unbounded]);
   external factory RippleComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
   /// Surfaces for bounded ripples should have the overflow property set to
   /// hidden, while surfaces for unbounded ripples should have it set to visible.

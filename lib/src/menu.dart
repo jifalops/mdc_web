@@ -17,7 +17,7 @@ class MDCMenu extends MDCComponent {
   static MDCMenu attachTo(Element root) => MDCMenu._attach(root);
   MDCMenu._attach(Element root) : _js = MenuComponent.attachTo(root);
 
-  MDCMenu(Element root, [MDCFoundation foundation, args])
+  MDCMenu(Element? root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   MenuComponent get js => _js;
@@ -50,7 +50,7 @@ class MDCMenu extends MDCComponent {
 }
 
 MenuComponent _preserveUndefined(
-        Element root, MDCFoundation foundation, args) =>
+        Element? root, MDCFoundation? foundation, args) =>
     foundation == null
         ? MenuComponent(root)
         : args == null

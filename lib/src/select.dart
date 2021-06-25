@@ -14,7 +14,7 @@ class MDCSelect extends MDCComponent implements MDCSelectionControl {
   static MDCSelect attachTo(Element root) => MDCSelect._attach(root);
   MDCSelect._attach(Element root) : _js = SelectComponent.attachTo(root);
 
-  MDCSelect(Element root, [MDCFoundation foundation, args])
+  MDCSelect(Element root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   SelectComponent get js => _js;
@@ -34,7 +34,7 @@ class MDCSelect extends MDCComponent implements MDCSelectionControl {
 }
 
 SelectComponent _preserveUndefined(
-        Element root, MDCFoundation foundation, args) =>
+        Element root, MDCFoundation? foundation, args) =>
     foundation == null
         ? SelectComponent(root)
         : args == null

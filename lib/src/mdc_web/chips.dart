@@ -18,7 +18,7 @@ import 'ripple.dart';
 abstract class ChipSetComponent extends Component {
   external static ChipSetComponent attachTo(Element root);
   external factory ChipSetComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
   external List get chips;
 
@@ -39,7 +39,7 @@ abstract class ChipSetComponent extends Component {
 abstract class ChipComponent extends Component {
   external static ChipComponent attachTo(Element root);
   external factory ChipComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
   /// This will be the same as the id attribute on the root element. If an id is
   /// not provided, a unique one will be generated.

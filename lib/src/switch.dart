@@ -14,7 +14,7 @@ class MDCSwitch extends MDCComponent implements MDCSelectionControl {
   static MDCSwitch attachTo(Element root) => MDCSwitch._attach(root);
   MDCSwitch._attach(Element root) : _js = SwitchComponent.attachTo(root);
 
-  MDCSwitch(Element root, [MDCFoundation foundation, args])
+  MDCSwitch(Element? root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   SwitchComponent get js => _js;
@@ -30,7 +30,7 @@ class MDCSwitch extends MDCComponent implements MDCSelectionControl {
 }
 
 SwitchComponent _preserveUndefined(
-        Element root, MDCFoundation foundation, args) =>
+        Element? root, MDCFoundation? foundation, args) =>
     foundation == null
         ? SwitchComponent(root)
         : args == null

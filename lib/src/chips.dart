@@ -14,7 +14,7 @@ class MDCChipSet extends MDCComponent {
   static MDCChipSet attachTo(Element root) => MDCChipSet._attach(root);
   MDCChipSet._attach(Element root) : _js = ChipSetComponent.attachTo(root);
 
-  MDCChipSet(Element root, [MDCFoundation foundation, args])
+  MDCChipSet(Element root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefinedChipSet(root, foundation, args);
 
   @override
@@ -54,7 +54,7 @@ class MDCChip extends MDCComponent {
   MDCChip._attach(Element root) : _js = ChipComponent.attachTo(root);
   MDCChip._(this._js);
 
-  MDCChip(Element root, [MDCFoundation foundation, args])
+  MDCChip(Element root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefinedChip(root, foundation, args);
 
   ChipComponent get js => _js;

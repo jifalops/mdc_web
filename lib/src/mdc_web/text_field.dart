@@ -19,7 +19,7 @@ abstract class TextFieldComponent extends Component
     implements SelectionControlComponent {
   external static TextFieldComponent attachTo(Element root);
   external factory TextFieldComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
   String value;
   bool disabled;

@@ -15,7 +15,7 @@ class MDCMenuSurface extends MDCComponent {
   MDCMenuSurface._attach(Element root)
       : _js = MenuSurfaceComponent.attachTo(root);
 
-  MDCMenuSurface(Element root, [MDCFoundation foundation, args])
+  MDCMenuSurface(Element root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   MenuSurfaceComponent get js => _js;
@@ -48,7 +48,7 @@ class MDCMenuSurface extends MDCComponent {
 }
 
 MenuSurfaceComponent _preserveUndefined(
-        Element root, MDCFoundation foundation, args) =>
+        Element root, MDCFoundation? foundation, args) =>
     foundation == null
         ? MenuSurfaceComponent(root)
         : args == null

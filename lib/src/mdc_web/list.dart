@@ -17,7 +17,7 @@ import 'base.dart';
 abstract class ListComponent extends Component {
   external static ListComponent attachTo(Element root);
   external factory ListComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
   external set vertical(bool value);
   external set wrapFocus(bool value);

@@ -16,7 +16,7 @@ import 'base.dart';
 abstract class MenuSurfaceComponent extends Component {
   external static MenuSurfaceComponent attachTo(Element root);
   external factory MenuSurfaceComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
   bool open;
   bool quickOpen;
@@ -54,7 +54,7 @@ abstract class MenuSurfaceCorner {
 @JS()
 @anonymous
 abstract class AnchorMargin {
-  external factory AnchorMargin({num top, num right, num bottom, num left});
+  external factory AnchorMargin({num? top, num? right, num? bottom, num? left});
   num top;
   num right;
   num bottom;

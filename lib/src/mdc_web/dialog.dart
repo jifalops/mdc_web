@@ -18,7 +18,7 @@ import 'base.dart';
 abstract class DialogComponent extends Component {
   external static DialogComponent attachTo(Element root);
   external factory DialogComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
   external bool get isOpen;
   String escapeKeyAction;
@@ -31,5 +31,5 @@ abstract class DialogComponent extends Component {
   external void open();
 
   /// [action] indicates why it was closed.
-  external void close([String action]);
+  external void close([String? action]);
 }

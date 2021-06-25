@@ -17,7 +17,7 @@ import 'base.dart';
 abstract class DrawerComponent extends Component {
   external static DrawerComponent attachTo(Element root);
   external factory DrawerComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
   bool open;
 }
