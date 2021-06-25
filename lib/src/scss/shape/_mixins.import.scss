@@ -1,0 +1,5 @@
+@forward "package:mdc_web/src/scss/feature-targeting" as mdc-feature-*;
+@forward "package:mdc_web/src/scss/rtl" as mdc-rtl-* hide mdc-rtl-rtl;
+@forward "package:mdc_web/src/scss/rtl" as mdc-* hide mdc-property-, mdc-reflexive, mdc-reflexive-box, mdc-reflexive-position, mdc-reflexive-property;
+@forward "./index" as mdc-shape-*;
+

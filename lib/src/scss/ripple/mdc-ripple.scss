@@ -20,7 +20,6 @@
 // THE SOFTWARE.
 //
 
-@import "./mixins";
-@include mdc-ripple-common;
-@include mdc-ripple-core-styles;
+/// @deprecated Use 'styles.css' instead.
+@forward './styles';
 

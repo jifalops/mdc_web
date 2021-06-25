@@ -1,0 +1,254 @@
+//
+// Copyright 2020 Google Inc.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+//
+
+// Selector '.mdc-*' should only be used in this project.
+// stylelint-disable selector-class-pattern --
+// Internal styling for Tooltip MDC component.
+
+@use 'package:mdc_web/src/scss/elevation/mixins' as elevation-mixins;
+@use 'package:mdc_web/src/scss/feature-targeting/feature-targeting';
+@use 'package:mdc_web/src/scss/rtl/rtl' as rtl;
+@use 'package:mdc_web/src/scss/dom/mixins' as dom-mixins;
+@use './tooltip-theme';
+@use 'package:mdc_web/src/scss/typography/typography';
+
+$_padding-x: 4px;
+$_padding-y: 8px;
+$_min-width: 40px;
+$_max-height: 40vh;
+//LINT.IfChange(tooltip-dimensions)
+$_max-width: 200px;
+$_min-height: 24px;
+// LINT.ThenChange(constants.ts:tooltip-dimensions)
+$_label-type-scale: caption;
+$_line-height: 16px;
+
+// Rich Tooltip variables
+$_rich_corner_radius: 4px;
+$_rich_line-height: 20px;
+$_rich_max-width: 320px;
+$_content-margin-x: 8px;
+$_content-type-scale: body2;
+$_title-type-scale: subtitle2;
+$_caret-size: 24px;
+
+@mixin core-styles($query: feature-targeting.all()) {
+  $feat-structure: feature-targeting.create-target($query, structure);
+
+  @include tooltip-theme.shape-radius(
+    tooltip-theme.$border-radius,
+    $query: $query
+  );
+  @include tooltip-theme.label-ink-color(
+    tooltip-theme.$label-color,
+    $query: $query
+  );
+  @include tooltip-theme.fill-color(
+    tooltip-theme.$background-color,
+    $query: $query
+  );
+  @include tooltip-theme.word-break(
+    tooltip-theme.$word-break-default,
+    tooltip-theme.$word-break-ie11-fallback,
+    $query: $query
+  );
+  @include tooltip-theme.z-index(tooltip-theme.$z-index, $query: $query);
+  @include tooltip-theme.show-transition(
+    tooltip-theme.$enter-duration,
+    $query: $query
+  );
+  @include tooltip-theme.hide-transition(
+    tooltip-theme.$exit-duration,
+    $query: $query
+  );
+  @include tooltip-theme.rich-text-ink-color(
+    tooltip-theme.$rich-title-text-color,
+    tooltip-theme.$rich-content-text-color,
+    tooltip-theme.$rich-content-link-color,
+    $query: $query
+  );
+
+  .mdc-tooltip {
+    @include feature-targeting.targets($feat-structure) {
+      position: fixed;
+      display: none;
+    }
+    @include tooltip-theme.rich-fill-color(
+      tooltip-theme.$rich-background-color,
+      $query: $query
+    );
+  }
+
+  .mdc-tooltip-wrapper--rich {
+    @include feature-targeting.targets($feat-structure) {
+      position: relative;
+    }
+  }
+
+  .mdc-tooltip--shown,
+  .mdc-tooltip--showing,
+  .mdc-tooltip--hide {
+    @include feature-targeting.targets($feat-structure) {
+      display: inline-flex;
+    }
+
+    &.mdc-tooltip--rich {
+      @include feature-targeting.targets($feat-structure) {
+        display: inline-block;
+        // Moves the rich tooltip out of the viewport/parent element initially
+        // so that the initial width is not affected and a 'correct' width can
+        // be used to calculate the position of the tooltip.
+        /* @noflip */
+        left: -$_rich_max_width;
+        position: absolute;
+      }
+    }
+  }
+
+  .mdc-tooltip__surface {
+    &::before {
+      @include dom-mixins.transparent-border($query: $query);
+    }
+
+    @include typography.typography(
+      $_label-type-scale,
+      $exclude-props: (line-height),
+      $query: $query
+    );
+
+    @include feature-targeting.targets($feat-structure) {
+      line-height: $_line-height;
+      padding: $_padding-x $_padding-y;
+      min-width: $_min-width;
+      max-width: $_max-width;
+      min-height: $_min-height;
+      max-height: $_max-height;
+      box-sizing: border-box;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .mdc-tooltip--rich & {
+      @include elevation-mixins.overlay-dimensions(100%, $query: $query);
+      @include elevation-mixins.elevation(2, $query: $query);
+      @include feature-targeting.targets($feat-structure) {
+        align-items: flex-start;
+        border-radius: $_rich_corner_radius;
+        display: flex;
+        flex-direction: column;
+        line-height: $_rich_line-height;
+        min-height: $_min-height;
+        min-width: $_min-width;
+        max-width: $_rich_max-width;
+        position: relative;
+      }
+    }
+
+    .mdc-tooltip--multiline & {
+      @include feature-targeting.targets($feat-structure) {
+        /* @noflip */
+        text-align: left;
+        @include rtl.rtl {
+          /* @noflip */
+          text-align: right;
+        }
+      }
+    }
+
+    .mdc-tooltip__title {
+      @include typography.text-baseline($top: 28px, $query: $query);
+      @include typography.typography(
+        $_title-type-scale,
+        $exclude-props: (line-height),
+        $query: $query
+      );
+      @include feature-targeting.targets($feat-structure) {
+        margin: 0 $_content-margin-x;
+      }
+    }
+
+    .mdc-tooltip__content {
+      @include typography.text-baseline($top: 24px, $query: $query);
+      @include typography.typography(
+        $_content-type-scale,
+        $exclude-props: (line-height),
+        $query: $query
+      );
+      @include feature-targeting.targets($feat-structure) {
+        max-width: calc(100% - 2 * #{$_content-margin-x});
+        margin: 0 $_content-margin-x 16px $_content-margin-x;
+        /* @noflip */
+        text-align: left;
+        @include rtl.rtl {
+          /* @noflip */
+          text-align: right;
+        }
+      }
+    }
+
+    .mdc-tooltip__content-link {
+      @include feature-targeting.targets($feat-structure) {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .mdc-tooltip__surface-animation {
+    @include feature-targeting.targets($feat-structure) {
+      opacity: 0;
+      transform: scale(0.8);
+      will-change: transform, opacity;
+    }
+
+    .mdc-tooltip--shown & {
+      @include feature-targeting.targets($feat-structure) {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .mdc-tooltip--hide & {
+      @include feature-targeting.targets($feat-structure) {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .mdc-tooltip__caret-surface-top,
+  .mdc-tooltip__caret-surface-bottom {
+    @include elevation-mixins.overlay-dimensions(100%, $query: $query);
+    @include feature-targeting.targets($feat-structure) {
+      position: absolute;
+      height: $_caret-size;
+      width: $_caret-size;
+    }
+  }
+
+  .mdc-tooltip__caret-surface-bottom {
+    @include elevation-mixins.elevation(2, $query: $query);
+    @include feature-targeting.targets($feat-structure) {
+      outline: 1px solid transparent;
+      z-index: -1;
+    }
+  }
+}
+

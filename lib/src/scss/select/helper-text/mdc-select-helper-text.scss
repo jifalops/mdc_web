@@ -19,25 +19,5 @@
 //  THE SOFTWARE.
 //
 
-@import "../functions";
-@import "package:mdc_web/src/scss/theme/mixins";
-@import "package:mdc_web/src/scss/typography/mixins";
-
-// postcss-bem-linter: define select-helper-text
-.mdc-select-helper-text {
-  @include mdc-typography(caption);
-  @include mdc-typography-baseline-top(16px);
-
-  margin: 0;
-  transition: mdc-select-transition(opacity);
-  opacity: 0;
-  will-change: opacity;
-}
-
-.mdc-select-helper-text--persistent {
-  transition: none;
-  opacity: 1;
-  will-change: initial;
-}
-// postcss-bem-linter: end
+@forward '../styles';
 

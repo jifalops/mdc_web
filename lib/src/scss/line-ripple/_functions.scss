@@ -20,9 +20,9 @@
 // THE SOFTWARE.
 //
 
-@import "package:mdc_web/src/scss/animation/variables";
+@use 'package:mdc_web/src/scss/animation/variables';
 
-@function mdc-line-ripple-transition-value($property) {
-  @return #{$property} 180ms $mdc-animation-standard-curve-timing-function;
+@function transition-value($property) {
+  @return #{$property} 180ms variables.$standard-curve-timing-function;
 }
 

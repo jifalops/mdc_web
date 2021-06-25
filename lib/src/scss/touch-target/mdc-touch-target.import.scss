@@ -1,0 +1,9 @@
+@forward "package:mdc_web/src/scss/base/mixins" as mdc-base-*;
+@forward "package:mdc_web/src/scss/feature-targeting/variables" as mdc-feature-*;
+@forward "package:mdc_web/src/scss/feature-targeting/mixins" as mdc-feature-*;
+@forward "variables" as mdc-touch-target-*;
+@forward "mixins" as mdc-* hide mdc-margin, mdc-wrapper;
+@forward "mixins" as mdc-touch-target-* hide mdc-touch-target-touch-target;
+@forward "package:mdc_web/src/scss/feature-targeting/functions" as mdc-feature-*;
+@forward "mdc-touch-target";
+

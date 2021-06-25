@@ -1,0 +1,12 @@
+@use '../banner';
+@use 'package:mdc_web/src/scss/feature-targeting/feature-targeting';
+
+@mixin test($query) {
+  .test {
+    @include banner.core-styles($query: $query);
+  }
+}
+
+// This shouldn't output any CSS.
+@include test(feature-targeting.any());
+

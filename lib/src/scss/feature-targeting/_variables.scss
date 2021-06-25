@@ -20,6 +20,6 @@
 // THE SOFTWARE.
 //
 
-$mdc-feature-all-features: (structure, color, typography, animation);
-$mdc-feature-all-query-operators: (any, all, without);
+/// @deprecated Import `_feature-targeting.scss` Sass module instead.
+@forward 'feature-targeting' show $all-features, $all-query-operators;
 

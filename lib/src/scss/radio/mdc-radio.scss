@@ -20,6 +20,5 @@
 // THE SOFTWARE.
 //
 
-@import "./mixins";
-@include mdc-radio-core-styles;
+@forward './styles';
 

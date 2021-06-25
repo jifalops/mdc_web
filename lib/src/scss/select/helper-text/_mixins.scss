@@ -19,31 +19,6 @@
 //  THE SOFTWARE.
 //
 
-// Public mixins
-
-@mixin mdc-select-helper-text-color($color) {
-  &:not(.mdc-select--disabled) {
-    @include mdc-select-helper-text-color_($color);
-  }
-}
-
-@mixin mdc-select-helper-text-validation-color($color) {
-  &:not(.mdc-select--disabled) {
-    @include mdc-select-helper-text-validation-color_($color);
-  }
-}
-
-// Private mixins
-
-@mixin mdc-select-helper-text-color_($color) {
-  + .mdc-select-helper-text {
-    @include mdc-theme-prop(color, $color);
-  }
-}
-
-@mixin mdc-select-helper-text-validation-color_($color) {
-  &.mdc-select--invalid + .mdc-select-helper-text--validation-msg {
-    @include mdc-theme-prop(color, $color);
-  }
-}
+@forward '../select-helper-text-theme' show helper-text-color, disabled-helper-text-color, helper-text-validation-color, hover-helper-text-validation-color;
+@forward '../select-helper-text' show helper-text-core-styles;
 

@@ -20,10 +20,19 @@
 // THE SOFTWARE.
 //
 
-@import "package:mdc_web/src/scss/theme/mixins";
-@import "package:mdc_web/src/scss/theme/variables";
+@use 'sass:color';
+@use 'package:mdc_web/src/scss/theme/theme';
+@use 'package:mdc_web/src/scss/theme/theme-color';
 
-$mdc-card-action-icon-color: rgba(mdc-theme-prop-value(on-surface), mdc-theme-text-emphasis(medium)) !default;
-$mdc-card-outline-color: mix(mdc-theme-prop-value(on-surface), mdc-theme-prop-value(surface), 12%) !default;
-$mdc-card-outline-width: 1px !default;
+$action-icon-color: rgba(
+  theme-color.prop-value(on-surface),
+  theme-color.text-emphasis(medium)
+) !default;
+$outline-color: color.mix(
+  theme-color.prop-value(on-surface),
+  theme-color.prop-value(surface),
+  12%
+) !default;
+$outline-width: 1px !default;
+$shape-radius: medium !default;
 

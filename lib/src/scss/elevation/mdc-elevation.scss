@@ -20,6 +20,6 @@
 // THE SOFTWARE.
 //
 
-@import "./mixins";
-@include mdc-elevation-core-styles;
+/// @deprecated Import 'styles.scss' module instead.
+@forward './styles';
 

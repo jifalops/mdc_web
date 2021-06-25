@@ -20,13 +20,6 @@
 // THE SOFTWARE.
 //
 
-@import "package:mdc_web/src/scss/theme/functions";
-
-@function mdc-checkbox-transition-enter($property, $delay: 0ms, $duration: $mdc-checkbox-transition-duration) {
-  @return mdc-animation-enter($property, $duration, $delay);
-}
-
-@function mdc-checkbox-transition-exit($property, $delay: 0ms, $duration: $mdc-checkbox-transition-duration) {
-  @return mdc-animation-exit-temporary($property, $duration, $delay);
-}
+/// @deprecated Import '_checkbox.scss' instead.
+@forward './checkbox' show transition-enter, transition-exit;
 

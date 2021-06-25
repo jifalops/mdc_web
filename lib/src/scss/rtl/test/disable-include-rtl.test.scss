@@ -1,0 +1,7 @@
+@use '../index' with (
+  $include: false,
+);
+@use 'package:mdc_web/src/scss/button/mdc-button';
+@use 'package:mdc_web/src/scss/textfield/mdc-text-field';
+@use 'package:mdc_web/src/scss/typography/mdc-typography';
+

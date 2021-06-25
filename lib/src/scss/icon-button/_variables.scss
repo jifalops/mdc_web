@@ -20,5 +20,19 @@
 // THE SOFTWARE.
 //
 
-$mdc-icon-button-size: 24px !default;
+@use 'package:mdc_web/src/scss/density/variables';
+
+$icon-size: 24px !default;
+
+$size: 48px !default;
+$minimum-height: 28px !default;
+$maximum-height: $size !default;
+$density-scale: variables.$default-scale !default;
+$density-config: (
+  size: (
+    default: $size,
+    maximum: $maximum-height,
+    minimum: $minimum-height,
+  ),
+) !default;
 

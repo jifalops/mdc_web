@@ -20,6 +20,6 @@
 // THE SOFTWARE.
 //
 
-@import "./mixins";
-@include mdc-snackbar-core-styles;
+@use './mixins';
+@include mixins.core-styles;
 

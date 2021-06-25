@@ -20,14 +20,6 @@
 // THE SOFTWARE.
 //
 
-@import "package:mdc_web/src/scss/animation/functions";
-@import "./variables";
-
-@function mdc-radio-enter($name) {
-  @return mdc-animation-enter($name, $mdc-radio-transition-duration);
-}
-
-@function mdc-radio-exit($name) {
-  @return mdc-animation-exit-temporary($name, $mdc-radio-transition-duration);
-}
+/// @deprecated Import '_radio.scss' module instead.
+@forward './radio' show enter, exit;
 

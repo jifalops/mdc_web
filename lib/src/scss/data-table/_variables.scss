@@ -20,28 +20,5 @@
 // THE SOFTWARE.
 //
 
-@import "package:mdc_web/src/scss/theme/functions";
-
-$mdc-data-table-fill-color: surface !default;
-$mdc-data-table-header-row-fill-color: inherit !default;
-$mdc-data-table-row-fill-color: inherit !default;
-$mdc-data-table-selected-row-fill-color: rgba(mdc-theme-prop-value(primary), .04) !default;
-
-$mdc-data-table-checked-icon-color: primary !default;
-$mdc-data-table-divider-color: rgba(mdc-theme-prop-value(on-surface), .12) !default;
-$mdc-data-table-divider-size: 1px !default;
-$mdc-data-table-row-hover-fill-color: rgba(mdc-theme-prop-value(on-surface), .04) !default;
-$mdc-data-table-checkbox-touch-dimension: 48px !default;
-
-$mdc-data-table-header-row-text-color: rgba(mdc-theme-prop-value(on-surface), .87) !default;
-$mdc-data-table-row-text-color: rgba(mdc-theme-prop-value(on-surface), .87) !default;
-
-$mdc-data-table-shape-radius: medium !default;
-$mdc-data-table-stroke-size: 1px !default;
-$mdc-data-table-stroke-color: rgba(mdc-theme-prop-value(on-surface), .12) !default;
-
-$mdc-data-table-row-height: 52px !default;
-$mdc-data-table-header-row-height: $mdc-data-table-row-height + 4px !default;
-$mdc-data-table-cell-leading-padding: 16px !default;
-$mdc-data-table-cell-trailing-padding: 16px !default;
+@forward './data-table-theme' show $fill-color, $header-row-fill-color, $row-fill-color, $selected-row-fill-color, $checked-icon-color, $divider-color, $divider-size, $row-hover-fill-color, $checkbox-touch-dimension, $header-row-text-color, $row-text-color, $sort-icon-color, $sort-icon-active-color, $sort-icon-density-scale, $shape-radius, $stroke-size, $stroke-color, $cell-height, $header-cell-height, $cell-leading-padding, $cell-trailing-padding, $minimum-cell-height, $maximum-cell-height, $default-density-scale;
 

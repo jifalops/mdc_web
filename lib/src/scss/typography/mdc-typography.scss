@@ -20,6 +20,5 @@
 // THE SOFTWARE.
 //
 
-@import "./mixins";
-@include mdc-typography-core-styles;
+@forward './styles';
 

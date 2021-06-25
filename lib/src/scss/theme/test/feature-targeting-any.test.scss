@@ -1,0 +1,12 @@
+@use '../theme';
+@use 'package:mdc_web/src/scss/feature-targeting/feature-targeting';
+
+@mixin test($query) {
+  .test {
+    @include theme.core-styles($query: $query);
+  }
+}
+
+// This shouldn't output any CSS.
+@include test(feature-targeting.any());
+

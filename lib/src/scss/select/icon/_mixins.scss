@@ -19,54 +19,6 @@
 //  THE SOFTWARE.
 //
 
-@import "package:mdc_web/src/scss/theme/mixins";
-@import "./variables";
-
-// Public mixins
-
-@mixin mdc-select-icon-color($color) {
-  &:not(.mdc-select--disabled) {
-    @include mdc-select-icon-color_($color);
-  }
-}
-
-// Private mixins
-
-@mixin mdc-select-icon_ {
-  @include mdc-select-icon-color(on-surface);
-
-  .mdc-select__icon {
-    display: inline-block;
-    position: absolute;
-    bottom: 16px;
-    box-sizing: border-box;
-    width: $mdc-select-icon-size;
-    height: $mdc-select-icon-size;
-    border: none;
-    background-color: transparent;
-    fill: currentColor;
-    opacity: $mdc-select-icon-opacity;
-    text-decoration: none;
-    cursor: pointer;
-    user-select: none;
-  }
-}
-
-@mixin mdc-select-icon-color_($color) {
-  .mdc-select__icon {
-    @include mdc-theme-prop(color, $color);
-  }
-}
-
-@mixin mdc-select-icon-horizontal-position_($iconPosition, $inputPadding) {
-  .mdc-select__icon {
-    @include mdc-rtl-reflexive-position(left, $iconPosition);
-  }
-
-  // Move the input's position, to allow room for the icon
-  .mdc-select__native-control,
-  .mdc-select__selected-text {
-    @include mdc-rtl-reflexive-property(padding, $inputPadding /* left */, $mdc-select-icon-right-padding /* right */);
-  }
-}
+@forward "../select-icon-theme" show size, icon-color, disabled-icon-color, icon-horizontal-margins;
+@forward "../select-icon" show icon-core-styles;
 

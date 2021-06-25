@@ -1,0 +1,13 @@
+@forward "package:mdc_web/src/scss/base/mixins" as mdc-base-*;
+@forward "package:mdc_web/src/scss/feature-targeting/variables" as mdc-feature-*;
+@forward "package:mdc_web/src/scss/feature-targeting/mixins" as mdc-feature-*;
+@forward "package:mdc_web/src/scss/theme/constants" as mdc-theme-*;
+@forward "package:mdc_web/src/scss/theme/variables" as mdc-theme-*;
+@forward "package:mdc_web/src/scss/animation/variables" as mdc-animation-*;
+@forward "package:mdc_web/src/scss/theme/mixins" as mdc-theme-*;
+@forward "mixins" as mdc-line-ripple-*;
+@forward "package:mdc_web/src/scss/feature-targeting/functions" as mdc-feature-*;
+@forward "package:mdc_web/src/scss/theme/functions" as mdc-theme-*;
+@forward "functions" as mdc-line-ripple-*;
+@forward "mdc-line-ripple";
+

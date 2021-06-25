@@ -19,15 +19,5 @@
 //  THE SOFTWARE.
 //
 
-@import "./mixins";
-
-.mdc-select--with-leading-icon {
-  @include mdc-select-icon_;
-}
-
-.mdc-select__icon:not([tabindex]),
-.mdc-select__icon[tabindex="-1"] {
-  cursor: default;
-  pointer-events: none;
-}
+@forward "../styles";
 

@@ -20,48 +20,5 @@
 // THE SOFTWARE.
 //
 
-@import "package:mdc_web/src/scss/animation/variables";
-@import "package:mdc_web/src/scss/theme/variables";
-
-$mdc-select-arrow-padding: 52px !default;
-$mdc-select-label-padding: 16px !default;
-$mdc-select-height: 56px !default;
-$mdc-select-icon-padding: 48px !default;
-
-$mdc-select-ink-color: rgba(mdc-theme-prop-value(on-surface), .87) !default;
-$mdc-select-dropdown-color: mdc-theme-prop-value(on-surface) !default;
-$mdc-select-icon-color: rgba(mdc-theme-prop-value(on-surface), .54) !default;
-$mdc-select-label-color: rgba(mdc-theme-prop-value(on-surface), .6) !default;
-$mdc-select-focused-label-color: rgba(mdc-theme-prop-value(primary), .87) !default;
-$mdc-select-bottom-line-idle-color: rgba(mdc-theme-prop-value(on-surface), .42) !default;
-$mdc-select-bottom-line-hover-color: rgba(mdc-theme-prop-value(on-surface), .87) !default;
-$mdc-select-helper-text-color: rgba(mdc-theme-prop-value(on-surface), .6) !default;
-
-$mdc-select-fill-color: mix(mdc-theme-prop-value(on-surface), mdc-theme-prop-value(surface), 4%) !default;
-
-$mdc-select-dropdown-opacity: .54 !default;
-
-// Disabled Styles
-$mdc-select-disabled-label-color: rgba(mdc-theme-prop-value(on-surface), .37) !default;
-$mdc-select-disabled-icon-color: rgba(mdc-theme-prop-value(on-surface), .37) !default;
-$mdc-select-disabled-ink-color: rgba(mdc-theme-prop-value(on-surface), .37) !default;
-$mdc-select-disabled-fill-color: mix(mdc-theme-prop-value(on-surface), mdc-theme-prop-value(surface), 2%) !default;
-$mdc-select-disabled-dropdown-opacity: .37 !default;
-
-$mdc-select-outlined-idle-border: rgba(mdc-theme-prop-value(on-surface), .38) !default;
-$mdc-select-outlined-hover-border: rgba(mdc-theme-prop-value(on-surface), .87) !default;
-
-// should be .06 after mdc-select opacity is applied
-$mdc-select-outlined-disabled-border: rgba(mdc-theme-prop-value(on-surface), .16) !default;
-
-$mdc-select-label-position-y: 70% !default;
-$mdc-select-outline-label-offset: 16px !default;
-$mdc-select-outlined-label-position-y: 130% !default;
-$mdc-select-outlined-dense-label-position-y: 110% !default;
-$mdc-select-outlined-with-leading-icon-label-position-x: 32px !default;
-
-$mdc-select-dropdown-transition-duration: 150ms !default;
-
-// Error colors
-$mdc-select-error-color: error !default;
+@forward './select-theme' show get-outlined-label-position-y, $ripple-target, $arrow-padding, $label-padding, $height, $minimum-height-for-filled-label, $filled-baseline-top, $selected-text-height, $anchor-padding-left, $anchor-padding-left-with-leading-icon, $anchor-padding-right, $outlined-stroke-width, $min-width, $shape-radius, $minimum-height, $minimum-height-for-filled-label, $maximum-height, $density-scale, $density-config, $ink-color, $dropdown-icon-color, $label-color, $focused-label-color, $bottom-line-idle-color, $bottom-line-hover-color, $fill-color, $disabled-label-color, $disabled-ink-color, $disabled-fill-color, $disabled-fill-border, $disabled-bottom-line-color, $disabled-dropdown-icon-color, $disabled-outline-color, $outlined-idle-border, $outlined-hover-border, $label-position-y, $outline-label-offset, $outlined-label-position-y, $outlined-with-leading-icon-label-position-x, $dropdown-transition-duration, $icon-active-fade-out-duration, $icon-active-fade-in-duration, $icon-inactive-fade-out-duration, $icon-inactive-fade-in-duration, $error-color;
 

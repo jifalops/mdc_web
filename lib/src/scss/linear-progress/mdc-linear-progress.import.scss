@@ -1,0 +1,14 @@
+@forward "package:mdc_web/src/scss/animation/variables" as mdc-animation-*;
+@forward "package:mdc_web/src/scss/feature-targeting/variables" as mdc-feature-*;
+@forward "package:mdc_web/src/scss/feature-targeting/mixins" as mdc-feature-*;
+@forward "package:mdc_web/src/scss/theme/constants" as mdc-theme-*;
+@forward "package:mdc_web/src/scss/theme/variables" as mdc-theme-*;
+@forward "variables" as mdc-linear-progress-*;
+@forward "package:mdc_web/src/scss/theme/mixins" as mdc-theme-*;
+@forward "keyframes" as mdc-linear-progress-*;
+@forward "mixins" as mdc-linear-progress-*;
+@forward "package:mdc_web/src/scss/animation/functions" as mdc-animation-*;
+@forward "package:mdc_web/src/scss/feature-targeting/functions" as mdc-feature-*;
+@forward "package:mdc_web/src/scss/theme/functions" as mdc-theme-*;
+@forward "mdc-linear-progress";
+

@@ -1,0 +1,11 @@
+@use 'package:mdc_web/src/scss/theme/custom-properties';
+@use '../mixins' as rtl;
+
+.test {
+  @include rtl.reflexive-box(
+    margin,
+    right,
+    custom-properties.create(--margin-prop, 8px)
+  );
+}
+

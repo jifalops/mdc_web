@@ -20,36 +20,6 @@
 // THE SOFTWARE.
 //
 
-@import "package:mdc_web/src/scss/theme/functions";
-@import "package:mdc_web/src/scss/theme/variables"; // for mdc-theme-prop-value
-@import "./variables";
-
-//
-// Public
-//
-
-@function mdc-states-opacity($color, $state) {
-  $opacity-map: mdc-states-opacities_($color);
-
-  @if not map-has-key($opacity-map, $state) {
-    @error "Invalid state: '#{$state}'. Choose one of: #{map-keys($opacity-map)}";
-  }
-
-  @return map-get($opacity-map, $state);
-}
-
-//
-// Private
-//
-
-@function mdc-states-opacities_($color) {
-  $color-value: mdc-theme-prop-value($color);
-  $opacity-map: if(
-    mdc-theme-tone($color-value) == "light",
-    $mdc-ripple-light-ink-opacities,
-    $mdc-ripple-dark-ink-opacities
-  );
-
-  @return $opacity-map;
-}
+/// @deprecated Import '_ripple-theme.scss' instead.
+@forward './ripple-theme' show states-opacity, states-opacities_;
 

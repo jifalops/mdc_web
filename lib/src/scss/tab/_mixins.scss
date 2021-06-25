@@ -20,59 +20,87 @@
 // THE SOFTWARE.
 //
 
-@import "package:mdc_web/src/scss/feature-targeting/functions";
-@import "package:mdc_web/src/scss/feature-targeting/mixins";
-@import "package:mdc_web/src/scss/ripple/mixins";
-@import "package:mdc_web/src/scss/theme/mixins";
-@import "package:mdc_web/src/scss/typography/mixins";
-@import "package:mdc_web/src/scss/rtl/mixins";
-@import "package:mdc_web/src/scss/tab-indicator/mixins";
-@import "./variables";
+// Selector '.mdc-*' should only be used in this project.
+// stylelint-disable selector-class-pattern
+
+@use 'package:mdc_web/src/scss/feature-targeting/feature-targeting';
+@use 'package:mdc_web/src/scss/ripple/ripple';
+@use 'package:mdc_web/src/scss/ripple/ripple-theme';
+@use 'package:mdc_web/src/scss/theme/theme';
+@use 'package:mdc_web/src/scss/typography/typography';
+@use 'package:mdc_web/src/scss/rtl/mixins' as rtl-mixins;
+@use 'package:mdc_web/src/scss/tab-indicator/mixins' as tab-indicator-mixins;
+@use './variables';
 
 // Public mixins
 
-@mixin mdc-tab-core-styles($query: mdc-feature-all()) {
-  @include mdc-tab-without-ripple($query);
-  @include mdc-tab-ripple($query);
+@mixin core-styles($query: feature-targeting.all()) {
+  @include without-ripple($query);
+  @include ripple($query);
 }
 
 // This API is intended for use by frameworks that may want to separate the ripple-related styles
 // from the other tah styles. It is recommended that most users use `mdc-tab-core-styles` instead.
-@mixin mdc-tab-without-ripple($query: mdc-feature-all()) {
-  $feat-structure: mdc-feature-create-target($query, structure);
+@mixin without-ripple($query: feature-targeting.all()) {
+  $feat-structure: feature-targeting.create-target($query, structure);
+  $feat-animation: feature-targeting.create-target($query, animation);
 
   // postcss-bem-linter: define tab
 
   .mdc-tab {
-    @include mdc-tab-base_($query);
+    @include base_($query);
   }
 
   .mdc-tab--min-width {
-    @include mdc-feature-targets($feat-structure) {
+    @include feature-targeting.targets($feat-structure) {
       flex: 0 1 auto;
     }
   }
 
   .mdc-tab__content {
-    @include mdc-tab__content_($query);
+    @include content_($query);
   }
 
-  .mdc-tab__text-label,
+  .mdc-tab__text-label {
+    @include feature-targeting.targets($feat-animation) {
+      transition: 150ms color linear;
+    }
+
+    @include feature-targeting.targets($feat-structure) {
+      display: inline-block;
+      // Setting line-height here overrides the line-height from the typography
+      // mixin above. The line-height needs to be overridden so that the spacing
+      // between the text label and the icon as well as the text label and the
+      // bottom of the tab remain the same.
+      line-height: 1;
+      z-index: 2;
+    }
+  }
+
   .mdc-tab__icon {
-    @include mdc-tab__content-child_($query);
+    @include feature-targeting.targets($feat-animation) {
+      transition: 150ms color linear;
+    }
+
+    @include feature-targeting.targets($feat-structure) {
+      width: variables.$icon-size;
+      height: variables.$icon-size;
+      font-size: variables.$icon-size;
+      z-index: 2;
+    }
   }
 
   .mdc-tab--stacked {
-    @include mdc-tab--stacked_($query);
+    @include stacked_($query);
   }
 
   .mdc-tab--active {
-    @include mdc-tab--active_($query);
+    @include active_($query);
   }
 
   .mdc-tab:not(.mdc-tab--stacked) .mdc-tab__icon + .mdc-tab__text-label {
-    @include mdc-feature-targets($feat-structure) {
-      @include mdc-rtl-reflexive-box(padding, left, 8px);
+    @include feature-targeting.targets($feat-structure) {
+      @include rtl-mixins.reflexive-box(padding, left, 8px);
     }
   }
 
@@ -81,88 +109,127 @@
 
 // This API is intended for use by frameworks that may want to separate the ripple-related styles
 // from the other tah styles. It is recommended that most users use `mdc-tab-core-styles` instead.
-@mixin mdc-tab-ripple($query: mdc-feature-all()) {
-  @include mdc-ripple-common($query);
+@mixin ripple($query: feature-targeting.all()) {
+  @include ripple.common($query); // COPYBARA_COMMENT_THIS_LINE
 
-  .mdc-tab__ripple {
-    @include mdc-tab__ripple_($query);
-  }
+  @include ripple_($query);
 }
 
-@mixin mdc-tab-horizontal-padding($padding, $query: mdc-feature-all()) {
-  $feat-structure: mdc-feature-create-target($query, structure);
+@mixin horizontal-padding($padding, $query: feature-targeting.all()) {
+  $feat-structure: feature-targeting.create-target($query, structure);
 
-  @include mdc-feature-targets($feat-structure) {
+  @include feature-targeting.targets($feat-structure) {
     padding-right: $padding;
     padding-left: $padding;
   }
 }
 
-@mixin mdc-tab-text-label-color($color, $query: mdc-feature-all()) {
-  $feat-color: mdc-feature-create-target($query, color);
+@mixin text-label-color($color, $query: feature-targeting.all()) {
+  $feat-color: feature-targeting.create-target($query, color);
 
   .mdc-tab__text-label {
-    @include mdc-feature-targets($feat-color) {
-      @include mdc-theme-prop(color, $color);
+    @include feature-targeting.targets($feat-color) {
+      @include theme.property(color, $color);
     }
   }
 }
 
-@mixin mdc-tab-icon-color($color, $query: mdc-feature-all()) {
-  $feat-color: mdc-feature-create-target($query, color);
+@mixin icon-color($color, $query: feature-targeting.all()) {
+  $feat-color: feature-targeting.create-target($query, color);
 
   .mdc-tab__icon {
-    @include mdc-feature-targets($feat-color) {
-      @include mdc-theme-prop(color, $color);
+    @include feature-targeting.targets($feat-color) {
+      @include theme.property(color, $color);
 
       fill: currentColor;
     }
   }
 }
 
-@mixin mdc-tab-states-color($color, $query: mdc-feature-all()) {
-  .mdc-tab__ripple {
-    @include mdc-states($color, $query: $query);
-  }
+@mixin states-color($color, $query: feature-targeting.all()) {
+  @include ripple-theme.states(
+    $color,
+    $query: $query,
+    $ripple-target: variables.$ripple-target
+  );
 }
 
-@mixin mdc-tab-ink-color($color, $query: mdc-feature-all()) {
-  @include mdc-tab-icon-color($color, $query);
-  @include mdc-tab-states-color($color, $query);
-  @include mdc-tab-text-label-color($color, $query);
+@mixin ink-color($color, $query: feature-targeting.all()) {
+  @include icon-color($color, $query);
+  @include states-color($color, $query);
+  @include text-label-color($color, $query);
 }
 
-@mixin mdc-tab-active-text-label-color($color, $query: mdc-feature-all()) {
+@mixin active-text-label-color($color, $query: feature-targeting.all()) {
   &.mdc-tab--active {
-    @include mdc-tab-text-label-color($color, $query);
+    @include text-label-color($color, $query);
   }
 }
 
-@mixin mdc-tab-active-icon-color($color, $query: mdc-feature-all()) {
+@mixin active-icon-color($color, $query: feature-targeting.all()) {
   &.mdc-tab--active {
-    @include mdc-tab-icon-color($color, $query);
+    @include icon-color($color, $query);
   }
 }
 
-@mixin mdc-tab-active-states-color($color, $query: mdc-feature-all()) {
+@mixin active-states-color($color, $query: feature-targeting.all()) {
   &.mdc-tab--active {
-    @include mdc-tab-states-color($color, $query);
+    @include states-color($color, $query);
   }
 }
 
-@mixin mdc-tab-parent-positioning($query: mdc-feature-all()) {
-  $feat-structure: mdc-feature-create-target($query, structure);
+@mixin parent-positioning($query: feature-targeting.all()) {
+  $feat-structure: feature-targeting.create-target($query, structure);
 
-  @include mdc-feature-targets($feat-structure) {
+  @include feature-targeting.targets($feat-structure) {
     position: relative;
   }
 }
 
-@mixin mdc-tab-fixed-width($width, $query: mdc-feature-all()) {
-  $feat-structure: mdc-feature-create-target($query, structure);
+@mixin fixed-width($width, $query: feature-targeting.all()) {
+  $feat-structure: feature-targeting.create-target($query, structure);
 
-  @include mdc-feature-targets($feat-structure) {
+  @include feature-targeting.targets($feat-structure) {
     flex: 0 1 $width;
+  }
+}
+
+///
+/// Sets tab height
+///
+/// @param {Number} $height Height value in `px`.
+///
+@mixin height($height, $query: feature-targeting.all()) {
+  $feat-structure: feature-targeting.create-target($query, structure);
+
+  @include feature-targeting.targets($feat-structure) {
+    height: $height;
+  }
+}
+
+///
+/// Sets tab text transform
+///
+/// @param {String} $transform The text-transform property to apply.
+///
+@mixin text-transform($transform, $query: feature-targeting.all()) {
+  $feat-structure: feature-targeting.create-target($query, structure);
+
+  @include feature-targeting.targets($feat-structure) {
+    text-transform: $transform;
+  }
+}
+
+///
+/// Sets tab min-width.
+///
+/// @param {Number} $min-width Minimum width value in `px`.
+///
+@mixin min-width($min-width, $query: feature-targeting.all()) {
+  $feat-structure: feature-targeting.create-target($query, structure);
+
+  @include feature-targeting.targets($feat-structure) {
+    min-width: $min-width;
   }
 }
 
@@ -170,21 +237,21 @@
 // Private
 //
 
-@mixin mdc-tab-base_($query: mdc-feature-all()) {
-  $feat-structure: mdc-feature-create-target($query, structure);
+@mixin base_($query: feature-targeting.all()) {
+  $feat-structure: feature-targeting.create-target($query, structure);
 
-  @include mdc-typography(button, $query);
-  @include mdc-tab-text-label-color($mdc-tab-text-label-color-default, $query);
-  @include mdc-tab-icon-color($mdc-tab-icon-color-default, $query);
-  @include mdc-tab-horizontal-padding($mdc-tab-horizontal-padding, $query);
-  @include mdc-tab-indicator-surface($query);
+  @include typography.typography(button, $query);
+  @include text-label-color(variables.$text-label-color-default, $query);
+  @include icon-color(variables.$icon-color-default, $query);
+  @include horizontal-padding(variables.$horizontal-padding, $query);
+  @include min-width(variables.$min-width, $query);
+  @include tab-indicator-mixins.surface($query);
 
-  @include mdc-feature-targets($feat-structure) {
+  @include feature-targeting.targets($feat-structure) {
     display: flex;
     flex: 1 0 auto;
     justify-content: center;
     box-sizing: border-box;
-    height: $mdc-tab-height;
     // Explicitly setting margin to 0 is to override safari default margin for button elements.
     margin: 0;
     padding-top: 0;
@@ -206,29 +273,46 @@
   }
 }
 
-@mixin mdc-tab__ripple_($query: mdc-feature-all()) {
-  $feat-structure: mdc-feature-create-target($query, structure);
+@mixin ripple_($query: feature-targeting.all()) {
+  $feat-structure: feature-targeting.create-target($query, structure);
 
-  @include mdc-ripple-surface($query);
-  @include mdc-ripple-radius-bounded($query: $query);
-  @include mdc-states($color: primary, $query: $query);
+  .mdc-tab {
+    @include ripple.surface(
+      $query,
+      $ripple-target: variables.$ripple-target,
+      $include-will-change: false
+    );
+    @include ripple.radius-bounded(
+      $query: $query,
+      $ripple-target: variables.$ripple-target
+    );
+    @include ripple-theme.states(
+      $color: primary,
+      $query: $query,
+      $ripple-target: variables.$ripple-target
+    );
+  }
 
-  @include mdc-feature-targets($feat-structure) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  #{variables.$ripple-target} {
+    @include feature-targeting.targets($feat-structure) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      // TODO(b/151931961): Remove the following line once resolved
+      will-change: transform, opacity;
+    }
   }
 }
 
-@mixin mdc-tab__content_($query: mdc-feature-all()) {
-  $feat-structure: mdc-feature-create-target($query, structure);
+@mixin content_($query: feature-targeting.all()) {
+  $feat-structure: feature-targeting.create-target($query, structure);
 
-  @include mdc-tab-indicator-surface($query);
+  @include tab-indicator-mixins.surface($query);
 
-  @include mdc-feature-targets($feat-structure) {
+  @include feature-targeting.targets($feat-structure) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -237,56 +321,32 @@
   }
 }
 
-@mixin mdc-tab__content-child_($query: mdc-feature-all()) {
-  $feat-animation: mdc-feature-create-target($query, animation);
-  $feat-structure: mdc-feature-create-target($query, structure);
+@mixin stacked_($query: feature-targeting.all()) {
+  $feat-structure: feature-targeting.create-target($query, structure);
 
-  @include mdc-feature-targets($feat-animation) {
-    transition: 150ms color linear;
-  }
-
-  @include mdc-feature-targets($feat-structure) {
-    display: inline-block;
-    // Setting line-height here overrides the line-height from the typography
-    // mixin above. The line-height needs to be overridden so that the spacing
-    // between the text label and the icon as well as the text label and the
-    // bottom of the tab remain the same.
-    line-height: 1;
-    z-index: 2;
-  }
-}
-
-@mixin mdc-tab--stacked_($query: mdc-feature-all()) {
-  $feat-structure: mdc-feature-create-target($query, structure);
-
-  @include mdc-feature-targets($feat-structure) {
-    height: $mdc-tab-stacked-height;
-
+  @include feature-targeting.targets($feat-structure) {
     .mdc-tab__content {
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-    }
-
-    .mdc-tab__icon {
-      padding-top: 12px;
+      justify-content: center;
     }
 
     .mdc-tab__text-label {
-      padding-bottom: 16px;
+      padding-top: 6px;
+      padding-bottom: 4px;
     }
   }
 }
 
-@mixin mdc-tab--active_($query: mdc-feature-all()) {
-  $feat-animation: mdc-feature-create-target($query, animation);
+@mixin active_($query: feature-targeting.all()) {
+  $feat-animation: feature-targeting.create-target($query, animation);
 
-  @include mdc-tab-text-label-color($mdc-tab-text-label-color-active, $query);
-  @include mdc-tab-icon-color($mdc-tab-icon-color-active, $query);
+  @include text-label-color(variables.$text-label-color-active, $query);
+  @include icon-color(variables.$icon-color-active, $query);
 
   .mdc-tab__text-label,
   .mdc-tab__icon {
-    @include mdc-feature-targets($feat-animation) {
+    @include feature-targeting.targets($feat-animation) {
       transition-delay: 100ms;
     }
   }

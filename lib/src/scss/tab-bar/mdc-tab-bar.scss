@@ -21,6 +21,6 @@
  * THE SOFTWARE.
  */
 
-@import "./mixins";
-@include mdc-tab-bar-core-styles;
+@use './mixins';
+@include mixins.core-styles;
 

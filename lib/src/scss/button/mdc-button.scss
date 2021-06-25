@@ -20,6 +20,5 @@
 // THE SOFTWARE.
 //
 
-@import "./mixins";
-@include mdc-button-core-styles;
+@forward './styles';
 

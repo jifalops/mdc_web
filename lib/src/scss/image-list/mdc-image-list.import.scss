@@ -1,0 +1,21 @@
+@forward "package:mdc_web/src/scss/feature-targeting/variables" as mdc-feature-*;
+@forward "package:mdc_web/src/scss/feature-targeting/mixins" as mdc-feature-*;
+@forward "package:mdc_web/src/scss/rtl/variables" as mdc-rtl-*;
+@forward "package:mdc_web/src/scss/shape/variables" as mdc-shape-*;
+@forward "package:mdc_web/src/scss/theme/constants" as mdc-theme-*;
+@forward "package:mdc_web/src/scss/theme/variables" as mdc-theme-*;
+@forward "package:mdc_web/src/scss/typography/variables" as mdc-typography-*;
+@forward "variables" as mdc-image-list-*;
+@forward "package:mdc_web/src/scss/rtl/mixins" as mdc-* hide mdc-property-, mdc-reflexive, mdc-reflexive-box, mdc-reflexive-position, mdc-reflexive-property;
+@forward "package:mdc_web/src/scss/rtl/mixins" as mdc-rtl-* hide mdc-rtl-rtl;
+@forward "package:mdc_web/src/scss/shape/mixins" as mdc-shape-*;
+@forward "package:mdc_web/src/scss/theme/mixins" as mdc-theme-*;
+@forward "package:mdc_web/src/scss/typography/mixins" as mdc-* hide mdc-base, mdc-baseline-bottom, mdc-baseline-strut-, mdc-baseline-top, mdc-core-styles, mdc-overflow-ellipsis;
+@forward "package:mdc_web/src/scss/typography/mixins" as mdc-typography-* hide mdc-typography-typography;
+@forward "mixins" as mdc-image-list-*;
+@forward "package:mdc_web/src/scss/feature-targeting/functions" as mdc-feature-*;
+@forward "package:mdc_web/src/scss/shape/functions" as mdc-shape-*;
+@forward "package:mdc_web/src/scss/theme/functions" as mdc-theme-*;
+@forward "package:mdc_web/src/scss/typography/functions" as mdc-typography-*;
+@forward "mdc-image-list";
+

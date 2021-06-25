@@ -1,0 +1,15 @@
+@forward "package:mdc_web/src/scss/animation/variables" as mdc-animation-*;
+@forward "package:mdc_web/src/scss/feature-targeting/variables" as mdc-feature-*;
+@forward "package:mdc_web/src/scss/feature-targeting/mixins" as mdc-feature-*;
+@forward "package:mdc_web/src/scss/theme/constants" as mdc-theme-*;
+@forward "package:mdc_web/src/scss/theme/variables" as mdc-theme-*;
+@forward "package:mdc_web/src/scss/typography/variables" as mdc-typography-*;
+@forward "package:mdc_web/src/scss/theme/mixins" as mdc-theme-*;
+@forward "package:mdc_web/src/scss/typography/mixins" as mdc-* hide mdc-base, mdc-baseline-bottom, mdc-baseline-strut-, mdc-baseline-top, mdc-core-styles, mdc-overflow-ellipsis;
+@forward "package:mdc_web/src/scss/typography/mixins" as mdc-typography-* hide mdc-typography-typography;
+@forward "../functions" as mdc-select-*;
+@forward "package:mdc_web/src/scss/feature-targeting/functions" as mdc-feature-*;
+@forward "package:mdc_web/src/scss/theme/functions" as mdc-theme-*;
+@forward "package:mdc_web/src/scss/typography/functions" as mdc-typography-*;
+@forward "mdc-select-helper-text";
+

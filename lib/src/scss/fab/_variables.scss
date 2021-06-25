@@ -20,9 +20,7 @@
 // THE SOFTWARE.
 //
 
-$mdc-fab-extended-icon-padding: 12px !default;
-$mdc-fab-extended-label-padding: 20px !default;
-$mdc-fab-height: 56px !default;
-$mdc-fab-mini-height: 40px !default;
-$mdc-fab-extended-height: 48px !default;
+/// @deprecated Import '_fab-theme.scss' or '_extended-fab-theme.scss' instead.
+@forward './extended-fab-theme' show $extended-icon-padding, $extended-label-padding, $extended-height;
+@forward './fab-theme' show $height, $mini-height, $shape-radius;
 

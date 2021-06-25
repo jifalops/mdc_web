@@ -20,6 +20,6 @@
 // THE SOFTWARE.
 //
 
-@import "./mixins";
-@include mdc-checkbox-core-styles;
+@use './checkbox';
+@include checkbox.core-styles;
 
