@@ -13,5 +13,5 @@ export 'ripple.dart';
 /// * [Source Code](https://github.com/material-components/material-components-web/blob/master/packages/mdc-selection-control/index.js)
 @JS('MDCSelectionControl')
 abstract class SelectionControlComponent {
-  external RippleComponent get ripple;
+  external RippleComponent? get ripple;
 }

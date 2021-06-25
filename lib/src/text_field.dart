@@ -20,10 +20,10 @@ class MDCTextField extends MDCComponent implements MDCSelectionControl {
   TextFieldComponent get js => _js;
   final TextFieldComponent _js;
 
-  String get value => js.value;
-  set value(String value) => js.value = value;
-  bool get disabled => js.disabled;
-  set disabled(bool value) => js.disabled = value;
+  String? get value => js.value;
+  set value(String? value) => js.value = value;
+  bool? get disabled => js.disabled;
+  set disabled(bool? value) => js.disabled = value;
   set useNativeValidation(bool value) => js.useNativeValidation = value;
   set helperTextContent(String value) => js.helperTextContent = value;
   set leadingIconAriaLabel(String value) => js.leadingIconAriaLabel = value;
@@ -31,28 +31,28 @@ class MDCTextField extends MDCComponent implements MDCSelectionControl {
   set leadingIconContent(String value) => js.leadingIconContent = value;
   set trailingIconContent(String value) => js.trailingIconContent = value;
   set ripple(MDCRipple value) => js.ripple = value.js;
-  bool get valid => js.valid;
-  set valid(bool value) => js.valid = value;
+  bool? get valid => js.valid;
+  set valid(bool? value) => js.valid = value;
 
-  bool get required => js.required;
-  set required(bool value) => js.required = value;
-  int get minLength => js.minLength;
-  set minLength(int value) => js.minLength = value;
-  int get maxLength => js.maxLength;
-  set maxLength(int value) => js.maxLength = value;
-  String get min => js.min;
-  set min(String value) => js.min = value;
-  String get max => js.max;
-  set max(String value) => js.max = value;
-  String get step => js.step;
-  set step(String value) => js.step = value;
-  String get pattern => js.pattern;
-  set pattern(String value) => js.pattern = value;
+  bool? get required => js.required;
+  set required(bool? value) => js.required = value;
+  int? get minLength => js.minLength;
+  set minLength(int? value) => js.minLength = value;
+  int? get maxLength => js.maxLength;
+  set maxLength(int? value) => js.maxLength = value;
+  String? get min => js.min;
+  set min(String? value) => js.min = value;
+  String? get max => js.max;
+  set max(String? value) => js.max = value;
+  String? get step => js.step;
+  set step(String? value) => js.step = value;
+  String? get pattern => js.pattern;
+  set pattern(String? value) => js.pattern = value;
 
   void layout() => js.layout();
 
   @override
-  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
+  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple!);
 }
 
 TextFieldComponent _preserveUndefined(

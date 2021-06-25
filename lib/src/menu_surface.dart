@@ -21,10 +21,10 @@ class MDCMenuSurface extends MDCComponent {
   MenuSurfaceComponent get js => _js;
   final MenuSurfaceComponent _js;
 
-  bool get open => js.open;
-  set open(bool value) => js.open = value;
-  bool get quickOpen => js.quickOpen;
-  set quickOpen(bool value) => js.quickOpen = value;
+  bool? get open => js.open;
+  set open(bool? value) => js.open = value;
+  bool? get quickOpen => js.quickOpen;
+  set quickOpen(bool? value) => js.quickOpen = value;
 
   /// See [AnchorCorner] for acceptable values.
   void setAnchorCorner(int corner) => js.setAnchorCorner(corner);

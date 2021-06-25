@@ -37,8 +37,8 @@ abstract class TabComponent extends Component {
 abstract class MDCTabDimensions {
   external factory MDCTabDimensions(
       {num? rootLeft, num? rootRight, num? contentLeft, num? contentRight});
-  num rootLeft;
-  num rootRight;
-  num contentLeft;
-  num contentRight;
+  num? rootLeft;
+  num? rootRight;
+  num? contentLeft;
+  num? contentRight;
 }

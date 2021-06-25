@@ -24,11 +24,11 @@ abstract class SliderComponent extends Component
   external factory SliderComponent(Element root,
       [MDCFoundation? foundation, args]);
 
-  num value;
-  num min;
-  num max;
-  num step;
-  bool disabled;
+  num? value;
+  num? min;
+  num? max;
+  num? step;
+  bool? disabled;
 
   external void layout();
   external void stepUp([num amount = 1]);

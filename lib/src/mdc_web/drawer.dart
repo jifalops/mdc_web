@@ -19,5 +19,5 @@ abstract class DrawerComponent extends Component {
   external factory DrawerComponent(Element root,
       [MDCFoundation? foundation, args]);
 
-  bool open;
+  bool? open;
 }

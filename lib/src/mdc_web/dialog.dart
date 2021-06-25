@@ -21,9 +21,9 @@ abstract class DialogComponent extends Component {
       [MDCFoundation? foundation, args]);
 
   external bool get isOpen;
-  String escapeKeyAction;
-  String scrimClickAction;
-  bool autoStackButtons;
+  String? escapeKeyAction;
+  String? scrimClickAction;
+  bool? autoStackButtons;
 
   /// Recalculates layout and automatically adds/removes modifier classes like
   /// --scrollable.

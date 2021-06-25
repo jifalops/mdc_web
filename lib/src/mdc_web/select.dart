@@ -21,9 +21,9 @@ abstract class SelectComponent extends Component
   external factory SelectComponent(Element root,
       [MDCFoundation? foundation, args]);
 
-  bool disabled;
-  String value;
+  bool? disabled;
+  String? value;
 
   /// Set to -1 if no option is currently selected.
-  int selectedIndex;
+  int? selectedIndex;
 }

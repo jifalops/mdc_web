@@ -21,7 +21,7 @@ abstract class IconButtonToggleComponent extends Component {
       [MDCFoundation? foundation, args]);
 
   /// Get/set the toggle state.
-  bool on;
+  bool? on;
 
   external RippleComponent get ripple;
 }

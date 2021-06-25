@@ -1,4 +1,4 @@
-import 'dart:html' show Element, EventListener;
+import 'dart:html' show Element, EventListener, Event;
 import 'package:js/js.dart' show allowInterop, allowInteropCaptureThis;
 import 'package:meta/meta.dart';
 import 'mdc_web/base.dart';

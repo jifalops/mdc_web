@@ -18,8 +18,8 @@ abstract class MenuSurfaceComponent extends Component {
   external factory MenuSurfaceComponent(Element root,
       [MDCFoundation? foundation, args]);
 
-  bool open;
-  bool quickOpen;
+  bool? open;
+  bool? quickOpen;
 
   /// See [AnchorCorner] for acceptable values.
   external void setAnchorCorner(int corner);
@@ -55,8 +55,8 @@ abstract class MenuSurfaceCorner {
 @anonymous
 abstract class AnchorMargin {
   external factory AnchorMargin({num? top, num? right, num? bottom, num? left});
-  num top;
-  num right;
-  num bottom;
-  num left;
+  num? top;
+  num? right;
+  num? bottom;
+  num? left;
 }

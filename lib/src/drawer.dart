@@ -19,8 +19,8 @@ class MDCDrawer extends MDCComponent {
   DrawerComponent get js => _js;
   final DrawerComponent _js;
 
-  bool get open => js.open;
-  set open(bool value) => js.open = value;
+  bool? get open => js.open;
+  set open(bool? value) => js.open = value;
 
   static const openedEvent = 'MDCDrawer:opened';
   static const closedEvent = 'MDCDrawer:closed';

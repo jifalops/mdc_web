@@ -21,7 +21,7 @@ abstract class RadioComponent extends Component
   external factory RadioComponent(Element root,
       [MDCFoundation? foundation, args]);
 
-  bool checked;
-  bool disabled;
-  String value;
+  bool? checked;
+  bool? disabled;
+  String? value;
 }

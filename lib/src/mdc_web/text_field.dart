@@ -21,17 +21,17 @@ abstract class TextFieldComponent extends Component
   external factory TextFieldComponent(Element root,
       [MDCFoundation? foundation, args]);
 
-  String value;
-  bool disabled;
-  bool valid;
-  RippleComponent ripple;
-  bool required;
-  int minLength;
-  int maxLength;
-  String min;
-  String max;
-  String step;
-  String pattern;
+  String? value;
+  bool? disabled;
+  bool? valid;
+  RippleComponent? ripple;
+  bool? required;
+  int? minLength;
+  int? maxLength;
+  String? min;
+  String? max;
+  String? step;
+  String? pattern;
 
   external set useNativeValidation(bool value);
   external set helperTextContent(String value);

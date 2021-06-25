@@ -25,7 +25,7 @@ class MDCFloatingLabel extends MDCComponent implements MDCSelectionControl {
   num getWidth() => js.getWidth();
 
   @override
-  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
+  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple!);
 }
 
 FloatingLabelComponent _preserveUndefined(

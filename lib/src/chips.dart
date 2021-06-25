@@ -63,11 +63,11 @@ class MDCChip extends MDCComponent {
   /// This will be the same as the id attribute on the root element. If an id is
   /// not provided, a unique one will be generated.
   String get id => js.id;
-  bool get selected => js.selected;
-  set selected(bool value) => js.selected = value;
-  bool get shouldRemoveOnTrailingIconClick =>
+  bool? get selected => js.selected;
+  set selected(bool? value) => js.selected = value;
+  bool? get shouldRemoveOnTrailingIconClick =>
       js.shouldRemoveOnTrailingIconClick;
-  set shouldRemoveOnTrailingIconClick(bool value) =>
+  set shouldRemoveOnTrailingIconClick(bool? value) =>
       js.shouldRemoveOnTrailingIconClick = value;
   MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 

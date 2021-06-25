@@ -21,6 +21,6 @@ abstract class SwitchComponent extends Component
   external factory SwitchComponent(Element? root,
       [MDCFoundation? foundation, args]);
 
-  bool checked;
-  bool disabled;
+  bool? checked;
+  bool? disabled;
 }

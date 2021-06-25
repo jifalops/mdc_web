@@ -44,8 +44,8 @@ abstract class ChipComponent extends Component {
   /// This will be the same as the id attribute on the root element. If an id is
   /// not provided, a unique one will be generated.
   external String get id;
-  bool selected;
-  bool shouldRemoveOnTrailingIconClick;
+  bool? selected;
+  bool? shouldRemoveOnTrailingIconClick;
   external RippleComponent get ripple;
 
   /// If [shouldRemoveOnTrailingIconClick] is set to false, you must manually

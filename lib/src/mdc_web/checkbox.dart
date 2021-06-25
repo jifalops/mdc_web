@@ -21,8 +21,8 @@ abstract class CheckboxComponent extends Component
   external factory CheckboxComponent(Element? root,
       [MDCFoundation? foundation, args]);
 
-  bool checked;
-  bool indeterminate;
-  bool disabled;
-  String value;
+  bool? checked;
+  bool? indeterminate;
+  bool? disabled;
+  String? value;
 }

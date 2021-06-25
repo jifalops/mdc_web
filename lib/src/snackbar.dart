@@ -22,14 +22,14 @@ class MDCSnackbar extends MDCComponent {
 
   bool get isOpen => js.isOpen;
 
-  String get labelText => js.labelText;
-  void set labelText(String text) => js.labelText = text;
+  String? get labelText => js.labelText;
+  void set labelText(String? text) => js.labelText = text;
 
-  String get actionButtonText => js.actionButtonText;
-  void set actionButtonText(String text) => js.actionButtonText = text;
+  String? get actionButtonText => js.actionButtonText;
+  void set actionButtonText(String? text) => js.actionButtonText = text;
 
-  int get timeoutMs => js.timeoutMs;
-  void set timeoutMs(int t) => js.timeoutMs = t;
+  int? get timeoutMs => js.timeoutMs;
+  void set timeoutMs(int? t) => js.timeoutMs = t;
 
   void open() => js.open();
   void close([String? reason]) => js.close(reason);

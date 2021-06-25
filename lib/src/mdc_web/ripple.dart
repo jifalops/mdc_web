@@ -21,8 +21,8 @@ abstract class RippleComponent extends Component {
 
   /// Surfaces for bounded ripples should have the overflow property set to
   /// hidden, while surfaces for unbounded ripples should have it set to visible.
-  bool unbounded;
-  bool disabled;
+  bool? unbounded;
+  bool? disabled;
 
   external void activate();
   external void deactivate();

@@ -23,23 +23,23 @@ class MDCSlider extends MDCComponent implements MDCSelectionControl {
   SliderComponent get js => _js;
   final SliderComponent _js;
 
-  num get value => js.value;
-  set value(num value) => js.value = value;
-  num get min => js.min;
-  set min(num value) => js.min = value;
-  num get max => js.max;
-  set max(num value) => js.max = value;
-  num get step => js.step;
-  set step(num value) => js.step = value;
-  bool get disabled => js.disabled;
-  set disabled(bool value) => js.disabled = value;
+  num? get value => js.value;
+  set value(num? value) => js.value = value;
+  num? get min => js.min;
+  set min(num? value) => js.min = value;
+  num? get max => js.max;
+  set max(num? value) => js.max = value;
+  num? get step => js.step;
+  set step(num? value) => js.step = value;
+  bool? get disabled => js.disabled;
+  set disabled(bool? value) => js.disabled = value;
 
   void layout() => js.layout();
   void stepUp([num amount = 1]) => js.stepUp(amount);
   void stepDown([num amount = 1]) => js.stepDown(amount);
 
   @override
-  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
+  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple!);
 
   /// Emitted whenever the slider value is changed by way of a user event, e.g.
   /// when a user is dragging the slider or changing the value using the arrow

@@ -20,17 +20,17 @@ class MDCSelect extends MDCComponent implements MDCSelectionControl {
   SelectComponent get js => _js;
   final SelectComponent _js;
 
-  bool get disabled => js.disabled;
-  set disabled(bool value) => js.disabled = value;
-  String get value => js.value;
-  set value(String value) => js.value = value;
+  bool? get disabled => js.disabled;
+  set disabled(bool? value) => js.disabled = value;
+  String? get value => js.value;
+  set value(String? value) => js.value = value;
 
   /// Set to -1 if no option is currently selected.
-  int get selectedIndex => js.selectedIndex;
-  set selectedIndex(int value) => js.selectedIndex = value;
+  int? get selectedIndex => js.selectedIndex;
+  set selectedIndex(int? value) => js.selectedIndex = value;
 
   @override
-  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
+  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple!);
 }
 
 SelectComponent _preserveUndefined(

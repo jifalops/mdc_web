@@ -21,8 +21,8 @@ abstract class MenuComponent extends Component {
   external factory MenuComponent(Element? root,
       [MDCFoundation? foundation, args]);
 
-  bool open;
-  bool quickOpen;
+  bool? open;
+  bool? quickOpen;
 
   external List get items;
 
