@@ -1,3 +1,7 @@
+## [0.6.0]
+
+* Upgrade to null safety.
+
 ## [0.5.0-pre] - September 5, 2019
 
 * Upgrade to material-components-web 3.1.1
