@@ -18,12 +18,12 @@ import 'base.dart';
 abstract class DialogComponent extends Component {
   external static DialogComponent attachTo(Element root);
   external factory DialogComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
   external bool get isOpen;
-  String escapeKeyAction;
-  String scrimClickAction;
-  bool autoStackButtons;
+  String? escapeKeyAction;
+  String? scrimClickAction;
+  bool? autoStackButtons;
 
   /// Recalculates layout and automatically adds/removes modifier classes like
   /// --scrollable.
@@ -31,5 +31,5 @@ abstract class DialogComponent extends Component {
   external void open();
 
   /// [action] indicates why it was closed.
-  external void close([String action]);
+  external void close([String? action]);
 }

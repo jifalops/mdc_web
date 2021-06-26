@@ -17,7 +17,7 @@ import 'base.dart';
 abstract class TabScrollerComponent extends Component {
   external static TabScrollerComponent attachTo(Element root);
   external factory TabScrollerComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
   external void scrollTo(num scrollX);
   external void incrementScroll(num scrollX);

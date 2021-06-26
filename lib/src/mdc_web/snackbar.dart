@@ -18,14 +18,14 @@ import 'base.dart';
 abstract class SnackbarComponent extends Component {
   external static SnackbarComponent attachTo(Element root);
   external factory SnackbarComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
-  bool dismissesOnAction;
+  bool? dismissesOnAction;
 
   external void open();
-  external void close([String reason]);
-  int timeoutMs;
-  String labelText;
-  String actionButtonText;
+  external void close([String? reason]);
+  int? timeoutMs;
+  String? labelText;
+  String? actionButtonText;
   external bool get isOpen;
 }

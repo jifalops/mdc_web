@@ -14,27 +14,27 @@ class MDCSelect extends MDCComponent implements MDCSelectionControl {
   static MDCSelect attachTo(Element root) => MDCSelect._attach(root);
   MDCSelect._attach(Element root) : _js = SelectComponent.attachTo(root);
 
-  MDCSelect(Element root, [MDCFoundation foundation, args])
+  MDCSelect(Element root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   SelectComponent get js => _js;
   final SelectComponent _js;
 
-  bool get disabled => js.disabled;
-  set disabled(bool value) => js.disabled = value;
-  String get value => js.value;
-  set value(String value) => js.value = value;
+  bool? get disabled => js.disabled;
+  set disabled(bool? value) => js.disabled = value;
+  String? get value => js.value;
+  set value(String? value) => js.value = value;
 
   /// Set to -1 if no option is currently selected.
-  int get selectedIndex => js.selectedIndex;
-  set selectedIndex(int value) => js.selectedIndex = value;
+  int? get selectedIndex => js.selectedIndex;
+  set selectedIndex(int? value) => js.selectedIndex = value;
 
   @override
-  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
+  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple!);
 }
 
 SelectComponent _preserveUndefined(
-        Element root, MDCFoundation foundation, args) =>
+        Element root, MDCFoundation? foundation, args) =>
     foundation == null
         ? SelectComponent(root)
         : args == null

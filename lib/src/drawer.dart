@@ -13,21 +13,21 @@ class MDCDrawer extends MDCComponent {
   static MDCDrawer attachTo(Element root) => MDCDrawer._attach(root);
   MDCDrawer._attach(Element root) : _js = DrawerComponent.attachTo(root);
 
-  MDCDrawer(Element root, [MDCFoundation foundation, args])
+  MDCDrawer(Element root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   DrawerComponent get js => _js;
   final DrawerComponent _js;
 
-  bool get open => js.open;
-  set open(bool value) => js.open = value;
+  bool? get open => js.open;
+  set open(bool? value) => js.open = value;
 
   static const openedEvent = 'MDCDrawer:opened';
   static const closedEvent = 'MDCDrawer:closed';
 }
 
 DrawerComponent _preserveUndefined(
-        Element root, MDCFoundation foundation, args) =>
+        Element root, MDCFoundation? foundation, args) =>
     foundation == null
         ? DrawerComponent(root)
         : args == null

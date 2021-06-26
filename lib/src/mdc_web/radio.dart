@@ -19,9 +19,9 @@ abstract class RadioComponent extends Component
     implements SelectionControlComponent {
   external static RadioComponent attachTo(Element root);
   external factory RadioComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
-  bool checked;
-  bool disabled;
-  String value;
+  bool? checked;
+  bool? disabled;
+  String? value;
 }

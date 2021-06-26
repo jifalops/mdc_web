@@ -17,7 +17,7 @@ import 'base.dart';
 abstract class NotchedOutlineComponent extends Component {
   external static NotchedOutlineComponent attachTo(Element root);
   external factory NotchedOutlineComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
   external void notch(num notchWidth, bool isRtl);
   external void closeNotch();

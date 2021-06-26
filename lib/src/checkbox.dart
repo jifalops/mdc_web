@@ -13,27 +13,27 @@ import 'mdc_web/checkbox.dart';
 class MDCCheckbox extends MDCComponent implements MDCSelectionControl {
   static MDCCheckbox attachTo(Element root) => MDCCheckbox._attach(root);
   MDCCheckbox._attach(Element root) : _js = CheckboxComponent.attachTo(root);
-  MDCCheckbox(Element root, [MDCFoundation foundation, args])
+  MDCCheckbox(Element? root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   @override
   CheckboxComponent get js => _js;
   final CheckboxComponent _js;
 
-  bool get checked => js.checked;
-  set checked(bool value) => js.checked = value;
-  bool get indeterminate => js.indeterminate;
-  set indeterminate(bool value) => js.indeterminate = value;
-  bool get disabled => js.disabled;
-  set disabled(bool value) => js.disabled = value;
-  String get value => js.value;
-  set value(String value) => js.value = value;
+  bool? get checked => js.checked;
+  set checked(bool? value) => js.checked = value;
+  bool? get indeterminate => js.indeterminate;
+  set indeterminate(bool? value) => js.indeterminate = value;
+  bool? get disabled => js.disabled;
+  set disabled(bool? value) => js.disabled = value;
+  String? get value => js.value;
+  set value(String? value) => js.value = value;
   @override
-  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
+  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple!);
 }
 
 CheckboxComponent _preserveUndefined(
-        Element root, MDCFoundation foundation, args) =>
+        Element? root, MDCFoundation? foundation, args) =>
     foundation == null
         ? CheckboxComponent(root)
         : args == null

@@ -16,8 +16,8 @@ import 'base.dart';
 @JS('MDCFormField')
 abstract class FormFieldComponent extends Component {
   external static FormFieldComponent attachTo(Element root);
-  external factory FormFieldComponent(Element root,
-      [MDCFoundation foundation, args]);
+  external factory FormFieldComponent(Element? root,
+      [MDCFoundation? foundation, args]);
 
   dynamic /*SelectionControlComponent*/ input;
 }

@@ -15,7 +15,7 @@ class MDCLinearProgress extends MDCComponent {
   MDCLinearProgress._attach(Element root)
       : _js = LinearProgressComponent.attachTo(root);
 
-  MDCLinearProgress(Element root, [MDCFoundation foundation, args])
+  MDCLinearProgress(Element root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   LinearProgressComponent get js => _js;
@@ -36,7 +36,7 @@ class MDCLinearProgress extends MDCComponent {
 }
 
 LinearProgressComponent _preserveUndefined(
-        Element root, MDCFoundation foundation, args) =>
+        Element root, MDCFoundation? foundation, args) =>
     foundation == null
         ? LinearProgressComponent(root)
         : args == null

@@ -14,23 +14,23 @@ class MDCSwitch extends MDCComponent implements MDCSelectionControl {
   static MDCSwitch attachTo(Element root) => MDCSwitch._attach(root);
   MDCSwitch._attach(Element root) : _js = SwitchComponent.attachTo(root);
 
-  MDCSwitch(Element root, [MDCFoundation foundation, args])
+  MDCSwitch(Element? root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   SwitchComponent get js => _js;
   final SwitchComponent _js;
 
-  bool get checked => js.checked;
-  set checked(bool value) => js.checked = value;
-  bool get disabled => js.disabled;
-  set disabled(bool value) => js.disabled = value;
+  bool? get checked => js.checked;
+  set checked(bool? value) => js.checked = value;
+  bool? get disabled => js.disabled;
+  set disabled(bool? value) => js.disabled = value;
 
   @override
-  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
+  MDCRipple get ripple => MDCRipple.fromComponent(js.ripple!);
 }
 
 SwitchComponent _preserveUndefined(
-        Element root, MDCFoundation foundation, args) =>
+        Element? root, MDCFoundation? foundation, args) =>
     foundation == null
         ? SwitchComponent(root)
         : args == null

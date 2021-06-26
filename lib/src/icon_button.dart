@@ -16,15 +16,15 @@ class MDCIconButtonToggle extends MDCComponent {
   MDCIconButtonToggle._attach(Element root)
       : _js = IconButtonToggleComponent.attachTo(root);
 
-  MDCIconButtonToggle(Element root, [MDCFoundation foundation, args])
+  MDCIconButtonToggle(Element root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   IconButtonToggleComponent get js => _js;
   final IconButtonToggleComponent _js;
 
   /// Get/set the toggle state.
-  bool get on => js.on;
-  set on(bool value) => js.on = value;
+  bool? get on => js.on;
+  set on(bool? value) => js.on = value;
 
   MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 
@@ -33,7 +33,7 @@ class MDCIconButtonToggle extends MDCComponent {
 }
 
 IconButtonToggleComponent _preserveUndefined(
-        Element root, MDCFoundation foundation, args) =>
+        Element root, MDCFoundation? foundation, args) =>
     foundation == null
         ? IconButtonToggleComponent(root)
         : args == null

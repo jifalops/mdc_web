@@ -14,7 +14,7 @@ class MDCSnackbar extends MDCComponent {
   static MDCSnackbar attachTo(Element root) => MDCSnackbar._attach(root);
   MDCSnackbar._attach(Element root) : _js = SnackbarComponent.attachTo(root);
 
-  MDCSnackbar(Element root, [MDCFoundation foundation, args])
+  MDCSnackbar(Element root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   SnackbarComponent get js => _js;
@@ -22,21 +22,21 @@ class MDCSnackbar extends MDCComponent {
 
   bool get isOpen => js.isOpen;
 
-  String get labelText => js.labelText;
-  void set labelText(String text) => js.labelText = text;
+  String? get labelText => js.labelText;
+  void set labelText(String? text) => js.labelText = text;
 
-  String get actionButtonText => js.actionButtonText;
-  void set actionButtonText(String text) => js.actionButtonText = text;
+  String? get actionButtonText => js.actionButtonText;
+  void set actionButtonText(String? text) => js.actionButtonText = text;
 
-  int get timeoutMs => js.timeoutMs;
-  void set timeoutMs(int t) => js.timeoutMs = t;
+  int? get timeoutMs => js.timeoutMs;
+  void set timeoutMs(int? t) => js.timeoutMs = t;
 
   void open() => js.open();
-  void close([String reason]) => js.close(reason);
+  void close([String? reason]) => js.close(reason);
 }
 
 SnackbarComponent _preserveUndefined(
-        Element root, MDCFoundation foundation, args) =>
+        Element root, MDCFoundation? foundation, args) =>
     foundation == null
         ? SnackbarComponent(root)
         : args == null

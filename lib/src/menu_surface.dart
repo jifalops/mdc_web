@@ -15,16 +15,16 @@ class MDCMenuSurface extends MDCComponent {
   MDCMenuSurface._attach(Element root)
       : _js = MenuSurfaceComponent.attachTo(root);
 
-  MDCMenuSurface(Element root, [MDCFoundation foundation, args])
+  MDCMenuSurface(Element root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   MenuSurfaceComponent get js => _js;
   final MenuSurfaceComponent _js;
 
-  bool get open => js.open;
-  set open(bool value) => js.open = value;
-  bool get quickOpen => js.quickOpen;
-  set quickOpen(bool value) => js.quickOpen = value;
+  bool? get open => js.open;
+  set open(bool? value) => js.open = value;
+  bool? get quickOpen => js.quickOpen;
+  set quickOpen(bool? value) => js.quickOpen = value;
 
   /// See [AnchorCorner] for acceptable values.
   void setAnchorCorner(int corner) => js.setAnchorCorner(corner);
@@ -48,7 +48,7 @@ class MDCMenuSurface extends MDCComponent {
 }
 
 MenuSurfaceComponent _preserveUndefined(
-        Element root, MDCFoundation foundation, args) =>
+        Element root, MDCFoundation? foundation, args) =>
     foundation == null
         ? MenuSurfaceComponent(root)
         : args == null

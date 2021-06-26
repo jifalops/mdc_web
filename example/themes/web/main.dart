@@ -30,17 +30,19 @@ void main() {
   final themeSwitch = MDCSwitch(querySelector('#theme-switch'));
   themeSwitch.checked = window.localStorage['theme'] == 'Dark';
   themeSwitch.listen('change', (e) {
-    window.localStorage['theme'] = themeSwitch.checked ? 'Dark' : 'Light';
-    final LinkElement styles = querySelector('#theme');
-    window.animationFrame.then((time) => styles.href =
-        themeSwitch.checked ? 'theme-dark.css' : 'theme-light.css');
+    final checked = themeSwitch.checked;
+    if (checked == null) return;
+    window.localStorage['theme'] = checked ? 'Dark' : 'Light';
+    final LinkElement? styles = querySelector('#theme') as LinkElement?;
+    window.animationFrame.then((time) =>
+        styles!.href = checked ? 'theme-dark.css' : 'theme-light.css');
   });
 
-  final menuButton = querySelector('#overflow-menu-button');
+  final menuButton = querySelector('#overflow-menu-button')!;
   final menu = MDCMenu(querySelector('#overflow-menu'));
   menu.setAnchorMargin(AnchorMargin(top: topAppBar.root.clientHeight / 2));
   menuButton.addEventListener('click', (event) {
-    menu.open = !menu.open;
+    menu.open = !menu.open!;
   });
 
   /// Automatically creates MDC-Web components from html elements that have a

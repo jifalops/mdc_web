@@ -18,10 +18,10 @@ import 'ripple.dart';
 abstract class IconButtonToggleComponent extends Component {
   external static IconButtonToggleComponent attachTo(Element root);
   external factory IconButtonToggleComponent(Element root,
-      [MDCFoundation foundation, args]);
+      [MDCFoundation? foundation, args]);
 
   /// Get/set the toggle state.
-  bool on;
+  bool? on;
 
   external RippleComponent get ripple;
 }

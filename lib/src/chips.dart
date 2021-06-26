@@ -14,7 +14,7 @@ class MDCChipSet extends MDCComponent {
   static MDCChipSet attachTo(Element root) => MDCChipSet._attach(root);
   MDCChipSet._attach(Element root) : _js = ChipSetComponent.attachTo(root);
 
-  MDCChipSet(Element root, [MDCFoundation foundation, args])
+  MDCChipSet(Element root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefinedChipSet(root, foundation, args);
 
   @override
@@ -54,7 +54,7 @@ class MDCChip extends MDCComponent {
   MDCChip._attach(Element root) : _js = ChipComponent.attachTo(root);
   MDCChip._(this._js);
 
-  MDCChip(Element root, [MDCFoundation foundation, args])
+  MDCChip(Element root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefinedChip(root, foundation, args);
 
   ChipComponent get js => _js;
@@ -63,11 +63,11 @@ class MDCChip extends MDCComponent {
   /// This will be the same as the id attribute on the root element. If an id is
   /// not provided, a unique one will be generated.
   String get id => js.id;
-  bool get selected => js.selected;
-  set selected(bool value) => js.selected = value;
-  bool get shouldRemoveOnTrailingIconClick =>
+  bool? get selected => js.selected;
+  set selected(bool? value) => js.selected = value;
+  bool? get shouldRemoveOnTrailingIconClick =>
       js.shouldRemoveOnTrailingIconClick;
-  set shouldRemoveOnTrailingIconClick(bool value) =>
+  set shouldRemoveOnTrailingIconClick(bool? value) =>
       js.shouldRemoveOnTrailingIconClick = value;
   MDCRipple get ripple => MDCRipple.fromComponent(js.ripple);
 

@@ -7,8 +7,8 @@ import 'package:mdc_web/mdc_web.dart';
 import 'main_demos.dart';
 import 'package:js/js.dart';
 
-Element _content;
-Element get content => _content;
+Element? _content;
+Element? get content => _content;
 
 // @JS('mdc.autoInit')
 // external void autoInit([Node root, void Function(String) warn]);
@@ -34,7 +34,7 @@ void main() async {
   addDyslexicOption();
   handleSelectedText();
 
-  _content = querySelector('#content');
+  _content = querySelector('#content')!;
 
   topAppBar();
   // chips();
@@ -48,7 +48,7 @@ void main() async {
   print(await fetchGoodBoys().toList());
 
   define('a-b', allowInterop(() => Test));
-  document.body.append(Element.tag('a-b'));
+  document.body!.append(Element.tag('a-b'));
 }
 
 class Test extends HtmlElement {
@@ -65,7 +65,7 @@ Element addSection(String id, String title, String demoUrl) {
   setInnerHtml(section, '''
 
     ''');
-  content.append(section);
+  content!.append(section);
   return section;
 }
 
@@ -73,7 +73,8 @@ void setInnerHtml(Element el, String html) =>
     el.setInnerHtml(html, treeSanitizer: NodeTreeSanitizer.trusted);
 
 /// Listen to events and print the event name and event details when they happen.
-void listen<T>(T target, final String eventName, [void Function(T) callback]) {
+/// void listen<T>(T target, final String eventName, [void Function(T) callback]) {
+void listen<T>(T target, final String eventName, [void Function(T)? callback]) {
   final handler = (Event event) {
     print('Event "$eventName": ${stringify(event)}');
     if (callback != null) callback(target);
@@ -86,8 +87,10 @@ void listen<T>(T target, final String eventName, [void Function(T) callback]) {
 /// I must be bored.
 void addDyslexicOption() {
   final dyslexic = MDCSwitch(querySelector('.mdc-switch'));
+  final checked = dyslexic.checked;
+  if (checked == null) return;
   dyslexic.listen('change', (e) {
-    document.body.className = dyslexic.checked ? 'dyslexic' : '';
+    document.body!.className = checked ? 'dyslexic' : '';
   });
 }
 
@@ -95,7 +98,9 @@ void addDyslexicOption() {
 void handleSelectedText() {
   document.addEventListener('mouseup', (event) {
     final sel = window.getSelection();
-    if (sel.toString().length > 0 && sel.rangeCount > 0) {
+    if (sel == null) return;
+    final rangeCount = sel.rangeCount;
+    if (sel.toString().length > 0 && rangeCount != null && rangeCount > 0) {
       final range = sel.getRangeAt(0).cloneRange();
       try {
         range.surroundContents(SpanElement()..className = 'selected-text');
@@ -108,7 +113,7 @@ void handleSelectedText() {
   document.addEventListener('mousedown', (event) {
     if (window.getSelection().toString().length == 0) {
       querySelectorAll('.selected-text').forEach((el) {
-        el.replaceWith(Text(el.text));
+        el.replaceWith(Text(el.text ?? ''));
       });
     }
   });

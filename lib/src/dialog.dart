@@ -14,19 +14,19 @@ class MDCDialog extends MDCComponent {
   static MDCDialog attachTo(Element root) => MDCDialog._attach(root);
   MDCDialog._attach(Element root) : _js = DialogComponent.attachTo(root);
 
-  MDCDialog(Element root, [MDCFoundation foundation, args])
+  MDCDialog(Element root, [MDCFoundation? foundation, args])
       : _js = _preserveUndefined(root, foundation, args);
 
   DialogComponent get js => _js;
   final DialogComponent _js;
 
   bool get isOpen => js.isOpen;
-  String get escapeKeyAction => js.escapeKeyAction;
-  set escapeKeyAction(String value) => js.escapeKeyAction = value;
-  String get scrimClickAction => js.scrimClickAction;
-  set scrimClickAction(String value) => js.scrimClickAction = value;
-  bool get autoStackButtons => js.autoStackButtons;
-  set autoStackButtons(bool value) => js.autoStackButtons = value;
+  String? get escapeKeyAction => js.escapeKeyAction;
+  set escapeKeyAction(String? value) => js.escapeKeyAction = value;
+  String? get scrimClickAction => js.scrimClickAction;
+  set scrimClickAction(String? value) => js.scrimClickAction = value;
+  bool? get autoStackButtons => js.autoStackButtons;
+  set autoStackButtons(bool? value) => js.autoStackButtons = value;
 
   /// Recalculates layout and automatically adds/removes modifier classes like
   /// --scrollable.
@@ -34,7 +34,7 @@ class MDCDialog extends MDCComponent {
   void open() => js.open();
 
   /// [action] indicates why it was closed.
-  void close([String action]) => js.close();
+  void close([String? action]) => js.close();
 
   static const openingEvent = 'MDCDialog:opening';
   static const openedEvent = 'MDCDialog:opened';
@@ -47,7 +47,7 @@ class MDCDialog extends MDCComponent {
 }
 
 DialogComponent _preserveUndefined(
-        Element root, MDCFoundation foundation, args) =>
+        Element root, MDCFoundation? foundation, args) =>
     foundation == null
         ? DialogComponent(root)
         : args == null
