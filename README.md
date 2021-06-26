@@ -1,3 +1,5 @@
+[![pub points](https://badges.bar/mdc_web/pub%20points)](https://pub.dev/packages/mdc_web/score)
+
 # mdc_web
 
 Dart wrapper for the material-components-web javascript library.
